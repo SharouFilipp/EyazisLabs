@@ -1,0 +1,39 @@
+Project lab2 {
+  database_type: 'PostgreSQL'
+  Note: 'Лабораторная работа №2 — автоматическое распознавание языка текста (база lab2)'
+}
+
+Table documents {
+  id serial [primary key]
+  filename text [unique, not null, note: 'Имя PDF-файла в data/documents']
+  title text [note: 'Заголовок из метаданных PDF или имя файла']
+  true_lang varchar(2) [note: 'Эталонный язык (en/fr) или NULL, если неизвестен']
+  pages integer [note: 'Число страниц']
+  chars integer [note: 'Длина извлечённого текста в символах']
+  words integer [note: 'Число слов после предобработки']
+  text text [not null, note: 'Текст, извлечённый из PDF']
+  uploaded_at timestamp [default: `now()`]
+
+  Note: 'Входная информация — загруженные документы'
+}
+
+Table results {
+  id serial [primary key]
+  document_id integer [not null]
+  method text [not null, note: 'frequent / short / neural']
+  lang varchar(2) [not null, note: 'Распознанный язык']
+  score_en real [note: 'Метрика расстояния до профиля английского']
+  score_fr real [note: 'Метрика расстояния до профиля французского']
+  confidence real [note: 'Уверенность решения']
+  time_ms real [note: 'Время распознавания, мс']
+  created_at timestamp [default: `now()`]
+
+  indexes {
+    (document_id, method) [unique]
+    document_id [name: 'idx_results_document']
+  }
+
+  Note: 'Выходная информация — результаты распознавания, по одному на метод'
+}
+
+Ref: results.document_id > documents.id [delete: cascade]

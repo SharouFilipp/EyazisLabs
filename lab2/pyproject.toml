@@ -1,0 +1,30 @@
+[project]
+name = "language-detector"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.151.0",
+    "jinja2>=3.1.6",
+    "joblib>=1.6.0",
+    "numpy>=2.2.6",
+    "psycopg2-binary>=2.9.13",
+    "pypdf>=6.21.1",
+    "python-multipart>=0.0.32",
+    "scikit-learn>=1.7.2",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[tool.uv]
+package = false
+# Проект лежит в папке OneDrive: жёсткие ссылки из кэша uv там не поддерживаются
+# (os error 396), поэтому пакеты копируются в .venv.
+link-mode = "copy"
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.10.9",
+    "playwright>=1.64.0",
+    "python-docx>=1.2.0",
+    "reportlab>=5.0.1",
+    "requests>=2.34.2",
+]

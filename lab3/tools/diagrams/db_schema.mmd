@@ -1,0 +1,67 @@
+erDiagram
+    documents ||--o{ sentences : "предложения"
+    documents ||--o{ terms : "термины"
+    documents ||--o{ summaries : "рефераты (2 метода)"
+    documents ||--o{ doc_concepts : "понятия базы знаний"
+    documents {
+        serial id PK
+        text filename UK
+        text title
+        varchar lang "fr | it"
+        varchar domain "cs | lit"
+        int pages
+        int chars
+        int words
+        int n_paragraphs
+        int n_sentences
+        jsonb paragraphs
+        jsonb reference "эталон или NULL"
+        timestamp uploaded_at
+    }
+    sentences {
+        serial id PK
+        int document_id FK
+        int idx
+        int paragraph
+        text text
+        int bd
+        int bp
+        float posd
+        float posp
+        float score
+        float weight
+        bool in_summary
+        float sem_weight
+        jsonb concepts
+        bool in_summary_ostis
+    }
+    doc_concepts {
+        int document_id PK,FK
+        text concept PK
+        text name
+        text ru
+        int tf
+        float a0
+        float activation
+        text parent
+    }
+    terms {
+        int document_id PK,FK
+        text stem PK
+        text surface
+        int tf
+        int df
+        float weight
+    }
+    summaries {
+        serial id PK
+        int document_id FK
+        varchar method "extraction | ostis"
+        int n_sentences
+        int db_size
+        text summary_text
+        jsonb keywords
+        text scs
+        float time_ms
+        timestamp created_at
+    }

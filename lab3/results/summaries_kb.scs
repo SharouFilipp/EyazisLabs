@@ -1,0 +1,2201 @@
+// ===== Онтология предметной области «Автоматическое реферирование документов» =====
+concept_document
+<- sc_node_class;
+=> nrel_main_idtf: [документ] (* <- lang_ru;; *);;
+
+concept_scientific_article_computer_science
+<- sc_node_class;
+=> nrel_main_idtf: [научная статья по computer science] (* <- lang_ru;; *);
+<= nrel_inclusion: concept_document;;
+
+concept_literary_essay
+<- sc_node_class;
+=> nrel_main_idtf: [сочинение по литературе] (* <- lang_ru;; *);
+<= nrel_inclusion: concept_document;;
+
+concept_classic_summary
+<- sc_node_class;
+=> nrel_main_idtf: [классический реферат] (* <- lang_ru;; *);;
+
+concept_keyword_summary
+<- sc_node_class;
+=> nrel_main_idtf: [реферат в виде списка ключевых слов] (* <- lang_ru;; *);;
+
+concept_keyword
+<- sc_node_class;
+=> nrel_main_idtf: [ключевое слово] (* <- lang_ru;; *);;
+
+concept_sentence
+<- sc_node_class;
+=> nrel_main_idtf: [предложение] (* <- lang_ru;; *);;
+
+method_sentence_extraction
+<- concept_summarization_method;
+=> nrel_main_idtf: [метод sentence extraction] (* <- lang_ru;; *);;
+
+nrel_summary
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [реферат*] (* <- lang_ru;; *);;
+
+nrel_keywords
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [ключевые слова*] (* <- lang_ru;; *);;
+
+nrel_subkeyword
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [уточняющее ключевое словосочетание*] (* <- lang_ru;; *);;
+
+nrel_text_language
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [язык текста*] (* <- lang_ru;; *);;
+
+nrel_source_document
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [исходный документ*] (* <- lang_ru;; *);;
+
+nrel_summarization_method
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [метод реферирования*] (* <- lang_ru;; *);;
+
+
+// ===== Документ 1: Les algorithmes de tri : principes, complexité et usages =====
+document_1
+<- concept_document;
+<- concept_scientific_article_computer_science;
+=> nrel_main_idtf: [Les algorithmes de tri : principes, complexité et usages] (* <- lang_fr;; *);
+=> nrel_text_language: lang_fr;
+=> nrel_source_document: [http://localhost:8003/documents/1/file];
+=> nrel_summary: classic_summary_1;
+=> nrel_keywords: keyword_summary_1;;
+
+classic_summary_1
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_1_1;
+-> rrel_2: ..sentence_1_2;
+-> rrel_3: ..sentence_1_3;
+-> rrel_4: ..sentence_1_4;
+-> rrel_5: ..sentence_1_5;
+-> rrel_6: ..sentence_1_6;
+-> rrel_7: ..sentence_1_7;
+-> rrel_8: ..sentence_1_8;
+-> rrel_9: ..sentence_1_9;
+-> rrel_10: ..sentence_1_10;;
+
+..sentence_1_1
+<- concept_sentence;
+=> nrel_main_idtf: [Le tri est l'une des opérations les plus fondamentales de l'informatique, car un grand nombre de traitements supposent que les données soient d'abord ordonnées.] (* <- lang_fr;; *);;
+
+..sentence_1_2
+<- concept_sentence;
+=> nrel_main_idtf: [Rechercher un élément, éliminer les doublons, fusionner deux listes ou construire un index devient beaucoup plus simple lorsque les valeurs sont rangées selon une relation d'ordre.] (* <- lang_fr;; *);;
+
+..sentence_1_3
+<- concept_sentence;
+=> nrel_main_idtf: [Un algorithme de tri par comparaison ne dispose que d'une seule opération pour obtenir de l'information sur les données : comparer deux éléments et savoir lequel est le plus petit.] (* <- lang_fr;; *);;
+
+..sentence_1_4
+<- concept_sentence;
+=> nrel_main_idtf: [Tout algorithme de ce type doit effectuer, dans le pire des cas, un nombre de comparaisons proportionnel à n log n pour trier n éléments.] (* <- lang_fr;; *);;
+
+..sentence_1_5
+<- concept_sentence;
+=> nrel_main_idtf: [Le tri par insertion parcourt le tableau de gauche à droite et insère chaque nouvel élément à sa place dans la partie déjà triée.] (* <- lang_fr;; *);;
+
+..sentence_1_6
+<- concept_sentence;
+=> nrel_main_idtf: [Sa complexité est quadratique dans le pire des cas, mais il est très rapide sur des tableaux presque triés et sur de petites séquences.] (* <- lang_fr;; *);;
+
+..sentence_1_7
+<- concept_sentence;
+=> nrel_main_idtf: [Le tri fusion repose sur le principe « diviser pour régner » : le tableau est coupé en deux moitiés, chaque moitié est triée récursivement, puis les deux séquences triées sont fusionnées.] (* <- lang_fr;; *);;
+
+..sentence_1_8
+<- concept_sentence;
+=> nrel_main_idtf: [Le tri rapide, proposé par Tony Hoare, choisit un élément appelé pivot et partitionne le tableau en deux zones : les éléments plus petits que le pivot et les éléments plus grands.] (* <- lang_fr;; *);;
+
+..sentence_1_9
+<- concept_sentence;
+=> nrel_main_idtf: [En moyenne, le tri rapide effectue environ n log n comparaisons avec une constante très faible, et il travaille directement dans le tableau sans mémoire supplémentaire importante.] (* <- lang_fr;; *);;
+
+..sentence_1_10
+<- concept_sentence;
+=> nrel_main_idtf: [Le tri par tas utilise une structure de données particulière, le tas binaire, dans laquelle chaque nœud est supérieur à ses descendants.] (* <- lang_fr;; *);;
+
+keyword_summary_1
+<- concept_keyword_summary;
+-> rrel_1: kw_fr_tri;  // w(t,D) = 2.0794
+-> rrel_2: kw_fr_fusion;  // w(t,D) = 1.2823
+-> rrel_3: kw_fr_tas;  // w(t,D) = 1.2477
+-> rrel_4: kw_fr_comparaisons;  // w(t,D) = 1.2130
+-> rrel_5: kw_fr_log;  // w(t,D) = 1.1784
+-> rrel_6: kw_fr_pire;  // w(t,D) = 1.1784
+-> rrel_7: kw_fr_pivot;  // w(t,D) = 1.1784
+-> rrel_8: kw_fr_borne;  // w(t,D) = 1.1437
+-> rrel_9: kw_fr_choix;  // w(t,D) = 1.1437
+-> rrel_10: kw_fr_recursivement;;  // w(t,D) = 1.1437
+
+kw_fr_tri
+<- concept_keyword;
+=> nrel_main_idtf: [tri] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_tri_rapide;
+=> nrel_subkeyword: kw_fr_tri_fusion;
+=> nrel_subkeyword: kw_fr_algorithme_de_tri;;
+
+kw_fr_tri_rapide
+<- concept_keyword;
+=> nrel_main_idtf: [tri rapide] (* <- lang_fr;; *);;
+
+kw_fr_tri_fusion
+<- concept_keyword;
+=> nrel_main_idtf: [tri fusion] (* <- lang_fr;; *);;
+
+kw_fr_algorithme_de_tri
+<- concept_keyword;
+=> nrel_main_idtf: [algorithme de tri] (* <- lang_fr;; *);;
+
+kw_fr_fusion
+<- concept_keyword;
+=> nrel_main_idtf: [fusion] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_tri_fusion;;
+
+kw_fr_tri_fusion
+<- concept_keyword;
+=> nrel_main_idtf: [tri fusion] (* <- lang_fr;; *);;
+
+kw_fr_tas
+<- concept_keyword;
+=> nrel_main_idtf: [tas] (* <- lang_fr;; *);;
+
+kw_fr_comparaisons
+<- concept_keyword;
+=> nrel_main_idtf: [comparaisons] (* <- lang_fr;; *);;
+
+kw_fr_log
+<- concept_keyword;
+=> nrel_main_idtf: [log] (* <- lang_fr;; *);;
+
+kw_fr_pire
+<- concept_keyword;
+=> nrel_main_idtf: [pire] (* <- lang_fr;; *);;
+
+kw_fr_pivot
+<- concept_keyword;
+=> nrel_main_idtf: [pivot] (* <- lang_fr;; *);;
+
+kw_fr_borne
+<- concept_keyword;
+=> nrel_main_idtf: [borne] (* <- lang_fr;; *);;
+
+kw_fr_choix
+<- concept_keyword;
+=> nrel_main_idtf: [choix] (* <- lang_fr;; *);;
+
+kw_fr_recursivement
+<- concept_keyword;
+=> nrel_main_idtf: [récursivement] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_triee_recursivement;;
+
+kw_fr_triee_recursivement
+<- concept_keyword;
+=> nrel_main_idtf: [triée récursivement] (* <- lang_fr;; *);;
+
+// ===== Документ 2: Les bases de données relationnelles et le langage SQL =====
+document_2
+<- concept_document;
+<- concept_scientific_article_computer_science;
+=> nrel_main_idtf: [Les bases de données relationnelles et le langage SQL] (* <- lang_fr;; *);
+=> nrel_text_language: lang_fr;
+=> nrel_source_document: [http://localhost:8003/documents/2/file];
+=> nrel_summary: classic_summary_2;
+=> nrel_keywords: keyword_summary_2;;
+
+classic_summary_2
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_2_1;
+-> rrel_2: ..sentence_2_2;
+-> rrel_3: ..sentence_2_3;
+-> rrel_4: ..sentence_2_4;
+-> rrel_5: ..sentence_2_5;
+-> rrel_6: ..sentence_2_6;
+-> rrel_7: ..sentence_2_7;
+-> rrel_8: ..sentence_2_8;
+-> rrel_9: ..sentence_2_9;
+-> rrel_10: ..sentence_2_10;;
+
+..sentence_2_1
+<- concept_sentence;
+=> nrel_main_idtf: [Une base de données est un ensemble organisé d'informations, géré par un logiciel spécialisé appelé système de gestion de bases de données.] (* <- lang_fr;; *);;
+
+..sentence_2_2
+<- concept_sentence;
+=> nrel_main_idtf: [Son rôle est de stocker les données de manière durable, de permettre leur consultation rapide et de garantir leur cohérence même lorsque de nombreux utilisateurs travaillent simultanément.] (* <- lang_fr;; *);;
+
+..sentence_2_3
+<- concept_sentence;
+=> nrel_main_idtf: [Parmi les différents modèles proposés depuis les années soixante, le modèle relationnel est devenu dominant et reste aujourd'hui au cœur de la plupart des applications de gestion.] (* <- lang_fr;; *);;
+
+..sentence_2_4
+<- concept_sentence;
+=> nrel_main_idtf: [Le modèle relationnel a été introduit par Edgar Codd en 1970 avec une idée simple : représenter toutes les données sous forme de relations, c'est-à-dire de tables composées de lignes et de colonnes.] (* <- lang_fr;; *);;
+
+..sentence_2_5
+<- concept_sentence;
+=> nrel_main_idtf: [Chaque ligne correspond à un objet du monde réel, par exemple un client ou une commande, et chaque colonne à un attribut de cet objet.] (* <- lang_fr;; *);;
+
+..sentence_2_6
+<- concept_sentence;
+=> nrel_main_idtf: [La notion de clé joue un rôle central dans l'organisation des relations.] (* <- lang_fr;; *);;
+
+..sentence_2_7
+<- concept_sentence;
+=> nrel_main_idtf: [Une clé primaire identifie de façon unique chaque ligne d'une table, tandis qu'une clé étrangère établit un lien entre deux tables en faisant référence à la clé primaire d'une autre relation.] (* <- lang_fr;; *);;
+
+..sentence_2_8
+<- concept_sentence;
+=> nrel_main_idtf: [Le langage SQL est le langage standard des bases de données relationnelles.] (* <- lang_fr;; *);;
+
+..sentence_2_9
+<- concept_sentence;
+=> nrel_main_idtf: [Une requête de sélection indique les colonnes souhaitées, les tables concernées et les conditions que doivent satisfaire les lignes.] (* <- lang_fr;; *);;
+
+..sentence_2_10
+<- concept_sentence;
+=> nrel_main_idtf: [Les formes normales successives visent à éliminer les redondances et les anomalies de mise à jour qui apparaissent lorsqu'une même information est stockée à plusieurs endroits.] (* <- lang_fr;; *);;
+
+keyword_summary_2
+<- concept_keyword_summary;
+-> rrel_1: kw_fr_lignes;  // w(t,D) = 1.5196
+-> rrel_2: kw_fr_relationnel;  // w(t,D) = 1.5196
+-> rrel_3: kw_fr_client;  // w(t,D) = 1.3596
+-> rrel_4: kw_fr_requete;  // w(t,D) = 1.3596
+-> rrel_5: kw_fr_transactions;  // w(t,D) = 1.3596
+-> rrel_6: kw_fr_colonnes;  // w(t,D) = 1.2797
+-> rrel_7: kw_fr_commande;  // w(t,D) = 1.2797
+-> rrel_8: kw_fr_durable;  // w(t,D) = 1.2797
+-> rrel_9: kw_fr_gestion;  // w(t,D) = 1.2797
+-> rrel_10: kw_fr_schema;;  // w(t,D) = 1.2797
+
+kw_fr_lignes
+<- concept_keyword;
+=> nrel_main_idtf: [lignes] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_ligne_correspond;;
+
+kw_fr_ligne_correspond
+<- concept_keyword;
+=> nrel_main_idtf: [ligne correspond] (* <- lang_fr;; *);;
+
+kw_fr_relationnel
+<- concept_keyword;
+=> nrel_main_idtf: [relationnel] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_modele_relationnel;;
+
+kw_fr_modele_relationnel
+<- concept_keyword;
+=> nrel_main_idtf: [modèle relationnel] (* <- lang_fr;; *);;
+
+kw_fr_client
+<- concept_keyword;
+=> nrel_main_idtf: [client] (* <- lang_fr;; *);;
+
+kw_fr_requete
+<- concept_keyword;
+=> nrel_main_idtf: [requête] (* <- lang_fr;; *);;
+
+kw_fr_transactions
+<- concept_keyword;
+=> nrel_main_idtf: [transactions] (* <- lang_fr;; *);;
+
+kw_fr_colonnes
+<- concept_keyword;
+=> nrel_main_idtf: [colonnes] (* <- lang_fr;; *);;
+
+kw_fr_commande
+<- concept_keyword;
+=> nrel_main_idtf: [commande] (* <- lang_fr;; *);;
+
+kw_fr_durable
+<- concept_keyword;
+=> nrel_main_idtf: [durable] (* <- lang_fr;; *);;
+
+kw_fr_gestion
+<- concept_keyword;
+=> nrel_main_idtf: [gestion] (* <- lang_fr;; *);;
+
+kw_fr_schema
+<- concept_keyword;
+=> nrel_main_idtf: [schéma] (* <- lang_fr;; *);;
+
+// ===== Документ 3: Les réseaux de neurones artificiels et l'apprentissage profond =====
+document_3
+<- concept_document;
+<- concept_scientific_article_computer_science;
+=> nrel_main_idtf: [Les réseaux de neurones artificiels et l'apprentissage profond] (* <- lang_fr;; *);
+=> nrel_text_language: lang_fr;
+=> nrel_source_document: [http://localhost:8003/documents/3/file];
+=> nrel_summary: classic_summary_3;
+=> nrel_keywords: keyword_summary_3;;
+
+classic_summary_3
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_3_1;
+-> rrel_2: ..sentence_3_2;
+-> rrel_3: ..sentence_3_3;
+-> rrel_4: ..sentence_3_4;
+-> rrel_5: ..sentence_3_5;
+-> rrel_6: ..sentence_3_6;
+-> rrel_7: ..sentence_3_7;
+-> rrel_8: ..sentence_3_8;
+-> rrel_9: ..sentence_3_9;
+-> rrel_10: ..sentence_3_10;;
+
+..sentence_3_1
+<- concept_sentence;
+=> nrel_main_idtf: [Les réseaux de neurones artificiels sont des modèles de calcul inspirés, de manière très simplifiée, du fonctionnement du cerveau.] (* <- lang_fr;; *);;
+
+..sentence_3_2
+<- concept_sentence;
+=> nrel_main_idtf: [Ils occupent aujourd'hui une place centrale en intelligence artificielle, car ils permettent de reconnaître des images, de traduire des textes ou de transcrire la parole avec une précision inconnue il y a encore quelques décennies.] (* <- lang_fr;; *);;
+
+..sentence_3_3
+<- concept_sentence;
+=> nrel_main_idtf: [L'élément de base d'un réseau est le neurone artificiel, qui reçoit plusieurs valeurs d'entrée, les multiplie par des poids, additionne le résultat et applique une fonction d'activation.] (* <- lang_fr;; *);;
+
+..sentence_3_4
+<- concept_sentence;
+=> nrel_main_idtf: [Les premiers modèles, comme le perceptron proposé par Frank Rosenblatt à la fin des années cinquante, utilisaient une simple fonction à seuil.] (* <- lang_fr;; *);;
+
+..sentence_3_5
+<- concept_sentence;
+=> nrel_main_idtf: [Les réseaux modernes emploient des fonctions d'activation non linéaires, par exemple la fonction sigmoïde ou la fonction ReLU, qui renvoie zéro pour les valeurs négatives.] (* <- lang_fr;; *);;
+
+..sentence_3_6
+<- concept_sentence;
+=> nrel_main_idtf: [La couche d'entrée reçoit les données, les couches cachées effectuent des transformations successives et la couche de sortie produit le résultat, par exemple la probabilité qu'une image représente un chat.] (* <- lang_fr;; *);;
+
+..sentence_3_7
+<- concept_sentence;
+=> nrel_main_idtf: [On parle d'apprentissage profond lorsque le réseau comporte de nombreuses couches cachées, chacune extrayant des représentations de plus en plus abstraites des données.] (* <- lang_fr;; *);;
+
+..sentence_3_8
+<- concept_sentence;
+=> nrel_main_idtf: [L'apprentissage consiste à ajuster les poids du réseau afin de minimiser une fonction de perte qui mesure l'écart entre les prédictions et les réponses attendues.] (* <- lang_fr;; *);;
+
+..sentence_3_9
+<- concept_sentence;
+=> nrel_main_idtf: [L'algorithme de rétropropagation calcule efficacement le gradient de la perte par rapport à tous les poids en propageant l'erreur de la sortie vers l'entrée, couche par couche.] (* <- lang_fr;; *);;
+
+..sentence_3_10
+<- concept_sentence;
+=> nrel_main_idtf: [Un problème majeur est le surapprentissage : le réseau mémorise les exemples d'apprentissage au lieu d'apprendre des régularités générales, et ses performances chutent sur de nouvelles données.] (* <- lang_fr;; *);;
+
+keyword_summary_3
+<- concept_keyword_summary;
+-> rrel_1: kw_fr_reseau;  // w(t,D) = 2.0794
+-> rrel_2: kw_fr_couches;  // w(t,D) = 1.9928
+-> rrel_3: kw_fr_apprentissage;  // w(t,D) = 1.8195
+-> rrel_4: kw_fr_neurones;  // w(t,D) = 1.6462
+-> rrel_5: kw_fr_poids;  // w(t,D) = 1.5596
+-> rrel_6: kw_fr_artificiels;  // w(t,D) = 1.2997
+-> rrel_7: kw_fr_entree;  // w(t,D) = 1.2997
+-> rrel_8: kw_fr_perte;  // w(t,D) = 1.2997
+-> rrel_9: kw_fr_activation;  // w(t,D) = 1.2130
+-> rrel_10: kw_fr_detectent;;  // w(t,D) = 1.2130
+
+kw_fr_reseau
+<- concept_keyword;
+=> nrel_main_idtf: [réseau] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_reseaux_de_neurones;;
+
+kw_fr_reseaux_de_neurones
+<- concept_keyword;
+=> nrel_main_idtf: [réseaux de neurones] (* <- lang_fr;; *);;
+
+kw_fr_couches
+<- concept_keyword;
+=> nrel_main_idtf: [couches] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_couches_cachees;;
+
+kw_fr_couches_cachees
+<- concept_keyword;
+=> nrel_main_idtf: [couches cachées] (* <- lang_fr;; *);;
+
+kw_fr_apprentissage
+<- concept_keyword;
+=> nrel_main_idtf: [apprentissage] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_donnees_d_apprentissage;
+=> nrel_subkeyword: kw_fr_apprentissage_profond;;
+
+kw_fr_donnees_d_apprentissage
+<- concept_keyword;
+=> nrel_main_idtf: [données d apprentissage] (* <- lang_fr;; *);;
+
+kw_fr_apprentissage_profond
+<- concept_keyword;
+=> nrel_main_idtf: [apprentissage profond] (* <- lang_fr;; *);;
+
+kw_fr_neurones
+<- concept_keyword;
+=> nrel_main_idtf: [neurones] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_reseaux_de_neurones;
+=> nrel_subkeyword: kw_fr_neurones_artificiels;;
+
+kw_fr_reseaux_de_neurones
+<- concept_keyword;
+=> nrel_main_idtf: [réseaux de neurones] (* <- lang_fr;; *);;
+
+kw_fr_neurones_artificiels
+<- concept_keyword;
+=> nrel_main_idtf: [neurones artificiels] (* <- lang_fr;; *);;
+
+kw_fr_poids
+<- concept_keyword;
+=> nrel_main_idtf: [poids] (* <- lang_fr;; *);;
+
+kw_fr_artificiels
+<- concept_keyword;
+=> nrel_main_idtf: [artificiels] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_neurones_artificiels;;
+
+kw_fr_neurones_artificiels
+<- concept_keyword;
+=> nrel_main_idtf: [neurones artificiels] (* <- lang_fr;; *);;
+
+kw_fr_entree
+<- concept_keyword;
+=> nrel_main_idtf: [entrée] (* <- lang_fr;; *);;
+
+kw_fr_perte
+<- concept_keyword;
+=> nrel_main_idtf: [perte] (* <- lang_fr;; *);;
+
+kw_fr_activation
+<- concept_keyword;
+=> nrel_main_idtf: [activation] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_fonction_d_activation;;
+
+kw_fr_fonction_d_activation
+<- concept_keyword;
+=> nrel_main_idtf: [fonction d activation] (* <- lang_fr;; *);;
+
+kw_fr_detectent
+<- concept_keyword;
+=> nrel_main_idtf: [détectent] (* <- lang_fr;; *);;
+
+// ===== Документ 4: La compilation : du code source au programme exécutable =====
+document_4
+<- concept_document;
+<- concept_scientific_article_computer_science;
+=> nrel_main_idtf: [La compilation : du code source au programme exécutable] (* <- lang_fr;; *);
+=> nrel_text_language: lang_fr;
+=> nrel_source_document: [http://localhost:8003/documents/4/file];
+=> nrel_summary: classic_summary_4;
+=> nrel_keywords: keyword_summary_4;;
+
+classic_summary_4
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_4_1;
+-> rrel_2: ..sentence_4_2;
+-> rrel_3: ..sentence_4_3;
+-> rrel_4: ..sentence_4_4;
+-> rrel_5: ..sentence_4_5;
+-> rrel_6: ..sentence_4_6;
+-> rrel_7: ..sentence_4_7;
+-> rrel_8: ..sentence_4_8;
+-> rrel_9: ..sentence_4_9;
+-> rrel_10: ..sentence_4_10;;
+
+..sentence_4_1
+<- concept_sentence;
+=> nrel_main_idtf: [Un compilateur est un programme qui traduit un texte écrit dans un langage de programmation de haut niveau en un code exécutable par la machine.] (* <- lang_fr;; *);;
+
+..sentence_4_2
+<- concept_sentence;
+=> nrel_main_idtf: [Grâce à lui, le programmeur peut exprimer ses idées avec des notions abstraites, comme les fonctions, les boucles ou les objets, sans se préoccuper des détails du processeur.] (* <- lang_fr;; *);;
+
+..sentence_4_3
+<- concept_sentence;
+=> nrel_main_idtf: [Le travail d'un compilateur est traditionnellement découpé en plusieurs phases successives.] (* <- lang_fr;; *);;
+
+..sentence_4_4
+<- concept_sentence;
+=> nrel_main_idtf: [La partie frontale analyse le code source et en construit une représentation interne, tandis que la partie arrière transforme cette représentation en instructions pour une architecture donnée.] (* <- lang_fr;; *);;
+
+..sentence_4_5
+<- concept_sentence;
+=> nrel_main_idtf: [La première phase est l'analyse lexicale, qui découpe la suite de caractères du programme en unités appelées lexèmes : mots-clés, identificateurs, nombres, opérateurs et signes de ponctuation.] (* <- lang_fr;; *);;
+
+..sentence_4_6
+<- concept_sentence;
+=> nrel_main_idtf: [L'analyse syntaxique vérifie ensuite que la suite de lexèmes respecte la grammaire du langage et construit un arbre syntaxique qui reflète la structure du programme.] (* <- lang_fr;; *);;
+
+..sentence_4_7
+<- concept_sentence;
+=> nrel_main_idtf: [Il existe deux grandes familles d'analyseurs : les analyseurs descendants, qui partent du symbole initial et cherchent à dériver le programme, et les analyseurs ascendants, qui regroupent progressivement les lexèmes en constructions plus larges.] (* <- lang_fr;; *);;
+
+..sentence_4_8
+<- concept_sentence;
+=> nrel_main_idtf: [Un programme syntaxiquement correct peut encore contenir des erreurs de sens, que détecte l'analyse sémantique.] (* <- lang_fr;; *);;
+
+..sentence_4_9
+<- concept_sentence;
+=> nrel_main_idtf: [Le compilateur vérifie que chaque variable est déclarée avant son utilisation, que les types des opérandes sont compatibles et que les fonctions sont appelées avec le bon nombre d'arguments.] (* <- lang_fr;; *);;
+
+..sentence_4_10
+<- concept_sentence;
+=> nrel_main_idtf: [Après les analyses, le compilateur traduit l'arbre syntaxique en un code intermédiaire, indépendant à la fois du langage source et de la machine cible.] (* <- lang_fr;; *);;
+
+keyword_summary_4
+<- concept_keyword_summary;
+-> rrel_1: kw_fr_compilateur;  // w(t,D) = 2.0794
+-> rrel_2: kw_fr_code;  // w(t,D) = 1.9755
+-> rrel_3: kw_fr_analyseurs;  // w(t,D) = 1.5596
+-> rrel_4: kw_fr_grammaire;  // w(t,D) = 1.4556
+-> rrel_5: kw_fr_lexemes;  // w(t,D) = 1.4556
+-> rrel_6: kw_fr_machine;  // w(t,D) = 1.4556
+-> rrel_7: kw_fr_syntaxique;  // w(t,D) = 1.4556
+-> rrel_8: kw_fr_programme;  // w(t,D) = 1.3863
+-> rrel_9: kw_fr_intermediaire;  // w(t,D) = 1.3516
+-> rrel_10: kw_fr_phase;;  // w(t,D) = 1.3516
+
+kw_fr_compilateur
+<- concept_keyword;
+=> nrel_main_idtf: [compilateur] (* <- lang_fr;; *);;
+
+kw_fr_code
+<- concept_keyword;
+=> nrel_main_idtf: [code] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_code_intermediaire;;
+
+kw_fr_code_intermediaire
+<- concept_keyword;
+=> nrel_main_idtf: [code intermédiaire] (* <- lang_fr;; *);;
+
+kw_fr_analyseurs
+<- concept_keyword;
+=> nrel_main_idtf: [analyseurs] (* <- lang_fr;; *);;
+
+kw_fr_grammaire
+<- concept_keyword;
+=> nrel_main_idtf: [grammaire] (* <- lang_fr;; *);;
+
+kw_fr_lexemes
+<- concept_keyword;
+=> nrel_main_idtf: [lexèmes] (* <- lang_fr;; *);;
+
+kw_fr_machine
+<- concept_keyword;
+=> nrel_main_idtf: [machine] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_machine_cible;;
+
+kw_fr_machine_cible
+<- concept_keyword;
+=> nrel_main_idtf: [machine cible] (* <- lang_fr;; *);;
+
+kw_fr_syntaxique
+<- concept_keyword;
+=> nrel_main_idtf: [syntaxique] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_arbre_syntaxique;;
+
+kw_fr_arbre_syntaxique
+<- concept_keyword;
+=> nrel_main_idtf: [arbre syntaxique] (* <- lang_fr;; *);;
+
+kw_fr_programme
+<- concept_keyword;
+=> nrel_main_idtf: [programme] (* <- lang_fr;; *);;
+
+kw_fr_intermediaire
+<- concept_keyword;
+=> nrel_main_idtf: [intermédiaire] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_code_intermediaire;;
+
+kw_fr_code_intermediaire
+<- concept_keyword;
+=> nrel_main_idtf: [code intermédiaire] (* <- lang_fr;; *);;
+
+kw_fr_phase
+<- concept_keyword;
+=> nrel_main_idtf: [phase] (* <- lang_fr;; *);;
+
+// ===== Документ 5: Madame Bovary de Flaubert : le rêve romanesque face à la réalité =====
+document_5
+<- concept_document;
+<- concept_literary_essay;
+=> nrel_main_idtf: [Madame Bovary de Flaubert : le rêve romanesque face à la réalité] (* <- lang_fr;; *);
+=> nrel_text_language: lang_fr;
+=> nrel_source_document: [http://localhost:8003/documents/5/file];
+=> nrel_summary: classic_summary_5;
+=> nrel_keywords: keyword_summary_5;;
+
+classic_summary_5
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_5_1;
+-> rrel_2: ..sentence_5_2;
+-> rrel_3: ..sentence_5_3;
+-> rrel_4: ..sentence_5_4;
+-> rrel_5: ..sentence_5_5;
+-> rrel_6: ..sentence_5_6;
+-> rrel_7: ..sentence_5_7;
+-> rrel_8: ..sentence_5_8;
+-> rrel_9: ..sentence_5_9;
+-> rrel_10: ..sentence_5_10;;
+
+..sentence_5_1
+<- concept_sentence;
+=> nrel_main_idtf: [Publié en 1857, Madame Bovary de Gustave Flaubert est considéré comme l'un des romans fondateurs du réalisme français.] (* <- lang_fr;; *);;
+
+..sentence_5_2
+<- concept_sentence;
+=> nrel_main_idtf: [L'œuvre raconte l'histoire d'Emma, une jeune femme de province qui étouffe dans un mariage sans passion et cherche à vivre les émotions découvertes dans ses lectures.] (* <- lang_fr;; *);;
+
+..sentence_5_3
+<- concept_sentence;
+=> nrel_main_idtf: [Le personnage d'Emma Bovary est d'abord façonné par son éducation au couvent, où elle a lu en cachette des romans sentimentaux.] (* <- lang_fr;; *);;
+
+..sentence_5_4
+<- concept_sentence;
+=> nrel_main_idtf: [Elle y a appris à imaginer l'amour comme une passion exaltée, peuplée de châteaux, de chevaux et d'amants héroïques.] (* <- lang_fr;; *);;
+
+..sentence_5_5
+<- concept_sentence;
+=> nrel_main_idtf: [Lorsqu'elle épouse Charles, un médecin de campagne honnête mais terne, elle découvre que le mariage ne ressemble en rien à ces images.] (* <- lang_fr;; *);;
+
+..sentence_5_6
+<- concept_sentence;
+=> nrel_main_idtf: [Emma s'ennuie à Tostes, puis à Yonville, dans des villages où les journées se répètent sans événement.] (* <- lang_fr;; *);;
+
+..sentence_5_7
+<- concept_sentence;
+=> nrel_main_idtf: [Le bal au château de la Vaubyessard constitue pour elle une révélation : pendant une nuit, elle entrevoit le monde luxueux dont elle rêve, puis elle retombe dans sa vie ordinaire avec une amertume accrue.] (* <- lang_fr;; *);;
+
+..sentence_5_8
+<- concept_sentence;
+=> nrel_main_idtf: [Les aventures amoureuses d'Emma avec Rodolphe, puis avec Léon, apparaissent comme des tentatives désespérées pour réaliser ses rêves.] (* <- lang_fr;; *);;
+
+..sentence_5_9
+<- concept_sentence;
+=> nrel_main_idtf: [Rodolphe est un séducteur cynique qui l'abandonne au moment où elle croit pouvoir s'enfuir avec lui.] (* <- lang_fr;; *);;
+
+..sentence_5_10
+<- concept_sentence;
+=> nrel_main_idtf: [Le pharmacien Homais incarne la sottise satisfaite et le culte des idées reçues : il parle sans cesse de progrès et de science, mais ne comprend rien à ce qui l'entoure.] (* <- lang_fr;; *);;
+
+keyword_summary_5
+<- concept_keyword_summary;
+-> rrel_1: kw_fr_emma;  // w(t,D) = 2.0794
+-> rrel_2: kw_fr_flaubert;  // w(t,D) = 1.7329
+-> rrel_3: kw_fr_bovary;  // w(t,D) = 1.5018
+-> rrel_4: kw_fr_rodolphe;  // w(t,D) = 1.3863
+-> rrel_5: kw_fr_bourgeoise;  // w(t,D) = 1.2708
+-> rrel_6: kw_fr_chateaux;  // w(t,D) = 1.2708
+-> rrel_7: kw_fr_discours;  // w(t,D) = 1.2708
+-> rrel_8: kw_fr_fuir;  // w(t,D) = 1.2708
+-> rrel_9: kw_fr_homais;  // w(t,D) = 1.2708
+-> rrel_10: kw_fr_heroine;;  // w(t,D) = 1.2708
+
+kw_fr_emma
+<- concept_keyword;
+=> nrel_main_idtf: [emma] (* <- lang_fr;; *);;
+
+kw_fr_flaubert
+<- concept_keyword;
+=> nrel_main_idtf: [flaubert] (* <- lang_fr;; *);;
+
+kw_fr_bovary
+<- concept_keyword;
+=> nrel_main_idtf: [bovary] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_madame_bovary;;
+
+kw_fr_madame_bovary
+<- concept_keyword;
+=> nrel_main_idtf: [madame bovary] (* <- lang_fr;; *);;
+
+kw_fr_rodolphe
+<- concept_keyword;
+=> nrel_main_idtf: [rodolphe] (* <- lang_fr;; *);;
+
+kw_fr_bourgeoise
+<- concept_keyword;
+=> nrel_main_idtf: [bourgeoise] (* <- lang_fr;; *);;
+
+kw_fr_chateaux
+<- concept_keyword;
+=> nrel_main_idtf: [châteaux] (* <- lang_fr;; *);;
+
+kw_fr_discours
+<- concept_keyword;
+=> nrel_main_idtf: [discours] (* <- lang_fr;; *);;
+
+kw_fr_fuir
+<- concept_keyword;
+=> nrel_main_idtf: [fuir] (* <- lang_fr;; *);;
+
+kw_fr_homais
+<- concept_keyword;
+=> nrel_main_idtf: [homais] (* <- lang_fr;; *);;
+
+kw_fr_heroine
+<- concept_keyword;
+=> nrel_main_idtf: [héroïne] (* <- lang_fr;; *);;
+
+// ===== Документ 6: Les Misérables de Victor Hugo : un roman de la rédemption et de la justice sociale =====
+document_6
+<- concept_document;
+<- concept_literary_essay;
+=> nrel_main_idtf: [Les Misérables de Victor Hugo : un roman de la rédemption et de la justice sociale] (* <- lang_fr;; *);
+=> nrel_text_language: lang_fr;
+=> nrel_source_document: [http://localhost:8003/documents/6/file];
+=> nrel_summary: classic_summary_6;
+=> nrel_keywords: keyword_summary_6;;
+
+classic_summary_6
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_6_1;
+-> rrel_2: ..sentence_6_2;
+-> rrel_3: ..sentence_6_3;
+-> rrel_4: ..sentence_6_4;
+-> rrel_5: ..sentence_6_5;
+-> rrel_6: ..sentence_6_6;
+-> rrel_7: ..sentence_6_7;
+-> rrel_8: ..sentence_6_8;
+-> rrel_9: ..sentence_6_9;
+-> rrel_10: ..sentence_6_10;;
+
+..sentence_6_1
+<- concept_sentence;
+=> nrel_main_idtf: [Les Misérables, publié par Victor Hugo en 1862, est une vaste fresque romanesque qui mêle l'histoire individuelle d'un ancien forçat et le tableau de la société française de la première moitié du dix-neuvième siècle.] (* <- lang_fr;; *);;
+
+..sentence_6_2
+<- concept_sentence;
+=> nrel_main_idtf: [Le héros du roman, Jean Valjean, a passé dix-neuf ans au bagne pour avoir volé un pain afin de nourrir les enfants de sa sœur, puis pour ses tentatives d'évasion.] (* <- lang_fr;; *);;
+
+..sentence_6_3
+<- concept_sentence;
+=> nrel_main_idtf: [À sa libération, il est rejeté de partout à cause de son passeport jaune d'ancien forçat.] (* <- lang_fr;; *);;
+
+..sentence_6_4
+<- concept_sentence;
+=> nrel_main_idtf: [Lorsque Valjean lui vole son argenterie et se fait arrêter, l'évêque affirme aux gendarmes qu'il la lui a donnée et lui offre en plus deux chandeliers.] (* <- lang_fr;; *);;
+
+..sentence_6_5
+<- concept_sentence;
+=> nrel_main_idtf: [Devenu, sous un faux nom, un industriel respecté et le maire d'une petite ville, Valjean consacre sa vie à faire le bien.] (* <- lang_fr;; *);;
+
+..sentence_6_6
+<- concept_sentence;
+=> nrel_main_idtf: [Lorsqu'un innocent est sur le point d'être condamné à sa place, il se dénonce au tribunal après une nuit de lutte intérieure, décrite par Hugo comme une tempête sous un crâne.] (* <- lang_fr;; *);;
+
+..sentence_6_7
+<- concept_sentence;
+=> nrel_main_idtf: [Face à Valjean se dresse l'inspecteur Javert, personnage rigide qui incarne la loi sans miséricorde.] (* <- lang_fr;; *);;
+
+..sentence_6_8
+<- concept_sentence;
+=> nrel_main_idtf: [Fils de bagnard, Javert a choisi de servir l'ordre avec une fidélité absolue et ne croit pas qu'un criminel puisse changer.] (* <- lang_fr;; *);;
+
+..sentence_6_9
+<- concept_sentence;
+=> nrel_main_idtf: [Abandonnée par l'homme qu'elle aimait, elle confie sa fille Cosette aux Thénardier, des aubergistes avides qui exploitent l'enfant.] (* <- lang_fr;; *);;
+
+..sentence_6_10
+<- concept_sentence;
+=> nrel_main_idtf: [La dernière partie du livre est consacrée à l'insurrection républicaine de juin 1832, où se retrouvent les étudiants idéalistes, le jeune Marius amoureux de Cosette et le gamin Gavroche.] (* <- lang_fr;; *);;
+
+keyword_summary_6
+<- concept_keyword_summary;
+-> rrel_1: kw_fr_valjean;  // w(t,D) = 2.0794
+-> rrel_2: kw_fr_hugo;  // w(t,D) = 1.8484
+-> rrel_3: kw_fr_cosette;  // w(t,D) = 1.5018
+-> rrel_4: kw_fr_javert;  // w(t,D) = 1.5018
+-> rrel_5: kw_fr_affirme;  // w(t,D) = 1.3863
+-> rrel_6: kw_fr_bagne;  // w(t,D) = 1.3863
+-> rrel_7: kw_fr_fantine;  // w(t,D) = 1.3863
+-> rrel_8: kw_fr_justice;  // w(t,D) = 1.3863
+-> rrel_9: kw_fr_loi;  // w(t,D) = 1.3863
+-> rrel_10: kw_fr_victor;;  // w(t,D) = 1.3863
+
+kw_fr_valjean
+<- concept_keyword;
+=> nrel_main_idtf: [valjean] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_jean_valjean;;
+
+kw_fr_jean_valjean
+<- concept_keyword;
+=> nrel_main_idtf: [jean valjean] (* <- lang_fr;; *);;
+
+kw_fr_hugo
+<- concept_keyword;
+=> nrel_main_idtf: [hugo] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_victor_hugo;
+=> nrel_subkeyword: kw_fr_hugo_affirme;;
+
+kw_fr_victor_hugo
+<- concept_keyword;
+=> nrel_main_idtf: [victor hugo] (* <- lang_fr;; *);;
+
+kw_fr_hugo_affirme
+<- concept_keyword;
+=> nrel_main_idtf: [hugo affirme] (* <- lang_fr;; *);;
+
+kw_fr_cosette
+<- concept_keyword;
+=> nrel_main_idtf: [cosette] (* <- lang_fr;; *);;
+
+kw_fr_javert
+<- concept_keyword;
+=> nrel_main_idtf: [javert] (* <- lang_fr;; *);;
+
+kw_fr_affirme
+<- concept_keyword;
+=> nrel_main_idtf: [affirme] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_hugo_affirme;;
+
+kw_fr_hugo_affirme
+<- concept_keyword;
+=> nrel_main_idtf: [hugo affirme] (* <- lang_fr;; *);;
+
+kw_fr_bagne
+<- concept_keyword;
+=> nrel_main_idtf: [bagne] (* <- lang_fr;; *);;
+
+kw_fr_fantine
+<- concept_keyword;
+=> nrel_main_idtf: [fantine] (* <- lang_fr;; *);;
+
+kw_fr_justice
+<- concept_keyword;
+=> nrel_main_idtf: [justice] (* <- lang_fr;; *);;
+
+kw_fr_loi
+<- concept_keyword;
+=> nrel_main_idtf: [loi] (* <- lang_fr;; *);;
+
+kw_fr_victor
+<- concept_keyword;
+=> nrel_main_idtf: [victor] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_victor_hugo;;
+
+kw_fr_victor_hugo
+<- concept_keyword;
+=> nrel_main_idtf: [victor hugo] (* <- lang_fr;; *);;
+
+// ===== Документ 7: Le Rouge et le Noir de Stendhal : l'ambition d'un jeune homme sous la Restauration =====
+document_7
+<- concept_document;
+<- concept_literary_essay;
+=> nrel_main_idtf: [Le Rouge et le Noir de Stendhal : l'ambition d'un jeune homme sous la Restauration] (* <- lang_fr;; *);
+=> nrel_text_language: lang_fr;
+=> nrel_source_document: [http://localhost:8003/documents/7/file];
+=> nrel_summary: classic_summary_7;
+=> nrel_keywords: keyword_summary_7;;
+
+classic_summary_7
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_7_1;
+-> rrel_2: ..sentence_7_2;
+-> rrel_3: ..sentence_7_3;
+-> rrel_4: ..sentence_7_4;
+-> rrel_5: ..sentence_7_5;
+-> rrel_6: ..sentence_7_6;
+-> rrel_7: ..sentence_7_7;
+-> rrel_8: ..sentence_7_8;
+-> rrel_9: ..sentence_7_9;
+-> rrel_10: ..sentence_7_10;;
+
+..sentence_7_1
+<- concept_sentence;
+=> nrel_main_idtf: [Le Rouge et le Noir, publié par Stendhal en 1830, retrace l'ascension et la chute de Julien Sorel, un jeune homme d'origine modeste qui rêve de gloire dans une société figée.] (* <- lang_fr;; *);;
+
+..sentence_7_2
+<- concept_sentence;
+=> nrel_main_idtf: [Sous-titré Chronique de 1830, le roman offre un portrait critique de la France de la Restauration.] (* <- lang_fr;; *);;
+
+..sentence_7_3
+<- concept_sentence;
+=> nrel_main_idtf: [Julien Sorel est le fils d'un charpentier du Jura, méprisé par son père et ses frères parce qu'il préfère les livres au travail manuel.] (* <- lang_fr;; *);;
+
+..sentence_7_4
+<- concept_sentence;
+=> nrel_main_idtf: [Il voue une admiration secrète à Napoléon, qui incarne pour lui la possibilité de s'élever par le mérite.] (* <- lang_fr;; *);;
+
+..sentence_7_5
+<- concept_sentence;
+=> nrel_main_idtf: [L'ambition est le trait dominant du héros, mais elle se heurte sans cesse à sa sensibilité et à son orgueil.] (* <- lang_fr;; *);;
+
+..sentence_7_6
+<- concept_sentence;
+=> nrel_main_idtf: [Engagé comme précepteur chez le maire de Verrières, monsieur de Rênal, Julien décide de séduire madame de Rênal pour prouver sa valeur.] (* <- lang_fr;; *);;
+
+..sentence_7_7
+<- concept_sentence;
+=> nrel_main_idtf: [Au séminaire de Besançon, Julien découvre un monde dominé par l'hypocrisie, la surveillance et les rivalités.] (* <- lang_fr;; *);;
+
+..sentence_7_8
+<- concept_sentence;
+=> nrel_main_idtf: [Il comprend que l'intelligence y est suspecte et que la réussite dépend de l'art de dissimuler ses pensées.] (* <- lang_fr;; *);;
+
+..sentence_7_9
+<- concept_sentence;
+=> nrel_main_idtf: [À Paris, devenu secrétaire du marquis de La Mole, Julien pénètre dans l'aristocratie et suscite l'intérêt de Mathilde, la fille du marquis.] (* <- lang_fr;; *);;
+
+..sentence_7_10
+<- concept_sentence;
+=> nrel_main_idtf: [Fou de colère, Julien retourne à Verrières et tire sur madame de Rênal pendant la messe.] (* <- lang_fr;; *);;
+
+keyword_summary_7
+<- concept_keyword_summary;
+-> rrel_1: kw_fr_julien;  // w(t,D) = 2.0794
+-> rrel_2: kw_fr_renal;  // w(t,D) = 1.5196
+-> rrel_3: kw_fr_noir;  // w(t,D) = 1.4396
+-> rrel_4: kw_fr_rouge;  // w(t,D) = 1.4396
+-> rrel_5: kw_fr_ambition;  // w(t,D) = 1.3596
+-> rrel_6: kw_fr_stendhal;  // w(t,D) = 1.3596
+-> rrel_7: kw_fr_orgueil;  // w(t,D) = 1.2797
+-> rrel_8: kw_fr_sorel;  // w(t,D) = 1.2797
+-> rrel_9: kw_fr_chances;  // w(t,D) = 1.1997
+-> rrel_10: kw_fr_mathilde;;  // w(t,D) = 1.1997
+
+kw_fr_julien
+<- concept_keyword;
+=> nrel_main_idtf: [julien] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_julien_sorel;;
+
+kw_fr_julien_sorel
+<- concept_keyword;
+=> nrel_main_idtf: [julien sorel] (* <- lang_fr;; *);;
+
+kw_fr_renal
+<- concept_keyword;
+=> nrel_main_idtf: [rênal] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_madame_de_renal;;
+
+kw_fr_madame_de_renal
+<- concept_keyword;
+=> nrel_main_idtf: [madame de rênal] (* <- lang_fr;; *);;
+
+kw_fr_noir
+<- concept_keyword;
+=> nrel_main_idtf: [noir] (* <- lang_fr;; *);;
+
+kw_fr_rouge
+<- concept_keyword;
+=> nrel_main_idtf: [rouge] (* <- lang_fr;; *);;
+
+kw_fr_ambition
+<- concept_keyword;
+=> nrel_main_idtf: [ambition] (* <- lang_fr;; *);;
+
+kw_fr_stendhal
+<- concept_keyword;
+=> nrel_main_idtf: [stendhal] (* <- lang_fr;; *);;
+
+kw_fr_orgueil
+<- concept_keyword;
+=> nrel_main_idtf: [orgueil] (* <- lang_fr;; *);;
+
+kw_fr_sorel
+<- concept_keyword;
+=> nrel_main_idtf: [sorel] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_julien_sorel;;
+
+kw_fr_julien_sorel
+<- concept_keyword;
+=> nrel_main_idtf: [julien sorel] (* <- lang_fr;; *);;
+
+kw_fr_chances
+<- concept_keyword;
+=> nrel_main_idtf: [chances] (* <- lang_fr;; *);;
+
+kw_fr_mathilde
+<- concept_keyword;
+=> nrel_main_idtf: [mathilde] (* <- lang_fr;; *);;
+
+// ===== Документ 8: Les Fleurs du mal de Baudelaire : le spleen et l'idéal =====
+document_8
+<- concept_document;
+<- concept_literary_essay;
+=> nrel_main_idtf: [Les Fleurs du mal de Baudelaire : le spleen et l'idéal] (* <- lang_fr;; *);
+=> nrel_text_language: lang_fr;
+=> nrel_source_document: [http://localhost:8003/documents/8/file];
+=> nrel_summary: classic_summary_8;
+=> nrel_keywords: keyword_summary_8;;
+
+classic_summary_8
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_8_1;
+-> rrel_2: ..sentence_8_2;
+-> rrel_3: ..sentence_8_3;
+-> rrel_4: ..sentence_8_4;
+-> rrel_5: ..sentence_8_5;
+-> rrel_6: ..sentence_8_6;
+-> rrel_7: ..sentence_8_7;
+-> rrel_8: ..sentence_8_8;
+-> rrel_9: ..sentence_8_9;
+-> rrel_10: ..sentence_8_10;;
+
+..sentence_8_1
+<- concept_sentence;
+=> nrel_main_idtf: [Les Fleurs du mal, recueil publié par Charles Baudelaire en 1857, occupe une place décisive dans l'histoire de la poésie française.] (* <- lang_fr;; *);;
+
+..sentence_8_2
+<- concept_sentence;
+=> nrel_main_idtf: [Le livre rompt avec la tradition romantique tout en prolongeant certaines de ses intuitions, et il ouvre la voie à la poésie moderne.] (* <- lang_fr;; *);;
+
+..sentence_8_3
+<- concept_sentence;
+=> nrel_main_idtf: [Le recueil est construit avec une grande rigueur, et Baudelaire tenait à ce qu'on le lise comme un ensemble organisé plutôt que comme une suite de pièces isolées.] (* <- lang_fr;; *);;
+
+..sentence_8_4
+<- concept_sentence;
+=> nrel_main_idtf: [La première et la plus longue section, intitulée Spleen et Idéal, expose le conflit fondamental qui déchire le poète.] (* <- lang_fr;; *);;
+
+..sentence_8_5
+<- concept_sentence;
+=> nrel_main_idtf: [Les sections suivantes, consacrées aux tableaux parisiens, au vin, aux fleurs du mal, à la révolte et à la mort, décrivent les tentatives successives pour échapper à ce conflit.] (* <- lang_fr;; *);;
+
+..sentence_8_6
+<- concept_sentence;
+=> nrel_main_idtf: [L'idéal correspond chez Baudelaire à l'aspiration vers la beauté, la pureté et l'infini.] (* <- lang_fr;; *);;
+
+..sentence_8_7
+<- concept_sentence;
+=> nrel_main_idtf: [Le spleen désigne au contraire un état d'angoisse, d'ennui et d'impuissance qui écrase le poète.] (* <- lang_fr;; *);;
+
+..sentence_8_8
+<- concept_sentence;
+=> nrel_main_idtf: [Baudelaire emprunte ce mot anglais pour nommer une mélancolie profonde, liée à la conscience du temps qui passe et de la mort.] (* <- lang_fr;; *);;
+
+..sentence_8_9
+<- concept_sentence;
+=> nrel_main_idtf: [Dans les poèmes qui portent ce titre, le ciel bas et lourd pèse comme un couvercle, l'esprit est assiégé par des pensées sombres et l'espoir semble vaincu.] (* <- lang_fr;; *);;
+
+..sentence_8_10
+<- concept_sentence;
+=> nrel_main_idtf: [Selon Baudelaire, la nature est un temple où les choses se répondent : les parfums, les couleurs et les sons se correspondent et renvoient à une réalité spirituelle cachée.] (* <- lang_fr;; *);;
+
+keyword_summary_8
+<- concept_keyword_summary;
+-> rrel_1: kw_fr_baudelaire;  // w(t,D) = 2.0794
+-> rrel_2: kw_fr_poete;  // w(t,D) = 1.9755
+-> rrel_3: kw_fr_poesie;  // w(t,D) = 1.5596
+-> rrel_4: kw_fr_recueil;  // w(t,D) = 1.5596
+-> rrel_5: kw_fr_beaute;  // w(t,D) = 1.4556
+-> rrel_6: kw_fr_fleurs;  // w(t,D) = 1.3516
+-> rrel_7: kw_fr_poemes;  // w(t,D) = 1.3516
+-> rrel_8: kw_fr_section;  // w(t,D) = 1.3516
+-> rrel_9: kw_fr_spleen;  // w(t,D) = 1.3516
+-> rrel_10: kw_fr_apparait;;  // w(t,D) = 1.2477
+
+kw_fr_baudelaire
+<- concept_keyword;
+=> nrel_main_idtf: [baudelaire] (* <- lang_fr;; *);;
+
+kw_fr_poete
+<- concept_keyword;
+=> nrel_main_idtf: [poète] (* <- lang_fr;; *);;
+
+kw_fr_poesie
+<- concept_keyword;
+=> nrel_main_idtf: [poésie] (* <- lang_fr;; *);;
+
+kw_fr_recueil
+<- concept_keyword;
+=> nrel_main_idtf: [recueil] (* <- lang_fr;; *);;
+
+kw_fr_beaute
+<- concept_keyword;
+=> nrel_main_idtf: [beauté] (* <- lang_fr;; *);;
+
+kw_fr_fleurs
+<- concept_keyword;
+=> nrel_main_idtf: [fleurs] (* <- lang_fr;; *);
+=> nrel_subkeyword: kw_fr_fleurs_du_mal;;
+
+kw_fr_fleurs_du_mal
+<- concept_keyword;
+=> nrel_main_idtf: [fleurs du mal] (* <- lang_fr;; *);;
+
+kw_fr_poemes
+<- concept_keyword;
+=> nrel_main_idtf: [poèmes] (* <- lang_fr;; *);;
+
+kw_fr_section
+<- concept_keyword;
+=> nrel_main_idtf: [section] (* <- lang_fr;; *);;
+
+kw_fr_spleen
+<- concept_keyword;
+=> nrel_main_idtf: [spleen] (* <- lang_fr;; *);;
+
+kw_fr_apparait
+<- concept_keyword;
+=> nrel_main_idtf: [apparaît] (* <- lang_fr;; *);;
+
+// ===== Документ 9: La crittografia a chiave pubblica e la sicurezza delle comunicazioni =====
+document_9
+<- concept_document;
+<- concept_scientific_article_computer_science;
+=> nrel_main_idtf: [La crittografia a chiave pubblica e la sicurezza delle comunicazioni] (* <- lang_it;; *);
+=> nrel_text_language: lang_it;
+=> nrel_source_document: [http://localhost:8003/documents/9/file];
+=> nrel_summary: classic_summary_9;
+=> nrel_keywords: keyword_summary_9;;
+
+classic_summary_9
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_9_1;
+-> rrel_2: ..sentence_9_2;
+-> rrel_3: ..sentence_9_3;
+-> rrel_4: ..sentence_9_4;
+-> rrel_5: ..sentence_9_5;
+-> rrel_6: ..sentence_9_6;
+-> rrel_7: ..sentence_9_7;
+-> rrel_8: ..sentence_9_8;
+-> rrel_9: ..sentence_9_9;
+-> rrel_10: ..sentence_9_10;;
+
+..sentence_9_1
+<- concept_sentence;
+=> nrel_main_idtf: [La crittografia è la disciplina che studia i metodi per rendere un messaggio comprensibile soltanto ai destinatari autorizzati.] (* <- lang_it;; *);;
+
+..sentence_9_2
+<- concept_sentence;
+=> nrel_main_idtf: [Per secoli è stata utilizzata soprattutto in ambito militare e diplomatico, ma con la diffusione di Internet è diventata uno strumento quotidiano che protegge i pagamenti elettronici, la posta e le conversazioni.] (* <- lang_it;; *);;
+
+..sentence_9_3
+<- concept_sentence;
+=> nrel_main_idtf: [Nei sistemi tradizionali, detti a chiave simmetrica, mittente e destinatario condividono la stessa chiave segreta, utilizzata sia per la cifratura sia per la decifratura.] (* <- lang_it;; *);;
+
+..sentence_9_4
+<- concept_sentence;
+=> nrel_main_idtf: [Algoritmi simmetrici come AES sono molto veloci e sicuri, ma presentano un problema fondamentale: le due parti devono scambiarsi la chiave in modo sicuro prima di poter comunicare.] (* <- lang_it;; *);;
+
+..sentence_9_5
+<- concept_sentence;
+=> nrel_main_idtf: [La soluzione fu proposta nel 1976 da Whitfield Diffie e Martin Hellman, che introdussero l'idea di una coppia di chiavi distinte.] (* <- lang_it;; *);;
+
+..sentence_9_6
+<- concept_sentence;
+=> nrel_main_idtf: [Ogni utente possiede una chiave pubblica, che può essere diffusa liberamente, e una chiave privata, che deve rimanere segreta.] (* <- lang_it;; *);;
+
+..sentence_9_7
+<- concept_sentence;
+=> nrel_main_idtf: [L'algoritmo RSA, presentato nel 1977 da Rivest, Shamir e Adleman, è il più noto sistema a chiave pubblica.] (* <- lang_it;; *);;
+
+..sentence_9_8
+<- concept_sentence;
+=> nrel_main_idtf: [Moltiplicare due numeri primi di centinaia di cifre è un'operazione rapida, mentre ritrovare i fattori a partire dal prodotto richiede, con gli algoritmi noti, un tempo enorme.] (* <- lang_it;; *);;
+
+..sentence_9_9
+<- concept_sentence;
+=> nrel_main_idtf: [Il mittente calcola un'impronta del messaggio con una funzione di hash e la cifra con la propria chiave privata.] (* <- lang_it;; *);;
+
+..sentence_9_10
+<- concept_sentence;
+=> nrel_main_idtf: [Resta però un problema: come essere sicuri che una chiave pubblica appartenga davvero alla persona indicata?] (* <- lang_it;; *);;
+
+keyword_summary_9
+<- concept_keyword_summary;
+-> rrel_1: kw_it_chiave;  // w(t,D) = 2.0794
+-> rrel_2: kw_it_crittografia;  // w(t,D) = 1.3863
+-> rrel_3: kw_it_digitale;  // w(t,D) = 1.3863
+-> rrel_4: kw_it_chiavi;  // w(t,D) = 1.3285
+-> rrel_5: kw_it_simmetrica;  // w(t,D) = 1.3285
+-> rrel_6: kw_it_firma;  // w(t,D) = 1.2708
+-> rrel_7: kw_it_mittente;  // w(t,D) = 1.2708
+-> rrel_8: kw_it_certificati;  // w(t,D) = 1.2130
+-> rrel_9: kw_it_cifratura;  // w(t,D) = 1.2130
+-> rrel_10: kw_it_rsa;;  // w(t,D) = 1.2130
+
+kw_it_chiave
+<- concept_keyword;
+=> nrel_main_idtf: [chiave] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_chiave_pubblica;
+=> nrel_subkeyword: kw_it_crittografia_a_chiave;
+=> nrel_subkeyword: kw_it_chiave_privata;;
+
+kw_it_chiave_pubblica
+<- concept_keyword;
+=> nrel_main_idtf: [chiave pubblica] (* <- lang_it;; *);;
+
+kw_it_crittografia_a_chiave
+<- concept_keyword;
+=> nrel_main_idtf: [crittografia a chiave] (* <- lang_it;; *);;
+
+kw_it_chiave_privata
+<- concept_keyword;
+=> nrel_main_idtf: [chiave privata] (* <- lang_it;; *);;
+
+kw_it_crittografia
+<- concept_keyword;
+=> nrel_main_idtf: [crittografia] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_crittografia_a_chiave_pubblica;;
+
+kw_it_crittografia_a_chiave_pubblica
+<- concept_keyword;
+=> nrel_main_idtf: [crittografia a chiave pubblica] (* <- lang_it;; *);;
+
+kw_it_digitale
+<- concept_keyword;
+=> nrel_main_idtf: [digitale] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_firma_digitale;;
+
+kw_it_firma_digitale
+<- concept_keyword;
+=> nrel_main_idtf: [firma digitale] (* <- lang_it;; *);;
+
+kw_it_chiavi
+<- concept_keyword;
+=> nrel_main_idtf: [chiavi] (* <- lang_it;; *);;
+
+kw_it_simmetrica
+<- concept_keyword;
+=> nrel_main_idtf: [simmetrica] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_algoritmi_simmetrici;;
+
+kw_it_algoritmi_simmetrici
+<- concept_keyword;
+=> nrel_main_idtf: [algoritmi simmetrici] (* <- lang_it;; *);;
+
+kw_it_firma
+<- concept_keyword;
+=> nrel_main_idtf: [firma] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_firma_digitale;;
+
+kw_it_firma_digitale
+<- concept_keyword;
+=> nrel_main_idtf: [firma digitale] (* <- lang_it;; *);;
+
+kw_it_mittente
+<- concept_keyword;
+=> nrel_main_idtf: [mittente] (* <- lang_it;; *);;
+
+kw_it_certificati
+<- concept_keyword;
+=> nrel_main_idtf: [certificati] (* <- lang_it;; *);;
+
+kw_it_cifratura
+<- concept_keyword;
+=> nrel_main_idtf: [cifratura] (* <- lang_it;; *);;
+
+kw_it_rsa
+<- concept_keyword;
+=> nrel_main_idtf: [rsa] (* <- lang_it;; *);;
+
+// ===== Документ 10: I sistemi operativi: gestione dei processi, della memoria e dei file =====
+document_10
+<- concept_document;
+<- concept_scientific_article_computer_science;
+=> nrel_main_idtf: [I sistemi operativi: gestione dei processi, della memoria e dei file] (* <- lang_it;; *);
+=> nrel_text_language: lang_it;
+=> nrel_source_document: [http://localhost:8003/documents/10/file];
+=> nrel_summary: classic_summary_10;
+=> nrel_keywords: keyword_summary_10;;
+
+classic_summary_10
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_10_1;
+-> rrel_2: ..sentence_10_2;
+-> rrel_3: ..sentence_10_3;
+-> rrel_4: ..sentence_10_4;
+-> rrel_5: ..sentence_10_5;
+-> rrel_6: ..sentence_10_6;
+-> rrel_7: ..sentence_10_7;
+-> rrel_8: ..sentence_10_8;
+-> rrel_9: ..sentence_10_9;
+-> rrel_10: ..sentence_10_10;;
+
+..sentence_10_1
+<- concept_sentence;
+=> nrel_main_idtf: [Il sistema operativo è il software fondamentale che gestisce le risorse di un calcolatore e offre ai programmi un ambiente di esecuzione comodo e sicuro.] (* <- lang_it;; *);;
+
+..sentence_10_2
+<- concept_sentence;
+=> nrel_main_idtf: [Senza di esso, ogni applicazione dovrebbe controllare direttamente il processore, la memoria e i dispositivi, con enormi difficoltà di programmazione.] (* <- lang_it;; *);;
+
+..sentence_10_3
+<- concept_sentence;
+=> nrel_main_idtf: [La parte centrale del sistema operativo è il nucleo, o kernel, che viene eseguito in una modalità privilegiata del processore.] (* <- lang_it;; *);;
+
+..sentence_10_4
+<- concept_sentence;
+=> nrel_main_idtf: [Questa separazione protegge il sistema da programmi difettosi o malevoli, poiché un errore in un'applicazione non può danneggiare direttamente il nucleo.] (* <- lang_it;; *);;
+
+..sentence_10_5
+<- concept_sentence;
+=> nrel_main_idtf: [Un processo è un programma in esecuzione, con il proprio spazio di indirizzamento, i propri registri e le proprie risorse.] (* <- lang_it;; *);;
+
+..sentence_10_6
+<- concept_sentence;
+=> nrel_main_idtf: [Il sistema operativo crea e termina i processi, li sospende e li riprende, e tiene traccia del loro stato in apposite strutture dati.] (* <- lang_it;; *);;
+
+..sentence_10_7
+<- concept_sentence;
+=> nrel_main_idtf: [Poiché i processi pronti sono di solito più numerosi dei processori disponibili, il sistema operativo deve decidere quale eseguire in ogni istante: questo compito è chiamato scheduling.] (* <- lang_it;; *);;
+
+..sentence_10_8
+<- concept_sentence;
+=> nrel_main_idtf: [Gli algoritmi di scheduling cercano di bilanciare obiettivi diversi, come la rapidità di risposta per i programmi interattivi, l'utilizzo efficiente del processore e l'equità tra gli utenti.] (* <- lang_it;; *);;
+
+..sentence_10_9
+<- concept_sentence;
+=> nrel_main_idtf: [Quando più processi o thread accedono alle stesse risorse, è necessaria la sincronizzazione per evitare risultati incoerenti.] (* <- lang_it;; *);;
+
+..sentence_10_10
+<- concept_sentence;
+=> nrel_main_idtf: [Grazie alla memoria virtuale, ogni processo ha l'impressione di disporre di uno spazio di indirizzamento ampio e continuo, indipendente dalla memoria fisica realmente installata.] (* <- lang_it;; *);;
+
+keyword_summary_10
+<- concept_keyword_summary;
+-> rrel_1: kw_it_processo;  // w(t,D) = 2.0794
+-> rrel_2: kw_it_processore;  // w(t,D) = 1.6462
+-> rrel_3: kw_it_file;  // w(t,D) = 1.3863
+-> rrel_4: kw_it_eseguire;  // w(t,D) = 1.2997
+-> rrel_5: kw_it_gestione;  // w(t,D) = 1.2997
+-> rrel_6: kw_it_hardware;  // w(t,D) = 1.2997
+-> rrel_7: kw_it_interruzioni;  // w(t,D) = 1.2997
+-> rrel_8: kw_it_nucleo;  // w(t,D) = 1.2997
+-> rrel_9: kw_it_scheduling;  // w(t,D) = 1.2997
+-> rrel_10: kw_it_thread;;  // w(t,D) = 1.2997
+
+kw_it_processo
+<- concept_keyword;
+=> nrel_main_idtf: [processo] (* <- lang_it;; *);;
+
+kw_it_processore
+<- concept_keyword;
+=> nrel_main_idtf: [processore] (* <- lang_it;; *);;
+
+kw_it_file
+<- concept_keyword;
+=> nrel_main_idtf: [file] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_file_system;;
+
+kw_it_file_system
+<- concept_keyword;
+=> nrel_main_idtf: [file system] (* <- lang_it;; *);;
+
+kw_it_eseguire
+<- concept_keyword;
+=> nrel_main_idtf: [eseguire] (* <- lang_it;; *);;
+
+kw_it_gestione
+<- concept_keyword;
+=> nrel_main_idtf: [gestione] (* <- lang_it;; *);;
+
+kw_it_hardware
+<- concept_keyword;
+=> nrel_main_idtf: [hardware] (* <- lang_it;; *);;
+
+kw_it_interruzioni
+<- concept_keyword;
+=> nrel_main_idtf: [interruzioni] (* <- lang_it;; *);;
+
+kw_it_nucleo
+<- concept_keyword;
+=> nrel_main_idtf: [nucleo] (* <- lang_it;; *);;
+
+kw_it_scheduling
+<- concept_keyword;
+=> nrel_main_idtf: [scheduling] (* <- lang_it;; *);;
+
+kw_it_thread
+<- concept_keyword;
+=> nrel_main_idtf: [thread] (* <- lang_it;; *);;
+
+// ===== Документ 11: Le reti di calcolatori e l'architettura dei protocolli di Internet =====
+document_11
+<- concept_document;
+<- concept_scientific_article_computer_science;
+=> nrel_main_idtf: [Le reti di calcolatori e l'architettura dei protocolli di Internet] (* <- lang_it;; *);
+=> nrel_text_language: lang_it;
+=> nrel_source_document: [http://localhost:8003/documents/11/file];
+=> nrel_summary: classic_summary_11;
+=> nrel_keywords: keyword_summary_11;;
+
+classic_summary_11
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_11_1;
+-> rrel_2: ..sentence_11_2;
+-> rrel_3: ..sentence_11_3;
+-> rrel_4: ..sentence_11_4;
+-> rrel_5: ..sentence_11_5;
+-> rrel_6: ..sentence_11_6;
+-> rrel_7: ..sentence_11_7;
+-> rrel_8: ..sentence_11_8;
+-> rrel_9: ..sentence_11_9;
+-> rrel_10: ..sentence_11_10;;
+
+..sentence_11_1
+<- concept_sentence;
+=> nrel_main_idtf: [Una rete di calcolatori è un insieme di dispositivi collegati tra loro che possono scambiarsi dati e condividere risorse.] (* <- lang_it;; *);;
+
+..sentence_11_2
+<- concept_sentence;
+=> nrel_main_idtf: [Dalle piccole reti domestiche fino alla rete mondiale Internet, la comunicazione tra calcolatori è diventata una componente essenziale della vita economica e sociale.] (* <- lang_it;; *);;
+
+..sentence_11_3
+<- concept_sentence;
+=> nrel_main_idtf: [Perché due calcolatori possano comunicare, devono rispettare regole comuni chiamate protocolli.] (* <- lang_it;; *);;
+
+..sentence_11_4
+<- concept_sentence;
+=> nrel_main_idtf: [Un protocollo stabilisce il formato dei messaggi, l'ordine in cui vengono scambiati e le azioni da compiere alla loro ricezione.] (* <- lang_it;; *);;
+
+..sentence_11_5
+<- concept_sentence;
+=> nrel_main_idtf: [Data la complessità del problema, i protocolli sono organizzati in livelli sovrapposti, ciascuno dei quali offre servizi al livello superiore e utilizza quelli del livello inferiore.] (* <- lang_it;; *);;
+
+..sentence_11_6
+<- concept_sentence;
+=> nrel_main_idtf: [I dati da trasmettere vengono suddivisi in piccoli blocchi, detti pacchetti, ognuno dei quali contiene l'indirizzo del destinatario e viaggia in modo indipendente attraverso la rete.] (* <- lang_it;; *);;
+
+..sentence_11_7
+<- concept_sentence;
+=> nrel_main_idtf: [Al livello di rete opera il protocollo IP, che assegna a ogni dispositivo un indirizzo IP e si occupa di trasportare i pacchetti dalla sorgente alla destinazione.] (* <- lang_it;; *);;
+
+..sentence_11_8
+<- concept_sentence;
+=> nrel_main_idtf: [I router sono i dispositivi incaricati dell'instradamento: per ogni pacchetto ricevuto consultano una tabella e decidono su quale collegamento inoltrarlo.] (* <- lang_it;; *);;
+
+..sentence_11_9
+<- concept_sentence;
+=> nrel_main_idtf: [Le tabelle di instradamento vengono costruite automaticamente da protocolli che scambiano informazioni sulla topologia della rete, come OSPF all'interno di un'organizzazione e BGP tra i diversi fornitori di servizi.] (* <- lang_it;; *);;
+
+..sentence_11_10
+<- concept_sentence;
+=> nrel_main_idtf: [Il protocollo TCP fornisce un canale affidabile e ordinato: numera i dati, richiede conferme di ricezione e ritrasmette i pacchetti perduti.] (* <- lang_it;; *);;
+
+keyword_summary_11
+<- concept_keyword_summary;
+-> rrel_1: kw_it_pacchetti;  // w(t,D) = 1.6795
+-> rrel_2: kw_it_protocolli;  // w(t,D) = 1.3863
+-> rrel_3: kw_it_trasporto;  // w(t,D) = 1.2797
+-> rrel_4: kw_it_commutazione;  // w(t,D) = 1.1997
+-> rrel_5: kw_it_garanzie;  // w(t,D) = 1.1997
+-> rrel_6: kw_it_instradamento;  // w(t,D) = 1.1997
+-> rrel_7: kw_it_invio;  // w(t,D) = 1.1997
+-> rrel_8: kw_it_porta;  // w(t,D) = 1.1997
+-> rrel_9: kw_it_progettati;  // w(t,D) = 1.1997
+-> rrel_10: kw_it_ricezione;;  // w(t,D) = 1.1997
+
+kw_it_pacchetti
+<- concept_keyword;
+=> nrel_main_idtf: [pacchetti] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_commutazione_di_pacchetto;;
+
+kw_it_commutazione_di_pacchetto
+<- concept_keyword;
+=> nrel_main_idtf: [commutazione di pacchetto] (* <- lang_it;; *);;
+
+kw_it_protocolli
+<- concept_keyword;
+=> nrel_main_idtf: [protocolli] (* <- lang_it;; *);;
+
+kw_it_trasporto
+<- concept_keyword;
+=> nrel_main_idtf: [trasporto] (* <- lang_it;; *);;
+
+kw_it_commutazione
+<- concept_keyword;
+=> nrel_main_idtf: [commutazione] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_commutazione_di_pacchetto;;
+
+kw_it_commutazione_di_pacchetto
+<- concept_keyword;
+=> nrel_main_idtf: [commutazione di pacchetto] (* <- lang_it;; *);;
+
+kw_it_garanzie
+<- concept_keyword;
+=> nrel_main_idtf: [garanzie] (* <- lang_it;; *);;
+
+kw_it_instradamento
+<- concept_keyword;
+=> nrel_main_idtf: [instradamento] (* <- lang_it;; *);;
+
+kw_it_invio
+<- concept_keyword;
+=> nrel_main_idtf: [invio] (* <- lang_it;; *);;
+
+kw_it_porta
+<- concept_keyword;
+=> nrel_main_idtf: [porta] (* <- lang_it;; *);;
+
+kw_it_progettati
+<- concept_keyword;
+=> nrel_main_idtf: [progettati] (* <- lang_it;; *);;
+
+kw_it_ricezione
+<- concept_keyword;
+=> nrel_main_idtf: [ricezione] (* <- lang_it;; *);;
+
+// ===== Документ 12: L'elaborazione del linguaggio naturale: metodi e applicazioni =====
+document_12
+<- concept_document;
+<- concept_scientific_article_computer_science;
+=> nrel_main_idtf: [L'elaborazione del linguaggio naturale: metodi e applicazioni] (* <- lang_it;; *);
+=> nrel_text_language: lang_it;
+=> nrel_source_document: [http://localhost:8003/documents/12/file];
+=> nrel_summary: classic_summary_12;
+=> nrel_keywords: keyword_summary_12;;
+
+classic_summary_12
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_12_1;
+-> rrel_2: ..sentence_12_2;
+-> rrel_3: ..sentence_12_3;
+-> rrel_4: ..sentence_12_4;
+-> rrel_5: ..sentence_12_5;
+-> rrel_6: ..sentence_12_6;
+-> rrel_7: ..sentence_12_7;
+-> rrel_8: ..sentence_12_8;
+-> rrel_9: ..sentence_12_9;
+-> rrel_10: ..sentence_12_10;;
+
+..sentence_12_1
+<- concept_sentence;
+=> nrel_main_idtf: [L'elaborazione del linguaggio naturale è il settore dell'informatica che si occupa di rendere i calcolatori capaci di comprendere e produrre testi nelle lingue umane.] (* <- lang_it;; *);;
+
+..sentence_12_2
+<- concept_sentence;
+=> nrel_main_idtf: [Si tratta di un campo interdisciplinare, che unisce informatica, linguistica e statistica.] (* <- lang_it;; *);;
+
+..sentence_12_3
+<- concept_sentence;
+=> nrel_main_idtf: [La principale difficoltà del linguaggio naturale è l'ambiguità, che si manifesta a tutti i livelli dell'analisi.] (* <- lang_it;; *);;
+
+..sentence_12_4
+<- concept_sentence;
+=> nrel_main_idtf: [Una stessa parola può avere significati diversi a seconda del contesto, una frase può ammettere più strutture sintattiche e un pronome può riferirsi a persone diverse.] (* <- lang_it;; *);;
+
+..sentence_12_5
+<- concept_sentence;
+=> nrel_main_idtf: [Il trattamento di un testo comincia generalmente con la suddivisione in frasi e in parole, seguita dall'analisi morfologica.] (* <- lang_it;; *);;
+
+..sentence_12_6
+<- concept_sentence;
+=> nrel_main_idtf: [Questa fase riconosce la forma di base di ogni parola, il lemma, e ne determina le caratteristiche grammaticali, come il genere, il numero o il tempo verbale.] (* <- lang_it;; *);;
+
+..sentence_12_7
+<- concept_sentence;
+=> nrel_main_idtf: [L'analisi sintattica individua la struttura della frase, cioè le relazioni tra le parole.] (* <- lang_it;; *);;
+
+..sentence_12_8
+<- concept_sentence;
+=> nrel_main_idtf: [Si possono costruire alberi a costituenti, che raggruppano le parole in sintagmi, oppure alberi a dipendenze, che collegano ogni parola a quella da cui dipende.] (* <- lang_it;; *);;
+
+..sentence_12_9
+<- concept_sentence;
+=> nrel_main_idtf: [Nei primi decenni della disciplina prevalevano i sistemi basati su regole scritte a mano da linguisti esperti.] (* <- lang_it;; *);;
+
+..sentence_12_10
+<- concept_sentence;
+=> nrel_main_idtf: [Le parole vengono rappresentate come vettori numerici che riflettono le loro somiglianze di significato, e i modelli linguistici di grandi dimensioni, addestrati su miliardi di parole, sono in grado di generare testi coerenti e di rispondere a domande.] (* <- lang_it;; *);;
+
+keyword_summary_12
+<- concept_keyword_summary;
+-> rrel_1: kw_it_frase;  // w(t,D) = 2.0794
+-> rrel_2: kw_it_analisi;  // w(t,D) = 1.7675
+-> rrel_3: kw_it_parole;  // w(t,D) = 1.3863
+-> rrel_4: kw_it_ambiguita;  // w(t,D) = 1.3516
+-> rrel_5: kw_it_naturale;  // w(t,D) = 1.3516
+-> rrel_6: kw_it_riassunto;  // w(t,D) = 1.3516
+-> rrel_7: kw_it_sintattica;  // w(t,D) = 1.3516
+-> rrel_8: kw_it_tratta;  // w(t,D) = 1.3516
+-> rrel_9: kw_it_alberi;  // w(t,D) = 1.2477
+-> rrel_10: kw_it_campo;;  // w(t,D) = 1.2477
+
+kw_it_frase
+<- concept_keyword;
+=> nrel_main_idtf: [frase] (* <- lang_it;; *);;
+
+kw_it_analisi
+<- concept_keyword;
+=> nrel_main_idtf: [analisi] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_analisi_morfologica;;
+
+kw_it_analisi_morfologica
+<- concept_keyword;
+=> nrel_main_idtf: [analisi morfologica] (* <- lang_it;; *);;
+
+kw_it_parole
+<- concept_keyword;
+=> nrel_main_idtf: [parole] (* <- lang_it;; *);;
+
+kw_it_ambiguita
+<- concept_keyword;
+=> nrel_main_idtf: [ambiguità] (* <- lang_it;; *);;
+
+kw_it_naturale
+<- concept_keyword;
+=> nrel_main_idtf: [naturale] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_elaborazione_del_linguaggio_naturale;;
+
+kw_it_elaborazione_del_linguaggio_naturale
+<- concept_keyword;
+=> nrel_main_idtf: [elaborazione del linguaggio naturale] (* <- lang_it;; *);;
+
+kw_it_riassunto
+<- concept_keyword;
+=> nrel_main_idtf: [riassunto] (* <- lang_it;; *);;
+
+kw_it_sintattica
+<- concept_keyword;
+=> nrel_main_idtf: [sintattica] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_strutture_sintattiche;;
+
+kw_it_strutture_sintattiche
+<- concept_keyword;
+=> nrel_main_idtf: [strutture sintattiche] (* <- lang_it;; *);;
+
+kw_it_tratta
+<- concept_keyword;
+=> nrel_main_idtf: [tratta] (* <- lang_it;; *);;
+
+kw_it_alberi
+<- concept_keyword;
+=> nrel_main_idtf: [alberi] (* <- lang_it;; *);;
+
+kw_it_campo
+<- concept_keyword;
+=> nrel_main_idtf: [campo] (* <- lang_it;; *);;
+
+// ===== Документ 13: La Divina Commedia di Dante: il viaggio dell'uomo verso la salvezza =====
+document_13
+<- concept_document;
+<- concept_literary_essay;
+=> nrel_main_idtf: [La Divina Commedia di Dante: il viaggio dell'uomo verso la salvezza] (* <- lang_it;; *);
+=> nrel_text_language: lang_it;
+=> nrel_source_document: [http://localhost:8003/documents/13/file];
+=> nrel_summary: classic_summary_13;
+=> nrel_keywords: keyword_summary_13;;
+
+classic_summary_13
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_13_1;
+-> rrel_2: ..sentence_13_2;
+-> rrel_3: ..sentence_13_3;
+-> rrel_4: ..sentence_13_4;
+-> rrel_5: ..sentence_13_5;
+-> rrel_6: ..sentence_13_6;
+-> rrel_7: ..sentence_13_7;
+-> rrel_8: ..sentence_13_8;
+-> rrel_9: ..sentence_13_9;
+-> rrel_10: ..sentence_13_10;;
+
+..sentence_13_1
+<- concept_sentence;
+=> nrel_main_idtf: [La Divina Commedia, composta da Dante Alighieri all'inizio del Trecento, è considerata il capolavoro della letteratura italiana e una delle opere più importanti della cultura europea.] (* <- lang_it;; *);;
+
+..sentence_13_2
+<- concept_sentence;
+=> nrel_main_idtf: [Il poema racconta il viaggio immaginario del poeta attraverso i tre regni dell'oltretomba: l'Inferno, il Purgatorio e il Paradiso.] (* <- lang_it;; *);;
+
+..sentence_13_3
+<- concept_sentence;
+=> nrel_main_idtf: [Il poema è diviso in tre cantiche, ciascuna composta da trentatré canti, a cui si aggiunge un canto introduttivo, per un totale di cento canti.] (* <- lang_it;; *);;
+
+..sentence_13_4
+<- concept_sentence;
+=> nrel_main_idtf: [La terzina di endecasillabi a rima incatenata, inventata da Dante, lega ogni strofa alla successiva e dà al racconto un movimento continuo.] (* <- lang_it;; *);;
+
+..sentence_13_5
+<- concept_sentence;
+=> nrel_main_idtf: [Il viaggio comincia in una selva oscura, immagine dello smarrimento morale in cui il poeta si trova a metà della sua vita.] (* <- lang_it;; *);;
+
+..sentence_13_6
+<- concept_sentence;
+=> nrel_main_idtf: [Impedito da tre fiere di salire verso il colle illuminato dal sole, Dante incontra Virgilio, il grande poeta latino, che gli farà da guida attraverso l'Inferno e il Purgatorio.] (* <- lang_it;; *);;
+
+..sentence_13_7
+<- concept_sentence;
+=> nrel_main_idtf: [L'Inferno è una voragine a forma di imbuto, divisa in nove cerchi in cui i dannati sono puniti secondo la gravità dei loro peccati.] (* <- lang_it;; *);;
+
+..sentence_13_8
+<- concept_sentence;
+=> nrel_main_idtf: [Gli incontri con i dannati sono tra le pagine più celebri del poema: Francesca da Rimini racconta il suo amore infelice, Farinata degli Uberti difende con orgoglio la propria parte politica, Ulisse narra il suo ultimo viaggio oltre i confini del mondo conosciuto.] (* <- lang_it;; *);;
+
+..sentence_13_9
+<- concept_sentence;
+=> nrel_main_idtf: [Il Purgatorio è una montagna che sorge in mezzo all'oceano, dove le anime destinate alla salvezza si purificano dai loro peccati.] (* <- lang_it;; *);;
+
+..sentence_13_10
+<- concept_sentence;
+=> nrel_main_idtf: [Beatrice, la donna amata da Dante in gioventù e morta prematuramente, diventa nel poema la guida verso il Paradiso e il simbolo della grazia divina e della teologia.] (* <- lang_it;; *);;
+
+keyword_summary_13
+<- concept_keyword_summary;
+-> rrel_1: kw_it_dante;  // w(t,D) = 2.0794
+-> rrel_2: kw_it_poema;  // w(t,D) = 1.6636
+-> rrel_3: kw_it_inferno;  // w(t,D) = 1.4556
+-> rrel_4: kw_it_paradiso;  // w(t,D) = 1.4556
+-> rrel_5: kw_it_commedia;  // w(t,D) = 1.3516
+-> rrel_6: kw_it_dannati;  // w(t,D) = 1.3516
+-> rrel_7: kw_it_divina;  // w(t,D) = 1.3516
+-> rrel_8: kw_it_peccati;  // w(t,D) = 1.3516
+-> rrel_9: kw_it_purgatorio;  // w(t,D) = 1.3516
+-> rrel_10: kw_it_virgilio;;  // w(t,D) = 1.3516
+
+kw_it_dante
+<- concept_keyword;
+=> nrel_main_idtf: [dante] (* <- lang_it;; *);;
+
+kw_it_poema
+<- concept_keyword;
+=> nrel_main_idtf: [poema] (* <- lang_it;; *);;
+
+kw_it_inferno
+<- concept_keyword;
+=> nrel_main_idtf: [inferno] (* <- lang_it;; *);;
+
+kw_it_paradiso
+<- concept_keyword;
+=> nrel_main_idtf: [paradiso] (* <- lang_it;; *);;
+
+kw_it_commedia
+<- concept_keyword;
+=> nrel_main_idtf: [commedia] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_divina_commedia;;
+
+kw_it_divina_commedia
+<- concept_keyword;
+=> nrel_main_idtf: [divina commedia] (* <- lang_it;; *);;
+
+kw_it_dannati
+<- concept_keyword;
+=> nrel_main_idtf: [dannati] (* <- lang_it;; *);;
+
+kw_it_divina
+<- concept_keyword;
+=> nrel_main_idtf: [divina] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_divina_commedia;;
+
+kw_it_divina_commedia
+<- concept_keyword;
+=> nrel_main_idtf: [divina commedia] (* <- lang_it;; *);;
+
+kw_it_peccati
+<- concept_keyword;
+=> nrel_main_idtf: [peccati] (* <- lang_it;; *);;
+
+kw_it_purgatorio
+<- concept_keyword;
+=> nrel_main_idtf: [purgatorio] (* <- lang_it;; *);;
+
+kw_it_virgilio
+<- concept_keyword;
+=> nrel_main_idtf: [virgilio] (* <- lang_it;; *);;
+
+// ===== Документ 14: I Promessi sposi di Manzoni: la storia degli umili e la Provvidenza =====
+document_14
+<- concept_document;
+<- concept_literary_essay;
+=> nrel_main_idtf: [I Promessi sposi di Manzoni: la storia degli umili e la Provvidenza] (* <- lang_it;; *);
+=> nrel_text_language: lang_it;
+=> nrel_source_document: [http://localhost:8003/documents/14/file];
+=> nrel_summary: classic_summary_14;
+=> nrel_keywords: keyword_summary_14;;
+
+classic_summary_14
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_14_1;
+-> rrel_2: ..sentence_14_2;
+-> rrel_3: ..sentence_14_3;
+-> rrel_4: ..sentence_14_4;
+-> rrel_5: ..sentence_14_5;
+-> rrel_6: ..sentence_14_6;
+-> rrel_7: ..sentence_14_7;
+-> rrel_8: ..sentence_14_8;
+-> rrel_9: ..sentence_14_9;
+-> rrel_10: ..sentence_14_10;;
+
+..sentence_14_1
+<- concept_sentence;
+=> nrel_main_idtf: [I Promessi sposi di Alessandro Manzoni, pubblicati nella versione definitiva tra il 1840 e il 1842, sono il romanzo più importante dell'Ottocento italiano.] (* <- lang_it;; *);;
+
+..sentence_14_2
+<- concept_sentence;
+=> nrel_main_idtf: [L'autore racconta la vicenda di due giovani popolani della Lombardia del Seicento, Renzo e Lucia, il cui matrimonio viene impedito dalla prepotenza di un signore locale.] (* <- lang_it;; *);;
+
+..sentence_14_3
+<- concept_sentence;
+=> nrel_main_idtf: [Il romanzo si apre con l'incontro tra il curato don Abbondio e i bravi di don Rodrigo, che gli ordinano di non celebrare le nozze tra Renzo e Lucia.] (* <- lang_it;; *);;
+
+..sentence_14_4
+<- concept_sentence;
+=> nrel_main_idtf: [Don Abbondio è un uomo pauroso, che ha scelto la vita religiosa per cercare protezione e non per vocazione.] (* <- lang_it;; *);;
+
+..sentence_14_5
+<- concept_sentence;
+=> nrel_main_idtf: [La sua viltà mette in moto l'intera vicenda e rappresenta il modo in cui la debolezza dei singoli favorisce l'ingiustizia dei potenti.] (* <- lang_it;; *);;
+
+..sentence_14_6
+<- concept_sentence;
+=> nrel_main_idtf: [Il genere scelto da Manzoni è quello del romanzo storico, che mescola personaggi inventati e avvenimenti realmente accaduti.] (* <- lang_it;; *);;
+
+..sentence_14_7
+<- concept_sentence;
+=> nrel_main_idtf: [Lo scrittore finge di aver ritrovato un antico manoscritto e di averne rifatto la lingua, e descrive con grande precisione la Lombardia sotto la dominazione spagnola.] (* <- lang_it;; *);;
+
+..sentence_14_8
+<- concept_sentence;
+=> nrel_main_idtf: [Una delle figure più potenti del romanzo è l'Innominato, un signore temuto da tutti per i suoi delitti, al quale don Rodrigo chiede di rapire Lucia.] (* <- lang_it;; *);;
+
+..sentence_14_9
+<- concept_sentence;
+=> nrel_main_idtf: [La presenza della giovane prigioniera, la sua preghiera e la notte di angoscia che segue provocano nell'Innominato una profonda crisi interiore.] (* <- lang_it;; *);;
+
+..sentence_14_10
+<- concept_sentence;
+=> nrel_main_idtf: [Manzoni non presenta la Provvidenza come una forza che elimina il male, ma come una presenza misteriosa che sa trarre il bene anche dalle sofferenze.] (* <- lang_it;; *);;
+
+keyword_summary_14
+<- concept_keyword_summary;
+-> rrel_1: kw_it_manzoni;  // w(t,D) = 2.0794
+-> rrel_2: kw_it_renzo;  // w(t,D) = 1.9495
+-> rrel_3: kw_it_promessi;  // w(t,D) = 1.5596
+-> rrel_4: kw_it_milano;  // w(t,D) = 1.4296
+-> rrel_5: kw_it_potenti;  // w(t,D) = 1.4296
+-> rrel_6: kw_it_religiosa;  // w(t,D) = 1.4296
+-> rrel_7: kw_it_rodrigo;  // w(t,D) = 1.4296
+-> rrel_8: kw_it_lucia;  // w(t,D) = 1.3863
+-> rrel_9: kw_it_romanzo;  // w(t,D) = 1.2997
+-> rrel_10: kw_it_abbondio;;  // w(t,D) = 1.2997
+
+kw_it_manzoni
+<- concept_keyword;
+=> nrel_main_idtf: [manzoni] (* <- lang_it;; *);;
+
+kw_it_renzo
+<- concept_keyword;
+=> nrel_main_idtf: [renzo] (* <- lang_it;; *);;
+
+kw_it_promessi
+<- concept_keyword;
+=> nrel_main_idtf: [promessi] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_promessi_sposi;;
+
+kw_it_promessi_sposi
+<- concept_keyword;
+=> nrel_main_idtf: [promessi sposi] (* <- lang_it;; *);;
+
+kw_it_milano
+<- concept_keyword;
+=> nrel_main_idtf: [milano] (* <- lang_it;; *);;
+
+kw_it_potenti
+<- concept_keyword;
+=> nrel_main_idtf: [potenti] (* <- lang_it;; *);;
+
+kw_it_religiosa
+<- concept_keyword;
+=> nrel_main_idtf: [religiosa] (* <- lang_it;; *);;
+
+kw_it_rodrigo
+<- concept_keyword;
+=> nrel_main_idtf: [rodrigo] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_don_rodrigo;;
+
+kw_it_don_rodrigo
+<- concept_keyword;
+=> nrel_main_idtf: [don rodrigo] (* <- lang_it;; *);;
+
+kw_it_lucia
+<- concept_keyword;
+=> nrel_main_idtf: [lucia] (* <- lang_it;; *);;
+
+kw_it_romanzo
+<- concept_keyword;
+=> nrel_main_idtf: [romanzo] (* <- lang_it;; *);;
+
+kw_it_abbondio
+<- concept_keyword;
+=> nrel_main_idtf: [abbondio] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_don_abbondio;;
+
+kw_it_don_abbondio
+<- concept_keyword;
+=> nrel_main_idtf: [don abbondio] (* <- lang_it;; *);;
+
+// ===== Документ 15: Giacomo Leopardi: il pessimismo e la poesia dell'infinito =====
+document_15
+<- concept_document;
+<- concept_literary_essay;
+=> nrel_main_idtf: [Giacomo Leopardi: il pessimismo e la poesia dell'infinito] (* <- lang_it;; *);
+=> nrel_text_language: lang_it;
+=> nrel_source_document: [http://localhost:8003/documents/15/file];
+=> nrel_summary: classic_summary_15;
+=> nrel_keywords: keyword_summary_15;;
+
+classic_summary_15
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_15_1;
+-> rrel_2: ..sentence_15_2;
+-> rrel_3: ..sentence_15_3;
+-> rrel_4: ..sentence_15_4;
+-> rrel_5: ..sentence_15_5;
+-> rrel_6: ..sentence_15_6;
+-> rrel_7: ..sentence_15_7;
+-> rrel_8: ..sentence_15_8;
+-> rrel_9: ..sentence_15_9;
+-> rrel_10: ..sentence_15_10;;
+
+..sentence_15_1
+<- concept_sentence;
+=> nrel_main_idtf: [Giacomo Leopardi, nato a Recanati nel 1798, è uno dei più grandi poeti della letteratura italiana e uno dei pensatori più originali dell'Ottocento europeo.] (* <- lang_it;; *);;
+
+..sentence_15_2
+<- concept_sentence;
+=> nrel_main_idtf: [La formazione di Leopardi avvenne in gran parte nella ricca biblioteca paterna, dove il giovane trascorse anni di studio intenso e solitario.] (* <- lang_it;; *);;
+
+..sentence_15_3
+<- concept_sentence;
+=> nrel_main_idtf: [Imparò da autodidatta il latino, il greco e l'ebraico e compose opere erudite di grande impegno.] (* <- lang_it;; *);;
+
+..sentence_15_4
+<- concept_sentence;
+=> nrel_main_idtf: [Questo studio accanito compromise però la sua salute già fragile e accrebbe il senso di isolamento nel piccolo ambiente di Recanati.] (* <- lang_it;; *);;
+
+..sentence_15_5
+<- concept_sentence;
+=> nrel_main_idtf: [Il pensiero leopardiano viene tradizionalmente descritto come un pessimismo che si sviluppa in varie fasi.] (* <- lang_it;; *);;
+
+..sentence_15_6
+<- concept_sentence;
+=> nrel_main_idtf: [In un primo momento il poeta attribuisce l'infelicità umana al progresso della civiltà e della ragione, che hanno distrutto le illusioni degli antichi.] (* <- lang_it;; *);;
+
+..sentence_15_7
+<- concept_sentence;
+=> nrel_main_idtf: [Il componimento L'infinito, scritto nel 1819, è uno dei vertici della lirica leopardiana.] (* <- lang_it;; *);;
+
+..sentence_15_8
+<- concept_sentence;
+=> nrel_main_idtf: [Il poeta siede su un colle solitario e una siepe gli impedisce di vedere l'orizzonte.] (* <- lang_it;; *);;
+
+..sentence_15_9
+<- concept_sentence;
+=> nrel_main_idtf: [Gli idilli e i canti composti negli anni successivi, come A Silvia, Il sabato del villaggio e La quiete dopo la tempesta, sviluppano il tema delle illusioni giovanili e della loro inevitabile caduta.] (* <- lang_it;; *);;
+
+..sentence_15_10
+<- concept_sentence;
+=> nrel_main_idtf: [Nelle Operette morali, dialoghi e racconti filosofici in prosa, Leopardi espone le sue idee con ironia e fantasia.] (* <- lang_it;; *);;
+
+keyword_summary_15
+<- concept_keyword_summary;
+-> rrel_1: kw_it_leopardi;  // w(t,D) = 2.0794
+-> rrel_2: kw_it_natura;  // w(t,D) = 1.6636
+-> rrel_3: kw_it_poesia;  // w(t,D) = 1.6636
+-> rrel_4: kw_it_dolore;  // w(t,D) = 1.3516
+-> rrel_5: kw_it_felicita;  // w(t,D) = 1.3516
+-> rrel_6: kw_it_uomini;  // w(t,D) = 1.3516
+-> rrel_7: kw_it_allora;  // w(t,D) = 1.2477
+-> rrel_8: kw_it_appare;  // w(t,D) = 1.2477
+-> rrel_9: kw_it_dialoghi;  // w(t,D) = 1.2477
+-> rrel_10: kw_it_distrutto;;  // w(t,D) = 1.2477
+
+kw_it_leopardi
+<- concept_keyword;
+=> nrel_main_idtf: [leopardi] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_poesia_di_leopardi;;
+
+kw_it_poesia_di_leopardi
+<- concept_keyword;
+=> nrel_main_idtf: [poesia di leopardi] (* <- lang_it;; *);;
+
+kw_it_natura
+<- concept_keyword;
+=> nrel_main_idtf: [natura] (* <- lang_it;; *);;
+
+kw_it_poesia
+<- concept_keyword;
+=> nrel_main_idtf: [poesia] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_poesia_di_leopardi;;
+
+kw_it_poesia_di_leopardi
+<- concept_keyword;
+=> nrel_main_idtf: [poesia di leopardi] (* <- lang_it;; *);;
+
+kw_it_dolore
+<- concept_keyword;
+=> nrel_main_idtf: [dolore] (* <- lang_it;; *);;
+
+kw_it_felicita
+<- concept_keyword;
+=> nrel_main_idtf: [felicità] (* <- lang_it;; *);;
+
+kw_it_uomini
+<- concept_keyword;
+=> nrel_main_idtf: [uomini] (* <- lang_it;; *);;
+
+kw_it_allora
+<- concept_keyword;
+=> nrel_main_idtf: [allora] (* <- lang_it;; *);;
+
+kw_it_appare
+<- concept_keyword;
+=> nrel_main_idtf: [appare] (* <- lang_it;; *);;
+
+kw_it_dialoghi
+<- concept_keyword;
+=> nrel_main_idtf: [dialoghi] (* <- lang_it;; *);;
+
+kw_it_distrutto
+<- concept_keyword;
+=> nrel_main_idtf: [distrutto] (* <- lang_it;; *);;
+
+// ===== Документ 16: Il fu Mattia Pascal di Pirandello: l'identità e la maschera =====
+document_16
+<- concept_document;
+<- concept_literary_essay;
+=> nrel_main_idtf: [Il fu Mattia Pascal di Pirandello: l'identità e la maschera] (* <- lang_it;; *);
+=> nrel_text_language: lang_it;
+=> nrel_source_document: [http://localhost:8003/documents/16/file];
+=> nrel_summary: classic_summary_16;
+=> nrel_keywords: keyword_summary_16;;
+
+classic_summary_16
+<- concept_classic_summary;
+=> nrel_summarization_method: method_sentence_extraction;
+-> rrel_1: ..sentence_16_1;
+-> rrel_2: ..sentence_16_2;
+-> rrel_3: ..sentence_16_3;
+-> rrel_4: ..sentence_16_4;
+-> rrel_5: ..sentence_16_5;
+-> rrel_6: ..sentence_16_6;
+-> rrel_7: ..sentence_16_7;
+-> rrel_8: ..sentence_16_8;
+-> rrel_9: ..sentence_16_9;
+-> rrel_10: ..sentence_16_10;;
+
+..sentence_16_1
+<- concept_sentence;
+=> nrel_main_idtf: [Il fu Mattia Pascal, pubblicato da Luigi Pirandello nel 1904, è uno dei romanzi più innovativi della letteratura italiana del Novecento.] (* <- lang_it;; *);;
+
+..sentence_16_2
+<- concept_sentence;
+=> nrel_main_idtf: [La vicenda di un uomo che, creduto morto, cerca di vivere una nuova esistenza sotto un falso nome permette all'autore di affrontare il tema della crisi dell'identità.] (* <- lang_it;; *);;
+
+..sentence_16_3
+<- concept_sentence;
+=> nrel_main_idtf: [Mattia Pascal vive in un piccolo paese ligure ed è intrappolato in una situazione familiare e sociale insopportabile.] (* <- lang_it;; *);;
+
+..sentence_16_4
+<- concept_sentence;
+=> nrel_main_idtf: [Ha sperperato il patrimonio di famiglia, si è sposato senza amore e lavora come bibliotecario in una biblioteca abbandonata.] (* <- lang_it;; *);;
+
+..sentence_16_5
+<- concept_sentence;
+=> nrel_main_idtf: [Dopo una lite con la moglie e la suocera, fugge di casa e, per caso, vince una grossa somma alla roulette di Montecarlo.] (* <- lang_it;; *);;
+
+..sentence_16_6
+<- concept_sentence;
+=> nrel_main_idtf: [Mattia assume il nome di Adriano Meis e si costruisce un'identità completamente nuova, inventando un passato e cambiando perfino il proprio aspetto fisico.] (* <- lang_it;; *);;
+
+..sentence_16_7
+<- concept_sentence;
+=> nrel_main_idtf: [In un primo momento questa libertà gli sembra meravigliosa: non ha più legami, obblighi né debiti, e può viaggiare a suo piacimento.] (* <- lang_it;; *);;
+
+..sentence_16_8
+<- concept_sentence;
+=> nrel_main_idtf: [A Roma, nella pensione del signor Paleari, Adriano si innamora di Adriana e comprende di non poter costruire con lei una vita autentica.] (* <- lang_it;; *);;
+
+..sentence_16_9
+<- concept_sentence;
+=> nrel_main_idtf: [La vita è un flusso continuo e mutevole, mentre la società impone agli individui forme fisse, ruoli e maschere che li imprigionano.] (* <- lang_it;; *);;
+
+..sentence_16_10
+<- concept_sentence;
+=> nrel_main_idtf: [Nel romanzo compaiono anche importanti riflessioni filosofiche, affidate soprattutto al signor Paleari, appassionato di spiritismo e di teorie bizzarre.] (* <- lang_it;; *);;
+
+keyword_summary_16
+<- concept_keyword_summary;
+-> rrel_1: kw_it_mattia;  // w(t,D) = 2.0794
+-> rrel_2: kw_it_pirandello;  // w(t,D) = 1.6895
+-> rrel_3: kw_it_adriano;  // w(t,D) = 1.5596
+-> rrel_4: kw_it_pascal;  // w(t,D) = 1.5596
+-> rrel_5: kw_it_meis;  // w(t,D) = 1.4296
+-> rrel_6: kw_it_scopre;  // w(t,D) = 1.4296
+-> rrel_7: kw_it_casa;  // w(t,D) = 1.2997
+-> rrel_8: kw_it_comica;  // w(t,D) = 1.2997
+-> rrel_9: kw_it_convenzioni;  // w(t,D) = 1.2997
+-> rrel_10: kw_it_definisce;;  // w(t,D) = 1.2997
+
+kw_it_mattia
+<- concept_keyword;
+=> nrel_main_idtf: [mattia] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_mattia_pascal;;
+
+kw_it_mattia_pascal
+<- concept_keyword;
+=> nrel_main_idtf: [mattia pascal] (* <- lang_it;; *);;
+
+kw_it_pirandello
+<- concept_keyword;
+=> nrel_main_idtf: [pirandello] (* <- lang_it;; *);;
+
+kw_it_adriano
+<- concept_keyword;
+=> nrel_main_idtf: [adriano] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_adriano_meis;;
+
+kw_it_adriano_meis
+<- concept_keyword;
+=> nrel_main_idtf: [adriano meis] (* <- lang_it;; *);;
+
+kw_it_pascal
+<- concept_keyword;
+=> nrel_main_idtf: [pascal] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_mattia_pascal;;
+
+kw_it_mattia_pascal
+<- concept_keyword;
+=> nrel_main_idtf: [mattia pascal] (* <- lang_it;; *);;
+
+kw_it_meis
+<- concept_keyword;
+=> nrel_main_idtf: [meis] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_adriano_meis;;
+
+kw_it_adriano_meis
+<- concept_keyword;
+=> nrel_main_idtf: [adriano meis] (* <- lang_it;; *);;
+
+kw_it_scopre
+<- concept_keyword;
+=> nrel_main_idtf: [scopre] (* <- lang_it;; *);;
+
+kw_it_casa
+<- concept_keyword;
+=> nrel_main_idtf: [casa] (* <- lang_it;; *);;
+
+kw_it_comica
+<- concept_keyword;
+=> nrel_main_idtf: [comica] (* <- lang_it;; *);;
+
+kw_it_convenzioni
+<- concept_keyword;
+=> nrel_main_idtf: [convenzioni] (* <- lang_it;; *);
+=> nrel_subkeyword: kw_it_convenzioni_sociali;;
+
+kw_it_convenzioni_sociali
+<- concept_keyword;
+=> nrel_main_idtf: [convenzioni sociali] (* <- lang_it;; *);;
+
+kw_it_definisce
+<- concept_keyword;
+=> nrel_main_idtf: [definisce] (* <- lang_it;; *);;

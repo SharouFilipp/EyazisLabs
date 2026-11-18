@@ -1,0 +1,20 @@
+flowchart TB
+    User(["Пользователь"]) <--> UI["Веб-интерфейс<br/>index.html, app.js, Chart.js"]
+    UI <-->|"HTTP / JSON, файлы отчётов"| API["app.py — REST API (FastAPI)<br/>загрузка, распознавание, статистика, отчёты HTML/CSV"]
+
+    API --> PDF["pdf_reader.py<br/>извлечение текста из PDF (pypdf)"]
+    API --> EV["evaluation.py<br/>сводная статистика,<br/>сравнение на фрагментах"]
+    API --> ID
+
+    subgraph ID["identifier.py — модуль распознавания"]
+        direction LR
+        TP["text_processor.py<br/>шаг 1: предобработка"] --> M1["Метод<br/>частотных слов"]
+        TP --> M2["Метод<br/>коротких слов"]
+        TP --> M3["Нейросетевой метод<br/>MLP (scikit-learn)"]
+    end
+    EV --> ID
+
+    API <--> DB[("PostgreSQL, база lab2<br/>documents, results")]
+    API <--> FILES[/"data/documents/*.pdf"/]
+    TRAIN[/"corpus/train/en.txt, fr.txt<br/>обучающий набор"/] --> ID
+    ID <--> PROF[/"data/profiles/<br/>frequent_words.json, short_words.json,<br/>neural.joblib, train_info.json"/]

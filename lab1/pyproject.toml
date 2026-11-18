@@ -1,0 +1,28 @@
+[project]
+name = "lab1-search-engine"
+version = "1.0.0"
+description = "ЛР №1: информационно-поисковая система (векторная модель, русский язык)"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "python-multipart>=0.0.9",
+    "jinja2>=3.1",
+    "pymorphy3>=2.0",
+    "pymorphy3-dicts-ru>=2.4",
+    "psycopg2-binary>=2.9",
+    "watchdog>=4.0",
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+    "lxml-html-clean>=0.1",
+    "newspaper3k>=0.2.8",
+    "scikit-learn>=1.4",
+    "joblib>=1.3",
+    "setuptools>=70",
+]
+
+[tool.uv]
+# Проект может лежать в папке OneDrive: жёсткие ссылки из кэша uv там невозможны (os error 396)
+link-mode = "copy"
+package = false

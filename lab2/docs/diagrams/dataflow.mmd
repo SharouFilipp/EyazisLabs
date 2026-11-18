@@ -1,0 +1,12 @@
+flowchart TB
+    A[/"PDF-файл<br/>(drag&drop или<br/>тестовая коллекция)"/] --> B["POST /api/documents/upload"]
+    B --> C["Сохранение в<br/>data/documents"]
+    C --> D["pdf_reader:<br/>извлечение текста (pypdf)"]
+    D --> E{"Есть текстовый<br/>слой?"}
+    E -- нет --> X["Ошибка:<br/>документ отклонён"]
+    E -- да --> F[("documents")]
+    F --> G["POST /api/detect"]
+    G --> H["identifier.detect:<br/>3 метода"]
+    H --> I[("results")]
+    I --> J["Таблица результатов,<br/>статистика, графики"]
+    I --> K[/"Отчёт HTML / CSV,<br/>печать"/]

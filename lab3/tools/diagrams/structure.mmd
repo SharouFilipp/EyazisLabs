@@ -1,0 +1,29 @@
+flowchart LR
+    subgraph client["Клиент (браузер)"]
+        ui["index.html + style.css<br/>6 вкладок, справка"]
+        js["app.js<br/>таблицы, Chart.js, SCg-граф"]
+    end
+    subgraph server["Сервер FastAPI"]
+        app["app.py<br/>REST API, отчёты HTML/TXT, экспорт SCs"]
+        reader["doc_reader.py<br/>PDF / DOCX / TXT → абзацы"]
+        tp["text_processor.py<br/>нормализация, предложения,<br/>термины, стемминг, язык"]
+        sw["stopwords.py"]
+        summ["summarizer.py<br/>метод 1: sentence extraction<br/>Score · Posd · Posp"]
+        agent["ostis_agent.py<br/>метод 2: агент семантического<br/>реферирования"]
+        mem["sc_memory.py<br/>sc-память, разбор SCs"]
+        ost["ostis.py<br/>онтология, фрагменты SCs, SCg"]
+        ev["evaluation.py<br/>P, R, F1, ROUGE"]
+        db["db.py"]
+    end
+    kb[["kb/*.scs<br/>онтологии CS и литературы"]]
+    pg[("PostgreSQL<br/>база lab3")]
+    js <-->|"HTTP / JSON"| app
+    ui --- js
+    app --> reader --> tp --> sw
+    app --> summ --> tp
+    app --> agent --> mem
+    kb --> mem
+    agent --> tp
+    app --> ost
+    app --> ev
+    app --> db --> pg

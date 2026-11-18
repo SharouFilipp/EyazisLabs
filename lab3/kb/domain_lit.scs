@@ -1,0 +1,775 @@
+// ===== Предметная область литературы: 67 понятий (сформировано tools/build_kb.py) =====
+subject_domain_literature
+<- sc_node_struct;
+<- subject_domain;
+=> nrel_main_idtf: [Предметная область литературы] (* <- lang_ru;; *);
+=> nrel_document_class: concept_literary_essay;;
+
+concept_literature
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [литература] (* <- lang_ru;; *);
+=> nrel_main_idtf: [littérature] (* <- lang_fr;; *);
+=> nrel_idtf: [littéraire] (* <- lang_fr;; *);
+=> nrel_main_idtf: [letteratura] (* <- lang_it;; *);
+=> nrel_idtf: [letterario] (* <- lang_it;; *);;
+
+concept_literary_work
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [литературное произведение] (* <- lang_ru;; *);
+=> nrel_main_idtf: [œuvre] (* <- lang_fr;; *);
+=> nrel_idtf: [livre] (* <- lang_fr;; *);
+=> nrel_idtf: [texte] (* <- lang_fr;; *);
+=> nrel_main_idtf: [opera] (* <- lang_it;; *);
+=> nrel_idtf: [libro] (* <- lang_it;; *);
+=> nrel_idtf: [testo] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literature;
+=> nrel_related: concept_writer;;
+
+concept_writer
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [писатель] (* <- lang_ru;; *);
+=> nrel_main_idtf: [écrivain] (* <- lang_fr;; *);
+=> nrel_idtf: [auteur] (* <- lang_fr;; *);
+=> nrel_idtf: [romancier] (* <- lang_fr;; *);
+=> nrel_main_idtf: [scrittore] (* <- lang_it;; *);
+=> nrel_idtf: [autore] (* <- lang_it;; *);
+=> nrel_idtf: [romanziere] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literature;;
+
+concept_reader
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [читатель] (* <- lang_ru;; *);
+=> nrel_main_idtf: [lecteur] (* <- lang_fr;; *);
+=> nrel_idtf: [lecteurs] (* <- lang_fr;; *);
+=> nrel_main_idtf: [lettore] (* <- lang_it;; *);
+=> nrel_idtf: [lettori] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literature;;
+
+concept_novel
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [роман] (* <- lang_ru;; *);
+=> nrel_main_idtf: [roman] (* <- lang_fr;; *);
+=> nrel_idtf: [romans] (* <- lang_fr;; *);
+=> nrel_idtf: [récit] (* <- lang_fr;; *);
+=> nrel_main_idtf: [romanzo] (* <- lang_it;; *);
+=> nrel_idtf: [romanzi] (* <- lang_it;; *);
+=> nrel_idtf: [racconto] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_work;;
+
+concept_historical_novel
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [исторический роман] (* <- lang_ru;; *);
+=> nrel_main_idtf: [roman historique] (* <- lang_fr;; *);
+=> nrel_idtf: [fresque] (* <- lang_fr;; *);
+=> nrel_main_idtf: [romanzo storico] (* <- lang_it;; *);
+<= nrel_inclusion: concept_novel;
+=> nrel_related: concept_history;;
+
+concept_poetry
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [поэзия] (* <- lang_ru;; *);
+=> nrel_main_idtf: [poésie] (* <- lang_fr;; *);
+=> nrel_idtf: [poète] (* <- lang_fr;; *);
+=> nrel_idtf: [poèmes] (* <- lang_fr;; *);
+=> nrel_idtf: [poème] (* <- lang_fr;; *);
+=> nrel_main_idtf: [poesia] (* <- lang_it;; *);
+=> nrel_idtf: [poeta] (* <- lang_it;; *);
+=> nrel_idtf: [poesie] (* <- lang_it;; *);
+=> nrel_idtf: [lirica] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_work;
+=> nrel_related: concept_verse;;
+
+concept_poem_collection
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [поэтический сборник] (* <- lang_ru;; *);
+=> nrel_main_idtf: [recueil] (* <- lang_fr;; *);
+=> nrel_main_idtf: [raccolta] (* <- lang_it;; *);
+=> nrel_idtf: [canzoniere] (* <- lang_it;; *);
+<= nrel_inclusion: concept_poetry;;
+
+concept_epic_poem
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [поэма] (* <- lang_ru;; *);
+=> nrel_main_idtf: [épopée] (* <- lang_fr;; *);
+=> nrel_idtf: [épopée moderne] (* <- lang_fr;; *);
+=> nrel_main_idtf: [poema] (* <- lang_it;; *);
+=> nrel_idtf: [cantica] (* <- lang_it;; *);
+=> nrel_idtf: [cantiche] (* <- lang_it;; *);
+=> nrel_idtf: [canto] (* <- lang_it;; *);
+<= nrel_inclusion: concept_poetry;;
+
+concept_sonnet
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [сонет] (* <- lang_ru;; *);
+=> nrel_main_idtf: [sonnet] (* <- lang_fr;; *);
+=> nrel_main_idtf: [sonetto] (* <- lang_it;; *);
+<= nrel_inclusion: concept_poetry;
+=> nrel_related: concept_verse;;
+
+concept_verse
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [стих] (* <- lang_ru;; *);
+=> nrel_main_idtf: [vers] (* <- lang_fr;; *);
+=> nrel_idtf: [alexandrin] (* <- lang_fr;; *);
+=> nrel_idtf: [strophe] (* <- lang_fr;; *);
+=> nrel_main_idtf: [verso] (* <- lang_it;; *);
+=> nrel_idtf: [endecasillabo] (* <- lang_it;; *);
+=> nrel_idtf: [terzina] (* <- lang_it;; *);
+=> nrel_idtf: [rima] (* <- lang_it;; *);
+<= nrel_inclusion: concept_poetry;;
+
+concept_prose_dialogue
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [философская проза] (* <- lang_ru;; *);
+=> nrel_main_idtf: [dialogue] (* <- lang_fr;; *);
+=> nrel_idtf: [conte philosophique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [operette morali] (* <- lang_it;; *);
+=> nrel_idtf: [dialogo] (* <- lang_it;; *);
+=> nrel_idtf: [prosa] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_work;;
+
+concept_character
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [персонаж] (* <- lang_ru;; *);
+=> nrel_main_idtf: [personnage] (* <- lang_fr;; *);
+=> nrel_idtf: [personnages] (* <- lang_fr;; *);
+=> nrel_idtf: [héros] (* <- lang_fr;; *);
+=> nrel_idtf: [héroïne] (* <- lang_fr;; *);
+=> nrel_idtf: [protagoniste] (* <- lang_fr;; *);
+=> nrel_main_idtf: [personaggio] (* <- lang_it;; *);
+=> nrel_idtf: [personaggi] (* <- lang_it;; *);
+=> nrel_idtf: [protagonista] (* <- lang_it;; *);
+=> nrel_idtf: [eroe] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_work;;
+
+concept_narrator
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [повествователь] (* <- lang_ru;; *);
+=> nrel_main_idtf: [narrateur] (* <- lang_fr;; *);
+=> nrel_idtf: [voix narrative] (* <- lang_fr;; *);
+=> nrel_main_idtf: [narratore] (* <- lang_it;; *);
+=> nrel_idtf: [voce narrante] (* <- lang_it;; *);
+=> nrel_idtf: [prima persona] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_work;
+=> nrel_related: concept_style;;
+
+concept_plot
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [сюжет] (* <- lang_ru;; *);
+=> nrel_main_idtf: [intrigue] (* <- lang_fr;; *);
+=> nrel_idtf: [histoire] (* <- lang_fr;; *);
+=> nrel_idtf: [destin] (* <- lang_fr;; *);
+=> nrel_main_idtf: [vicenda] (* <- lang_it;; *);
+=> nrel_idtf: [trama] (* <- lang_it;; *);
+=> nrel_idtf: [storia] (* <- lang_it;; *);
+<= nrel_inclusion: concept_novel;
+=> nrel_related: concept_character;;
+
+concept_style
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [стиль] (* <- lang_ru;; *);
+=> nrel_main_idtf: [style] (* <- lang_fr;; *);
+=> nrel_idtf: [mot juste] (* <- lang_fr;; *);
+=> nrel_main_idtf: [stile] (* <- lang_it;; *);
+=> nrel_idtf: [linguaggio] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literature;
+=> nrel_related: concept_irony;;
+
+concept_free_indirect
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [несобственно-прямая речь] (* <- lang_ru;; *);
+=> nrel_main_idtf: [discours indirect libre] (* <- lang_fr;; *);
+=> nrel_main_idtf: [discorso indiretto libero] (* <- lang_it;; *);
+<= nrel_inclusion: concept_style;;
+
+concept_irony
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [ирония] (* <- lang_ru;; *);
+=> nrel_main_idtf: [ironie] (* <- lang_fr;; *);
+=> nrel_idtf: [ironique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ironia] (* <- lang_it;; *);
+=> nrel_idtf: [ironico] (* <- lang_it;; *);
+<= nrel_inclusion: concept_style;;
+
+concept_humor
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [юмор] (* <- lang_ru;; *);
+=> nrel_main_idtf: [humour] (* <- lang_fr;; *);
+=> nrel_main_idtf: [umorismo] (* <- lang_it;; *);
+=> nrel_idtf: [sentimento del contrario] (* <- lang_it;; *);
+=> nrel_idtf: [comicità] (* <- lang_it;; *);
+<= nrel_inclusion: concept_style;
+=> nrel_related: concept_irony;;
+
+concept_antithesis
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [антитеза] (* <- lang_ru;; *);
+=> nrel_main_idtf: [antithèse] (* <- lang_fr;; *);
+=> nrel_idtf: [contraste] (* <- lang_fr;; *);
+=> nrel_main_idtf: [antitesi] (* <- lang_it;; *);
+=> nrel_idtf: [contrasto] (* <- lang_it;; *);
+<= nrel_inclusion: concept_style;;
+
+concept_symbol
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [символ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [symbole] (* <- lang_fr;; *);
+=> nrel_idtf: [symbolique] (* <- lang_fr;; *);
+=> nrel_idtf: [image] (* <- lang_fr;; *);
+=> nrel_main_idtf: [simbolo] (* <- lang_it;; *);
+=> nrel_idtf: [simbolico] (* <- lang_it;; *);
+=> nrel_idtf: [immagine] (* <- lang_it;; *);
+<= nrel_inclusion: concept_style;;
+
+concept_allegory
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [аллегория] (* <- lang_ru;; *);
+=> nrel_main_idtf: [allégorie] (* <- lang_fr;; *);
+=> nrel_main_idtf: [allegoria] (* <- lang_it;; *);
+=> nrel_idtf: [senso allegorico] (* <- lang_it;; *);
+=> nrel_idtf: [senso letterale] (* <- lang_it;; *);
+<= nrel_inclusion: concept_symbol;;
+
+concept_synesthesia
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [синестезия] (* <- lang_ru;; *);
+=> nrel_main_idtf: [correspondances] (* <- lang_fr;; *);
+=> nrel_idtf: [synesthésie] (* <- lang_fr;; *);
+=> nrel_idtf: [analogies] (* <- lang_fr;; *);
+=> nrel_main_idtf: [sinestesia] (* <- lang_it;; *);
+<= nrel_inclusion: concept_symbol;;
+
+concept_literary_movement
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [литературное направление] (* <- lang_ru;; *);
+=> nrel_main_idtf: [mouvement littéraire] (* <- lang_fr;; *);
+=> nrel_main_idtf: [corrente letteraria] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literature;;
+
+concept_realism
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [реализм] (* <- lang_ru;; *);
+=> nrel_main_idtf: [réalisme] (* <- lang_fr;; *);
+=> nrel_idtf: [réaliste] (* <- lang_fr;; *);
+=> nrel_main_idtf: [realismo] (* <- lang_it;; *);
+=> nrel_idtf: [realistico] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_movement;;
+
+concept_romanticism
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [романтизм] (* <- lang_ru;; *);
+=> nrel_main_idtf: [romantisme] (* <- lang_fr;; *);
+=> nrel_idtf: [romantique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [romanticismo] (* <- lang_it;; *);
+=> nrel_idtf: [romantico] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_movement;;
+
+concept_symbolism
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [символизм] (* <- lang_ru;; *);
+=> nrel_main_idtf: [symbolistes] (* <- lang_fr;; *);
+=> nrel_idtf: [symbolisme] (* <- lang_fr;; *);
+=> nrel_main_idtf: [simbolismo] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_movement;;
+
+concept_modernity
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [модерн, современность] (* <- lang_ru;; *);
+=> nrel_main_idtf: [modernité] (* <- lang_fr;; *);
+=> nrel_idtf: [moderne] (* <- lang_fr;; *);
+=> nrel_main_idtf: [modernità] (* <- lang_it;; *);
+=> nrel_idtf: [moderno] (* <- lang_it;; *);
+=> nrel_idtf: [novecento] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_movement;;
+
+concept_theme
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [тема произведения] (* <- lang_ru;; *);
+=> nrel_main_idtf: [thème] (* <- lang_fr;; *);
+=> nrel_main_idtf: [tema] (* <- lang_it;; *);
+<= nrel_inclusion: concept_literary_work;;
+
+concept_love
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [любовь] (* <- lang_ru;; *);
+=> nrel_main_idtf: [amour] (* <- lang_fr;; *);
+=> nrel_idtf: [passion] (* <- lang_fr;; *);
+=> nrel_idtf: [amant] (* <- lang_fr;; *);
+=> nrel_idtf: [amants] (* <- lang_fr;; *);
+=> nrel_main_idtf: [amore] (* <- lang_it;; *);
+=> nrel_idtf: [passione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_death
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [смерть] (* <- lang_ru;; *);
+=> nrel_main_idtf: [mort] (* <- lang_fr;; *);
+=> nrel_idtf: [suicide] (* <- lang_fr;; *);
+=> nrel_main_idtf: [morte] (* <- lang_it;; *);
+=> nrel_idtf: [suicidio] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_dream
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [мечта, иллюзия] (* <- lang_ru;; *);
+=> nrel_main_idtf: [rêve] (* <- lang_fr;; *);
+=> nrel_idtf: [rêves] (* <- lang_fr;; *);
+=> nrel_idtf: [illusion] (* <- lang_fr;; *);
+=> nrel_idtf: [illusions] (* <- lang_fr;; *);
+=> nrel_idtf: [imaginaire] (* <- lang_fr;; *);
+=> nrel_main_idtf: [sogno] (* <- lang_it;; *);
+=> nrel_idtf: [illusione] (* <- lang_it;; *);
+=> nrel_idtf: [illusioni] (* <- lang_it;; *);
+=> nrel_idtf: [immaginazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_boredom
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [скука, сплин] (* <- lang_ru;; *);
+=> nrel_main_idtf: [ennui] (* <- lang_fr;; *);
+=> nrel_idtf: [spleen] (* <- lang_fr;; *);
+=> nrel_idtf: [mélancolie] (* <- lang_fr;; *);
+=> nrel_main_idtf: [noia] (* <- lang_it;; *);
+=> nrel_idtf: [malinconia] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_ideal
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [идеал] (* <- lang_ru;; *);
+=> nrel_main_idtf: [idéal] (* <- lang_fr;; *);
+=> nrel_idtf: [beauté] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ideale] (* <- lang_it;; *);
+=> nrel_idtf: [bellezza] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_society
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [общество] (* <- lang_ru;; *);
+=> nrel_main_idtf: [société] (* <- lang_fr;; *);
+=> nrel_idtf: [social] (* <- lang_fr;; *);
+=> nrel_idtf: [sociale] (* <- lang_fr;; *);
+=> nrel_main_idtf: [società] (* <- lang_it;; *);
+=> nrel_idtf: [sociale] (* <- lang_it;; *);
+=> nrel_idtf: [convenzioni sociali] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_bourgeoisie
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [буржуазия] (* <- lang_ru;; *);
+=> nrel_main_idtf: [bourgeoisie] (* <- lang_fr;; *);
+=> nrel_idtf: [bourgeois] (* <- lang_fr;; *);
+=> nrel_idtf: [province] (* <- lang_fr;; *);
+=> nrel_idtf: [provinciale] (* <- lang_fr;; *);
+=> nrel_main_idtf: [borghesia] (* <- lang_it;; *);
+=> nrel_idtf: [provincia] (* <- lang_it;; *);
+<= nrel_inclusion: concept_society;;
+
+concept_ambition
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [честолюбие] (* <- lang_ru;; *);
+=> nrel_main_idtf: [ambition] (* <- lang_fr;; *);
+=> nrel_idtf: [ambitieux] (* <- lang_fr;; *);
+=> nrel_idtf: [ascension] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ambizione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_hypocrisy
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [лицемерие] (* <- lang_ru;; *);
+=> nrel_main_idtf: [hypocrisie] (* <- lang_fr;; *);
+=> nrel_idtf: [masque] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ipocrisia] (* <- lang_it;; *);
+=> nrel_idtf: [maschera] (* <- lang_it;; *);
+<= nrel_inclusion: concept_society;;
+
+concept_justice
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [справедливость] (* <- lang_ru;; *);
+=> nrel_main_idtf: [justice] (* <- lang_fr;; *);
+=> nrel_idtf: [loi] (* <- lang_fr;; *);
+=> nrel_main_idtf: [giustizia] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_poverty
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [бедность] (* <- lang_ru;; *);
+=> nrel_main_idtf: [misère] (* <- lang_fr;; *);
+=> nrel_idtf: [pauvres] (* <- lang_fr;; *);
+=> nrel_idtf: [misérables] (* <- lang_fr;; *);
+=> nrel_main_idtf: [miseria] (* <- lang_it;; *);
+=> nrel_idtf: [poveri] (* <- lang_it;; *);
+=> nrel_idtf: [umili] (* <- lang_it;; *);
+<= nrel_inclusion: concept_society;;
+
+concept_redemption
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [искупление] (* <- lang_ru;; *);
+=> nrel_main_idtf: [rédemption] (* <- lang_fr;; *);
+=> nrel_idtf: [pardon] (* <- lang_fr;; *);
+=> nrel_idtf: [conscience] (* <- lang_fr;; *);
+=> nrel_main_idtf: [redenzione] (* <- lang_it;; *);
+=> nrel_idtf: [perdono] (* <- lang_it;; *);
+=> nrel_idtf: [salvezza] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;
+=> nrel_related: concept_religion;;
+
+concept_religion
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [религия] (* <- lang_ru;; *);
+=> nrel_main_idtf: [église] (* <- lang_fr;; *);
+=> nrel_idtf: [dieu] (* <- lang_fr;; *);
+=> nrel_idtf: [religieux] (* <- lang_fr;; *);
+=> nrel_idtf: [foi] (* <- lang_fr;; *);
+=> nrel_main_idtf: [chiesa] (* <- lang_it;; *);
+=> nrel_idtf: [dio] (* <- lang_it;; *);
+=> nrel_idtf: [religioso] (* <- lang_it;; *);
+=> nrel_idtf: [fede] (* <- lang_it;; *);
+=> nrel_idtf: [grazia] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_providence
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [Провидение] (* <- lang_ru;; *);
+=> nrel_main_idtf: [providence] (* <- lang_fr;; *);
+=> nrel_main_idtf: [provvidenza] (* <- lang_it;; *);
+<= nrel_inclusion: concept_religion;;
+
+concept_identity
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [идентичность] (* <- lang_ru;; *);
+=> nrel_main_idtf: [identité] (* <- lang_fr;; *);
+=> nrel_main_idtf: [identità] (* <- lang_it;; *);
+=> nrel_idtf: [io] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_freedom
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [свобода] (* <- lang_ru;; *);
+=> nrel_main_idtf: [liberté] (* <- lang_fr;; *);
+=> nrel_main_idtf: [libertà] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_nature
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [природа] (* <- lang_ru;; *);
+=> nrel_main_idtf: [nature] (* <- lang_fr;; *);
+=> nrel_main_idtf: [natura] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_pessimism
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [пессимизм] (* <- lang_ru;; *);
+=> nrel_main_idtf: [pessimisme] (* <- lang_fr;; *);
+=> nrel_main_idtf: [pessimismo] (* <- lang_it;; *);
+=> nrel_idtf: [dolore] (* <- lang_it;; *);
+=> nrel_idtf: [infelicità] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;
+=> nrel_related: concept_nature;;
+
+concept_infinity
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [бесконечность] (* <- lang_ru;; *);
+=> nrel_main_idtf: [infini] (* <- lang_fr;; *);
+=> nrel_main_idtf: [infinito] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_memory_lit
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [воспоминание] (* <- lang_ru;; *);
+=> nrel_main_idtf: [souvenir] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ricordo] (* <- lang_it;; *);
+=> nrel_idtf: [rimembranza] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_city
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [город] (* <- lang_ru;; *);
+=> nrel_main_idtf: [ville] (* <- lang_fr;; *);
+=> nrel_idtf: [paris] (* <- lang_fr;; *);
+=> nrel_idtf: [urbain] (* <- lang_fr;; *);
+=> nrel_main_idtf: [città] (* <- lang_it;; *);
+=> nrel_idtf: [milano] (* <- lang_it;; *);
+=> nrel_idtf: [roma] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_history
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [история (эпоха)] (* <- lang_ru;; *);
+=> nrel_main_idtf: [restauration] (* <- lang_fr;; *);
+=> nrel_idtf: [empire] (* <- lang_fr;; *);
+=> nrel_idtf: [insurrection] (* <- lang_fr;; *);
+=> nrel_idtf: [époque] (* <- lang_fr;; *);
+=> nrel_main_idtf: [seicento] (* <- lang_it;; *);
+=> nrel_idtf: [ottocento] (* <- lang_it;; *);
+=> nrel_idtf: [epoca] (* <- lang_it;; *);
+<= nrel_inclusion: concept_theme;;
+
+concept_flaubert
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [Гюстав Флобер] (* <- lang_ru;; *);
+=> nrel_main_idtf: [flaubert] (* <- lang_fr;; *);
+=> nrel_main_idtf: [flaubert] (* <- lang_it;; *);
+<= nrel_inclusion: concept_writer;
+=> nrel_related: concept_madame_bovary;;
+
+concept_madame_bovary
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [«Госпожа Бовари»] (* <- lang_ru;; *);
+=> nrel_main_idtf: [madame bovary] (* <- lang_fr;; *);
+=> nrel_idtf: [emma] (* <- lang_fr;; *);
+=> nrel_idtf: [bovary] (* <- lang_fr;; *);
+=> nrel_idtf: [rodolphe] (* <- lang_fr;; *);
+=> nrel_idtf: [léon] (* <- lang_fr;; *);
+=> nrel_idtf: [homais] (* <- lang_fr;; *);
+=> nrel_idtf: [bovarysme] (* <- lang_fr;; *);
+=> nrel_main_idtf: [madame bovary] (* <- lang_it;; *);
+<= nrel_inclusion: concept_novel;
+=> nrel_related: concept_flaubert;
+=> nrel_related: concept_boredom;
+=> nrel_related: concept_dream;;
+
+concept_hugo
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [Виктор Гюго] (* <- lang_ru;; *);
+=> nrel_main_idtf: [victor hugo] (* <- lang_fr;; *);
+=> nrel_idtf: [hugo] (* <- lang_fr;; *);
+=> nrel_main_idtf: [hugo] (* <- lang_it;; *);
+<= nrel_inclusion: concept_writer;
+=> nrel_related: concept_les_miserables;;
+
+concept_les_miserables
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [«Отверженные»] (* <- lang_ru;; *);
+=> nrel_main_idtf: [les misérables] (* <- lang_fr;; *);
+=> nrel_idtf: [jean valjean] (* <- lang_fr;; *);
+=> nrel_idtf: [valjean] (* <- lang_fr;; *);
+=> nrel_idtf: [javert] (* <- lang_fr;; *);
+=> nrel_idtf: [cosette] (* <- lang_fr;; *);
+=> nrel_idtf: [fantine] (* <- lang_fr;; *);
+=> nrel_idtf: [myriel] (* <- lang_fr;; *);
+=> nrel_idtf: [gavroche] (* <- lang_fr;; *);
+=> nrel_idtf: [thénardier] (* <- lang_fr;; *);
+=> nrel_idtf: [marius] (* <- lang_fr;; *);
+=> nrel_main_idtf: [i miserabili] (* <- lang_it;; *);
+<= nrel_inclusion: concept_historical_novel;
+=> nrel_related: concept_hugo;
+=> nrel_related: concept_poverty;
+=> nrel_related: concept_redemption;
+=> nrel_related: concept_justice;;
+
+concept_stendhal
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [Стендаль] (* <- lang_ru;; *);
+=> nrel_main_idtf: [stendhal] (* <- lang_fr;; *);
+=> nrel_main_idtf: [stendhal] (* <- lang_it;; *);
+<= nrel_inclusion: concept_writer;
+=> nrel_related: concept_le_rouge_et_le_noir;;
+
+concept_le_rouge_et_le_noir
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [«Красное и чёрное»] (* <- lang_ru;; *);
+=> nrel_main_idtf: [le rouge et le noir] (* <- lang_fr;; *);
+=> nrel_idtf: [julien sorel] (* <- lang_fr;; *);
+=> nrel_idtf: [julien] (* <- lang_fr;; *);
+=> nrel_idtf: [madame de rênal] (* <- lang_fr;; *);
+=> nrel_idtf: [mathilde] (* <- lang_fr;; *);
+=> nrel_idtf: [la mole] (* <- lang_fr;; *);
+=> nrel_idtf: [séminaire] (* <- lang_fr;; *);
+=> nrel_idtf: [napoléon] (* <- lang_fr;; *);
+=> nrel_main_idtf: [il rosso e il nero] (* <- lang_it;; *);
+<= nrel_inclusion: concept_novel;
+=> nrel_related: concept_stendhal;
+=> nrel_related: concept_ambition;
+=> nrel_related: concept_hypocrisy;;
+
+concept_baudelaire
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [Шарль Бодлер] (* <- lang_ru;; *);
+=> nrel_main_idtf: [baudelaire] (* <- lang_fr;; *);
+=> nrel_main_idtf: [baudelaire] (* <- lang_it;; *);
+<= nrel_inclusion: concept_writer;
+=> nrel_related: concept_les_fleurs_du_mal;;
+
+concept_les_fleurs_du_mal
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [«Цветы зла»] (* <- lang_ru;; *);
+=> nrel_main_idtf: [les fleurs du mal] (* <- lang_fr;; *);
+=> nrel_idtf: [fleurs du mal] (* <- lang_fr;; *);
+=> nrel_idtf: [spleen et idéal] (* <- lang_fr;; *);
+=> nrel_idtf: [tableaux parisiens] (* <- lang_fr;; *);
+=> nrel_idtf: [albatros] (* <- lang_fr;; *);
+=> nrel_main_idtf: [i fiori del male] (* <- lang_it;; *);
+<= nrel_inclusion: concept_poem_collection;
+=> nrel_related: concept_baudelaire;
+=> nrel_related: concept_boredom;
+=> nrel_related: concept_ideal;
+=> nrel_related: concept_synesthesia;;
+
+concept_dante
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [Данте Алигьери] (* <- lang_ru;; *);
+=> nrel_main_idtf: [dante] (* <- lang_fr;; *);
+=> nrel_main_idtf: [dante] (* <- lang_it;; *);
+=> nrel_idtf: [dante alighieri] (* <- lang_it;; *);
+<= nrel_inclusion: concept_writer;
+=> nrel_related: concept_divine_comedy;;
+
+concept_divine_comedy
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [«Божественная комедия»] (* <- lang_ru;; *);
+=> nrel_main_idtf: [divine comédie] (* <- lang_fr;; *);
+=> nrel_main_idtf: [divina commedia] (* <- lang_it;; *);
+=> nrel_idtf: [commedia] (* <- lang_it;; *);
+=> nrel_idtf: [inferno] (* <- lang_it;; *);
+=> nrel_idtf: [purgatorio] (* <- lang_it;; *);
+=> nrel_idtf: [paradiso] (* <- lang_it;; *);
+=> nrel_idtf: [virgilio] (* <- lang_it;; *);
+=> nrel_idtf: [beatrice] (* <- lang_it;; *);
+=> nrel_idtf: [oltretomba] (* <- lang_it;; *);
+=> nrel_idtf: [contrappasso] (* <- lang_it;; *);
+<= nrel_inclusion: concept_epic_poem;
+=> nrel_related: concept_dante;
+=> nrel_related: concept_allegory;
+=> nrel_related: concept_redemption;;
+
+concept_manzoni
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [Алессандро Мандзони] (* <- lang_ru;; *);
+=> nrel_main_idtf: [manzoni] (* <- lang_fr;; *);
+=> nrel_main_idtf: [manzoni] (* <- lang_it;; *);
+=> nrel_idtf: [alessandro manzoni] (* <- lang_it;; *);
+<= nrel_inclusion: concept_writer;
+=> nrel_related: concept_promessi_sposi;;
+
+concept_promessi_sposi
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [«Обручённые»] (* <- lang_ru;; *);
+=> nrel_main_idtf: [les fiancés] (* <- lang_fr;; *);
+=> nrel_main_idtf: [promessi sposi] (* <- lang_it;; *);
+=> nrel_idtf: [renzo] (* <- lang_it;; *);
+=> nrel_idtf: [lucia] (* <- lang_it;; *);
+=> nrel_idtf: [don abbondio] (* <- lang_it;; *);
+=> nrel_idtf: [don rodrigo] (* <- lang_it;; *);
+=> nrel_idtf: [innominato] (* <- lang_it;; *);
+=> nrel_idtf: [fra cristoforo] (* <- lang_it;; *);
+=> nrel_idtf: [peste] (* <- lang_it;; *);
+=> nrel_idtf: [lazzaretto] (* <- lang_it;; *);
+<= nrel_inclusion: concept_historical_novel;
+=> nrel_related: concept_manzoni;
+=> nrel_related: concept_providence;
+=> nrel_related: concept_poverty;;
+
+concept_leopardi
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [Джакомо Леопарди] (* <- lang_ru;; *);
+=> nrel_main_idtf: [leopardi] (* <- lang_fr;; *);
+=> nrel_main_idtf: [leopardi] (* <- lang_it;; *);
+=> nrel_idtf: [giacomo leopardi] (* <- lang_it;; *);
+=> nrel_idtf: [recanati] (* <- lang_it;; *);
+<= nrel_inclusion: concept_writer;
+=> nrel_related: concept_canti;
+=> nrel_related: concept_pessimism;;
+
+concept_canti
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [«Песни» Леопарди] (* <- lang_ru;; *);
+=> nrel_main_idtf: [canti] (* <- lang_fr;; *);
+=> nrel_main_idtf: [canti] (* <- lang_it;; *);
+=> nrel_idtf: [idilli] (* <- lang_it;; *);
+=> nrel_idtf: [a silvia] (* <- lang_it;; *);
+=> nrel_idtf: [la ginestra] (* <- lang_it;; *);
+=> nrel_idtf: [ginestra] (* <- lang_it;; *);
+=> nrel_idtf: [siepe] (* <- lang_it;; *);
+<= nrel_inclusion: concept_poem_collection;
+=> nrel_related: concept_leopardi;
+=> nrel_related: concept_infinity;
+=> nrel_related: concept_memory_lit;;
+
+concept_pirandello
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [Луиджи Пиранделло] (* <- lang_ru;; *);
+=> nrel_main_idtf: [pirandello] (* <- lang_fr;; *);
+=> nrel_main_idtf: [pirandello] (* <- lang_it;; *);
+=> nrel_idtf: [luigi pirandello] (* <- lang_it;; *);
+<= nrel_inclusion: concept_writer;
+=> nrel_related: concept_mattia_pascal;;
+
+concept_mattia_pascal
+<- sc_node_class;
+<- subject_domain_literature;
+=> nrel_main_idtf: [«Покойный Маттиа Паскаль»] (* <- lang_ru;; *);
+=> nrel_main_idtf: [feu mathias pascal] (* <- lang_fr;; *);
+=> nrel_main_idtf: [mattia pascal] (* <- lang_it;; *);
+=> nrel_idtf: [adriano meis] (* <- lang_it;; *);
+=> nrel_idtf: [paleari] (* <- lang_it;; *);
+=> nrel_idtf: [adriana] (* <- lang_it;; *);
+<= nrel_inclusion: concept_novel;
+=> nrel_related: concept_pirandello;
+=> nrel_related: concept_identity;
+=> nrel_related: concept_humor;;

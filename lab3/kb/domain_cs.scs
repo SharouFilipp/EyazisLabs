@@ -1,0 +1,1152 @@
+// ===== Предметная область computer science: 114 понятий (сформировано tools/build_kb.py) =====
+subject_domain_computer_science
+<- sc_node_struct;
+<- subject_domain;
+=> nrel_main_idtf: [Предметная область computer science] (* <- lang_ru;; *);
+=> nrel_document_class: concept_scientific_article_computer_science;;
+
+concept_informatics
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [информатика] (* <- lang_ru;; *);
+=> nrel_main_idtf: [informatique] (* <- lang_fr;; *);
+=> nrel_idtf: [science informatique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [informatica] (* <- lang_it;; *);
+=> nrel_related: concept_computer;;
+
+concept_computer
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [вычислительная машина] (* <- lang_ru;; *);
+=> nrel_main_idtf: [ordinateur] (* <- lang_fr;; *);
+=> nrel_idtf: [machine] (* <- lang_fr;; *);
+=> nrel_idtf: [calculateur] (* <- lang_fr;; *);
+=> nrel_main_idtf: [calcolatore] (* <- lang_it;; *);
+=> nrel_idtf: [computer] (* <- lang_it;; *);
+=> nrel_idtf: [elaboratore] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;
+=> nrel_related: concept_processor;
+=> nrel_related: concept_memory;;
+
+concept_processor
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [процессор] (* <- lang_ru;; *);
+=> nrel_main_idtf: [processeur] (* <- lang_fr;; *);
+=> nrel_idtf: [processeurs] (* <- lang_fr;; *);
+=> nrel_main_idtf: [processore] (* <- lang_it;; *);
+=> nrel_idtf: [core] (* <- lang_it;; *);
+<= nrel_inclusion: concept_computer;
+=> nrel_related: concept_register;
+=> nrel_related: concept_cache;;
+
+concept_cache
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [кэш] (* <- lang_ru;; *);
+=> nrel_main_idtf: [cache] (* <- lang_fr;; *);
+=> nrel_main_idtf: [cache] (* <- lang_it;; *);
+<= nrel_inclusion: concept_memory;;
+
+concept_register
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [регистр процессора] (* <- lang_ru;; *);
+=> nrel_main_idtf: [registre] (* <- lang_fr;; *);
+=> nrel_main_idtf: [registro] (* <- lang_it;; *);
+<= nrel_inclusion: concept_processor;;
+
+concept_memory
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [память] (* <- lang_ru;; *);
+=> nrel_main_idtf: [mémoire] (* <- lang_fr;; *);
+=> nrel_main_idtf: [memoria] (* <- lang_it;; *);
+<= nrel_inclusion: concept_computer;;
+
+concept_algorithm
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [алгоритм] (* <- lang_ru;; *);
+=> nrel_main_idtf: [algorithme] (* <- lang_fr;; *);
+=> nrel_main_idtf: [algoritmo] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;
+=> nrel_related: concept_complexity;
+=> nrel_related: concept_data_structure;;
+
+concept_complexity
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [вычислительная сложность] (* <- lang_ru;; *);
+=> nrel_main_idtf: [complexité] (* <- lang_fr;; *);
+=> nrel_idtf: [complexité théorique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [complessità] (* <- lang_it;; *);
+<= nrel_inclusion: concept_algorithm;
+=> nrel_related: concept_lower_bound;;
+
+concept_lower_bound
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [нижняя оценка сложности] (* <- lang_ru;; *);
+=> nrel_main_idtf: [borne inférieure] (* <- lang_fr;; *);
+=> nrel_main_idtf: [limite inferiore] (* <- lang_it;; *);
+<= nrel_inclusion: concept_complexity;;
+
+concept_divide_and_conquer
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [разделяй и властвуй] (* <- lang_ru;; *);
+=> nrel_main_idtf: [diviser pour régner] (* <- lang_fr;; *);
+=> nrel_idtf: [récursion] (* <- lang_fr;; *);
+=> nrel_idtf: [récursivement] (* <- lang_fr;; *);
+=> nrel_main_idtf: [divide et impera] (* <- lang_it;; *);
+=> nrel_idtf: [ricorsione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_algorithm;;
+
+concept_sorting
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [сортировка] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tri] (* <- lang_fr;; *);
+=> nrel_idtf: [algorithme de tri] (* <- lang_fr;; *);
+=> nrel_idtf: [trier] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ordinamento] (* <- lang_it;; *);
+=> nrel_idtf: [algoritmo di ordinamento] (* <- lang_it;; *);
+<= nrel_inclusion: concept_algorithm;
+=> nrel_related: concept_comparison;
+=> nrel_related: concept_array;;
+
+concept_comparison
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [сравнение элементов] (* <- lang_ru;; *);
+=> nrel_main_idtf: [comparaison] (* <- lang_fr;; *);
+=> nrel_idtf: [tri par comparaison] (* <- lang_fr;; *);
+=> nrel_main_idtf: [confronto] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;;
+
+concept_stability
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [устойчивость сортировки] (* <- lang_ru;; *);
+=> nrel_main_idtf: [stabilité] (* <- lang_fr;; *);
+=> nrel_idtf: [tri stable] (* <- lang_fr;; *);
+=> nrel_idtf: [stable] (* <- lang_fr;; *);
+=> nrel_main_idtf: [stabilità] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;;
+
+concept_insertion_sort
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [сортировка вставками] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tri par insertion] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ordinamento per inserimento] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;;
+
+concept_selection_sort
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [сортировка выбором] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tri par sélection] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ordinamento per selezione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;;
+
+concept_bubble_sort
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [пузырьковая сортировка] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tri à bulles] (* <- lang_fr;; *);
+=> nrel_main_idtf: [bubble sort] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;;
+
+concept_merge_sort
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [сортировка слиянием] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tri fusion] (* <- lang_fr;; *);
+=> nrel_idtf: [fusion] (* <- lang_fr;; *);
+=> nrel_main_idtf: [merge sort] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;
+=> nrel_related: concept_divide_and_conquer;;
+
+concept_quicksort
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [быстрая сортировка] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tri rapide] (* <- lang_fr;; *);
+=> nrel_idtf: [pivot] (* <- lang_fr;; *);
+=> nrel_idtf: [partition] (* <- lang_fr;; *);
+=> nrel_main_idtf: [quicksort] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;
+=> nrel_related: concept_divide_and_conquer;;
+
+concept_heapsort
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [пирамидальная сортировка] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tri par tas] (* <- lang_fr;; *);
+=> nrel_main_idtf: [heapsort] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;
+=> nrel_related: concept_heap;;
+
+concept_counting_sort
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [сортировка подсчётом] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tri par dénombrement] (* <- lang_fr;; *);
+=> nrel_idtf: [tri par base] (* <- lang_fr;; *);
+=> nrel_main_idtf: [counting sort] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;;
+
+concept_hybrid_sort
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [гибридная сортировка] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tri introspectif] (* <- lang_fr;; *);
+=> nrel_idtf: [timsort] (* <- lang_fr;; *);
+=> nrel_idtf: [algorithme hybride] (* <- lang_fr;; *);
+=> nrel_main_idtf: [algoritmo ibrido] (* <- lang_it;; *);
+<= nrel_inclusion: concept_sorting;;
+
+concept_data_structure
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [структура данных] (* <- lang_ru;; *);
+=> nrel_main_idtf: [structure de données] (* <- lang_fr;; *);
+=> nrel_main_idtf: [struttura dati] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;;
+
+concept_array
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [массив] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tableau] (* <- lang_fr;; *);
+=> nrel_main_idtf: [array] (* <- lang_it;; *);
+=> nrel_idtf: [vettore] (* <- lang_it;; *);
+<= nrel_inclusion: concept_data_structure;;
+
+concept_heap
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [куча] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tas] (* <- lang_fr;; *);
+=> nrel_idtf: [tas binaire] (* <- lang_fr;; *);
+=> nrel_main_idtf: [heap] (* <- lang_it;; *);
+<= nrel_inclusion: concept_data_structure;;
+
+concept_tree
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [дерево] (* <- lang_ru;; *);
+=> nrel_main_idtf: [arbre] (* <- lang_fr;; *);
+=> nrel_main_idtf: [albero] (* <- lang_it;; *);
+<= nrel_inclusion: concept_data_structure;;
+
+concept_graph
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [граф] (* <- lang_ru;; *);
+=> nrel_main_idtf: [graphe] (* <- lang_fr;; *);
+=> nrel_idtf: [coloration de graphe] (* <- lang_fr;; *);
+=> nrel_main_idtf: [grafo] (* <- lang_it;; *);
+<= nrel_inclusion: concept_data_structure;;
+
+concept_database
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [база данных] (* <- lang_ru;; *);
+=> nrel_main_idtf: [base de données] (* <- lang_fr;; *);
+=> nrel_idtf: [données] (* <- lang_fr;; *);
+=> nrel_main_idtf: [base di dati] (* <- lang_it;; *);
+=> nrel_idtf: [database] (* <- lang_it;; *);
+=> nrel_idtf: [dati] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;
+=> nrel_related: concept_dbms;;
+
+concept_dbms
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [СУБД] (* <- lang_ru;; *);
+=> nrel_main_idtf: [système de gestion de bases de données] (* <- lang_fr;; *);
+=> nrel_main_idtf: [sistema di gestione di basi di dati] (* <- lang_it;; *);
+<= nrel_inclusion: concept_database;;
+
+concept_relational_model
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [реляционная модель] (* <- lang_ru;; *);
+=> nrel_main_idtf: [modèle relationnel] (* <- lang_fr;; *);
+=> nrel_idtf: [base relationnelle] (* <- lang_fr;; *);
+=> nrel_main_idtf: [modello relazionale] (* <- lang_it;; *);
+<= nrel_inclusion: concept_database;
+=> nrel_related: concept_relation_table;;
+
+concept_relation_table
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [отношение (таблица)] (* <- lang_ru;; *);
+=> nrel_main_idtf: [relation] (* <- lang_fr;; *);
+=> nrel_idtf: [table] (* <- lang_fr;; *);
+=> nrel_idtf: [ligne] (* <- lang_fr;; *);
+=> nrel_idtf: [colonne] (* <- lang_fr;; *);
+=> nrel_idtf: [attribut] (* <- lang_fr;; *);
+=> nrel_main_idtf: [tabella] (* <- lang_it;; *);
+=> nrel_idtf: [relazione] (* <- lang_it;; *);
+=> nrel_idtf: [colonna] (* <- lang_it;; *);
+=> nrel_idtf: [riga] (* <- lang_it;; *);
+<= nrel_inclusion: concept_relational_model;;
+
+concept_key
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [ключ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [clé] (* <- lang_fr;; *);
+=> nrel_main_idtf: [chiave] (* <- lang_it;; *);
+<= nrel_inclusion: concept_relational_model;;
+
+concept_primary_key
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [первичный ключ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [clé primaire] (* <- lang_fr;; *);
+=> nrel_main_idtf: [chiave primaria] (* <- lang_it;; *);
+<= nrel_inclusion: concept_key;;
+
+concept_foreign_key
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [внешний ключ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [clé étrangère] (* <- lang_fr;; *);
+=> nrel_main_idtf: [chiave esterna] (* <- lang_it;; *);
+<= nrel_inclusion: concept_key;;
+
+concept_integrity
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [целостность данных] (* <- lang_ru;; *);
+=> nrel_main_idtf: [intégrité] (* <- lang_fr;; *);
+=> nrel_idtf: [contrainte d'intégrité] (* <- lang_fr;; *);
+=> nrel_idtf: [cohérence] (* <- lang_fr;; *);
+=> nrel_main_idtf: [integrità] (* <- lang_it;; *);
+=> nrel_idtf: [coerenza] (* <- lang_it;; *);
+<= nrel_inclusion: concept_database;;
+
+concept_sql
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [SQL] (* <- lang_ru;; *);
+=> nrel_main_idtf: [sql] (* <- lang_fr;; *);
+=> nrel_idtf: [langage sql] (* <- lang_fr;; *);
+=> nrel_main_idtf: [sql] (* <- lang_it;; *);
+<= nrel_inclusion: concept_query_language;
+=> nrel_related: concept_query;;
+
+concept_query_language
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [язык запросов] (* <- lang_ru;; *);
+=> nrel_main_idtf: [langage de requête] (* <- lang_fr;; *);
+=> nrel_main_idtf: [linguaggio di interrogazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_database;;
+
+concept_query
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [запрос] (* <- lang_ru;; *);
+=> nrel_main_idtf: [requête] (* <- lang_fr;; *);
+=> nrel_idtf: [requêtes] (* <- lang_fr;; *);
+=> nrel_main_idtf: [query] (* <- lang_it;; *);
+=> nrel_idtf: [interrogazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_database;
+=> nrel_related: concept_join;;
+
+concept_join
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [соединение таблиц] (* <- lang_ru;; *);
+=> nrel_main_idtf: [jointure] (* <- lang_fr;; *);
+=> nrel_main_idtf: [join] (* <- lang_it;; *);
+<= nrel_inclusion: concept_query;;
+
+concept_normalization
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [нормализация] (* <- lang_ru;; *);
+=> nrel_main_idtf: [normalisation] (* <- lang_fr;; *);
+=> nrel_idtf: [forme normale] (* <- lang_fr;; *);
+=> nrel_idtf: [dénormalisation] (* <- lang_fr;; *);
+=> nrel_main_idtf: [normalizzazione] (* <- lang_it;; *);
+=> nrel_idtf: [forma normale] (* <- lang_it;; *);
+<= nrel_inclusion: concept_relational_model;;
+
+concept_transaction
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [транзакция] (* <- lang_ru;; *);
+=> nrel_main_idtf: [transaction] (* <- lang_fr;; *);
+=> nrel_idtf: [acid] (* <- lang_fr;; *);
+=> nrel_idtf: [atomicité] (* <- lang_fr;; *);
+=> nrel_idtf: [durabilité] (* <- lang_fr;; *);
+=> nrel_main_idtf: [transazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_database;
+=> nrel_related: concept_synchronization;;
+
+concept_index
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [индекс] (* <- lang_ru;; *);
+=> nrel_main_idtf: [index] (* <- lang_fr;; *);
+=> nrel_idtf: [arbre équilibré] (* <- lang_fr;; *);
+=> nrel_main_idtf: [indice] (* <- lang_it;; *);
+<= nrel_inclusion: concept_database;
+=> nrel_related: concept_tree;;
+
+concept_nosql
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [NoSQL] (* <- lang_ru;; *);
+=> nrel_main_idtf: [nosql] (* <- lang_fr;; *);
+=> nrel_main_idtf: [nosql] (* <- lang_it;; *);
+<= nrel_inclusion: concept_database;;
+
+concept_ai
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [искусственный интеллект] (* <- lang_ru;; *);
+=> nrel_main_idtf: [intelligence artificielle] (* <- lang_fr;; *);
+=> nrel_main_idtf: [intelligenza artificiale] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;;
+
+concept_machine_learning
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [машинное обучение] (* <- lang_ru;; *);
+=> nrel_main_idtf: [apprentissage automatique] (* <- lang_fr;; *);
+=> nrel_idtf: [apprentissage] (* <- lang_fr;; *);
+=> nrel_main_idtf: [apprendimento automatico] (* <- lang_it;; *);
+=> nrel_idtf: [apprendimento] (* <- lang_it;; *);
+<= nrel_inclusion: concept_ai;
+=> nrel_related: concept_training_data;;
+
+concept_neural_network
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [нейронная сеть] (* <- lang_ru;; *);
+=> nrel_main_idtf: [réseau de neurones] (* <- lang_fr;; *);
+=> nrel_idtf: [réseaux de neurones] (* <- lang_fr;; *);
+=> nrel_idtf: [réseau neuronal] (* <- lang_fr;; *);
+=> nrel_main_idtf: [rete neurale] (* <- lang_it;; *);
+=> nrel_idtf: [reti neurali] (* <- lang_it;; *);
+<= nrel_inclusion: concept_machine_learning;
+=> nrel_related: concept_neuron;
+=> nrel_related: concept_layer;;
+
+concept_neuron
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [нейрон] (* <- lang_ru;; *);
+=> nrel_main_idtf: [neurone] (* <- lang_fr;; *);
+=> nrel_idtf: [perceptron] (* <- lang_fr;; *);
+=> nrel_main_idtf: [neurone] (* <- lang_it;; *);
+<= nrel_inclusion: concept_neural_network;
+=> nrel_related: concept_activation_function;;
+
+concept_activation_function
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [функция активации] (* <- lang_ru;; *);
+=> nrel_main_idtf: [fonction d'activation] (* <- lang_fr;; *);
+=> nrel_idtf: [sigmoïde] (* <- lang_fr;; *);
+=> nrel_idtf: [relu] (* <- lang_fr;; *);
+=> nrel_idtf: [non-linéarité] (* <- lang_fr;; *);
+=> nrel_main_idtf: [funzione di attivazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_neuron;;
+
+concept_layer
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [слой нейронной сети] (* <- lang_ru;; *);
+=> nrel_main_idtf: [couche] (* <- lang_fr;; *);
+=> nrel_idtf: [couches cachées] (* <- lang_fr;; *);
+=> nrel_main_idtf: [strato] (* <- lang_it;; *);
+<= nrel_inclusion: concept_neural_network;;
+
+concept_deep_learning
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [глубокое обучение] (* <- lang_ru;; *);
+=> nrel_main_idtf: [apprentissage profond] (* <- lang_fr;; *);
+=> nrel_main_idtf: [apprendimento profondo] (* <- lang_it;; *);
+<= nrel_inclusion: concept_machine_learning;
+=> nrel_related: concept_neural_network;;
+
+concept_backpropagation
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [обратное распространение ошибки] (* <- lang_ru;; *);
+=> nrel_main_idtf: [rétropropagation] (* <- lang_fr;; *);
+=> nrel_main_idtf: [retropropagazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_deep_learning;
+=> nrel_related: concept_gradient;;
+
+concept_gradient
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [градиентный спуск] (* <- lang_ru;; *);
+=> nrel_main_idtf: [gradient] (* <- lang_fr;; *);
+=> nrel_idtf: [descente de gradient] (* <- lang_fr;; *);
+=> nrel_idtf: [fonction de perte] (* <- lang_fr;; *);
+=> nrel_idtf: [perte] (* <- lang_fr;; *);
+=> nrel_main_idtf: [discesa del gradiente] (* <- lang_it;; *);
+=> nrel_idtf: [gradiente] (* <- lang_it;; *);
+<= nrel_inclusion: concept_machine_learning;;
+
+concept_training_data
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [обучающие данные] (* <- lang_ru;; *);
+=> nrel_main_idtf: [données d'apprentissage] (* <- lang_fr;; *);
+=> nrel_idtf: [ensemble de validation] (* <- lang_fr;; *);
+=> nrel_idtf: [exemples] (* <- lang_fr;; *);
+=> nrel_main_idtf: [dati di addestramento] (* <- lang_it;; *);
+=> nrel_idtf: [addestramento] (* <- lang_it;; *);
+<= nrel_inclusion: concept_machine_learning;;
+
+concept_overfitting
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [переобучение] (* <- lang_ru;; *);
+=> nrel_main_idtf: [surapprentissage] (* <- lang_fr;; *);
+=> nrel_idtf: [régularisation] (* <- lang_fr;; *);
+=> nrel_idtf: [dropout] (* <- lang_fr;; *);
+=> nrel_main_idtf: [sovradattamento] (* <- lang_it;; *);
+=> nrel_idtf: [overfitting] (* <- lang_it;; *);
+<= nrel_inclusion: concept_machine_learning;
+=> nrel_related: concept_training_data;;
+
+concept_cnn
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [свёрточная сеть] (* <- lang_ru;; *);
+=> nrel_main_idtf: [réseau convolutif] (* <- lang_fr;; *);
+=> nrel_idtf: [réseaux de neurones convolutifs] (* <- lang_fr;; *);
+=> nrel_idtf: [convolution] (* <- lang_fr;; *);
+=> nrel_idtf: [filtre] (* <- lang_fr;; *);
+=> nrel_main_idtf: [rete convoluzionale] (* <- lang_it;; *);
+<= nrel_inclusion: concept_neural_network;;
+
+concept_rnn
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [рекуррентная сеть] (* <- lang_ru;; *);
+=> nrel_main_idtf: [réseau récurrent] (* <- lang_fr;; *);
+=> nrel_idtf: [réseaux récurrents] (* <- lang_fr;; *);
+=> nrel_main_idtf: [rete ricorrente] (* <- lang_it;; *);
+<= nrel_inclusion: concept_neural_network;;
+
+concept_transformer
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [трансформер] (* <- lang_ru;; *);
+=> nrel_main_idtf: [transformeur] (* <- lang_fr;; *);
+=> nrel_idtf: [transformeurs] (* <- lang_fr;; *);
+=> nrel_idtf: [attention] (* <- lang_fr;; *);
+=> nrel_main_idtf: [transformer] (* <- lang_it;; *);
+=> nrel_idtf: [attenzione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_neural_network;
+=> nrel_related: concept_language_model;;
+
+concept_gpu
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [графический процессор] (* <- lang_ru;; *);
+=> nrel_main_idtf: [processeur graphique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [processore grafico] (* <- lang_it;; *);
+=> nrel_idtf: [gpu] (* <- lang_it;; *);
+<= nrel_inclusion: concept_processor;;
+
+concept_programming_language
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [язык программирования] (* <- lang_ru;; *);
+=> nrel_main_idtf: [langage de programmation] (* <- lang_fr;; *);
+=> nrel_idtf: [langage] (* <- lang_fr;; *);
+=> nrel_main_idtf: [linguaggio di programmazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;
+=> nrel_related: concept_compiler;;
+
+concept_program
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [программа] (* <- lang_ru;; *);
+=> nrel_main_idtf: [programme] (* <- lang_fr;; *);
+=> nrel_idtf: [code source] (* <- lang_fr;; *);
+=> nrel_idtf: [code] (* <- lang_fr;; *);
+=> nrel_main_idtf: [programma] (* <- lang_it;; *);
+=> nrel_idtf: [codice] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;;
+
+concept_compiler
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [компилятор] (* <- lang_ru;; *);
+=> nrel_main_idtf: [compilateur] (* <- lang_fr;; *);
+=> nrel_idtf: [compilation] (* <- lang_fr;; *);
+=> nrel_main_idtf: [compilatore] (* <- lang_it;; *);
+=> nrel_idtf: [compilazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_programming_language;
+=> nrel_related: concept_program;;
+
+concept_lexical_analysis
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [лексический анализ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [analyse lexicale] (* <- lang_fr;; *);
+=> nrel_idtf: [lexème] (* <- lang_fr;; *);
+=> nrel_idtf: [analyseur lexical] (* <- lang_fr;; *);
+=> nrel_idtf: [expression régulière] (* <- lang_fr;; *);
+=> nrel_idtf: [automate fini] (* <- lang_fr;; *);
+=> nrel_main_idtf: [analisi lessicale] (* <- lang_it;; *);
+<= nrel_inclusion: concept_compiler;;
+
+concept_syntax_analysis
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [синтаксический анализ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [analyse syntaxique] (* <- lang_fr;; *);
+=> nrel_idtf: [analyseur syntaxique] (* <- lang_fr;; *);
+=> nrel_idtf: [analyseur] (* <- lang_fr;; *);
+=> nrel_main_idtf: [analisi sintattica] (* <- lang_it;; *);
+<= nrel_inclusion: concept_compiler;
+=> nrel_related: concept_grammar;;
+
+concept_grammar
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [грамматика] (* <- lang_ru;; *);
+=> nrel_main_idtf: [grammaire] (* <- lang_fr;; *);
+=> nrel_idtf: [règle de production] (* <- lang_fr;; *);
+=> nrel_idtf: [grammaire non contextuelle] (* <- lang_fr;; *);
+=> nrel_main_idtf: [grammatica] (* <- lang_it;; *);
+<= nrel_inclusion: concept_syntax_analysis;;
+
+concept_syntax_tree
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [синтаксическое дерево] (* <- lang_ru;; *);
+=> nrel_main_idtf: [arbre syntaxique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [albero sintattico] (* <- lang_it;; *);
+<= nrel_inclusion: concept_syntax_analysis;
+=> nrel_related: concept_tree;;
+
+concept_semantic_analysis
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [семантический анализ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [analyse sémantique] (* <- lang_fr;; *);
+=> nrel_idtf: [table des symboles] (* <- lang_fr;; *);
+=> nrel_main_idtf: [analisi semantica] (* <- lang_it;; *);
+<= nrel_inclusion: concept_compiler;;
+
+concept_intermediate_code
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [промежуточный код] (* <- lang_ru;; *);
+=> nrel_main_idtf: [code intermédiaire] (* <- lang_fr;; *);
+=> nrel_idtf: [représentation intermédiaire] (* <- lang_fr;; *);
+=> nrel_idtf: [code à trois adresses] (* <- lang_fr;; *);
+=> nrel_main_idtf: [codice intermedio] (* <- lang_it;; *);
+<= nrel_inclusion: concept_compiler;;
+
+concept_optimization
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [оптимизация программ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [optimisation] (* <- lang_fr;; *);
+=> nrel_idtf: [code mort] (* <- lang_fr;; *);
+=> nrel_idtf: [flot de données] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ottimizzazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_compiler;;
+
+concept_code_generation
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [генерация кода] (* <- lang_ru;; *);
+=> nrel_main_idtf: [génération de code] (* <- lang_fr;; *);
+=> nrel_idtf: [générateur] (* <- lang_fr;; *);
+=> nrel_idtf: [allocation des registres] (* <- lang_fr;; *);
+=> nrel_main_idtf: [generazione del codice] (* <- lang_it;; *);
+<= nrel_inclusion: concept_compiler;
+=> nrel_related: concept_register;;
+
+concept_interpreter
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [интерпретатор] (* <- lang_ru;; *);
+=> nrel_main_idtf: [interprétation] (* <- lang_fr;; *);
+=> nrel_idtf: [machine virtuelle] (* <- lang_fr;; *);
+=> nrel_idtf: [code octet] (* <- lang_fr;; *);
+=> nrel_idtf: [compilation à la volée] (* <- lang_fr;; *);
+=> nrel_main_idtf: [interprete] (* <- lang_it;; *);
+=> nrel_idtf: [macchina virtuale] (* <- lang_it;; *);
+<= nrel_inclusion: concept_programming_language;;
+
+concept_security
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [информационная безопасность] (* <- lang_ru;; *);
+=> nrel_main_idtf: [sécurité] (* <- lang_fr;; *);
+=> nrel_main_idtf: [sicurezza] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;
+=> nrel_related: concept_cryptography;;
+
+concept_cryptography
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [криптография] (* <- lang_ru;; *);
+=> nrel_main_idtf: [cryptographie] (* <- lang_fr;; *);
+=> nrel_idtf: [chiffrement] (* <- lang_fr;; *);
+=> nrel_main_idtf: [crittografia] (* <- lang_it;; *);
+=> nrel_idtf: [cifratura] (* <- lang_it;; *);
+=> nrel_idtf: [decifratura] (* <- lang_it;; *);
+<= nrel_inclusion: concept_security;;
+
+concept_symmetric_cipher
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [симметричное шифрование] (* <- lang_ru;; *);
+=> nrel_main_idtf: [chiffrement symétrique] (* <- lang_fr;; *);
+=> nrel_idtf: [clé secrète] (* <- lang_fr;; *);
+=> nrel_main_idtf: [chiave simmetrica] (* <- lang_it;; *);
+=> nrel_idtf: [algoritmo simmetrico] (* <- lang_it;; *);
+=> nrel_idtf: [aes] (* <- lang_it;; *);
+=> nrel_idtf: [chiave segreta] (* <- lang_it;; *);
+<= nrel_inclusion: concept_cryptography;;
+
+concept_public_key_crypto
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [криптография с открытым ключом] (* <- lang_ru;; *);
+=> nrel_main_idtf: [cryptographie à clé publique] (* <- lang_fr;; *);
+=> nrel_idtf: [clé publique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [chiave pubblica] (* <- lang_it;; *);
+=> nrel_idtf: [crittografia a chiave pubblica] (* <- lang_it;; *);
+=> nrel_idtf: [crittografia asimmetrica] (* <- lang_it;; *);
+<= nrel_inclusion: concept_cryptography;
+=> nrel_related: concept_private_key;;
+
+concept_private_key
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [закрытый ключ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [clé privée] (* <- lang_fr;; *);
+=> nrel_main_idtf: [chiave privata] (* <- lang_it;; *);
+<= nrel_inclusion: concept_public_key_crypto;;
+
+concept_key_exchange
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [обмен ключами] (* <- lang_ru;; *);
+=> nrel_main_idtf: [échange de clés] (* <- lang_fr;; *);
+=> nrel_main_idtf: [scambio di chiavi] (* <- lang_it;; *);
+=> nrel_idtf: [diffie] (* <- lang_it;; *);
+=> nrel_idtf: [hellman] (* <- lang_it;; *);
+<= nrel_inclusion: concept_public_key_crypto;;
+
+concept_rsa
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [алгоритм RSA] (* <- lang_ru;; *);
+=> nrel_main_idtf: [rsa] (* <- lang_fr;; *);
+=> nrel_main_idtf: [rsa] (* <- lang_it;; *);
+=> nrel_idtf: [algoritmo rsa] (* <- lang_it;; *);
+<= nrel_inclusion: concept_public_key_crypto;
+=> nrel_related: concept_prime_number;;
+
+concept_prime_number
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [простое число] (* <- lang_ru;; *);
+=> nrel_main_idtf: [nombre premier] (* <- lang_fr;; *);
+=> nrel_main_idtf: [numero primo] (* <- lang_it;; *);
+=> nrel_idtf: [numeri primi] (* <- lang_it;; *);
+=> nrel_idtf: [fattori] (* <- lang_it;; *);
+=> nrel_idtf: [scomporre] (* <- lang_it;; *);
+<= nrel_inclusion: concept_rsa;;
+
+concept_digital_signature
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [электронная подпись] (* <- lang_ru;; *);
+=> nrel_main_idtf: [signature numérique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [firma digitale] (* <- lang_it;; *);
+<= nrel_inclusion: concept_public_key_crypto;
+=> nrel_related: concept_hash_function;;
+
+concept_hash_function
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [хеш-функция] (* <- lang_ru;; *);
+=> nrel_main_idtf: [fonction de hachage] (* <- lang_fr;; *);
+=> nrel_main_idtf: [funzione di hash] (* <- lang_it;; *);
+=> nrel_idtf: [hash] (* <- lang_it;; *);
+=> nrel_idtf: [impronta] (* <- lang_it;; *);
+<= nrel_inclusion: concept_cryptography;;
+
+concept_certificate
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [цифровой сертификат] (* <- lang_ru;; *);
+=> nrel_main_idtf: [certificat] (* <- lang_fr;; *);
+=> nrel_main_idtf: [certificato] (* <- lang_it;; *);
+=> nrel_idtf: [certificati digitali] (* <- lang_it;; *);
+=> nrel_idtf: [autorità di certificazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_public_key_crypto;;
+
+concept_elliptic_curves
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [эллиптические кривые] (* <- lang_ru;; *);
+=> nrel_main_idtf: [courbes elliptiques] (* <- lang_fr;; *);
+=> nrel_main_idtf: [curve ellittiche] (* <- lang_it;; *);
+<= nrel_inclusion: concept_public_key_crypto;;
+
+concept_quantum_computer
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [квантовый компьютер] (* <- lang_ru;; *);
+=> nrel_main_idtf: [ordinateur quantique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [calcolatore quantistico] (* <- lang_it;; *);
+=> nrel_idtf: [calcolatori quantistici] (* <- lang_it;; *);
+=> nrel_idtf: [post-quantistica] (* <- lang_it;; *);
+<= nrel_inclusion: concept_cryptography;;
+
+concept_operating_system
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [операционная система] (* <- lang_ru;; *);
+=> nrel_main_idtf: [système d'exploitation] (* <- lang_fr;; *);
+=> nrel_main_idtf: [sistema operativo] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;
+=> nrel_related: concept_kernel;
+=> nrel_related: concept_process;;
+
+concept_kernel
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [ядро ОС] (* <- lang_ru;; *);
+=> nrel_main_idtf: [noyau] (* <- lang_fr;; *);
+=> nrel_main_idtf: [nucleo] (* <- lang_it;; *);
+=> nrel_idtf: [kernel] (* <- lang_it;; *);
+=> nrel_idtf: [micronuclei] (* <- lang_it;; *);
+=> nrel_idtf: [chiamate di sistema] (* <- lang_it;; *);
+<= nrel_inclusion: concept_operating_system;;
+
+concept_process
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [процесс] (* <- lang_ru;; *);
+=> nrel_main_idtf: [processus] (* <- lang_fr;; *);
+=> nrel_main_idtf: [processo] (* <- lang_it;; *);
+=> nrel_idtf: [processi] (* <- lang_it;; *);
+<= nrel_inclusion: concept_operating_system;
+=> nrel_related: concept_scheduling;;
+
+concept_thread
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [поток выполнения] (* <- lang_ru;; *);
+=> nrel_main_idtf: [thread] (* <- lang_fr;; *);
+=> nrel_idtf: [fil d'exécution] (* <- lang_fr;; *);
+=> nrel_main_idtf: [thread] (* <- lang_it;; *);
+<= nrel_inclusion: concept_process;;
+
+concept_scheduling
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [планирование процессов] (* <- lang_ru;; *);
+=> nrel_main_idtf: [ordonnancement] (* <- lang_fr;; *);
+=> nrel_main_idtf: [scheduling] (* <- lang_it;; *);
+=> nrel_idtf: [quanto di tempo] (* <- lang_it;; *);
+=> nrel_idtf: [cambio di contesto] (* <- lang_it;; *);
+=> nrel_idtf: [priorità] (* <- lang_it;; *);
+<= nrel_inclusion: concept_process;;
+
+concept_synchronization
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [синхронизация] (* <- lang_ru;; *);
+=> nrel_main_idtf: [synchronisation] (* <- lang_fr;; *);
+=> nrel_idtf: [verrouillage] (* <- lang_fr;; *);
+=> nrel_main_idtf: [sincronizzazione] (* <- lang_it;; *);
+=> nrel_idtf: [semafori] (* <- lang_it;; *);
+=> nrel_idtf: [mutex] (* <- lang_it;; *);
+=> nrel_idtf: [monitor] (* <- lang_it;; *);
+=> nrel_idtf: [mutua esclusione] (* <- lang_it;; *);
+=> nrel_idtf: [sezioni critiche] (* <- lang_it;; *);
+<= nrel_inclusion: concept_process;
+=> nrel_related: concept_deadlock;;
+
+concept_deadlock
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [взаимная блокировка] (* <- lang_ru;; *);
+=> nrel_main_idtf: [interblocage] (* <- lang_fr;; *);
+=> nrel_main_idtf: [stallo] (* <- lang_it;; *);
+<= nrel_inclusion: concept_synchronization;;
+
+concept_virtual_memory
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [виртуальная память] (* <- lang_ru;; *);
+=> nrel_main_idtf: [mémoire virtuelle] (* <- lang_fr;; *);
+=> nrel_main_idtf: [memoria virtuale] (* <- lang_it;; *);
+=> nrel_idtf: [tabelle delle pagine] (* <- lang_it;; *);
+=> nrel_idtf: [spazio di indirizzamento] (* <- lang_it;; *);
+<= nrel_inclusion: concept_memory;
+=> nrel_related: concept_operating_system;;
+
+concept_file_system
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [файловая система] (* <- lang_ru;; *);
+=> nrel_main_idtf: [système de fichiers] (* <- lang_fr;; *);
+=> nrel_idtf: [fichier] (* <- lang_fr;; *);
+=> nrel_main_idtf: [file system] (* <- lang_it;; *);
+=> nrel_idtf: [file] (* <- lang_it;; *);
+=> nrel_idtf: [cartelle] (* <- lang_it;; *);
+<= nrel_inclusion: concept_operating_system;;
+
+concept_driver
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [драйвер] (* <- lang_ru;; *);
+=> nrel_main_idtf: [pilote] (* <- lang_fr;; *);
+=> nrel_main_idtf: [driver] (* <- lang_it;; *);
+=> nrel_idtf: [dispositivi] (* <- lang_it;; *);
+<= nrel_inclusion: concept_operating_system;;
+
+concept_interrupt
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [прерывание] (* <- lang_ru;; *);
+=> nrel_main_idtf: [interruption] (* <- lang_fr;; *);
+=> nrel_main_idtf: [interruzione] (* <- lang_it;; *);
+=> nrel_idtf: [interruzioni] (* <- lang_it;; *);
+<= nrel_inclusion: concept_operating_system;
+=> nrel_related: concept_processor;;
+
+concept_network
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [компьютерная сеть] (* <- lang_ru;; *);
+=> nrel_main_idtf: [réseau informatique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [rete di calcolatori] (* <- lang_it;; *);
+=> nrel_idtf: [reti] (* <- lang_it;; *);
+=> nrel_idtf: [rete] (* <- lang_it;; *);
+<= nrel_inclusion: concept_informatics;
+=> nrel_related: concept_protocol;;
+
+concept_internet
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [Интернет] (* <- lang_ru;; *);
+=> nrel_main_idtf: [internet] (* <- lang_fr;; *);
+=> nrel_idtf: [web] (* <- lang_fr;; *);
+=> nrel_main_idtf: [internet] (* <- lang_it;; *);
+=> nrel_idtf: [web] (* <- lang_it;; *);
+<= nrel_inclusion: concept_network;;
+
+concept_protocol
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [протокол] (* <- lang_ru;; *);
+=> nrel_main_idtf: [protocole] (* <- lang_fr;; *);
+=> nrel_main_idtf: [protocollo] (* <- lang_it;; *);
+=> nrel_idtf: [protocolli] (* <- lang_it;; *);
+=> nrel_idtf: [livelli] (* <- lang_it;; *);
+=> nrel_idtf: [modello a livelli] (* <- lang_it;; *);
+<= nrel_inclusion: concept_network;;
+
+concept_packet_switching
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [коммутация пакетов] (* <- lang_ru;; *);
+=> nrel_main_idtf: [commutation de paquets] (* <- lang_fr;; *);
+=> nrel_idtf: [paquet] (* <- lang_fr;; *);
+=> nrel_main_idtf: [commutazione di pacchetto] (* <- lang_it;; *);
+=> nrel_idtf: [pacchetti] (* <- lang_it;; *);
+=> nrel_idtf: [pacchetto] (* <- lang_it;; *);
+<= nrel_inclusion: concept_network;;
+
+concept_ip
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [протокол IP] (* <- lang_ru;; *);
+=> nrel_main_idtf: [adresse ip] (* <- lang_fr;; *);
+=> nrel_idtf: [protocole ip] (* <- lang_fr;; *);
+=> nrel_main_idtf: [protocollo ip] (* <- lang_it;; *);
+=> nrel_idtf: [indirizzo ip] (* <- lang_it;; *);
+=> nrel_idtf: [indirizzi] (* <- lang_it;; *);
+<= nrel_inclusion: concept_protocol;
+=> nrel_related: concept_routing;;
+
+concept_routing
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [маршрутизация] (* <- lang_ru;; *);
+=> nrel_main_idtf: [routage] (* <- lang_fr;; *);
+=> nrel_idtf: [routeur] (* <- lang_fr;; *);
+=> nrel_main_idtf: [instradamento] (* <- lang_it;; *);
+=> nrel_idtf: [router] (* <- lang_it;; *);
+=> nrel_idtf: [tabelle di instradamento] (* <- lang_it;; *);
+=> nrel_idtf: [ospf] (* <- lang_it;; *);
+=> nrel_idtf: [bgp] (* <- lang_it;; *);
+<= nrel_inclusion: concept_network;;
+
+concept_tcp
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [протокол TCP] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tcp] (* <- lang_fr;; *);
+=> nrel_main_idtf: [tcp] (* <- lang_it;; *);
+=> nrel_idtf: [controllo della congestione] (* <- lang_it;; *);
+=> nrel_idtf: [ritrasmette] (* <- lang_it;; *);
+<= nrel_inclusion: concept_protocol;
+=> nrel_related: concept_transport_layer;;
+
+concept_udp
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [протокол UDP] (* <- lang_ru;; *);
+=> nrel_main_idtf: [udp] (* <- lang_fr;; *);
+=> nrel_main_idtf: [udp] (* <- lang_it;; *);
+<= nrel_inclusion: concept_protocol;
+=> nrel_related: concept_transport_layer;;
+
+concept_transport_layer
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [транспортный уровень] (* <- lang_ru;; *);
+=> nrel_main_idtf: [couche transport] (* <- lang_fr;; *);
+=> nrel_main_idtf: [livello di trasporto] (* <- lang_it;; *);
+=> nrel_idtf: [numeri di porta] (* <- lang_it;; *);
+<= nrel_inclusion: concept_protocol;;
+
+concept_dns
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [DNS] (* <- lang_ru;; *);
+=> nrel_main_idtf: [dns] (* <- lang_fr;; *);
+=> nrel_idtf: [nom de domaine] (* <- lang_fr;; *);
+=> nrel_main_idtf: [dns] (* <- lang_it;; *);
+=> nrel_idtf: [nomi di dominio] (* <- lang_it;; *);
+=> nrel_idtf: [server radice] (* <- lang_it;; *);
+<= nrel_inclusion: concept_protocol;;
+
+concept_http
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [HTTP] (* <- lang_ru;; *);
+=> nrel_main_idtf: [http] (* <- lang_fr;; *);
+=> nrel_main_idtf: [http] (* <- lang_it;; *);
+=> nrel_idtf: [cliente servente] (* <- lang_it;; *);
+=> nrel_idtf: [browser] (* <- lang_it;; *);
+<= nrel_inclusion: concept_protocol;
+=> nrel_related: concept_internet;;
+
+concept_tls
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [протокол TLS] (* <- lang_ru;; *);
+=> nrel_main_idtf: [tls] (* <- lang_fr;; *);
+=> nrel_main_idtf: [tls] (* <- lang_it;; *);
+=> nrel_idtf: [chiave di sessione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_protocol;
+=> nrel_related: concept_cryptography;;
+
+concept_nlp
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [обработка естественного языка] (* <- lang_ru;; *);
+=> nrel_main_idtf: [traitement automatique des langues] (* <- lang_fr;; *);
+=> nrel_idtf: [langage naturel] (* <- lang_fr;; *);
+=> nrel_main_idtf: [elaborazione del linguaggio naturale] (* <- lang_it;; *);
+=> nrel_idtf: [linguaggio naturale] (* <- lang_it;; *);
+<= nrel_inclusion: concept_ai;
+=> nrel_related: concept_corpus;;
+
+concept_ambiguity
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [неоднозначность] (* <- lang_ru;; *);
+=> nrel_main_idtf: [ambiguïté] (* <- lang_fr;; *);
+=> nrel_main_idtf: [ambiguità] (* <- lang_it;; *);
+<= nrel_inclusion: concept_nlp;;
+
+concept_morphology
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [морфологический анализ] (* <- lang_ru;; *);
+=> nrel_main_idtf: [analyse morphologique] (* <- lang_fr;; *);
+=> nrel_idtf: [lemme] (* <- lang_fr;; *);
+=> nrel_main_idtf: [analisi morfologica] (* <- lang_it;; *);
+=> nrel_idtf: [lemma] (* <- lang_it;; *);
+=> nrel_idtf: [flessione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_nlp;;
+
+concept_parsing_nl
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [синтаксический анализ текста] (* <- lang_ru;; *);
+=> nrel_main_idtf: [arbre de dépendances] (* <- lang_fr;; *);
+=> nrel_main_idtf: [albero a dipendenze] (* <- lang_it;; *);
+=> nrel_idtf: [costituenti] (* <- lang_it;; *);
+=> nrel_idtf: [sintagmi] (* <- lang_it;; *);
+=> nrel_idtf: [struttura sintattica] (* <- lang_it;; *);
+<= nrel_inclusion: concept_nlp;;
+
+concept_corpus
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [корпус текстов] (* <- lang_ru;; *);
+=> nrel_main_idtf: [corpus] (* <- lang_fr;; *);
+=> nrel_main_idtf: [corpus] (* <- lang_it;; *);
+=> nrel_idtf: [raccolte di testi] (* <- lang_it;; *);
+<= nrel_inclusion: concept_nlp;;
+
+concept_language_model
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [языковая модель] (* <- lang_ru;; *);
+=> nrel_main_idtf: [modèle de langage] (* <- lang_fr;; *);
+=> nrel_main_idtf: [modello linguistico] (* <- lang_it;; *);
+=> nrel_idtf: [modelli linguistici] (* <- lang_it;; *);
+<= nrel_inclusion: concept_nlp;;
+
+concept_machine_translation
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [машинный перевод] (* <- lang_ru;; *);
+=> nrel_main_idtf: [traduction automatique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [traduzione automatica] (* <- lang_it;; *);
+<= nrel_inclusion: concept_nlp;;
+
+concept_summarization
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [автоматическое реферирование] (* <- lang_ru;; *);
+=> nrel_main_idtf: [résumé automatique] (* <- lang_fr;; *);
+=> nrel_main_idtf: [riassunto automatico] (* <- lang_it;; *);
+=> nrel_idtf: [riassunto] (* <- lang_it;; *);
+=> nrel_idtf: [estrazione] (* <- lang_it;; *);
+<= nrel_inclusion: concept_nlp;;
+
+concept_information_extraction
+<- sc_node_class;
+<- subject_domain_computer_science;
+=> nrel_main_idtf: [извлечение информации] (* <- lang_ru;; *);
+=> nrel_main_idtf: [extraction d'informations] (* <- lang_fr;; *);
+=> nrel_main_idtf: [estrazione di informazioni] (* <- lang_it;; *);
+=> nrel_idtf: [analisi del sentimento] (* <- lang_it;; *);
+<= nrel_inclusion: concept_nlp;;

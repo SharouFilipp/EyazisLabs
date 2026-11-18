@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Рефераты документов</title>
+<style>
+  body { font: 14px/1.5 "Times New Roman", serif; color: #111; max-width: 900px; margin: 24px auto; padding: 0 16px; }
+  h1 { font-size: 20px; text-align: center; margin-bottom: 2px; }
+  .gen { text-align: center; color: #555; margin-bottom: 22px; }
+  .doc { border-top: 2px solid #1f3b73; padding-top: 10px; margin-top: 22px; page-break-inside: avoid; }
+  .doc + .doc { page-break-before: always; }
+  h2 { font-size: 17px; margin: 0 0 4px; }
+  .meta { color: #444; font-size: 13px; margin-bottom: 8px; }
+  h3 { font-size: 15px; margin: 12px 0 4px; }
+  ol li { text-align: justify; margin-bottom: 4px; }
+  ul.kw { list-style: none; padding-left: 14px; } ul.kw ul { list-style: none; padding-left: 22px; }
+  ul.kw ul li::before { content: "└ "; color: #777; }
+  .w { color: #777; font-size: 12px; }
+  a { color: #1f3b73; }
+  @media print { body { margin: 0 auto; } }
+</style>
+</head>
+<body>
+<h1>Рефераты документов</h1>
+<div class="gen">Сформировано 04.11.2026 00:09 · документов: 16 · метод: sentence extraction</div>
+
+<div class="doc">
+  <h2>Les algorithmes de tri : principes, complexité et usages</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/1/file">fr_cs_01.pdf</a> · язык: французский · область: научная статья (computer science)
+    · страниц: 2 · предложений: 34 · слов: 774 · время: 49.7 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Le tri est l&#39;une des opérations les plus fondamentales de l&#39;informatique, car un grand nombre de traitements supposent que les données soient d&#39;abord ordonnées.</li><li>Rechercher un élément, éliminer les doublons, fusionner deux listes ou construire un index devient beaucoup plus simple lorsque les valeurs sont rangées selon une relation d&#39;ordre.</li><li>Un algorithme de tri par comparaison ne dispose que d&#39;une seule opération pour obtenir de l&#39;information sur les données : comparer deux éléments et savoir lequel est le plus petit.</li><li>Tout algorithme de ce type doit effectuer, dans le pire des cas, un nombre de comparaisons proportionnel à n log n pour trier n éléments.</li><li>Le tri par insertion parcourt le tableau de gauche à droite et insère chaque nouvel élément à sa place dans la partie déjà triée.</li><li>Sa complexité est quadratique dans le pire des cas, mais il est très rapide sur des tableaux presque triés et sur de petites séquences.</li><li>Le tri fusion repose sur le principe « diviser pour régner » : le tableau est coupé en deux moitiés, chaque moitié est triée récursivement, puis les deux séquences triées sont fusionnées.</li><li>Le tri rapide, proposé par Tony Hoare, choisit un élément appelé pivot et partitionne le tableau en deux zones : les éléments plus petits que le pivot et les éléments plus grands.</li><li>En moyenne, le tri rapide effectue environ n log n comparaisons avec une constante très faible, et il travaille directement dans le tableau sans mémoire supplémentaire importante.</li><li>Le tri par tas utilise une structure de données particulière, le tas binaire, dans laquelle chaque nœud est supérieur à ses descendants.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>tri</b> <span class="w">(2.079)</span>
+      <ul><li>tri rapide</li><li>tri fusion</li><li>algorithme de tri</li></ul></li>
+    <li><b>fusion</b> <span class="w">(1.282)</span>
+      <ul><li>tri fusion</li></ul></li>
+    <li><b>tas</b> <span class="w">(1.248)</span>
+      </li>
+    <li><b>comparaisons</b> <span class="w">(1.213)</span>
+      </li>
+    <li><b>log</b> <span class="w">(1.178)</span>
+      </li>
+    <li><b>pire</b> <span class="w">(1.178)</span>
+      </li>
+    <li><b>pivot</b> <span class="w">(1.178)</span>
+      </li>
+    <li><b>borne</b> <span class="w">(1.144)</span>
+      </li>
+    <li><b>choix</b> <span class="w">(1.144)</span>
+      </li>
+    <li><b>récursivement</b> <span class="w">(1.144)</span>
+      <ul><li>triée récursivement</li></ul></li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>Les bases de données relationnelles et le langage SQL</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/2/file">fr_cs_02.pdf</a> · язык: французский · область: научная статья (computer science)
+    · страниц: 2 · предложений: 34 · слов: 723 · время: 55.3 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Une base de données est un ensemble organisé d&#39;informations, géré par un logiciel spécialisé appelé système de gestion de bases de données.</li><li>Son rôle est de stocker les données de manière durable, de permettre leur consultation rapide et de garantir leur cohérence même lorsque de nombreux utilisateurs travaillent simultanément.</li><li>Parmi les différents modèles proposés depuis les années soixante, le modèle relationnel est devenu dominant et reste aujourd&#39;hui au cœur de la plupart des applications de gestion.</li><li>Le modèle relationnel a été introduit par Edgar Codd en 1970 avec une idée simple : représenter toutes les données sous forme de relations, c&#39;est-à-dire de tables composées de lignes et de colonnes.</li><li>Chaque ligne correspond à un objet du monde réel, par exemple un client ou une commande, et chaque colonne à un attribut de cet objet.</li><li>La notion de clé joue un rôle central dans l&#39;organisation des relations.</li><li>Une clé primaire identifie de façon unique chaque ligne d&#39;une table, tandis qu&#39;une clé étrangère établit un lien entre deux tables en faisant référence à la clé primaire d&#39;une autre relation.</li><li>Le langage SQL est le langage standard des bases de données relationnelles.</li><li>Une requête de sélection indique les colonnes souhaitées, les tables concernées et les conditions que doivent satisfaire les lignes.</li><li>Les formes normales successives visent à éliminer les redondances et les anomalies de mise à jour qui apparaissent lorsqu&#39;une même information est stockée à plusieurs endroits.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>lignes</b> <span class="w">(1.520)</span>
+      <ul><li>ligne correspond</li></ul></li>
+    <li><b>relationnel</b> <span class="w">(1.520)</span>
+      <ul><li>modèle relationnel</li></ul></li>
+    <li><b>client</b> <span class="w">(1.360)</span>
+      </li>
+    <li><b>requête</b> <span class="w">(1.360)</span>
+      </li>
+    <li><b>transactions</b> <span class="w">(1.360)</span>
+      </li>
+    <li><b>colonnes</b> <span class="w">(1.280)</span>
+      </li>
+    <li><b>commande</b> <span class="w">(1.280)</span>
+      </li>
+    <li><b>durable</b> <span class="w">(1.280)</span>
+      </li>
+    <li><b>gestion</b> <span class="w">(1.280)</span>
+      </li>
+    <li><b>schéma</b> <span class="w">(1.280)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>Les réseaux de neurones artificiels et l&#39;apprentissage profond</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/3/file">fr_cs_03.pdf</a> · язык: французский · область: научная статья (computer science)
+    · страниц: 2 · предложений: 31 · слов: 720 · время: 58.2 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Les réseaux de neurones artificiels sont des modèles de calcul inspirés, de manière très simplifiée, du fonctionnement du cerveau.</li><li>Ils occupent aujourd&#39;hui une place centrale en intelligence artificielle, car ils permettent de reconnaître des images, de traduire des textes ou de transcrire la parole avec une précision inconnue il y a encore quelques décennies.</li><li>L&#39;élément de base d&#39;un réseau est le neurone artificiel, qui reçoit plusieurs valeurs d&#39;entrée, les multiplie par des poids, additionne le résultat et applique une fonction d&#39;activation.</li><li>Les premiers modèles, comme le perceptron proposé par Frank Rosenblatt à la fin des années cinquante, utilisaient une simple fonction à seuil.</li><li>Les réseaux modernes emploient des fonctions d&#39;activation non linéaires, par exemple la fonction sigmoïde ou la fonction ReLU, qui renvoie zéro pour les valeurs négatives.</li><li>La couche d&#39;entrée reçoit les données, les couches cachées effectuent des transformations successives et la couche de sortie produit le résultat, par exemple la probabilité qu&#39;une image représente un chat.</li><li>On parle d&#39;apprentissage profond lorsque le réseau comporte de nombreuses couches cachées, chacune extrayant des représentations de plus en plus abstraites des données.</li><li>L&#39;apprentissage consiste à ajuster les poids du réseau afin de minimiser une fonction de perte qui mesure l&#39;écart entre les prédictions et les réponses attendues.</li><li>L&#39;algorithme de rétropropagation calcule efficacement le gradient de la perte par rapport à tous les poids en propageant l&#39;erreur de la sortie vers l&#39;entrée, couche par couche.</li><li>Un problème majeur est le surapprentissage : le réseau mémorise les exemples d&#39;apprentissage au lieu d&#39;apprendre des régularités générales, et ses performances chutent sur de nouvelles données.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>réseau</b> <span class="w">(2.079)</span>
+      <ul><li>réseaux de neurones</li></ul></li>
+    <li><b>couches</b> <span class="w">(1.993)</span>
+      <ul><li>couches cachées</li></ul></li>
+    <li><b>apprentissage</b> <span class="w">(1.819)</span>
+      <ul><li>données d apprentissage</li><li>apprentissage profond</li></ul></li>
+    <li><b>neurones</b> <span class="w">(1.646)</span>
+      <ul><li>réseaux de neurones</li><li>neurones artificiels</li></ul></li>
+    <li><b>poids</b> <span class="w">(1.560)</span>
+      </li>
+    <li><b>artificiels</b> <span class="w">(1.300)</span>
+      <ul><li>neurones artificiels</li></ul></li>
+    <li><b>entrée</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>perte</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>activation</b> <span class="w">(1.213)</span>
+      <ul><li>fonction d activation</li></ul></li>
+    <li><b>détectent</b> <span class="w">(1.213)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>La compilation : du code source au programme exécutable</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/4/file">fr_cs_04.pdf</a> · язык: французский · область: научная статья (computer science)
+    · страниц: 2 · предложений: 31 · слов: 710 · время: 52.2 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Un compilateur est un programme qui traduit un texte écrit dans un langage de programmation de haut niveau en un code exécutable par la machine.</li><li>Grâce à lui, le programmeur peut exprimer ses idées avec des notions abstraites, comme les fonctions, les boucles ou les objets, sans se préoccuper des détails du processeur.</li><li>Le travail d&#39;un compilateur est traditionnellement découpé en plusieurs phases successives.</li><li>La partie frontale analyse le code source et en construit une représentation interne, tandis que la partie arrière transforme cette représentation en instructions pour une architecture donnée.</li><li>La première phase est l&#39;analyse lexicale, qui découpe la suite de caractères du programme en unités appelées lexèmes : mots-clés, identificateurs, nombres, opérateurs et signes de ponctuation.</li><li>L&#39;analyse syntaxique vérifie ensuite que la suite de lexèmes respecte la grammaire du langage et construit un arbre syntaxique qui reflète la structure du programme.</li><li>Il existe deux grandes familles d&#39;analyseurs : les analyseurs descendants, qui partent du symbole initial et cherchent à dériver le programme, et les analyseurs ascendants, qui regroupent progressivement les lexèmes en constructions plus larges.</li><li>Un programme syntaxiquement correct peut encore contenir des erreurs de sens, que détecte l&#39;analyse sémantique.</li><li>Le compilateur vérifie que chaque variable est déclarée avant son utilisation, que les types des opérandes sont compatibles et que les fonctions sont appelées avec le bon nombre d&#39;arguments.</li><li>Après les analyses, le compilateur traduit l&#39;arbre syntaxique en un code intermédiaire, indépendant à la fois du langage source et de la machine cible.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>compilateur</b> <span class="w">(2.079)</span>
+      </li>
+    <li><b>code</b> <span class="w">(1.976)</span>
+      <ul><li>code intermédiaire</li></ul></li>
+    <li><b>analyseurs</b> <span class="w">(1.560)</span>
+      </li>
+    <li><b>grammaire</b> <span class="w">(1.456)</span>
+      </li>
+    <li><b>lexèmes</b> <span class="w">(1.456)</span>
+      </li>
+    <li><b>machine</b> <span class="w">(1.456)</span>
+      <ul><li>machine cible</li></ul></li>
+    <li><b>syntaxique</b> <span class="w">(1.456)</span>
+      <ul><li>arbre syntaxique</li></ul></li>
+    <li><b>programme</b> <span class="w">(1.386)</span>
+      </li>
+    <li><b>intermédiaire</b> <span class="w">(1.352)</span>
+      <ul><li>code intermédiaire</li></ul></li>
+    <li><b>phase</b> <span class="w">(1.352)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>Madame Bovary de Flaubert : le rêve romanesque face à la réalité</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/5/file">fr_lit_01.pdf</a> · язык: французский · область: сочинение по литературе
+    · страниц: 2 · предложений: 33 · слов: 701 · время: 43.2 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Publié en 1857, Madame Bovary de Gustave Flaubert est considéré comme l&#39;un des romans fondateurs du réalisme français.</li><li>L&#39;œuvre raconte l&#39;histoire d&#39;Emma, une jeune femme de province qui étouffe dans un mariage sans passion et cherche à vivre les émotions découvertes dans ses lectures.</li><li>Le personnage d&#39;Emma Bovary est d&#39;abord façonné par son éducation au couvent, où elle a lu en cachette des romans sentimentaux.</li><li>Elle y a appris à imaginer l&#39;amour comme une passion exaltée, peuplée de châteaux, de chevaux et d&#39;amants héroïques.</li><li>Lorsqu&#39;elle épouse Charles, un médecin de campagne honnête mais terne, elle découvre que le mariage ne ressemble en rien à ces images.</li><li>Emma s&#39;ennuie à Tostes, puis à Yonville, dans des villages où les journées se répètent sans événement.</li><li>Le bal au château de la Vaubyessard constitue pour elle une révélation : pendant une nuit, elle entrevoit le monde luxueux dont elle rêve, puis elle retombe dans sa vie ordinaire avec une amertume accrue.</li><li>Les aventures amoureuses d&#39;Emma avec Rodolphe, puis avec Léon, apparaissent comme des tentatives désespérées pour réaliser ses rêves.</li><li>Rodolphe est un séducteur cynique qui l&#39;abandonne au moment où elle croit pouvoir s&#39;enfuir avec lui.</li><li>Le pharmacien Homais incarne la sottise satisfaite et le culte des idées reçues : il parle sans cesse de progrès et de science, mais ne comprend rien à ce qui l&#39;entoure.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>emma</b> <span class="w">(2.079)</span>
+      </li>
+    <li><b>flaubert</b> <span class="w">(1.733)</span>
+      </li>
+    <li><b>bovary</b> <span class="w">(1.502)</span>
+      <ul><li>madame bovary</li></ul></li>
+    <li><b>rodolphe</b> <span class="w">(1.386)</span>
+      </li>
+    <li><b>bourgeoise</b> <span class="w">(1.271)</span>
+      </li>
+    <li><b>châteaux</b> <span class="w">(1.271)</span>
+      </li>
+    <li><b>discours</b> <span class="w">(1.271)</span>
+      </li>
+    <li><b>fuir</b> <span class="w">(1.271)</span>
+      </li>
+    <li><b>homais</b> <span class="w">(1.271)</span>
+      </li>
+    <li><b>héroïne</b> <span class="w">(1.271)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>Les Misérables de Victor Hugo : un roman de la rédemption et de la justice sociale</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/6/file">fr_lit_02.pdf</a> · язык: французский · область: сочинение по литературе
+    · страниц: 2 · предложений: 35 · слов: 719 · время: 58.1 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Les Misérables, publié par Victor Hugo en 1862, est une vaste fresque romanesque qui mêle l&#39;histoire individuelle d&#39;un ancien forçat et le tableau de la société française de la première moitié du dix-neuvième siècle.</li><li>Le héros du roman, Jean Valjean, a passé dix-neuf ans au bagne pour avoir volé un pain afin de nourrir les enfants de sa sœur, puis pour ses tentatives d&#39;évasion.</li><li>À sa libération, il est rejeté de partout à cause de son passeport jaune d&#39;ancien forçat.</li><li>Lorsque Valjean lui vole son argenterie et se fait arrêter, l&#39;évêque affirme aux gendarmes qu&#39;il la lui a donnée et lui offre en plus deux chandeliers.</li><li>Devenu, sous un faux nom, un industriel respecté et le maire d&#39;une petite ville, Valjean consacre sa vie à faire le bien.</li><li>Lorsqu&#39;un innocent est sur le point d&#39;être condamné à sa place, il se dénonce au tribunal après une nuit de lutte intérieure, décrite par Hugo comme une tempête sous un crâne.</li><li>Face à Valjean se dresse l&#39;inspecteur Javert, personnage rigide qui incarne la loi sans miséricorde.</li><li>Fils de bagnard, Javert a choisi de servir l&#39;ordre avec une fidélité absolue et ne croit pas qu&#39;un criminel puisse changer.</li><li>Abandonnée par l&#39;homme qu&#39;elle aimait, elle confie sa fille Cosette aux Thénardier, des aubergistes avides qui exploitent l&#39;enfant.</li><li>La dernière partie du livre est consacrée à l&#39;insurrection républicaine de juin 1832, où se retrouvent les étudiants idéalistes, le jeune Marius amoureux de Cosette et le gamin Gavroche.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>valjean</b> <span class="w">(2.079)</span>
+      <ul><li>jean valjean</li></ul></li>
+    <li><b>hugo</b> <span class="w">(1.848)</span>
+      <ul><li>victor hugo</li><li>hugo affirme</li></ul></li>
+    <li><b>cosette</b> <span class="w">(1.502)</span>
+      </li>
+    <li><b>javert</b> <span class="w">(1.502)</span>
+      </li>
+    <li><b>affirme</b> <span class="w">(1.386)</span>
+      <ul><li>hugo affirme</li></ul></li>
+    <li><b>bagne</b> <span class="w">(1.386)</span>
+      </li>
+    <li><b>fantine</b> <span class="w">(1.386)</span>
+      </li>
+    <li><b>justice</b> <span class="w">(1.386)</span>
+      </li>
+    <li><b>loi</b> <span class="w">(1.386)</span>
+      </li>
+    <li><b>victor</b> <span class="w">(1.386)</span>
+      <ul><li>victor hugo</li></ul></li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>Le Rouge et le Noir de Stendhal : l&#39;ambition d&#39;un jeune homme sous la Restauration</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/7/file">fr_lit_03.pdf</a> · язык: французский · область: сочинение по литературе
+    · страниц: 2 · предложений: 33 · слов: 700 · время: 55.7 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Le Rouge et le Noir, publié par Stendhal en 1830, retrace l&#39;ascension et la chute de Julien Sorel, un jeune homme d&#39;origine modeste qui rêve de gloire dans une société figée.</li><li>Sous-titré Chronique de 1830, le roman offre un portrait critique de la France de la Restauration.</li><li>Julien Sorel est le fils d&#39;un charpentier du Jura, méprisé par son père et ses frères parce qu&#39;il préfère les livres au travail manuel.</li><li>Il voue une admiration secrète à Napoléon, qui incarne pour lui la possibilité de s&#39;élever par le mérite.</li><li>L&#39;ambition est le trait dominant du héros, mais elle se heurte sans cesse à sa sensibilité et à son orgueil.</li><li>Engagé comme précepteur chez le maire de Verrières, monsieur de Rênal, Julien décide de séduire madame de Rênal pour prouver sa valeur.</li><li>Au séminaire de Besançon, Julien découvre un monde dominé par l&#39;hypocrisie, la surveillance et les rivalités.</li><li>Il comprend que l&#39;intelligence y est suspecte et que la réussite dépend de l&#39;art de dissimuler ses pensées.</li><li>À Paris, devenu secrétaire du marquis de La Mole, Julien pénètre dans l&#39;aristocratie et suscite l&#39;intérêt de Mathilde, la fille du marquis.</li><li>Fou de colère, Julien retourne à Verrières et tire sur madame de Rênal pendant la messe.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>julien</b> <span class="w">(2.079)</span>
+      <ul><li>julien sorel</li></ul></li>
+    <li><b>rênal</b> <span class="w">(1.520)</span>
+      <ul><li>madame de rênal</li></ul></li>
+    <li><b>noir</b> <span class="w">(1.440)</span>
+      </li>
+    <li><b>rouge</b> <span class="w">(1.440)</span>
+      </li>
+    <li><b>ambition</b> <span class="w">(1.360)</span>
+      </li>
+    <li><b>stendhal</b> <span class="w">(1.360)</span>
+      </li>
+    <li><b>orgueil</b> <span class="w">(1.280)</span>
+      </li>
+    <li><b>sorel</b> <span class="w">(1.280)</span>
+      <ul><li>julien sorel</li></ul></li>
+    <li><b>chances</b> <span class="w">(1.200)</span>
+      </li>
+    <li><b>mathilde</b> <span class="w">(1.200)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>Les Fleurs du mal de Baudelaire : le spleen et l&#39;idéal</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/8/file">fr_lit_04.pdf</a> · язык: французский · область: сочинение по литературе
+    · страниц: 2 · предложений: 32 · слов: 658 · время: 52.3 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Les Fleurs du mal, recueil publié par Charles Baudelaire en 1857, occupe une place décisive dans l&#39;histoire de la poésie française.</li><li>Le livre rompt avec la tradition romantique tout en prolongeant certaines de ses intuitions, et il ouvre la voie à la poésie moderne.</li><li>Le recueil est construit avec une grande rigueur, et Baudelaire tenait à ce qu&#39;on le lise comme un ensemble organisé plutôt que comme une suite de pièces isolées.</li><li>La première et la plus longue section, intitulée Spleen et Idéal, expose le conflit fondamental qui déchire le poète.</li><li>Les sections suivantes, consacrées aux tableaux parisiens, au vin, aux fleurs du mal, à la révolte et à la mort, décrivent les tentatives successives pour échapper à ce conflit.</li><li>L&#39;idéal correspond chez Baudelaire à l&#39;aspiration vers la beauté, la pureté et l&#39;infini.</li><li>Le spleen désigne au contraire un état d&#39;angoisse, d&#39;ennui et d&#39;impuissance qui écrase le poète.</li><li>Baudelaire emprunte ce mot anglais pour nommer une mélancolie profonde, liée à la conscience du temps qui passe et de la mort.</li><li>Dans les poèmes qui portent ce titre, le ciel bas et lourd pèse comme un couvercle, l&#39;esprit est assiégé par des pensées sombres et l&#39;espoir semble vaincu.</li><li>Selon Baudelaire, la nature est un temple où les choses se répondent : les parfums, les couleurs et les sons se correspondent et renvoient à une réalité spirituelle cachée.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>baudelaire</b> <span class="w">(2.079)</span>
+      </li>
+    <li><b>poète</b> <span class="w">(1.976)</span>
+      </li>
+    <li><b>poésie</b> <span class="w">(1.560)</span>
+      </li>
+    <li><b>recueil</b> <span class="w">(1.560)</span>
+      </li>
+    <li><b>beauté</b> <span class="w">(1.456)</span>
+      </li>
+    <li><b>fleurs</b> <span class="w">(1.352)</span>
+      <ul><li>fleurs du mal</li></ul></li>
+    <li><b>poèmes</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>section</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>spleen</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>apparaît</b> <span class="w">(1.248)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>La crittografia a chiave pubblica e la sicurezza delle comunicazioni</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/9/file">it_cs_01.pdf</a> · язык: итальянский · область: научная статья (computer science)
+    · страниц: 2 · предложений: 33 · слов: 691 · время: 47.4 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>La crittografia è la disciplina che studia i metodi per rendere un messaggio comprensibile soltanto ai destinatari autorizzati.</li><li>Per secoli è stata utilizzata soprattutto in ambito militare e diplomatico, ma con la diffusione di Internet è diventata uno strumento quotidiano che protegge i pagamenti elettronici, la posta e le conversazioni.</li><li>Nei sistemi tradizionali, detti a chiave simmetrica, mittente e destinatario condividono la stessa chiave segreta, utilizzata sia per la cifratura sia per la decifratura.</li><li>Algoritmi simmetrici come AES sono molto veloci e sicuri, ma presentano un problema fondamentale: le due parti devono scambiarsi la chiave in modo sicuro prima di poter comunicare.</li><li>La soluzione fu proposta nel 1976 da Whitfield Diffie e Martin Hellman, che introdussero l&#39;idea di una coppia di chiavi distinte.</li><li>Ogni utente possiede una chiave pubblica, che può essere diffusa liberamente, e una chiave privata, che deve rimanere segreta.</li><li>L&#39;algoritmo RSA, presentato nel 1977 da Rivest, Shamir e Adleman, è il più noto sistema a chiave pubblica.</li><li>Moltiplicare due numeri primi di centinaia di cifre è un&#39;operazione rapida, mentre ritrovare i fattori a partire dal prodotto richiede, con gli algoritmi noti, un tempo enorme.</li><li>Il mittente calcola un&#39;impronta del messaggio con una funzione di hash e la cifra con la propria chiave privata.</li><li>Resta però un problema: come essere sicuri che una chiave pubblica appartenga davvero alla persona indicata?</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>chiave</b> <span class="w">(2.079)</span>
+      <ul><li>chiave pubblica</li><li>crittografia a chiave</li><li>chiave privata</li></ul></li>
+    <li><b>crittografia</b> <span class="w">(1.386)</span>
+      <ul><li>crittografia a chiave pubblica</li></ul></li>
+    <li><b>digitale</b> <span class="w">(1.386)</span>
+      <ul><li>firma digitale</li></ul></li>
+    <li><b>chiavi</b> <span class="w">(1.329)</span>
+      </li>
+    <li><b>simmetrica</b> <span class="w">(1.329)</span>
+      <ul><li>algoritmi simmetrici</li></ul></li>
+    <li><b>firma</b> <span class="w">(1.271)</span>
+      <ul><li>firma digitale</li></ul></li>
+    <li><b>mittente</b> <span class="w">(1.271)</span>
+      </li>
+    <li><b>certificati</b> <span class="w">(1.213)</span>
+      </li>
+    <li><b>cifratura</b> <span class="w">(1.213)</span>
+      </li>
+    <li><b>rsa</b> <span class="w">(1.213)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>I sistemi operativi: gestione dei processi, della memoria e dei file</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/10/file">it_cs_02.pdf</a> · язык: итальянский · область: научная статья (computer science)
+    · страниц: 2 · предложений: 31 · слов: 658 · время: 45.2 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Il sistema operativo è il software fondamentale che gestisce le risorse di un calcolatore e offre ai programmi un ambiente di esecuzione comodo e sicuro.</li><li>Senza di esso, ogni applicazione dovrebbe controllare direttamente il processore, la memoria e i dispositivi, con enormi difficoltà di programmazione.</li><li>La parte centrale del sistema operativo è il nucleo, o kernel, che viene eseguito in una modalità privilegiata del processore.</li><li>Questa separazione protegge il sistema da programmi difettosi o malevoli, poiché un errore in un&#39;applicazione non può danneggiare direttamente il nucleo.</li><li>Un processo è un programma in esecuzione, con il proprio spazio di indirizzamento, i propri registri e le proprie risorse.</li><li>Il sistema operativo crea e termina i processi, li sospende e li riprende, e tiene traccia del loro stato in apposite strutture dati.</li><li>Poiché i processi pronti sono di solito più numerosi dei processori disponibili, il sistema operativo deve decidere quale eseguire in ogni istante: questo compito è chiamato scheduling.</li><li>Gli algoritmi di scheduling cercano di bilanciare obiettivi diversi, come la rapidità di risposta per i programmi interattivi, l&#39;utilizzo efficiente del processore e l&#39;equità tra gli utenti.</li><li>Quando più processi o thread accedono alle stesse risorse, è necessaria la sincronizzazione per evitare risultati incoerenti.</li><li>Grazie alla memoria virtuale, ogni processo ha l&#39;impressione di disporre di uno spazio di indirizzamento ampio e continuo, indipendente dalla memoria fisica realmente installata.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>processo</b> <span class="w">(2.079)</span>
+      </li>
+    <li><b>processore</b> <span class="w">(1.646)</span>
+      </li>
+    <li><b>file</b> <span class="w">(1.386)</span>
+      <ul><li>file system</li></ul></li>
+    <li><b>eseguire</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>gestione</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>hardware</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>interruzioni</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>nucleo</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>scheduling</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>thread</b> <span class="w">(1.300)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>Le reti di calcolatori e l&#39;architettura dei protocolli di Internet</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/11/file">it_cs_03.pdf</a> · язык: итальянский · область: научная статья (computer science)
+    · страниц: 2 · предложений: 30 · слов: 651 · время: 58.0 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Una rete di calcolatori è un insieme di dispositivi collegati tra loro che possono scambiarsi dati e condividere risorse.</li><li>Dalle piccole reti domestiche fino alla rete mondiale Internet, la comunicazione tra calcolatori è diventata una componente essenziale della vita economica e sociale.</li><li>Perché due calcolatori possano comunicare, devono rispettare regole comuni chiamate protocolli.</li><li>Un protocollo stabilisce il formato dei messaggi, l&#39;ordine in cui vengono scambiati e le azioni da compiere alla loro ricezione.</li><li>Data la complessità del problema, i protocolli sono organizzati in livelli sovrapposti, ciascuno dei quali offre servizi al livello superiore e utilizza quelli del livello inferiore.</li><li>I dati da trasmettere vengono suddivisi in piccoli blocchi, detti pacchetti, ognuno dei quali contiene l&#39;indirizzo del destinatario e viaggia in modo indipendente attraverso la rete.</li><li>Al livello di rete opera il protocollo IP, che assegna a ogni dispositivo un indirizzo IP e si occupa di trasportare i pacchetti dalla sorgente alla destinazione.</li><li>I router sono i dispositivi incaricati dell&#39;instradamento: per ogni pacchetto ricevuto consultano una tabella e decidono su quale collegamento inoltrarlo.</li><li>Le tabelle di instradamento vengono costruite automaticamente da protocolli che scambiano informazioni sulla topologia della rete, come OSPF all&#39;interno di un&#39;organizzazione e BGP tra i diversi fornitori di servizi.</li><li>Il protocollo TCP fornisce un canale affidabile e ordinato: numera i dati, richiede conferme di ricezione e ritrasmette i pacchetti perduti.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>pacchetti</b> <span class="w">(1.679)</span>
+      <ul><li>commutazione di pacchetto</li></ul></li>
+    <li><b>protocolli</b> <span class="w">(1.386)</span>
+      </li>
+    <li><b>trasporto</b> <span class="w">(1.280)</span>
+      </li>
+    <li><b>commutazione</b> <span class="w">(1.200)</span>
+      <ul><li>commutazione di pacchetto</li></ul></li>
+    <li><b>garanzie</b> <span class="w">(1.200)</span>
+      </li>
+    <li><b>instradamento</b> <span class="w">(1.200)</span>
+      </li>
+    <li><b>invio</b> <span class="w">(1.200)</span>
+      </li>
+    <li><b>porta</b> <span class="w">(1.200)</span>
+      </li>
+    <li><b>progettati</b> <span class="w">(1.200)</span>
+      </li>
+    <li><b>ricezione</b> <span class="w">(1.200)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>L&#39;elaborazione del linguaggio naturale: metodi e applicazioni</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/12/file">it_cs_04.pdf</a> · язык: итальянский · область: научная статья (computer science)
+    · страниц: 2 · предложений: 28 · слов: 650 · время: 48.7 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>L&#39;elaborazione del linguaggio naturale è il settore dell&#39;informatica che si occupa di rendere i calcolatori capaci di comprendere e produrre testi nelle lingue umane.</li><li>Si tratta di un campo interdisciplinare, che unisce informatica, linguistica e statistica.</li><li>La principale difficoltà del linguaggio naturale è l&#39;ambiguità, che si manifesta a tutti i livelli dell&#39;analisi.</li><li>Una stessa parola può avere significati diversi a seconda del contesto, una frase può ammettere più strutture sintattiche e un pronome può riferirsi a persone diverse.</li><li>Il trattamento di un testo comincia generalmente con la suddivisione in frasi e in parole, seguita dall&#39;analisi morfologica.</li><li>Questa fase riconosce la forma di base di ogni parola, il lemma, e ne determina le caratteristiche grammaticali, come il genere, il numero o il tempo verbale.</li><li>L&#39;analisi sintattica individua la struttura della frase, cioè le relazioni tra le parole.</li><li>Si possono costruire alberi a costituenti, che raggruppano le parole in sintagmi, oppure alberi a dipendenze, che collegano ogni parola a quella da cui dipende.</li><li>Nei primi decenni della disciplina prevalevano i sistemi basati su regole scritte a mano da linguisti esperti.</li><li>Le parole vengono rappresentate come vettori numerici che riflettono le loro somiglianze di significato, e i modelli linguistici di grandi dimensioni, addestrati su miliardi di parole, sono in grado di generare testi coerenti e di rispondere a domande.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>frase</b> <span class="w">(2.079)</span>
+      </li>
+    <li><b>analisi</b> <span class="w">(1.768)</span>
+      <ul><li>analisi morfologica</li></ul></li>
+    <li><b>parole</b> <span class="w">(1.386)</span>
+      </li>
+    <li><b>ambiguità</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>naturale</b> <span class="w">(1.352)</span>
+      <ul><li>elaborazione del linguaggio naturale</li></ul></li>
+    <li><b>riassunto</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>sintattica</b> <span class="w">(1.352)</span>
+      <ul><li>strutture sintattiche</li></ul></li>
+    <li><b>tratta</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>alberi</b> <span class="w">(1.248)</span>
+      </li>
+    <li><b>campo</b> <span class="w">(1.248)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>La Divina Commedia di Dante: il viaggio dell&#39;uomo verso la salvezza</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/13/file">it_lit_01.pdf</a> · язык: итальянский · область: сочинение по литературе
+    · страниц: 2 · предложений: 29 · слов: 676 · время: 46.4 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>La Divina Commedia, composta da Dante Alighieri all&#39;inizio del Trecento, è considerata il capolavoro della letteratura italiana e una delle opere più importanti della cultura europea.</li><li>Il poema racconta il viaggio immaginario del poeta attraverso i tre regni dell&#39;oltretomba: l&#39;Inferno, il Purgatorio e il Paradiso.</li><li>Il poema è diviso in tre cantiche, ciascuna composta da trentatré canti, a cui si aggiunge un canto introduttivo, per un totale di cento canti.</li><li>La terzina di endecasillabi a rima incatenata, inventata da Dante, lega ogni strofa alla successiva e dà al racconto un movimento continuo.</li><li>Il viaggio comincia in una selva oscura, immagine dello smarrimento morale in cui il poeta si trova a metà della sua vita.</li><li>Impedito da tre fiere di salire verso il colle illuminato dal sole, Dante incontra Virgilio, il grande poeta latino, che gli farà da guida attraverso l&#39;Inferno e il Purgatorio.</li><li>L&#39;Inferno è una voragine a forma di imbuto, divisa in nove cerchi in cui i dannati sono puniti secondo la gravità dei loro peccati.</li><li>Gli incontri con i dannati sono tra le pagine più celebri del poema: Francesca da Rimini racconta il suo amore infelice, Farinata degli Uberti difende con orgoglio la propria parte politica, Ulisse narra il suo ultimo viaggio oltre i confini del mondo conosciuto.</li><li>Il Purgatorio è una montagna che sorge in mezzo all&#39;oceano, dove le anime destinate alla salvezza si purificano dai loro peccati.</li><li>Beatrice, la donna amata da Dante in gioventù e morta prematuramente, diventa nel poema la guida verso il Paradiso e il simbolo della grazia divina e della teologia.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>dante</b> <span class="w">(2.079)</span>
+      </li>
+    <li><b>poema</b> <span class="w">(1.664)</span>
+      </li>
+    <li><b>inferno</b> <span class="w">(1.456)</span>
+      </li>
+    <li><b>paradiso</b> <span class="w">(1.456)</span>
+      </li>
+    <li><b>commedia</b> <span class="w">(1.352)</span>
+      <ul><li>divina commedia</li></ul></li>
+    <li><b>dannati</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>divina</b> <span class="w">(1.352)</span>
+      <ul><li>divina commedia</li></ul></li>
+    <li><b>peccati</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>purgatorio</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>virgilio</b> <span class="w">(1.352)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>I Promessi sposi di Manzoni: la storia degli umili e la Provvidenza</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/14/file">it_lit_02.pdf</a> · язык: итальянский · область: сочинение по литературе
+    · страниц: 2 · предложений: 31 · слов: 669 · время: 52.5 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>I Promessi sposi di Alessandro Manzoni, pubblicati nella versione definitiva tra il 1840 e il 1842, sono il romanzo più importante dell&#39;Ottocento italiano.</li><li>L&#39;autore racconta la vicenda di due giovani popolani della Lombardia del Seicento, Renzo e Lucia, il cui matrimonio viene impedito dalla prepotenza di un signore locale.</li><li>Il romanzo si apre con l&#39;incontro tra il curato don Abbondio e i bravi di don Rodrigo, che gli ordinano di non celebrare le nozze tra Renzo e Lucia.</li><li>Don Abbondio è un uomo pauroso, che ha scelto la vita religiosa per cercare protezione e non per vocazione.</li><li>La sua viltà mette in moto l&#39;intera vicenda e rappresenta il modo in cui la debolezza dei singoli favorisce l&#39;ingiustizia dei potenti.</li><li>Il genere scelto da Manzoni è quello del romanzo storico, che mescola personaggi inventati e avvenimenti realmente accaduti.</li><li>Lo scrittore finge di aver ritrovato un antico manoscritto e di averne rifatto la lingua, e descrive con grande precisione la Lombardia sotto la dominazione spagnola.</li><li>Una delle figure più potenti del romanzo è l&#39;Innominato, un signore temuto da tutti per i suoi delitti, al quale don Rodrigo chiede di rapire Lucia.</li><li>La presenza della giovane prigioniera, la sua preghiera e la notte di angoscia che segue provocano nell&#39;Innominato una profonda crisi interiore.</li><li>Manzoni non presenta la Provvidenza come una forza che elimina il male, ma come una presenza misteriosa che sa trarre il bene anche dalle sofferenze.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>manzoni</b> <span class="w">(2.079)</span>
+      </li>
+    <li><b>renzo</b> <span class="w">(1.950)</span>
+      </li>
+    <li><b>promessi</b> <span class="w">(1.560)</span>
+      <ul><li>promessi sposi</li></ul></li>
+    <li><b>milano</b> <span class="w">(1.430)</span>
+      </li>
+    <li><b>potenti</b> <span class="w">(1.430)</span>
+      </li>
+    <li><b>religiosa</b> <span class="w">(1.430)</span>
+      </li>
+    <li><b>rodrigo</b> <span class="w">(1.430)</span>
+      <ul><li>don rodrigo</li></ul></li>
+    <li><b>lucia</b> <span class="w">(1.386)</span>
+      </li>
+    <li><b>romanzo</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>abbondio</b> <span class="w">(1.300)</span>
+      <ul><li>don abbondio</li></ul></li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>Giacomo Leopardi: il pessimismo e la poesia dell&#39;infinito</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/15/file">it_lit_03.pdf</a> · язык: итальянский · область: сочинение по литературе
+    · страниц: 2 · предложений: 32 · слов: 647 · время: 45.9 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Giacomo Leopardi, nato a Recanati nel 1798, è uno dei più grandi poeti della letteratura italiana e uno dei pensatori più originali dell&#39;Ottocento europeo.</li><li>La formazione di Leopardi avvenne in gran parte nella ricca biblioteca paterna, dove il giovane trascorse anni di studio intenso e solitario.</li><li>Imparò da autodidatta il latino, il greco e l&#39;ebraico e compose opere erudite di grande impegno.</li><li>Questo studio accanito compromise però la sua salute già fragile e accrebbe il senso di isolamento nel piccolo ambiente di Recanati.</li><li>Il pensiero leopardiano viene tradizionalmente descritto come un pessimismo che si sviluppa in varie fasi.</li><li>In un primo momento il poeta attribuisce l&#39;infelicità umana al progresso della civiltà e della ragione, che hanno distrutto le illusioni degli antichi.</li><li>Il componimento L&#39;infinito, scritto nel 1819, è uno dei vertici della lirica leopardiana.</li><li>Il poeta siede su un colle solitario e una siepe gli impedisce di vedere l&#39;orizzonte.</li><li>Gli idilli e i canti composti negli anni successivi, come A Silvia, Il sabato del villaggio e La quiete dopo la tempesta, sviluppano il tema delle illusioni giovanili e della loro inevitabile caduta.</li><li>Nelle Operette morali, dialoghi e racconti filosofici in prosa, Leopardi espone le sue idee con ironia e fantasia.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>leopardi</b> <span class="w">(2.079)</span>
+      <ul><li>poesia di leopardi</li></ul></li>
+    <li><b>natura</b> <span class="w">(1.664)</span>
+      </li>
+    <li><b>poesia</b> <span class="w">(1.664)</span>
+      <ul><li>poesia di leopardi</li></ul></li>
+    <li><b>dolore</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>felicità</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>uomini</b> <span class="w">(1.352)</span>
+      </li>
+    <li><b>allora</b> <span class="w">(1.248)</span>
+      </li>
+    <li><b>appare</b> <span class="w">(1.248)</span>
+      </li>
+    <li><b>dialoghi</b> <span class="w">(1.248)</span>
+      </li>
+    <li><b>distrutto</b> <span class="w">(1.248)</span>
+      </li>
+  </ul>
+</div>
+
+<div class="doc">
+  <h2>Il fu Mattia Pascal di Pirandello: l&#39;identità e la maschera</h2>
+  <div class="meta">Исходный документ: <a href="http://localhost:8003/documents/16/file">it_lit_04.pdf</a> · язык: итальянский · область: сочинение по литературе
+    · страниц: 2 · предложений: 29 · слов: 644 · время: 57.7 мс</div>
+  <h3>1. Классический реферат</h3>
+  <ol><li>Il fu Mattia Pascal, pubblicato da Luigi Pirandello nel 1904, è uno dei romanzi più innovativi della letteratura italiana del Novecento.</li><li>La vicenda di un uomo che, creduto morto, cerca di vivere una nuova esistenza sotto un falso nome permette all&#39;autore di affrontare il tema della crisi dell&#39;identità.</li><li>Mattia Pascal vive in un piccolo paese ligure ed è intrappolato in una situazione familiare e sociale insopportabile.</li><li>Ha sperperato il patrimonio di famiglia, si è sposato senza amore e lavora come bibliotecario in una biblioteca abbandonata.</li><li>Dopo una lite con la moglie e la suocera, fugge di casa e, per caso, vince una grossa somma alla roulette di Montecarlo.</li><li>Mattia assume il nome di Adriano Meis e si costruisce un&#39;identità completamente nuova, inventando un passato e cambiando perfino il proprio aspetto fisico.</li><li>In un primo momento questa libertà gli sembra meravigliosa: non ha più legami, obblighi né debiti, e può viaggiare a suo piacimento.</li><li>A Roma, nella pensione del signor Paleari, Adriano si innamora di Adriana e comprende di non poter costruire con lei una vita autentica.</li><li>La vita è un flusso continuo e mutevole, mentre la società impone agli individui forme fisse, ruoli e maschere che li imprigionano.</li><li>Nel romanzo compaiono anche importanti riflessioni filosofiche, affidate soprattutto al signor Paleari, appassionato di spiritismo e di teorie bizzarre.</li></ol>
+  <h3>2. Реферат в виде списка ключевых слов</h3>
+  <ul class="kw">
+    <li><b>mattia</b> <span class="w">(2.079)</span>
+      <ul><li>mattia pascal</li></ul></li>
+    <li><b>pirandello</b> <span class="w">(1.690)</span>
+      </li>
+    <li><b>adriano</b> <span class="w">(1.560)</span>
+      <ul><li>adriano meis</li></ul></li>
+    <li><b>pascal</b> <span class="w">(1.560)</span>
+      <ul><li>mattia pascal</li></ul></li>
+    <li><b>meis</b> <span class="w">(1.430)</span>
+      <ul><li>adriano meis</li></ul></li>
+    <li><b>scopre</b> <span class="w">(1.430)</span>
+      </li>
+    <li><b>casa</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>comica</b> <span class="w">(1.300)</span>
+      </li>
+    <li><b>convenzioni</b> <span class="w">(1.300)</span>
+      <ul><li>convenzioni sociali</li></ul></li>
+    <li><b>definisce</b> <span class="w">(1.300)</span>
+      </li>
+  </ul>
+</div>
+
+</body>
+</html>

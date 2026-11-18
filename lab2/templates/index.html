@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Распознавание языка текста</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="header-row">
+        <div>
+            <h1>Автоматическое распознавание языка текста</h1>
+            <p>Английский / французский · PDF-документы · методы частотных слов, коротких слов, нейросетевой</p>
+        </div>
+        <button class="ghost" onclick="openTab('help')" title="Открыть справку">? Справка</button>
+    </div>
+</header>
+
+<nav class="tabs">
+    <button class="tab active" data-tab="detect">Распознавание</button>
+    <button class="tab" data-tab="text">Проверка текста</button>
+    <button class="tab" data-tab="stats">Статистика</button>
+    <button class="tab" data-tab="compare">Сравнение методов</button>
+    <button class="tab" data-tab="profiles">Профили языков</button>
+    <button class="tab" data-tab="help">Справка</button>
+</nav>
+
+<main>
+
+    <!-- ======================= Распознавание ======================= -->
+    <section class="panel active" id="detect">
+        <div class="panel-header">
+            <h2>Распознавание языка документов
+                <button class="help-btn" onclick="openTab('help', 'h-detect')" title="Как пользоваться">?</button>
+            </h2>
+            <p class="hint">
+                Загрузите PDF-документы (перетащите их в область ниже) или тестовую коллекцию,
+                выберите методы и нажмите «Распознать». Имя документа — активная ссылка: он откроется в новой вкладке.
+            </p>
+        </div>
+
+        <div class="load-block no-print">
+            <div id="dropzone">
+                <p><b>Перетащите PDF-файлы сюда</b> или <a href="#" id="pick-files">выберите на диске</a></p>
+                <p class="hint">Документы одинакового размера, например одна страница A4</p>
+                <input type="file" id="file-input" accept=".pdf,application/pdf" multiple hidden>
+            </div>
+            <div class="row">
+                <label class="topk">Эталонный язык загружаемых файлов:
+                    <select id="upload-lang">
+                        <option value="">неизвестен</option>
+                        <option value="en">Английский</option>
+                        <option value="fr">Французский</option>
+                    </select>
+                </label>
+                <button class="ghost" id="btn-import">Загрузить тестовую коллекцию (30 PDF)</button>
+            </div>
+        </div>
+
+        <div class="methods-pick">
+            <b>Методы:</b>
+            <label><input type="checkbox" class="method-cb" value="frequent" checked> Частотных слов</label>
+            <label><input type="checkbox" class="method-cb" value="short" checked> Коротких слов</label>
+            <label><input type="checkbox" class="method-cb" value="neural" checked> Нейросетевой</label>
+        </div>
+
+        <div class="row no-print">
+            <button id="btn-detect">Распознать все документы</button>
+            <button class="ghost" id="btn-refresh">Обновить</button>
+            <button class="ghost" onclick="saveReport('html')">Сохранить отчёт (HTML)</button>
+            <button class="ghost" onclick="saveReport('csv')">Сохранить таблицу (CSV)</button>
+            <button class="ghost" onclick="printReport()">Печать</button>
+            <button class="danger" id="btn-clear">Очистить всё</button>
+        </div>
+
+        <p id="detect-status" class="status"></p>
+        <div id="summary-cards" class="stat-cards"></div>
+        <div id="docs-table"></div>
+    </section>
+
+    <!-- ======================= Проверка текста ======================= -->
+    <section class="panel" id="text">
+        <div class="panel-header">
+            <h2>Проверка произвольного текста
+                <button class="help-btn" onclick="openTab('help', 'h-text')" title="Справка">?</button>
+            </h2>
+            <p class="hint">
+                Вставьте фрагмент текста на английском или французском языке — каждый метод покажет
+                распознанный язык, метрики расстояния до профилей языков и время работы.
+            </p>
+        </div>
+        <textarea id="free-text" rows="7" placeholder="Например: Le chat dort sur le canapé depuis ce matin."></textarea>
+        <div class="row">
+            <button id="btn-text">Определить язык</button>
+            <button class="ghost" onclick="sampleText('en')">Пример (англ.)</button>
+            <button class="ghost" onclick="sampleText('fr')">Пример (франц.)</button>
+            <button class="ghost" onclick="sampleText('mix')">Короткий фрагмент</button>
+        </div>
+        <p id="text-status" class="status"></p>
+        <div id="text-result" class="text-result"></div>
+    </section>
+
+    <!-- ======================= Статистика ======================= -->
+    <section class="panel" id="stats">
+        <div class="panel-header">
+            <h2>Сводная статистика по коллекции
+                <button class="help-btn" onclick="openTab('help', 'h-stats')" title="Справка">?</button>
+            </h2>
+            <p class="hint">
+                Распределение документов по языкам, точность каждого метода (по документам с известным
+                эталонным языком), матрицы ошибок и время распознавания.
+            </p>
+        </div>
+        <div class="row no-print">
+            <button class="ghost" onclick="loadStats()">Обновить</button>
+            <button class="ghost" onclick="saveReport('html')">Сохранить отчёт (HTML)</button>
+            <button class="ghost" onclick="saveReport('csv')">Сохранить таблицу (CSV)</button>
+            <button class="ghost" onclick="printReport()">Печать</button>
+        </div>
+        <div id="stats-body"></div>
+        <div class="chart-wrap"><canvas id="stats-chart" height="110"></canvas></div>
+    </section>
+
+    <!-- ======================= Сравнение методов ======================= -->
+    <section class="panel" id="compare">
+        <div class="panel-header">
+            <h2>Сравнение методов: точность и быстродействие
+                <button class="help-btn" onclick="openTab('help', 'h-compare')" title="Справка">?</button>
+            </h2>
+            <p class="hint">
+                На полных страницах все методы почти безошибочны, поэтому дополнительно они сравниваются на
+                случайных фрагментах документов длиной 1, 2, 3, 5, 10, 20 и 50 слов.
+            </p>
+        </div>
+        <div class="row no-print">
+            <label class="topk">Фрагментов на документ:
+                <input id="per-doc" type="number" value="10" min="1" max="50">
+            </label>
+            <button id="btn-bench">Запустить сравнение</button>
+            <button class="ghost" onclick="printReport()">Печать</button>
+        </div>
+        <p id="bench-status" class="status"></p>
+        <div id="bench-table"></div>
+        <div class="chart-wrap"><canvas id="bench-chart" height="120"></canvas></div>
+        <div class="chart-wrap"><canvas id="bench-time" height="90"></canvas></div>
+    </section>
+
+    <!-- ======================= Профили языков ======================= -->
+    <section class="panel" id="profiles">
+        <div class="panel-header">
+            <h2>Профили языков (поисковые образы языков)
+                <button class="help-btn" onclick="openTab('help', 'h-profiles')" title="Справка">?</button>
+            </h2>
+            <p class="hint">
+                Профили построены по обучающему набору текстов (corpus/train/en.txt и fr.txt).
+                После замены обучающих текстов нажмите «Переобучить».
+            </p>
+        </div>
+        <div class="row no-print">
+            <button class="ghost" id="btn-train">Переобучить профили</button>
+        </div>
+        <p id="profiles-status" class="status"></p>
+        <div id="profiles-body"></div>
+    </section>
+
+    <!-- ======================= Справка ======================= -->
+    <section class="panel" id="help">
+        <div class="panel-header">
+            <h2>Справка</h2>
+            <p class="hint">Краткое руководство по работе с системой и описание методов распознавания.</p>
+        </div>
+        <div class="help-grid">
+            <div class="help-card" id="h-detect">
+                <h3>1. Распознавание документов</h3>
+                <ul>
+                    <li>Перетащите PDF-файлы в область загрузки или нажмите «выберите на диске».</li>
+                    <li>Если язык файлов заранее известен, укажите его в поле «Эталонный язык» — тогда система посчитает точность.</li>
+                    <li>Кнопка «Загрузить тестовую коллекцию» добавляет 30 подготовленных документов (15 англ. + 15 франц.).</li>
+                    <li>Отметьте нужные методы и нажмите «Распознать все документы».</li>
+                    <li>В таблице: имя документа — ссылка на PDF; для каждого метода — язык, уверенность и время. Ошибки выделены красным.</li>
+                    <li>Эталонный язык можно изменить прямо в таблице.</li>
+                </ul>
+            </div>
+            <div class="help-card" id="h-text">
+                <h3>2. Проверка текста</h3>
+                <p>Позволяет вставить любой фрагмент текста и сразу увидеть ответ каждого метода,
+                    значения метрик d(en) и d(fr) и время работы. Удобно для проверки поведения
+                    методов на очень коротких фразах.</p>
+            </div>
+            <div class="help-card" id="h-stats">
+                <h3>3. Статистика, сохранение и печать</h3>
+                <ul>
+                    <li>«Статистика» — распределение по языкам, точность, матрица ошибок и среднее время каждого метода.</li>
+                    <li>«Сохранить отчёт (HTML)» — файл с полной таблицей результатов и активными ссылками.</li>
+                    <li>«Сохранить таблицу (CSV)» — таблица для Excel (разделитель «;»).</li>
+                    <li>«Печать» — печать текущей вкладки (кнопки и меню на печать не выводятся).</li>
+                </ul>
+            </div>
+            <div class="help-card" id="h-compare">
+                <h3>4. Сравнение методов</h3>
+                <p>Из каждого документа с известным языком вырезаются случайные фрагменты заданной длины,
+                    и каждый метод распознаёт их. Строятся графики точности и среднего времени
+                    распознавания в зависимости от длины фрагмента.</p>
+            </div>
+            <div class="help-card" id="h-profiles">
+                <h3>5. Методы распознавания</h3>
+                <ul class="metric-list">
+                    <li><b>Частотных слов</b> — профиль языка: 200 самых частых слов обучающего текста с вероятностями.
+                        Метрика: d = −(1/n)·Σ log p(w|L); слова, отсутствующие в профиле, получают минимальную вероятность.</li>
+                    <li><b>Коротких слов</b> — профиль: слова длиной до 5 символов, встретившиеся более 3 раз.
+                        Вероятность предложения — произведение вероятностей его коротких слов.</li>
+                    <li><b>Нейросетевой</b> — многослойный перцептрон по символьным N-граммам (N = 1…3).
+                        Метрика: d = 1 − P(L|D).</li>
+                    <li>Языком документа считается язык с <b>минимальной</b> метрикой.</li>
+                </ul>
+            </div>
+            <div class="help-card">
+                <h3>6. Ограничения</h3>
+                <ul>
+                    <li>Поддерживаются только PDF с текстовым слоем (сканы без OCR не распознаются).</li>
+                    <li>Система различает только английский и французский: текст на другом языке будет отнесён к ближайшему из них.</li>
+                    <li>На фрагментах из 1–3 слов надёжность всех методов заметно падает.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="viewer" class="modal-overlay" style="display:none;">
+    <div class="modal">
+        <div class="modal-header">
+            <h2 id="viewer-title"></h2>
+            <button class="modal-close" onclick="closeViewer()">×</button>
+        </div>
+        <div class="modal-meta" id="viewer-meta"></div>
+        <div class="modal-body"><pre id="viewer-text"></pre></div>
+        <div class="modal-footer"><button class="ghost" onclick="closeViewer()">Закрыть</button></div>
+    </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+flowchart TD
+    sd(["subject_domain_computer_science"]) -.-> alg
+    alg(("concept_algorithm<br/>algorithme / algoritmo"))
+    sort(("concept_sorting<br/>tri; algorithme de tri / ordinamento"))
+    qs(("concept_quicksort<br/>tri rapide; pivot / quicksort"))
+    ms(("concept_merge_sort<br/>tri fusion / merge sort"))
+    hs(("concept_heapsort<br/>tri par tas / heapsort"))
+    heap(("concept_heap<br/>tas / heap"))
+    dc(("concept_divide_and_conquer<br/>diviser pour régner"))
+    cx(("concept_complexity<br/>complexité / complessità"))
+    alg ==>|"nrel_inclusion"| sort
+    sort ==>|"nrel_inclusion"| qs
+    sort ==>|"nrel_inclusion"| ms
+    sort ==>|"nrel_inclusion"| hs
+    alg ==>|"nrel_inclusion"| cx
+    qs -.->|"nrel_related"| dc
+    ms -.->|"nrel_related"| dc
+    hs -.->|"nrel_related"| heap

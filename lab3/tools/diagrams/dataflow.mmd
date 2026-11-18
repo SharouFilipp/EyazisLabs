@@ -1,0 +1,18 @@
+flowchart TD
+    A["Файлы PDF / DOCX / TXT"] --> C["doc_reader: текст и абзацы"]
+    C --> D["text_processor: язык, область,<br/>предложения, термины"]
+    D --> E[("documents")]
+    E --> F["df(t), |DB| по коллекции"]
+    F --> G["Метод 1 — sentence extraction:<br/>w(t,D), Score·Posd·Posp"]
+    K[["kb/*.scs"]] --> M["sc-память: понятия, идентификаторы fr/it,<br/>nrel_inclusion, nrel_related"]
+    E --> S["Метод 2 — агент OSTIS:<br/>понятия в предложениях, активация,<br/>отбор с покрытием понятий"]
+    M --> S
+    G --> R1["Классический реферат +<br/>ключевые слова"]
+    S --> R2["Семантический реферат +<br/>ключевые понятия базы знаний"]
+    R1 --> O["ostis.py: фрагменты SCs"]
+    R2 --> O
+    R1 --> T[("sentences, terms, summaries")]
+    R2 --> T2[("sentences, doc_concepts, summaries")]
+    O --> T
+    T --> U["Интерфейс: сравнение методов,<br/>SCg-граф, оценка; файлы HTML / TXT / SCs"]
+    T2 --> U

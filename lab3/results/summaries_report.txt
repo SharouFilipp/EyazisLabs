@@ -1,0 +1,533 @@
+Les algorithmes de tri : principes, complexité et usages
+Документ: http://localhost:8003/documents/1/file
+Язык: французский; область: научная статья (computer science); предложений в тексте: 34
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Le tri est l'une des opérations les plus fondamentales de l'informatique, car un grand nombre de traitements supposent que les données soient d'abord ordonnées.
+2. Rechercher un élément, éliminer les doublons, fusionner deux listes ou construire un index devient beaucoup plus simple lorsque les valeurs sont rangées selon une relation d'ordre.
+3. Un algorithme de tri par comparaison ne dispose que d'une seule opération pour obtenir de l'information sur les données : comparer deux éléments et savoir lequel est le plus petit.
+4. Tout algorithme de ce type doit effectuer, dans le pire des cas, un nombre de comparaisons proportionnel à n log n pour trier n éléments.
+5. Le tri par insertion parcourt le tableau de gauche à droite et insère chaque nouvel élément à sa place dans la partie déjà triée.
+6. Sa complexité est quadratique dans le pire des cas, mais il est très rapide sur des tableaux presque triés et sur de petites séquences.
+7. Le tri fusion repose sur le principe « diviser pour régner » : le tableau est coupé en deux moitiés, chaque moitié est triée récursivement, puis les deux séquences triées sont fusionnées.
+8. Le tri rapide, proposé par Tony Hoare, choisit un élément appelé pivot et partitionne le tableau en deux zones : les éléments plus petits que le pivot et les éléments plus grands.
+9. En moyenne, le tri rapide effectue environ n log n comparaisons avec une constante très faible, et il travaille directement dans le tableau sans mémoire supplémentaire importante.
+10. Le tri par tas utilise une structure de données particulière, le tas binaire, dans laquelle chaque nœud est supérieur à ses descendants.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- tri (2.079)
+    - tri rapide
+    - tri fusion
+    - algorithme de tri
+- fusion (1.282)
+    - tri fusion
+- tas (1.248)
+- comparaisons (1.213)
+- log (1.178)
+- pire (1.178)
+- pivot (1.178)
+- borne (1.144)
+- choix (1.144)
+- récursivement (1.144)
+    - triée récursivement
+
+======================================================================
+
+Les bases de données relationnelles et le langage SQL
+Документ: http://localhost:8003/documents/2/file
+Язык: французский; область: научная статья (computer science); предложений в тексте: 34
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Une base de données est un ensemble organisé d'informations, géré par un logiciel spécialisé appelé système de gestion de bases de données.
+2. Son rôle est de stocker les données de manière durable, de permettre leur consultation rapide et de garantir leur cohérence même lorsque de nombreux utilisateurs travaillent simultanément.
+3. Parmi les différents modèles proposés depuis les années soixante, le modèle relationnel est devenu dominant et reste aujourd'hui au cœur de la plupart des applications de gestion.
+4. Le modèle relationnel a été introduit par Edgar Codd en 1970 avec une idée simple : représenter toutes les données sous forme de relations, c'est-à-dire de tables composées de lignes et de colonnes.
+5. Chaque ligne correspond à un objet du monde réel, par exemple un client ou une commande, et chaque colonne à un attribut de cet objet.
+6. La notion de clé joue un rôle central dans l'organisation des relations.
+7. Une clé primaire identifie de façon unique chaque ligne d'une table, tandis qu'une clé étrangère établit un lien entre deux tables en faisant référence à la clé primaire d'une autre relation.
+8. Le langage SQL est le langage standard des bases de données relationnelles.
+9. Une requête de sélection indique les colonnes souhaitées, les tables concernées et les conditions que doivent satisfaire les lignes.
+10. Les formes normales successives visent à éliminer les redondances et les anomalies de mise à jour qui apparaissent lorsqu'une même information est stockée à plusieurs endroits.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- lignes (1.520)
+    - ligne correspond
+- relationnel (1.520)
+    - modèle relationnel
+- client (1.360)
+- requête (1.360)
+- transactions (1.360)
+- colonnes (1.280)
+- commande (1.280)
+- durable (1.280)
+- gestion (1.280)
+- schéma (1.280)
+
+======================================================================
+
+Les réseaux de neurones artificiels et l'apprentissage profond
+Документ: http://localhost:8003/documents/3/file
+Язык: французский; область: научная статья (computer science); предложений в тексте: 31
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Les réseaux de neurones artificiels sont des modèles de calcul inspirés, de manière très simplifiée, du fonctionnement du cerveau.
+2. Ils occupent aujourd'hui une place centrale en intelligence artificielle, car ils permettent de reconnaître des images, de traduire des textes ou de transcrire la parole avec une précision inconnue il y a encore quelques décennies.
+3. L'élément de base d'un réseau est le neurone artificiel, qui reçoit plusieurs valeurs d'entrée, les multiplie par des poids, additionne le résultat et applique une fonction d'activation.
+4. Les premiers modèles, comme le perceptron proposé par Frank Rosenblatt à la fin des années cinquante, utilisaient une simple fonction à seuil.
+5. Les réseaux modernes emploient des fonctions d'activation non linéaires, par exemple la fonction sigmoïde ou la fonction ReLU, qui renvoie zéro pour les valeurs négatives.
+6. La couche d'entrée reçoit les données, les couches cachées effectuent des transformations successives et la couche de sortie produit le résultat, par exemple la probabilité qu'une image représente un chat.
+7. On parle d'apprentissage profond lorsque le réseau comporte de nombreuses couches cachées, chacune extrayant des représentations de plus en plus abstraites des données.
+8. L'apprentissage consiste à ajuster les poids du réseau afin de minimiser une fonction de perte qui mesure l'écart entre les prédictions et les réponses attendues.
+9. L'algorithme de rétropropagation calcule efficacement le gradient de la perte par rapport à tous les poids en propageant l'erreur de la sortie vers l'entrée, couche par couche.
+10. Un problème majeur est le surapprentissage : le réseau mémorise les exemples d'apprentissage au lieu d'apprendre des régularités générales, et ses performances chutent sur de nouvelles données.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- réseau (2.079)
+    - réseaux de neurones
+- couches (1.993)
+    - couches cachées
+- apprentissage (1.819)
+    - données d apprentissage
+    - apprentissage profond
+- neurones (1.646)
+    - réseaux de neurones
+    - neurones artificiels
+- poids (1.560)
+- artificiels (1.300)
+    - neurones artificiels
+- entrée (1.300)
+- perte (1.300)
+- activation (1.213)
+    - fonction d activation
+- détectent (1.213)
+
+======================================================================
+
+La compilation : du code source au programme exécutable
+Документ: http://localhost:8003/documents/4/file
+Язык: французский; область: научная статья (computer science); предложений в тексте: 31
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Un compilateur est un programme qui traduit un texte écrit dans un langage de programmation de haut niveau en un code exécutable par la machine.
+2. Grâce à lui, le programmeur peut exprimer ses idées avec des notions abstraites, comme les fonctions, les boucles ou les objets, sans se préoccuper des détails du processeur.
+3. Le travail d'un compilateur est traditionnellement découpé en plusieurs phases successives.
+4. La partie frontale analyse le code source et en construit une représentation interne, tandis que la partie arrière transforme cette représentation en instructions pour une architecture donnée.
+5. La première phase est l'analyse lexicale, qui découpe la suite de caractères du programme en unités appelées lexèmes : mots-clés, identificateurs, nombres, opérateurs et signes de ponctuation.
+6. L'analyse syntaxique vérifie ensuite que la suite de lexèmes respecte la grammaire du langage et construit un arbre syntaxique qui reflète la structure du programme.
+7. Il existe deux grandes familles d'analyseurs : les analyseurs descendants, qui partent du symbole initial et cherchent à dériver le programme, et les analyseurs ascendants, qui regroupent progressivement les lexèmes en constructions plus larges.
+8. Un programme syntaxiquement correct peut encore contenir des erreurs de sens, que détecte l'analyse sémantique.
+9. Le compilateur vérifie que chaque variable est déclarée avant son utilisation, que les types des opérandes sont compatibles et que les fonctions sont appelées avec le bon nombre d'arguments.
+10. Après les analyses, le compilateur traduit l'arbre syntaxique en un code intermédiaire, indépendant à la fois du langage source et de la machine cible.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- compilateur (2.079)
+- code (1.976)
+    - code intermédiaire
+- analyseurs (1.560)
+- grammaire (1.456)
+- lexèmes (1.456)
+- machine (1.456)
+    - machine cible
+- syntaxique (1.456)
+    - arbre syntaxique
+- programme (1.386)
+- intermédiaire (1.352)
+    - code intermédiaire
+- phase (1.352)
+
+======================================================================
+
+Madame Bovary de Flaubert : le rêve romanesque face à la réalité
+Документ: http://localhost:8003/documents/5/file
+Язык: французский; область: сочинение по литературе; предложений в тексте: 33
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Publié en 1857, Madame Bovary de Gustave Flaubert est considéré comme l'un des romans fondateurs du réalisme français.
+2. L'œuvre raconte l'histoire d'Emma, une jeune femme de province qui étouffe dans un mariage sans passion et cherche à vivre les émotions découvertes dans ses lectures.
+3. Le personnage d'Emma Bovary est d'abord façonné par son éducation au couvent, où elle a lu en cachette des romans sentimentaux.
+4. Elle y a appris à imaginer l'amour comme une passion exaltée, peuplée de châteaux, de chevaux et d'amants héroïques.
+5. Lorsqu'elle épouse Charles, un médecin de campagne honnête mais terne, elle découvre que le mariage ne ressemble en rien à ces images.
+6. Emma s'ennuie à Tostes, puis à Yonville, dans des villages où les journées se répètent sans événement.
+7. Le bal au château de la Vaubyessard constitue pour elle une révélation : pendant une nuit, elle entrevoit le monde luxueux dont elle rêve, puis elle retombe dans sa vie ordinaire avec une amertume accrue.
+8. Les aventures amoureuses d'Emma avec Rodolphe, puis avec Léon, apparaissent comme des tentatives désespérées pour réaliser ses rêves.
+9. Rodolphe est un séducteur cynique qui l'abandonne au moment où elle croit pouvoir s'enfuir avec lui.
+10. Le pharmacien Homais incarne la sottise satisfaite et le culte des idées reçues : il parle sans cesse de progrès et de science, mais ne comprend rien à ce qui l'entoure.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- emma (2.079)
+- flaubert (1.733)
+- bovary (1.502)
+    - madame bovary
+- rodolphe (1.386)
+- bourgeoise (1.271)
+- châteaux (1.271)
+- discours (1.271)
+- fuir (1.271)
+- homais (1.271)
+- héroïne (1.271)
+
+======================================================================
+
+Les Misérables de Victor Hugo : un roman de la rédemption et de la justice sociale
+Документ: http://localhost:8003/documents/6/file
+Язык: французский; область: сочинение по литературе; предложений в тексте: 35
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Les Misérables, publié par Victor Hugo en 1862, est une vaste fresque romanesque qui mêle l'histoire individuelle d'un ancien forçat et le tableau de la société française de la première moitié du dix-neuvième siècle.
+2. Le héros du roman, Jean Valjean, a passé dix-neuf ans au bagne pour avoir volé un pain afin de nourrir les enfants de sa sœur, puis pour ses tentatives d'évasion.
+3. À sa libération, il est rejeté de partout à cause de son passeport jaune d'ancien forçat.
+4. Lorsque Valjean lui vole son argenterie et se fait arrêter, l'évêque affirme aux gendarmes qu'il la lui a donnée et lui offre en plus deux chandeliers.
+5. Devenu, sous un faux nom, un industriel respecté et le maire d'une petite ville, Valjean consacre sa vie à faire le bien.
+6. Lorsqu'un innocent est sur le point d'être condamné à sa place, il se dénonce au tribunal après une nuit de lutte intérieure, décrite par Hugo comme une tempête sous un crâne.
+7. Face à Valjean se dresse l'inspecteur Javert, personnage rigide qui incarne la loi sans miséricorde.
+8. Fils de bagnard, Javert a choisi de servir l'ordre avec une fidélité absolue et ne croit pas qu'un criminel puisse changer.
+9. Abandonnée par l'homme qu'elle aimait, elle confie sa fille Cosette aux Thénardier, des aubergistes avides qui exploitent l'enfant.
+10. La dernière partie du livre est consacrée à l'insurrection républicaine de juin 1832, où se retrouvent les étudiants idéalistes, le jeune Marius amoureux de Cosette et le gamin Gavroche.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- valjean (2.079)
+    - jean valjean
+- hugo (1.848)
+    - victor hugo
+    - hugo affirme
+- cosette (1.502)
+- javert (1.502)
+- affirme (1.386)
+    - hugo affirme
+- bagne (1.386)
+- fantine (1.386)
+- justice (1.386)
+- loi (1.386)
+- victor (1.386)
+    - victor hugo
+
+======================================================================
+
+Le Rouge et le Noir de Stendhal : l'ambition d'un jeune homme sous la Restauration
+Документ: http://localhost:8003/documents/7/file
+Язык: французский; область: сочинение по литературе; предложений в тексте: 33
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Le Rouge et le Noir, publié par Stendhal en 1830, retrace l'ascension et la chute de Julien Sorel, un jeune homme d'origine modeste qui rêve de gloire dans une société figée.
+2. Sous-titré Chronique de 1830, le roman offre un portrait critique de la France de la Restauration.
+3. Julien Sorel est le fils d'un charpentier du Jura, méprisé par son père et ses frères parce qu'il préfère les livres au travail manuel.
+4. Il voue une admiration secrète à Napoléon, qui incarne pour lui la possibilité de s'élever par le mérite.
+5. L'ambition est le trait dominant du héros, mais elle se heurte sans cesse à sa sensibilité et à son orgueil.
+6. Engagé comme précepteur chez le maire de Verrières, monsieur de Rênal, Julien décide de séduire madame de Rênal pour prouver sa valeur.
+7. Au séminaire de Besançon, Julien découvre un monde dominé par l'hypocrisie, la surveillance et les rivalités.
+8. Il comprend que l'intelligence y est suspecte et que la réussite dépend de l'art de dissimuler ses pensées.
+9. À Paris, devenu secrétaire du marquis de La Mole, Julien pénètre dans l'aristocratie et suscite l'intérêt de Mathilde, la fille du marquis.
+10. Fou de colère, Julien retourne à Verrières et tire sur madame de Rênal pendant la messe.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- julien (2.079)
+    - julien sorel
+- rênal (1.520)
+    - madame de rênal
+- noir (1.440)
+- rouge (1.440)
+- ambition (1.360)
+- stendhal (1.360)
+- orgueil (1.280)
+- sorel (1.280)
+    - julien sorel
+- chances (1.200)
+- mathilde (1.200)
+
+======================================================================
+
+Les Fleurs du mal de Baudelaire : le spleen et l'idéal
+Документ: http://localhost:8003/documents/8/file
+Язык: французский; область: сочинение по литературе; предложений в тексте: 32
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Les Fleurs du mal, recueil publié par Charles Baudelaire en 1857, occupe une place décisive dans l'histoire de la poésie française.
+2. Le livre rompt avec la tradition romantique tout en prolongeant certaines de ses intuitions, et il ouvre la voie à la poésie moderne.
+3. Le recueil est construit avec une grande rigueur, et Baudelaire tenait à ce qu'on le lise comme un ensemble organisé plutôt que comme une suite de pièces isolées.
+4. La première et la plus longue section, intitulée Spleen et Idéal, expose le conflit fondamental qui déchire le poète.
+5. Les sections suivantes, consacrées aux tableaux parisiens, au vin, aux fleurs du mal, à la révolte et à la mort, décrivent les tentatives successives pour échapper à ce conflit.
+6. L'idéal correspond chez Baudelaire à l'aspiration vers la beauté, la pureté et l'infini.
+7. Le spleen désigne au contraire un état d'angoisse, d'ennui et d'impuissance qui écrase le poète.
+8. Baudelaire emprunte ce mot anglais pour nommer une mélancolie profonde, liée à la conscience du temps qui passe et de la mort.
+9. Dans les poèmes qui portent ce titre, le ciel bas et lourd pèse comme un couvercle, l'esprit est assiégé par des pensées sombres et l'espoir semble vaincu.
+10. Selon Baudelaire, la nature est un temple où les choses se répondent : les parfums, les couleurs et les sons se correspondent et renvoient à une réalité spirituelle cachée.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- baudelaire (2.079)
+- poète (1.976)
+- poésie (1.560)
+- recueil (1.560)
+- beauté (1.456)
+- fleurs (1.352)
+    - fleurs du mal
+- poèmes (1.352)
+- section (1.352)
+- spleen (1.352)
+- apparaît (1.248)
+
+======================================================================
+
+La crittografia a chiave pubblica e la sicurezza delle comunicazioni
+Документ: http://localhost:8003/documents/9/file
+Язык: итальянский; область: научная статья (computer science); предложений в тексте: 33
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. La crittografia è la disciplina che studia i metodi per rendere un messaggio comprensibile soltanto ai destinatari autorizzati.
+2. Per secoli è stata utilizzata soprattutto in ambito militare e diplomatico, ma con la diffusione di Internet è diventata uno strumento quotidiano che protegge i pagamenti elettronici, la posta e le conversazioni.
+3. Nei sistemi tradizionali, detti a chiave simmetrica, mittente e destinatario condividono la stessa chiave segreta, utilizzata sia per la cifratura sia per la decifratura.
+4. Algoritmi simmetrici come AES sono molto veloci e sicuri, ma presentano un problema fondamentale: le due parti devono scambiarsi la chiave in modo sicuro prima di poter comunicare.
+5. La soluzione fu proposta nel 1976 da Whitfield Diffie e Martin Hellman, che introdussero l'idea di una coppia di chiavi distinte.
+6. Ogni utente possiede una chiave pubblica, che può essere diffusa liberamente, e una chiave privata, che deve rimanere segreta.
+7. L'algoritmo RSA, presentato nel 1977 da Rivest, Shamir e Adleman, è il più noto sistema a chiave pubblica.
+8. Moltiplicare due numeri primi di centinaia di cifre è un'operazione rapida, mentre ritrovare i fattori a partire dal prodotto richiede, con gli algoritmi noti, un tempo enorme.
+9. Il mittente calcola un'impronta del messaggio con una funzione di hash e la cifra con la propria chiave privata.
+10. Resta però un problema: come essere sicuri che una chiave pubblica appartenga davvero alla persona indicata?
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- chiave (2.079)
+    - chiave pubblica
+    - crittografia a chiave
+    - chiave privata
+- crittografia (1.386)
+    - crittografia a chiave pubblica
+- digitale (1.386)
+    - firma digitale
+- chiavi (1.329)
+- simmetrica (1.329)
+    - algoritmi simmetrici
+- firma (1.271)
+    - firma digitale
+- mittente (1.271)
+- certificati (1.213)
+- cifratura (1.213)
+- rsa (1.213)
+
+======================================================================
+
+I sistemi operativi: gestione dei processi, della memoria e dei file
+Документ: http://localhost:8003/documents/10/file
+Язык: итальянский; область: научная статья (computer science); предложений в тексте: 31
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Il sistema operativo è il software fondamentale che gestisce le risorse di un calcolatore e offre ai programmi un ambiente di esecuzione comodo e sicuro.
+2. Senza di esso, ogni applicazione dovrebbe controllare direttamente il processore, la memoria e i dispositivi, con enormi difficoltà di programmazione.
+3. La parte centrale del sistema operativo è il nucleo, o kernel, che viene eseguito in una modalità privilegiata del processore.
+4. Questa separazione protegge il sistema da programmi difettosi o malevoli, poiché un errore in un'applicazione non può danneggiare direttamente il nucleo.
+5. Un processo è un programma in esecuzione, con il proprio spazio di indirizzamento, i propri registri e le proprie risorse.
+6. Il sistema operativo crea e termina i processi, li sospende e li riprende, e tiene traccia del loro stato in apposite strutture dati.
+7. Poiché i processi pronti sono di solito più numerosi dei processori disponibili, il sistema operativo deve decidere quale eseguire in ogni istante: questo compito è chiamato scheduling.
+8. Gli algoritmi di scheduling cercano di bilanciare obiettivi diversi, come la rapidità di risposta per i programmi interattivi, l'utilizzo efficiente del processore e l'equità tra gli utenti.
+9. Quando più processi o thread accedono alle stesse risorse, è necessaria la sincronizzazione per evitare risultati incoerenti.
+10. Grazie alla memoria virtuale, ogni processo ha l'impressione di disporre di uno spazio di indirizzamento ampio e continuo, indipendente dalla memoria fisica realmente installata.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- processo (2.079)
+- processore (1.646)
+- file (1.386)
+    - file system
+- eseguire (1.300)
+- gestione (1.300)
+- hardware (1.300)
+- interruzioni (1.300)
+- nucleo (1.300)
+- scheduling (1.300)
+- thread (1.300)
+
+======================================================================
+
+Le reti di calcolatori e l'architettura dei protocolli di Internet
+Документ: http://localhost:8003/documents/11/file
+Язык: итальянский; область: научная статья (computer science); предложений в тексте: 30
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Una rete di calcolatori è un insieme di dispositivi collegati tra loro che possono scambiarsi dati e condividere risorse.
+2. Dalle piccole reti domestiche fino alla rete mondiale Internet, la comunicazione tra calcolatori è diventata una componente essenziale della vita economica e sociale.
+3. Perché due calcolatori possano comunicare, devono rispettare regole comuni chiamate protocolli.
+4. Un protocollo stabilisce il formato dei messaggi, l'ordine in cui vengono scambiati e le azioni da compiere alla loro ricezione.
+5. Data la complessità del problema, i protocolli sono organizzati in livelli sovrapposti, ciascuno dei quali offre servizi al livello superiore e utilizza quelli del livello inferiore.
+6. I dati da trasmettere vengono suddivisi in piccoli blocchi, detti pacchetti, ognuno dei quali contiene l'indirizzo del destinatario e viaggia in modo indipendente attraverso la rete.
+7. Al livello di rete opera il protocollo IP, che assegna a ogni dispositivo un indirizzo IP e si occupa di trasportare i pacchetti dalla sorgente alla destinazione.
+8. I router sono i dispositivi incaricati dell'instradamento: per ogni pacchetto ricevuto consultano una tabella e decidono su quale collegamento inoltrarlo.
+9. Le tabelle di instradamento vengono costruite automaticamente da protocolli che scambiano informazioni sulla topologia della rete, come OSPF all'interno di un'organizzazione e BGP tra i diversi fornitori di servizi.
+10. Il protocollo TCP fornisce un canale affidabile e ordinato: numera i dati, richiede conferme di ricezione e ritrasmette i pacchetti perduti.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- pacchetti (1.679)
+    - commutazione di pacchetto
+- protocolli (1.386)
+- trasporto (1.280)
+- commutazione (1.200)
+    - commutazione di pacchetto
+- garanzie (1.200)
+- instradamento (1.200)
+- invio (1.200)
+- porta (1.200)
+- progettati (1.200)
+- ricezione (1.200)
+
+======================================================================
+
+L'elaborazione del linguaggio naturale: metodi e applicazioni
+Документ: http://localhost:8003/documents/12/file
+Язык: итальянский; область: научная статья (computer science); предложений в тексте: 28
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. L'elaborazione del linguaggio naturale è il settore dell'informatica che si occupa di rendere i calcolatori capaci di comprendere e produrre testi nelle lingue umane.
+2. Si tratta di un campo interdisciplinare, che unisce informatica, linguistica e statistica.
+3. La principale difficoltà del linguaggio naturale è l'ambiguità, che si manifesta a tutti i livelli dell'analisi.
+4. Una stessa parola può avere significati diversi a seconda del contesto, una frase può ammettere più strutture sintattiche e un pronome può riferirsi a persone diverse.
+5. Il trattamento di un testo comincia generalmente con la suddivisione in frasi e in parole, seguita dall'analisi morfologica.
+6. Questa fase riconosce la forma di base di ogni parola, il lemma, e ne determina le caratteristiche grammaticali, come il genere, il numero o il tempo verbale.
+7. L'analisi sintattica individua la struttura della frase, cioè le relazioni tra le parole.
+8. Si possono costruire alberi a costituenti, che raggruppano le parole in sintagmi, oppure alberi a dipendenze, che collegano ogni parola a quella da cui dipende.
+9. Nei primi decenni della disciplina prevalevano i sistemi basati su regole scritte a mano da linguisti esperti.
+10. Le parole vengono rappresentate come vettori numerici che riflettono le loro somiglianze di significato, e i modelli linguistici di grandi dimensioni, addestrati su miliardi di parole, sono in grado di generare testi coerenti e di rispondere a domande.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- frase (2.079)
+- analisi (1.768)
+    - analisi morfologica
+- parole (1.386)
+- ambiguità (1.352)
+- naturale (1.352)
+    - elaborazione del linguaggio naturale
+- riassunto (1.352)
+- sintattica (1.352)
+    - strutture sintattiche
+- tratta (1.352)
+- alberi (1.248)
+- campo (1.248)
+
+======================================================================
+
+La Divina Commedia di Dante: il viaggio dell'uomo verso la salvezza
+Документ: http://localhost:8003/documents/13/file
+Язык: итальянский; область: сочинение по литературе; предложений в тексте: 29
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. La Divina Commedia, composta da Dante Alighieri all'inizio del Trecento, è considerata il capolavoro della letteratura italiana e una delle opere più importanti della cultura europea.
+2. Il poema racconta il viaggio immaginario del poeta attraverso i tre regni dell'oltretomba: l'Inferno, il Purgatorio e il Paradiso.
+3. Il poema è diviso in tre cantiche, ciascuna composta da trentatré canti, a cui si aggiunge un canto introduttivo, per un totale di cento canti.
+4. La terzina di endecasillabi a rima incatenata, inventata da Dante, lega ogni strofa alla successiva e dà al racconto un movimento continuo.
+5. Il viaggio comincia in una selva oscura, immagine dello smarrimento morale in cui il poeta si trova a metà della sua vita.
+6. Impedito da tre fiere di salire verso il colle illuminato dal sole, Dante incontra Virgilio, il grande poeta latino, che gli farà da guida attraverso l'Inferno e il Purgatorio.
+7. L'Inferno è una voragine a forma di imbuto, divisa in nove cerchi in cui i dannati sono puniti secondo la gravità dei loro peccati.
+8. Gli incontri con i dannati sono tra le pagine più celebri del poema: Francesca da Rimini racconta il suo amore infelice, Farinata degli Uberti difende con orgoglio la propria parte politica, Ulisse narra il suo ultimo viaggio oltre i confini del mondo conosciuto.
+9. Il Purgatorio è una montagna che sorge in mezzo all'oceano, dove le anime destinate alla salvezza si purificano dai loro peccati.
+10. Beatrice, la donna amata da Dante in gioventù e morta prematuramente, diventa nel poema la guida verso il Paradiso e il simbolo della grazia divina e della teologia.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- dante (2.079)
+- poema (1.664)
+- inferno (1.456)
+- paradiso (1.456)
+- commedia (1.352)
+    - divina commedia
+- dannati (1.352)
+- divina (1.352)
+    - divina commedia
+- peccati (1.352)
+- purgatorio (1.352)
+- virgilio (1.352)
+
+======================================================================
+
+I Promessi sposi di Manzoni: la storia degli umili e la Provvidenza
+Документ: http://localhost:8003/documents/14/file
+Язык: итальянский; область: сочинение по литературе; предложений в тексте: 31
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. I Promessi sposi di Alessandro Manzoni, pubblicati nella versione definitiva tra il 1840 e il 1842, sono il romanzo più importante dell'Ottocento italiano.
+2. L'autore racconta la vicenda di due giovani popolani della Lombardia del Seicento, Renzo e Lucia, il cui matrimonio viene impedito dalla prepotenza di un signore locale.
+3. Il romanzo si apre con l'incontro tra il curato don Abbondio e i bravi di don Rodrigo, che gli ordinano di non celebrare le nozze tra Renzo e Lucia.
+4. Don Abbondio è un uomo pauroso, che ha scelto la vita religiosa per cercare protezione e non per vocazione.
+5. La sua viltà mette in moto l'intera vicenda e rappresenta il modo in cui la debolezza dei singoli favorisce l'ingiustizia dei potenti.
+6. Il genere scelto da Manzoni è quello del romanzo storico, che mescola personaggi inventati e avvenimenti realmente accaduti.
+7. Lo scrittore finge di aver ritrovato un antico manoscritto e di averne rifatto la lingua, e descrive con grande precisione la Lombardia sotto la dominazione spagnola.
+8. Una delle figure più potenti del romanzo è l'Innominato, un signore temuto da tutti per i suoi delitti, al quale don Rodrigo chiede di rapire Lucia.
+9. La presenza della giovane prigioniera, la sua preghiera e la notte di angoscia che segue provocano nell'Innominato una profonda crisi interiore.
+10. Manzoni non presenta la Provvidenza come una forza che elimina il male, ma come una presenza misteriosa che sa trarre il bene anche dalle sofferenze.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- manzoni (2.079)
+- renzo (1.950)
+- promessi (1.560)
+    - promessi sposi
+- milano (1.430)
+- potenti (1.430)
+- religiosa (1.430)
+- rodrigo (1.430)
+    - don rodrigo
+- lucia (1.386)
+- romanzo (1.300)
+- abbondio (1.300)
+    - don abbondio
+
+======================================================================
+
+Giacomo Leopardi: il pessimismo e la poesia dell'infinito
+Документ: http://localhost:8003/documents/15/file
+Язык: итальянский; область: сочинение по литературе; предложений в тексте: 32
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Giacomo Leopardi, nato a Recanati nel 1798, è uno dei più grandi poeti della letteratura italiana e uno dei pensatori più originali dell'Ottocento europeo.
+2. La formazione di Leopardi avvenne in gran parte nella ricca biblioteca paterna, dove il giovane trascorse anni di studio intenso e solitario.
+3. Imparò da autodidatta il latino, il greco e l'ebraico e compose opere erudite di grande impegno.
+4. Questo studio accanito compromise però la sua salute già fragile e accrebbe il senso di isolamento nel piccolo ambiente di Recanati.
+5. Il pensiero leopardiano viene tradizionalmente descritto come un pessimismo che si sviluppa in varie fasi.
+6. In un primo momento il poeta attribuisce l'infelicità umana al progresso della civiltà e della ragione, che hanno distrutto le illusioni degli antichi.
+7. Il componimento L'infinito, scritto nel 1819, è uno dei vertici della lirica leopardiana.
+8. Il poeta siede su un colle solitario e una siepe gli impedisce di vedere l'orizzonte.
+9. Gli idilli e i canti composti negli anni successivi, come A Silvia, Il sabato del villaggio e La quiete dopo la tempesta, sviluppano il tema delle illusioni giovanili e della loro inevitabile caduta.
+10. Nelle Operette morali, dialoghi e racconti filosofici in prosa, Leopardi espone le sue idee con ironia e fantasia.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- leopardi (2.079)
+    - poesia di leopardi
+- natura (1.664)
+- poesia (1.664)
+    - poesia di leopardi
+- dolore (1.352)
+- felicità (1.352)
+- uomini (1.352)
+- allora (1.248)
+- appare (1.248)
+- dialoghi (1.248)
+- distrutto (1.248)
+
+======================================================================
+
+Il fu Mattia Pascal di Pirandello: l'identità e la maschera
+Документ: http://localhost:8003/documents/16/file
+Язык: итальянский; область: сочинение по литературе; предложений в тексте: 29
+
+КЛАССИЧЕСКИЙ РЕФЕРАТ
+1. Il fu Mattia Pascal, pubblicato da Luigi Pirandello nel 1904, è uno dei romanzi più innovativi della letteratura italiana del Novecento.
+2. La vicenda di un uomo che, creduto morto, cerca di vivere una nuova esistenza sotto un falso nome permette all'autore di affrontare il tema della crisi dell'identità.
+3. Mattia Pascal vive in un piccolo paese ligure ed è intrappolato in una situazione familiare e sociale insopportabile.
+4. Ha sperperato il patrimonio di famiglia, si è sposato senza amore e lavora come bibliotecario in una biblioteca abbandonata.
+5. Dopo una lite con la moglie e la suocera, fugge di casa e, per caso, vince una grossa somma alla roulette di Montecarlo.
+6. Mattia assume il nome di Adriano Meis e si costruisce un'identità completamente nuova, inventando un passato e cambiando perfino il proprio aspetto fisico.
+7. In un primo momento questa libertà gli sembra meravigliosa: non ha più legami, obblighi né debiti, e può viaggiare a suo piacimento.
+8. A Roma, nella pensione del signor Paleari, Adriano si innamora di Adriana e comprende di non poter costruire con lei una vita autentica.
+9. La vita è un flusso continuo e mutevole, mentre la società impone agli individui forme fisse, ruoli e maschere che li imprigionano.
+10. Nel romanzo compaiono anche importanti riflessioni filosofiche, affidate soprattutto al signor Paleari, appassionato di spiritismo e di teorie bizzarre.
+
+РЕФЕРАТ В ВИДЕ СПИСКА КЛЮЧЕВЫХ СЛОВ
+- mattia (2.079)
+    - mattia pascal
+- pirandello (1.690)
+- adriano (1.560)
+    - adriano meis
+- pascal (1.560)
+    - mattia pascal
+- meis (1.430)
+    - adriano meis
+- scopre (1.430)
+- casa (1.300)
+- comica (1.300)
+- convenzioni (1.300)
+    - convenzioni sociali
+- definisce (1.300)
+
+======================================================================

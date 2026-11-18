@@ -1,0 +1,1294 @@
+{
+ "machine": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel · Python 3.10.11",
+ "train": {
+  "hash": "8b59bb99be02bd61119c255bc145fb8180c2dbb422d204a925d0260d0fa47e42",
+  "trained_at": "2026-10-20 13:22:59",
+  "corpus": {
+   "en": {
+    "bytes": 102305,
+    "chars": 102087,
+    "words": 15450
+   },
+   "fr": {
+    "bytes": 102353,
+    "chars": 98582,
+    "words": 15463
+   }
+  },
+  "train_ms": {
+   "frequent": 29.5,
+   "short": 15.9,
+   "neural": 2843.4
+  },
+  "neural": {
+   "samples": 3000,
+   "features": 4000,
+   "hidden": 64,
+   "epochs": 13,
+   "val_accuracy": 1.0,
+   "loss": 0.01302
+  }
+ },
+ "train_total_ms": 2972.8,
+ "extract_avg_ms": 10.97,
+ "summary": {
+  "documents": 30,
+  "methods": {
+   "frequent": {
+    "processed": 30,
+    "by_lang": {
+     "en": 15,
+     "fr": 15
+    },
+    "labeled": 30,
+    "correct": 30,
+    "accuracy": 1.0,
+    "avg_ms": 0.319,
+    "total_ms": 9.56,
+    "confusion": {
+     "en": {
+      "en": 15,
+      "fr": 0
+     },
+     "fr": {
+      "en": 0,
+      "fr": 15
+     }
+    }
+   },
+   "short": {
+    "processed": 30,
+    "by_lang": {
+     "en": 15,
+     "fr": 15
+    },
+    "labeled": 30,
+    "correct": 30,
+    "accuracy": 1.0,
+    "avg_ms": 0.376,
+    "total_ms": 11.28,
+    "confusion": {
+     "en": {
+      "en": 15,
+      "fr": 0
+     },
+     "fr": {
+      "en": 0,
+      "fr": 15
+     }
+    }
+   },
+   "neural": {
+    "processed": 30,
+    "by_lang": {
+     "en": 15,
+     "fr": 15
+    },
+    "labeled": 30,
+    "correct": 30,
+    "accuracy": 1.0,
+    "avg_ms": 3.07,
+    "total_ms": 92.1,
+    "confusion": {
+     "en": {
+      "en": 15,
+      "fr": 0
+     },
+     "fr": {
+      "en": 0,
+      "fr": 15
+     }
+    }
+   }
+  },
+  "agreement": 30,
+  "compared": 30
+ },
+ "fragments": {
+  "lengths": [
+   "1",
+   "2",
+   "3",
+   "5",
+   "10",
+   "20",
+   "50",
+   "full"
+  ],
+  "documents": 30,
+  "table": {
+   "frequent": {
+    "1": {
+     "samples": 600,
+     "accuracy": 0.7367,
+     "avg_ms": 0.0032,
+     "wall_ms": 3.1
+    },
+    "2": {
+     "samples": 600,
+     "accuracy": 0.8717,
+     "avg_ms": 0.0084,
+     "wall_ms": 7.6
+    },
+    "3": {
+     "samples": 600,
+     "accuracy": 0.9583,
+     "avg_ms": 0.0048,
+     "wall_ms": 4.2
+    },
+    "5": {
+     "samples": 600,
+     "accuracy": 0.9867,
+     "avg_ms": 0.006,
+     "wall_ms": 4.9
+    },
+    "10": {
+     "samples": 600,
+     "accuracy": 1.0,
+     "avg_ms": 0.0105,
+     "wall_ms": 7.8
+    },
+    "20": {
+     "samples": 600,
+     "accuracy": 1.0,
+     "avg_ms": 0.0161,
+     "wall_ms": 11.1
+    },
+    "50": {
+     "samples": 600,
+     "accuracy": 1.0,
+     "avg_ms": 0.0541,
+     "wall_ms": 35.0
+    },
+    "full": {
+     "samples": 30,
+     "accuracy": 1.0,
+     "avg_ms": 0.3692,
+     "wall_ms": 11.3
+    }
+   },
+   "short": {
+    "1": {
+     "samples": 600,
+     "accuracy": 0.73,
+     "avg_ms": 0.0047,
+     "wall_ms": 4.1
+    },
+    "2": {
+     "samples": 600,
+     "accuracy": 0.8683,
+     "avg_ms": 0.0088,
+     "wall_ms": 7.2
+    },
+    "3": {
+     "samples": 600,
+     "accuracy": 0.9533,
+     "avg_ms": 0.008,
+     "wall_ms": 6.4
+    },
+    "5": {
+     "samples": 600,
+     "accuracy": 0.9917,
+     "avg_ms": 0.0094,
+     "wall_ms": 7.1
+    },
+    "10": {
+     "samples": 600,
+     "accuracy": 1.0,
+     "avg_ms": 0.0119,
+     "wall_ms": 8.5
+    },
+    "20": {
+     "samples": 600,
+     "accuracy": 1.0,
+     "avg_ms": 0.0211,
+     "wall_ms": 14.2
+    },
+    "50": {
+     "samples": 600,
+     "accuracy": 1.0,
+     "avg_ms": 0.0521,
+     "wall_ms": 33.3
+    },
+    "full": {
+     "samples": 30,
+     "accuracy": 1.0,
+     "avg_ms": 0.3276,
+     "wall_ms": 10.0
+    }
+   },
+   "neural": {
+    "1": {
+     "samples": 600,
+     "accuracy": 0.8317,
+     "avg_ms": 0.3806,
+     "wall_ms": 233.4
+    },
+    "2": {
+     "samples": 600,
+     "accuracy": 0.8717,
+     "avg_ms": 0.2947,
+     "wall_ms": 180.6
+    },
+    "3": {
+     "samples": 600,
+     "accuracy": 0.9433,
+     "avg_ms": 0.396,
+     "wall_ms": 243.1
+    },
+    "5": {
+     "samples": 600,
+     "accuracy": 0.9617,
+     "avg_ms": 0.4022,
+     "wall_ms": 246.2
+    },
+    "10": {
+     "samples": 600,
+     "accuracy": 0.9883,
+     "avg_ms": 0.477,
+     "wall_ms": 291.8
+    },
+    "20": {
+     "samples": 600,
+     "accuracy": 0.9967,
+     "avg_ms": 0.565,
+     "wall_ms": 344.5
+    },
+    "50": {
+     "samples": 600,
+     "accuracy": 1.0,
+     "avg_ms": 1.0359,
+     "wall_ms": 628.9
+    },
+    "full": {
+     "samples": 30,
+     "accuracy": 1.0,
+     "avg_ms": 3.0303,
+     "wall_ms": 91.3
+    }
+   }
+  }
+ },
+ "documents": [
+  {
+   "filename": "en_01_Photosynthesis.pdf",
+   "true_lang": "en",
+   "chars": 2537,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 10.06753,
+      "fr": 13.54478
+     },
+     "confidence": 0.2567,
+     "time_ms": 0.243
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 5.56212,
+      "fr": 13.19938
+     },
+     "confidence": 0.5786,
+     "time_ms": 0.261
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.09128,
+      "fr": 0.90872
+     },
+     "confidence": 0.9087,
+     "time_ms": 2.51
+    }
+   }
+  },
+  {
+   "filename": "en_02_Volcano.pdf",
+   "true_lang": "en",
+   "chars": 2574,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.8149,
+      "fr": 13.54731
+     },
+     "confidence": 0.2755,
+     "time_ms": 0.247
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.26279,
+      "fr": 13.22423
+     },
+     "confidence": 0.5264,
+     "time_ms": 0.293
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.08751,
+      "fr": 0.91249
+     },
+     "confidence": 0.9125,
+     "time_ms": 2.469
+    }
+   }
+  },
+  {
+   "filename": "en_03_Jazz.pdf",
+   "true_lang": "en",
+   "chars": 2552,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.49524,
+      "fr": 13.57834
+     },
+     "confidence": 0.3007,
+     "time_ms": 0.23
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.76208,
+      "fr": 13.42417
+     },
+     "confidence": 0.4963,
+     "time_ms": 0.44
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.08404,
+      "fr": 0.91596
+     },
+     "confidence": 0.916,
+     "time_ms": 2.864
+    }
+   }
+  },
+  {
+   "filename": "en_04_Bicycle.pdf",
+   "true_lang": "en",
+   "chars": 2572,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.22754,
+      "fr": 13.41644
+     },
+     "confidence": 0.3122,
+     "time_ms": 0.434
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 5.9846,
+      "fr": 13.17686
+     },
+     "confidence": 0.5458,
+     "time_ms": 0.382
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.07787,
+      "fr": 0.92213
+     },
+     "confidence": 0.9221,
+     "time_ms": 3.474
+    }
+   }
+  },
+  {
+   "filename": "en_05_Chess.pdf",
+   "true_lang": "en",
+   "chars": 2569,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.31642,
+      "fr": 13.43978
+     },
+     "confidence": 0.3068,
+     "time_ms": 0.236
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.71723,
+      "fr": 13.27399
+     },
+     "confidence": 0.494,
+     "time_ms": 0.301
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.07432,
+      "fr": 0.92568
+     },
+     "confidence": 0.9257,
+     "time_ms": 2.281
+    }
+   }
+  },
+  {
+   "filename": "en_06_Coffee.pdf",
+   "true_lang": "en",
+   "chars": 2522,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.59418,
+      "fr": 13.63964
+     },
+     "confidence": 0.2966,
+     "time_ms": 0.239
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.08714,
+      "fr": 13.46521
+     },
+     "confidence": 0.5479,
+     "time_ms": 0.299
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.07262,
+      "fr": 0.92738
+     },
+     "confidence": 0.9274,
+     "time_ms": 2.193
+    }
+   }
+  },
+  {
+   "filename": "en_07_Olympic_Games.pdf",
+   "true_lang": "en",
+   "chars": 2515,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.29331,
+      "fr": 13.72322
+     },
+     "confidence": 0.3228,
+     "time_ms": 0.474
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.2547,
+      "fr": 13.58083
+     },
+     "confidence": 0.5394,
+     "time_ms": 0.608
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.09664,
+      "fr": 0.90336
+     },
+     "confidence": 0.9034,
+     "time_ms": 5.067
+    }
+   }
+  },
+  {
+   "filename": "en_08_Moon.pdf",
+   "true_lang": "en",
+   "chars": 2476,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.08882,
+      "fr": 13.60348
+     },
+     "confidence": 0.3319,
+     "time_ms": 0.252
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.78634,
+      "fr": 13.49434
+     },
+     "confidence": 0.4971,
+     "time_ms": 0.3
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.08322,
+      "fr": 0.91678
+     },
+     "confidence": 0.9168,
+     "time_ms": 2.227
+    }
+   }
+  },
+  {
+   "filename": "en_09_Western_honey_bee.pdf",
+   "true_lang": "en",
+   "chars": 2510,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.76676,
+      "fr": 13.52146
+     },
+     "confidence": 0.2777,
+     "time_ms": 0.242
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.35298,
+      "fr": 13.28076
+     },
+     "confidence": 0.5216,
+     "time_ms": 0.297
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.08579,
+      "fr": 0.91421
+     },
+     "confidence": 0.9142,
+     "time_ms": 2.325
+    }
+   }
+  },
+  {
+   "filename": "en_10_Paris.pdf",
+   "true_lang": "en",
+   "chars": 2455,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.34545,
+      "fr": 13.26794
+     },
+     "confidence": 0.2956,
+     "time_ms": 0.447
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.37417,
+      "fr": 13.07625
+     },
+     "confidence": 0.5125,
+     "time_ms": 0.39
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.13783,
+      "fr": 0.86217
+     },
+     "confidence": 0.8622,
+     "time_ms": 2.806
+    }
+   }
+  },
+  {
+   "filename": "en_11_Renaissance.pdf",
+   "true_lang": "en",
+   "chars": 2569,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 8.24171,
+      "fr": 13.60851
+     },
+     "confidence": 0.3944,
+     "time_ms": 0.254
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 4.86646,
+      "fr": 13.49088
+     },
+     "confidence": 0.6393,
+     "time_ms": 0.286
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.07277,
+      "fr": 0.92723
+     },
+     "confidence": 0.9272,
+     "time_ms": 2.14
+    }
+   }
+  },
+  {
+   "filename": "en_12_Internet.pdf",
+   "true_lang": "en",
+   "chars": 2562,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.8045,
+      "fr": 13.53185
+     },
+     "confidence": 0.2755,
+     "time_ms": 0.208
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 5.82318,
+      "fr": 13.37323
+     },
+     "confidence": 0.5646,
+     "time_ms": 0.233
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.09397,
+      "fr": 0.90603
+     },
+     "confidence": 0.906,
+     "time_ms": 2.151
+    }
+   }
+  },
+  {
+   "filename": "en_13_Association_football.pdf",
+   "true_lang": "en",
+   "chars": 2527,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.32348,
+      "fr": 13.65389
+     },
+     "confidence": 0.3172,
+     "time_ms": 0.252
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.65118,
+      "fr": 13.49211
+     },
+     "confidence": 0.507,
+     "time_ms": 0.305
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.08016,
+      "fr": 0.91984
+     },
+     "confidence": 0.9198,
+     "time_ms": 2.219
+    }
+   }
+  },
+  {
+   "filename": "en_14_Chocolate.pdf",
+   "true_lang": "en",
+   "chars": 2508,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.54169,
+      "fr": 13.58851
+     },
+     "confidence": 0.2978,
+     "time_ms": 0.475
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.67377,
+      "fr": 13.46139
+     },
+     "confidence": 0.5042,
+     "time_ms": 0.64
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.07227,
+      "fr": 0.92773
+     },
+     "confidence": 0.9277,
+     "time_ms": 5.319
+    }
+   }
+  },
+  {
+   "filename": "en_15_Rail_transport.pdf",
+   "true_lang": "en",
+   "chars": 2502,
+   "results": {
+    "frequent": {
+     "lang": "en",
+     "scores": {
+      "en": 9.56935,
+      "fr": 13.59593
+     },
+     "confidence": 0.2962,
+     "time_ms": 0.479
+    },
+    "short": {
+     "lang": "en",
+     "scores": {
+      "en": 6.24407,
+      "fr": 13.52324
+     },
+     "confidence": 0.5383,
+     "time_ms": 0.558
+    },
+    "neural": {
+     "lang": "en",
+     "scores": {
+      "en": 0.0723,
+      "fr": 0.9277
+     },
+     "confidence": 0.9277,
+     "time_ms": 4.778
+    }
+   }
+  },
+  {
+   "filename": "fr_01_Photosynthese.pdf",
+   "true_lang": "fr",
+   "chars": 2553,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.72464,
+      "fr": 9.14055
+     },
+     "confidence": 0.334,
+     "time_ms": 0.256
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 12.89673,
+      "fr": 4.99182
+     },
+     "confidence": 0.6129,
+     "time_ms": 0.274
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.85295,
+      "fr": 0.14705
+     },
+     "confidence": 0.853,
+     "time_ms": 2.243
+    }
+   }
+  },
+  {
+   "filename": "fr_02_Volcan.pdf",
+   "true_lang": "fr",
+   "chars": 2593,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.73796,
+      "fr": 8.66825
+     },
+     "confidence": 0.369,
+     "time_ms": 0.259
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.112,
+      "fr": 4.97146
+     },
+     "confidence": 0.6208,
+     "time_ms": 0.307
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.91581,
+      "fr": 0.08419
+     },
+     "confidence": 0.9158,
+     "time_ms": 2.49
+    }
+   }
+  },
+  {
+   "filename": "fr_03_Jazz.pdf",
+   "true_lang": "fr",
+   "chars": 2471,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.6727,
+      "fr": 8.78307
+     },
+     "confidence": 0.3576,
+     "time_ms": 0.281
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.42397,
+      "fr": 6.05317
+     },
+     "confidence": 0.5491,
+     "time_ms": 0.352
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.86334,
+      "fr": 0.13666
+     },
+     "confidence": 0.8633,
+     "time_ms": 2.606
+    }
+   }
+  },
+  {
+   "filename": "fr_04_Bicyclette.pdf",
+   "true_lang": "fr",
+   "chars": 2560,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.75212,
+      "fr": 9.18469
+     },
+     "confidence": 0.3321,
+     "time_ms": 0.536
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.29459,
+      "fr": 5.78179
+     },
+     "confidence": 0.5651,
+     "time_ms": 0.654
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.90683,
+      "fr": 0.09317
+     },
+     "confidence": 0.9068,
+     "time_ms": 4.409
+    }
+   }
+  },
+  {
+   "filename": "fr_05_Echecs.pdf",
+   "true_lang": "fr",
+   "chars": 2504,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.54955,
+      "fr": 9.06831
+     },
+     "confidence": 0.3307,
+     "time_ms": 0.29
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 12.95543,
+      "fr": 6.24223
+     },
+     "confidence": 0.5182,
+     "time_ms": 0.335
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.89715,
+      "fr": 0.10285
+     },
+     "confidence": 0.8971,
+     "time_ms": 2.282
+    }
+   }
+  },
+  {
+   "filename": "fr_06_Cafe.pdf",
+   "true_lang": "fr",
+   "chars": 2453,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.76137,
+      "fr": 9.02903
+     },
+     "confidence": 0.3439,
+     "time_ms": 0.267
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.28216,
+      "fr": 6.03154
+     },
+     "confidence": 0.5459,
+     "time_ms": 0.311
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.90825,
+      "fr": 0.09175
+     },
+     "confidence": 0.9083,
+     "time_ms": 2.459
+    }
+   }
+  },
+  {
+   "filename": "fr_07_Jeux_olympiques.pdf",
+   "true_lang": "fr",
+   "chars": 2540,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.71712,
+      "fr": 9.16992
+     },
+     "confidence": 0.3315,
+     "time_ms": 0.262
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.2225,
+      "fr": 6.0442
+     },
+     "confidence": 0.5429,
+     "time_ms": 0.312
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.91008,
+      "fr": 0.08992
+     },
+     "confidence": 0.9101,
+     "time_ms": 2.617
+    }
+   }
+  },
+  {
+   "filename": "fr_08_Lune.pdf",
+   "true_lang": "fr",
+   "chars": 2558,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.79603,
+      "fr": 8.88249
+     },
+     "confidence": 0.3562,
+     "time_ms": 0.249
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.08705,
+      "fr": 5.73328
+     },
+     "confidence": 0.5619,
+     "time_ms": 0.301
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.90534,
+      "fr": 0.09466
+     },
+     "confidence": 0.9053,
+     "time_ms": 2.199
+    }
+   }
+  },
+  {
+   "filename": "fr_09_Abeille_domestique.pdf",
+   "true_lang": "fr",
+   "chars": 2566,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.69706,
+      "fr": 9.40262
+     },
+     "confidence": 0.3135,
+     "time_ms": 0.245
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.01465,
+      "fr": 5.69737
+     },
+     "confidence": 0.5622,
+     "time_ms": 0.29
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.89441,
+      "fr": 0.10559
+     },
+     "confidence": 0.8944,
+     "time_ms": 2.369
+    }
+   }
+  },
+  {
+   "filename": "fr_10_Londres.pdf",
+   "true_lang": "fr",
+   "chars": 2576,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.68388,
+      "fr": 9.18689
+     },
+     "confidence": 0.3286,
+     "time_ms": 0.26
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 12.68501,
+      "fr": 5.50599
+     },
+     "confidence": 0.5659,
+     "time_ms": 0.307
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.81912,
+      "fr": 0.18088
+     },
+     "confidence": 0.8191,
+     "time_ms": 3.762
+    }
+   }
+  },
+  {
+   "filename": "fr_11_Renaissance.pdf",
+   "true_lang": "fr",
+   "chars": 2497,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.4823,
+      "fr": 8.44134
+     },
+     "confidence": 0.3739,
+     "time_ms": 0.262
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 12.49051,
+      "fr": 4.82146
+     },
+     "confidence": 0.614,
+     "time_ms": 0.284
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.88951,
+      "fr": 0.11049
+     },
+     "confidence": 0.8895,
+     "time_ms": 2.356
+    }
+   }
+  },
+  {
+   "filename": "fr_12_Internet.pdf",
+   "true_lang": "fr",
+   "chars": 2457,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.71448,
+      "fr": 9.56386
+     },
+     "confidence": 0.3026,
+     "time_ms": 0.258
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 12.80474,
+      "fr": 5.63943
+     },
+     "confidence": 0.5596,
+     "time_ms": 0.306
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.84752,
+      "fr": 0.15248
+     },
+     "confidence": 0.8475,
+     "time_ms": 2.562
+    }
+   }
+  },
+  {
+   "filename": "fr_13_Football.pdf",
+   "true_lang": "fr",
+   "chars": 2479,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.69886,
+      "fr": 8.6326
+     },
+     "confidence": 0.3698,
+     "time_ms": 0.566
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.20155,
+      "fr": 5.70234
+     },
+     "confidence": 0.5681,
+     "time_ms": 0.623
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.89914,
+      "fr": 0.10086
+     },
+     "confidence": 0.8991,
+     "time_ms": 5.471
+    }
+   }
+  },
+  {
+   "filename": "fr_14_Chocolat.pdf",
+   "true_lang": "fr",
+   "chars": 2549,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.79165,
+      "fr": 9.52752
+     },
+     "confidence": 0.3092,
+     "time_ms": 0.562
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.04245,
+      "fr": 6.1522
+     },
+     "confidence": 0.5283,
+     "time_ms": 0.719
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.86945,
+      "fr": 0.13055
+     },
+     "confidence": 0.8694,
+     "time_ms": 6.064
+    }
+   }
+  },
+  {
+   "filename": "fr_15_Transport_ferroviaire.pdf",
+   "true_lang": "fr",
+   "chars": 2545,
+   "results": {
+    "frequent": {
+     "lang": "fr",
+     "scores": {
+      "en": 13.79646,
+      "fr": 9.06096
+     },
+     "confidence": 0.3432,
+     "time_ms": 0.299
+    },
+    "short": {
+     "lang": "fr",
+     "scores": {
+      "en": 12.97236,
+      "fr": 5.07339
+     },
+     "confidence": 0.6089,
+     "time_ms": 0.313
+    },
+    "neural": {
+     "lang": "fr",
+     "scores": {
+      "en": 0.91284,
+      "fr": 0.08716
+     },
+     "confidence": 0.9128,
+     "time_ms": 3.391
+    }
+   }
+  }
+ ]
+}

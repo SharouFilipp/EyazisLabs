@@ -1,0 +1,93 @@
+// ===== Онтология предметной области «Автоматическое реферирование документов» =====
+concept_document
+<- sc_node_class;
+=> nrel_main_idtf: [документ] (* <- lang_ru;; *);;
+
+concept_scientific_article_computer_science
+<- sc_node_class;
+=> nrel_main_idtf: [научная статья по computer science] (* <- lang_ru;; *);
+<= nrel_inclusion: concept_document;;
+
+concept_literary_essay
+<- sc_node_class;
+=> nrel_main_idtf: [сочинение по литературе] (* <- lang_ru;; *);
+<= nrel_inclusion: concept_document;;
+
+concept_classic_summary
+<- sc_node_class;
+=> nrel_main_idtf: [классический реферат] (* <- lang_ru;; *);;
+
+concept_keyword_summary
+<- sc_node_class;
+=> nrel_main_idtf: [реферат в виде списка ключевых слов] (* <- lang_ru;; *);;
+
+concept_keyword
+<- sc_node_class;
+=> nrel_main_idtf: [ключевое слово] (* <- lang_ru;; *);;
+
+concept_sentence
+<- sc_node_class;
+=> nrel_main_idtf: [предложение] (* <- lang_ru;; *);;
+
+method_sentence_extraction
+<- concept_summarization_method;
+=> nrel_main_idtf: [метод sentence extraction] (* <- lang_ru;; *);;
+
+nrel_summary
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [реферат*] (* <- lang_ru;; *);;
+
+nrel_keywords
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [ключевые слова*] (* <- lang_ru;; *);;
+
+nrel_subkeyword
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [уточняющее ключевое словосочетание*] (* <- lang_ru;; *);;
+
+nrel_text_language
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [язык текста*] (* <- lang_ru;; *);;
+
+nrel_source_document
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [исходный документ*] (* <- lang_ru;; *);;
+
+nrel_summarization_method
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [метод реферирования*] (* <- lang_ru;; *);;
+
+method_semantic_ostis
+<- concept_summarization_method;
+=> nrel_main_idtf: [семантический метод реферирования по базе знаний OSTIS] (* <- lang_ru;; *);;
+
+concept_semantic_summary
+<- sc_node_class;
+=> nrel_main_idtf: [семантический реферат] (* <- lang_ru;; *);
+<= nrel_inclusion: concept_classic_summary;;
+
+concept_key_concept_summary
+<- sc_node_class;
+=> nrel_main_idtf: [реферат в виде ключевых понятий базы знаний] (* <- lang_ru;; *);
+<= nrel_inclusion: concept_keyword_summary;;
+
+nrel_key_concepts
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [ключевые понятия*] (* <- lang_ru;; *);;
+
+nrel_idtf
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [идентификатор*] (* <- lang_ru;; *);;
+
+nrel_inclusion
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [включение*] (* <- lang_ru;; *);;
+
+nrel_related
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [ассоциативная связь*] (* <- lang_ru;; *);;
+
+nrel_document_class
+<- sc_node_norole_relation;
+=> nrel_main_idtf: [класс документов предметной области*] (* <- lang_ru;; *);;
+
