@@ -16,9 +16,6 @@
 
 Задания ко всем работам (в том числе 4–9) лежат в [`tasks/`](tasks/).
 
-<p align="center">
-  <img src="lab3/results/screens/02b_summary_ostis.png" width="85%" alt="ЛР 3: семантический реферат OSTIS">
-</p>
 
 ## Что нужно установить
 
