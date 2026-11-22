@@ -1,0 +1,24 @@
+title: La crittografia a chiave pubblica e la sicurezza delle comunicazioni
+lang: it
+domain: cs
+keywords: crittografia; chiave pubblica; chiave privata; cifratura; algoritmo RSA; firma digitale; numeri primi; sicurezza; certificato; scambio di chiavi
+===
+[*] La crittografia è la disciplina che studia i metodi per rendere un messaggio comprensibile soltanto ai destinatari autorizzati. Per secoli è stata utilizzata soprattutto in ambito militare e diplomatico, ma con la diffusione di Internet è diventata uno strumento quotidiano che protegge i pagamenti elettronici, la posta e le conversazioni. Questo articolo illustra i principi della crittografia a chiave pubblica, che ha rivoluzionato la sicurezza delle comunicazioni digitali.
+
+[*] Nei sistemi tradizionali, detti a chiave simmetrica, mittente e destinatario condividono la stessa chiave segreta, utilizzata sia per la cifratura sia per la decifratura. Algoritmi simmetrici come AES sono molto veloci e sicuri, ma presentano un problema fondamentale: le due parti devono scambiarsi la chiave in modo sicuro prima di poter comunicare. [*] In una rete aperta con milioni di utenti che non si conoscono, la distribuzione delle chiavi segrete diventa praticamente impossibile.
+
+[*] La soluzione fu proposta nel 1976 da Whitfield Diffie e Martin Hellman, che introdussero l'idea di una coppia di chiavi distinte. Ogni utente possiede una chiave pubblica, che può essere diffusa liberamente, e una chiave privata, che deve rimanere segreta. Ciò che viene cifrato con la chiave pubblica può essere decifrato soltanto con la chiave privata corrispondente. Il loro protocollo di scambio di chiavi permette inoltre a due persone di concordare un segreto comune comunicando su un canale pubblico, senza che un osservatore possa ricostruirlo.
+
+[*] L'algoritmo RSA, presentato nel 1977 da Rivest, Shamir e Adleman, è il più noto sistema a chiave pubblica. La sua sicurezza si basa sulla difficoltà di scomporre in fattori un numero molto grande ottenuto moltiplicando due numeri primi. Moltiplicare due numeri primi di centinaia di cifre è un'operazione rapida, mentre ritrovare i fattori a partire dal prodotto richiede, con gli algoritmi noti, un tempo enorme. Questa asimmetria tra un calcolo facile e il suo inverso difficile è il cuore di tutta la crittografia a chiave pubblica.
+
+[*] Un'applicazione fondamentale di questi sistemi è la firma digitale. Il mittente calcola un'impronta del messaggio con una funzione di hash e la cifra con la propria chiave privata. Chiunque può verificare la firma utilizzando la chiave pubblica del mittente e confrontando il risultato con l'impronta del messaggio ricevuto. [*] La firma digitale garantisce così l'autenticità del mittente e l'integrità del messaggio, poiché qualsiasi modifica del testo renderebbe la verifica non valida.
+
+[*] Resta però un problema: come essere sicuri che una chiave pubblica appartenga davvero alla persona indicata? Un attaccante potrebbe infatti sostituirla con la propria e intercettare le comunicazioni. Per risolvere questa difficoltà si utilizzano i certificati digitali, emessi da autorità di certificazione che attestano il legame tra una chiave pubblica e l'identità del suo proprietario. Quando un browser si collega a un sito protetto, verifica il certificato del server attraverso una catena di fiducia che risale a un'autorità riconosciuta.
+
+[*] Nella pratica, gli algoritmi a chiave pubblica sono molto più lenti di quelli simmetrici e vengono quindi impiegati in sistemi ibridi. Il protocollo TLS, che protegge le pagine web, utilizza la crittografia asimmetrica soltanto all'inizio della connessione per autenticare il server e concordare una chiave di sessione. Il resto della comunicazione viene poi cifrato con un algoritmo simmetrico veloce. Questa combinazione unisce la comodità della chiave pubblica all'efficienza della cifratura simmetrica.
+
+Negli ultimi anni si sono diffusi anche sistemi basati sulle curve ellittiche, che offrono lo stesso livello di sicurezza di RSA con chiavi molto più corte. La lunghezza ridotta delle chiavi rende questi algoritmi particolarmente adatti ai telefoni cellulari e ai dispositivi con risorse limitate.
+
+[*] Una minaccia futura è rappresentata dai calcolatori quantistici, che potrebbero scomporre rapidamente i grandi numeri e risolvere i problemi su cui si basano RSA e le curve ellittiche. Per questo motivo i ricercatori stanno sviluppando la crittografia post-quantistica, fondata su problemi matematici che si ritengono difficili anche per tali macchine. Diversi organismi di standardizzazione hanno già selezionato i primi algoritmi di questo tipo.
+
+[*] In conclusione, la crittografia a chiave pubblica ha reso possibile la comunicazione sicura tra persone che non si sono mai incontrate. Grazie alla cifratura, alla firma digitale e ai certificati, essa costituisce oggi una delle basi della fiducia nella società digitale.

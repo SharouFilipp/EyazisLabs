@@ -1,0 +1,67 @@
+@startuml
+' Структурная схема системы машинного перевода (ЛР4)
+!theme plain
+skinparam componentStyle rectangle
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam nodesep 25
+skinparam ranksep 50
+skinparam ArrowColor #555555
+skinparam packageStyle rectangle
+
+actor "Пользователь" as User
+
+rectangle "Клиент (браузер)" #EAF0FB {
+  component "index.html, style.css\n7 вкладок, справка" as UI
+  component "app.js\nтаблицы, деревья (SVG),\nутилита словаря" as JS
+}
+
+rectangle "Серверная часть (FastAPI)" #F5F7FB {
+  component "app.py\nREST API, отчёты TXT,\nоценка качества" as API
+
+  package "Анализ" #FFF7E8 {
+    component "spaCy en_core_web_sm\nтокены, POS, леммы,\nзависимости" as Spacy
+    component "grammar.py\nрасшифровка тегов\n(из ЛР1, ЛР3)" as Gram
+  }
+
+  package "Трансфер" #FFF3F0 {
+    component "transfer.py\nобороты, словарь,\nструктурные правила" as Tr
+    component "lexicon.py\nпоиск по лемме,\nчасти речи и области" as Lex
+  }
+
+  package "Синтез" #F0F5F0 {
+    component "french.py\nспряжение, согласование,\nартикли, элизия" as Fr
+  }
+
+  component "syntax.py\nдеревья разбора" as Syn
+  component "suggest.py\nгипотезы перевода" as Sug
+  component "evaluation.py\nBLEU, chrF" as Ev
+  component "db.py" as DBm
+}
+
+rectangle "Хранилище" #F0F5F0 {
+  database "PostgreSQL\nбаза lab4" as PG
+  folder "data/seed\nисходный словарь" as Seed
+  folder "corpus/dev, corpus/test\nтексты и эталоны" as Corp
+}
+
+User --> UI
+UI - JS
+JS --> API : HTTP / JSON
+API --> Spacy
+API --> Tr
+Tr --> Lex
+Tr --> Fr
+Tr --> Gram
+API --> Syn
+API --> Sug
+Sug --> Lex
+API --> Ev
+API --> DBm
+DBm --> PG
+DBm --> Seed : наполнение при\nпервом запуске
+API --> Corp
+Lex <.. PG : загрузка словаря
+
+Ev -[hidden]down- DBm
+@enduml

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Автоматическое реферирование документов</title>
+<link rel="stylesheet" href="/static/style.css?v={{ v }}">
+<script src="/static/vendor/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Автоматическое реферирование документов</h1>
+    <div class="sub">Два метода: sentence extraction и семантический метод OSTIS · французский и итальянский языки · научные статьи по computer science и сочинения по литературе</div>
+  </div>
+  <button class="btn light" onclick="showHelp('overview')">? Справка</button>
+</header>
+
+<nav class="tabs no-print">
+  <button data-tab="docs" class="active">Документы</button>
+  <button data-tab="summary">Реферат документа</button>
+  <button data-tab="text">Произвольный текст</button>
+  <button data-tab="eval">Оценка качества</button>
+  <button data-tab="kb">База знаний OSTIS</button>
+  <button data-tab="help">Справка</button>
+</nav>
+
+<main>
+<section id="tab-docs" class="tab active">
+  <div class="card">
+    <h2>Коллекция документов <button class="q no-print" onclick="showHelp('docs')">?</button></h2>
+    <div id="drop" class="drop no-print">
+      <div class="drop-title">Перетащите сюда файлы PDF, DOCX или TXT</div>
+      <div class="muted">или <label class="link">выберите на диске<input id="file" type="file" multiple accept=".pdf,.docx,.txt" hidden></label></div>
+    </div>
+    <div class="row no-print">
+      <label>Язык загружаемых файлов
+        <select id="up-lang"><option value="auto">определить автоматически</option><option value="fr">французский</option><option value="it">итальянский</option></select></label>
+      <label>Предметная область
+        <select id="up-domain"><option value="auto">определить автоматически</option><option value="cs">научная статья (computer science)</option><option value="lit">сочинение по литературе</option></select></label>
+      <button class="btn" onclick="loadCollection()">Загрузить тестовую коллекцию</button>
+      <button class="btn danger" onclick="deleteAll()">Удалить все</button>
+    </div>
+    <div class="row no-print">
+      <label>Предложений в реферате <input id="n-sent" type="number" min="1" max="50" value="10"></label>
+      <label>Ключевых слов <input id="n-kw" type="number" min="1" max="30" value="10"></label>
+      <button class="btn primary" onclick="summarizeAll()">Построить рефераты всех документов</button>
+      <span id="status" class="muted"></span>
+    </div>
+  </div>
+  <div id="doc-cards" class="cards"></div>
+  <div class="card">
+    <div class="row between">
+      <h2>Документы и рефераты</h2>
+      <div class="no-print">
+        <a class="btn" href="/api/report.html">Сохранить отчёт (HTML)</a>
+        <a class="btn" href="/api/report.txt">Сохранить рефераты (TXT)</a>
+        <a class="btn" href="/api/kb.scs">Сохранить базу знаний (SCs)</a>
+        <button class="btn" onclick="window.print()">Печать</button>
+      </div>
+    </div>
+    <table class="grid" id="doc-table">
+      <thead><tr><th>№</th><th>Документ</th><th>Язык</th><th>Предметная область</th><th>Стр.</th><th>Абз.</th><th>Предл.</th><th>Слов</th><th>Время SE / OSTIS, мс</th><th class="no-print">Действия</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div id="empty" class="muted center">Документов пока нет — загрузите файлы или тестовую коллекцию.</div>
+  </div>
+</section>
+
+<section id="tab-summary" class="tab">
+  <div class="card no-print">
+    <div class="row">
+      <label>Документ <select id="sum-doc" onchange="openSummary(this.value)"></select></label>
+      <div class="seg" id="sum-method"><button data-m="extraction" class="on" onclick="setMethod('extraction')">Sentence extraction</button><button data-m="ostis" onclick="setMethod('ostis')">Семантический метод OSTIS</button></div>
+      <button class="q" onclick="showHelp('summary')">?</button>
+    </div>
+  </div>
+  <div id="sum-body"><div class="card muted">Выберите документ, для которого построен реферат.</div></div>
+</section>
+
+<section id="tab-text" class="tab">
+  <div class="card">
+    <h2>Реферирование произвольного текста <button class="q no-print" onclick="showHelp('text')">?</button></h2>
+    <p class="muted">Абзацы разделяются пустой строкой. Веса терминов рассчитываются по коллекции документов того же языка, к которой добавляется этот текст.</p>
+    <textarea id="free-text" rows="10" placeholder="Вставьте французский или итальянский текст…"></textarea>
+    <div class="row no-print">
+      <label>Язык <select id="free-lang"><option value="auto">автоматически</option><option value="fr">французский</option><option value="it">итальянский</option></select></label>
+      <label>Предложений <input id="free-n" type="number" min="1" max="30" value="4"></label>
+      <label>Метод <select id="free-method"><option value="extraction">sentence extraction</option><option value="ostis">семантический метод OSTIS</option></select></label>
+      <button class="btn primary" onclick="summarizeText()">Построить реферат</button>
+      <button class="btn" onclick="example('fr')">Пример (fr)</button>
+      <button class="btn" onclick="example('it')">Пример (it)</button>
+    </div>
+  </div>
+  <div id="free-out"></div>
+</section>
+
+<section id="tab-eval" class="tab">
+  <div class="card">
+    <div class="row between">
+      <h2>Оценка качества рефератов <button class="q no-print" onclick="showHelp('eval')">?</button></h2>
+      <div class="no-print"><button class="btn" onclick="loadEval()">Обновить</button> <button class="btn" onclick="window.print()">Печать</button></div>
+    </div>
+    <p class="muted">Сравнение двух методов — sentence extraction (SE) и семантического метода OSTIS — с эталонной разметкой тестовой коллекции: P, R, F1 — точность, полнота и F-мера выбора предложений; ROUGE-1/2 — совпадение основ слов и пар основ с эталонным рефератом; КС — точность ключевых слов и полнота покрытия эталонного списка.</p>
+    <div id="eval-groups"></div>
+  </div>
+  <div class="cards two">
+    <div class="card"><h3>F1 выбора предложений по вариантам</h3><canvas id="chart-f1" height="230"></canvas></div>
+    <div class="card"><h3>Время построения реферата, мс</h3><canvas id="chart-time" height="230"></canvas></div>
+  </div>
+  <div class="card"><h3>Сравнение двух методов, вариантов формулы и базовых методов (все документы)</h3><div id="eval-variants"></div></div>
+  <div class="card"><h3>Результаты по документам</h3><div id="eval-docs"></div></div>
+</section>
+
+<section id="tab-kb" class="tab">
+  <div class="card">
+    <div class="row between">
+      <h2>База знаний OSTIS <button class="q no-print" onclick="showHelp('kb')">?</button></h2>
+      <div class="no-print">
+        <label>Документ <select id="kb-doc" onchange="openKb(this.value)"></select></label>
+        <label>Метод <select id="kb-method" onchange="openKb($('#kb-doc').value)"><option value="extraction">sentence extraction</option><option value="ostis">семантический OSTIS</option></select></label>
+        <a class="btn" id="kb-dl" href="/api/kb.scs">Сохранить фрагмент (SCs)</a>
+        <a class="btn" href="/api/kb.scs">Вся база знаний (SCs)</a>
+      </div>
+    </div>
+    <p class="muted">Реферат документа представлен в SC-коде: SCg — графическая нотация (ниже), SCs — текстовая нотация, пригодная для загрузки в базу знаний ostis-web-platform.</p>
+    <div class="legend"><span><i class="lg doc"></i>документ</span><span><i class="lg class"></i>класс (sc_node_class)</span><span><i class="lg struct"></i>реферат (структура)</span><span><i class="lg link"></i>sc-ссылка (предложение)</span><span><i class="lg term"></i>ключевое слово / понятие базы знаний</span><span><b>→</b> принадлежность / ролевое отношение</span><span><b>⇒</b> неролевое отношение</span></div>
+    <div id="scg" class="scg"></div>
+  </div>
+  <div class="card"><h3>SCs-текст</h3><pre id="scs" class="code"></pre></div>
+  <div class="card">
+    <div class="row between"><h3>База знаний предметных областей (sc-память)</h3>
+      <div class="no-print"><a class="btn" href="/api/kb/file/domain_cs.scs">domain_cs.scs</a> <a class="btn" href="/api/kb/file/domain_lit.scs">domain_lit.scs</a> <a class="btn" href="/api/kb/file/ontology_summarization.scs">ontology_summarization.scs</a> <a class="btn" href="/api/kb.scs?with_domains=1">Вся база знаний</a></div></div>
+    <div id="kb-stats" class="cards"></div>
+    <div class="row"><label>Поиск понятия <input id="kb-q" type="text" placeholder="tri, chiave, roman…" oninput="renderConcepts()"></label>
+      <label>Область <select id="kb-dom" onchange="renderConcepts()"><option value="">все</option><option value="cs">computer science</option><option value="lit">литература</option></select></label></div>
+    <div id="kb-concepts"></div>
+  </div>
+</section>
+
+<section id="tab-help" class="tab">
+  <div class="help-grid">
+    <div class="card" id="help-overview"><h3>Назначение системы</h3>
+      <p>Система строит реферат текстового документа на французском или итальянском языке двумя методами. <b>Sentence extraction</b> оценивает предложения по частотам терминов и положению в тексте. <b>Семантический метод OSTIS</b> находит в тексте понятия базы знаний предметной области и выбирает предложения с наиболее значимыми понятиями. Реферат каждого метода состоит из двух разделов: классического реферата (10 предложений) и иерархического списка ключевых слов (для OSTIS — ключевых понятий базы знаний). Результат содержит активную ссылку на исходный документ, сохраняется в файл (HTML, TXT, SCs) и выводится на печать.</p></div>
+    <div class="card" id="help-docs"><h3>1. Работа с документами</h3><ul>
+      <li>Перетащите PDF, DOCX или TXT в область загрузки. Язык и предметная область определяются автоматически, их можно указать заранее или изменить в таблице.</li>
+      <li>«Загрузить тестовую коллекцию» добавляет 16 документов с эталонными рефератами.</li>
+      <li>Эталон есть только у размеченных документов. Обычный PDF/DOCX/TXT загружается без эталона и в оценке помечается «нет эталона». Размеченный TXT (заголовок title/lang/domain/keywords, строка ===, метки [*] перед эталонными предложениями) загружается вместе со своим эталоном.</li>
+      <li>«Построить рефераты» строит рефераты всех документов; веса терминов зависят от всей коллекции, поэтому после добавления документов рефераты лучше перестроить.</li>
+      <li>Имя документа в таблице — активная ссылка: файл откроется в новой вкладке.</li></ul></div>
+    <div class="card" id="help-summary"><h3>2. Реферат документа</h3><ul>
+      <li>Переключатель «Sentence extraction / Семантический метод OSTIS» показывает реферат выбранного метода.</li>
+      <li>Классический реферат — выбранные предложения; в таблице весов они выделены, эталонные предложения отмечены «★». Для OSTIS вес предложения — сумма активаций понятий, а ниже показаны найденные понятия базы знаний.</li>
+      <li>Ключевые слова (SE) — термины с наибольшим весом w(t,D) и именные группы с ними; ключевые понятия (OSTIS) — понятия базы знаний с наибольшей активацией, сгруппированные по иерархии онтологии.</li>
+      <li>Кнопки «HTML», «TXT», «SCs» сохраняют реферат в файл, «Печать» — распечатывает его.</li></ul></div>
+    <div class="card" id="help-text"><h3>3. Произвольный текст</h3><p>Вставьте фрагмент текста (абзацы — через пустую строку) и нажмите «Построить реферат». Кнопки-примеры подставляют французский и итальянский текст.</p></div>
+    <div class="card" id="help-eval"><h3>4. Оценка качества</h3><p>Для документов с эталонной разметкой рассчитываются точность, полнота, F1, ROUGE-1/2 и качество ключевых слов обоих методов, по языкам и предметным областям, а также варианты формулы и базовые методы Lead-N и Random-N.</p></div>
+    <div class="card" id="help-kb"><h3>5. База знаний OSTIS</h3><p>База знаний предметных областей (181 понятие computer science и литературы с идентификаторами на французском и итальянском языках, отношения <code>nrel_inclusion</code> и <code>nrel_related</code>) хранится в файлах kb/*.scs и при запуске загружается в sc-память. Рефераты обоих методов записываются в SC-коде: документ связан отношением <code>nrel_summary</code> с рефератом (упорядоченное множество предложений, роли <code>rrel_1…</code>), а отношениями <code>nrel_keywords</code> / <code>nrel_key_concepts</code> — с ключевыми словами или понятиями базы знаний. Граф показан в нотации SCg, текст — в SCs; ниже — поиск по понятиям базы знаний.</p></div>
+    <div class="card" id="help-method"><h3>6. Метод реферирования</h3>
+      <p><b>Sentence extraction:</b> Weight(S) = Score(S)·Posd(S)·Posp(S), где Posd = 1 − BD/|D|, Posp = 1 − BP/|P|, Score(S) = Σ tf(t,S)·w(t,D), w(t,D) = 0,5·(1 + tf/tf<sub>max</sub>)·log(|DB|/df(t)).</p>
+      <p><b>Семантический метод OSTIS:</b> агент находит в предложениях понятия базы знаний (по идентификаторам на языке документа), определяет предметную область, вычисляет значимость понятия a0(c) = 0,5·(1 + tf(c)/tf<sub>max</sub>)·spec(c) и распространяет её по связям онтологии: a(c) = a0(c) + 0,2·Σ a0(соседей). Предложения выбираются по приросту покрытия значимых понятий (повторно покрытые понятия учитываются с коэффициентом 0,3).</p></div>
+    <div class="card" id="help-limits"><h3>7. Ограничения</h3><ul>
+      <li>Поддерживаются только французский и итальянский языки.</li>
+      <li>PDF-сканы без текстового слоя не обрабатываются.</li>
+      <li>Чем больше документов того же языка в коллекции, тем точнее веса терминов; при одном документе используется сглаженная формула log(1 + |DB|/df).</li></ul></div>
+  </div>
+</section>
+</main>
+
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box"><div class="row between"><h3 id="modal-title"></h3><button class="btn" onclick="closeModal()">Закрыть</button></div><div id="modal-body"></div></div>
+</div>
+<script src="/static/app.js?v={{ v }}"></script>
+</body>
+</html>

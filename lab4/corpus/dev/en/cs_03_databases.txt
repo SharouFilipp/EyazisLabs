@@ -1,0 +1,11 @@
+Relational Databases
+
+A database is an organized collection of data. Most modern systems use the relational model. In this model, the data are stored in tables. Each table consists of rows and columns. A row represents an object, and a column represents a property of this object.
+
+Every table has a primary key that identifies each row. A foreign key creates a link between two tables. These links allow the system to avoid the duplication of data.
+
+Users access the data with the SQL language. A query describes the result, but it does not describe the method of execution. The database management system chooses the best plan for each query. An index speeds up the search, but it slows down the insertion of new rows.
+
+A transaction is a sequence of operations that the system executes as a single unit. If an error occurs, the system cancels the whole transaction. Thus the database always remains in a consistent state.
+
+PostgreSQL and MySQL are popular open source systems. They support large volumes of data and many simultaneous users.

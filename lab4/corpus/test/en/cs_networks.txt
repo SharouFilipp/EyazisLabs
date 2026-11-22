@@ -1,0 +1,11 @@
+Computer Networks
+
+A computer network connects devices so that they can exchange information. The Internet is the largest network in the world. It connects billions of computers, phones and servers.
+
+The data travel through the network in small packets. Each packet contains the address of the sender and the address of the receiver. Routers read these addresses and send the packets toward their destination.
+
+The communication follows protocols, which are sets of rules. The IP protocol delivers packets between machines, but it does not guarantee their arrival. The TCP protocol checks that all packets arrive in the correct order and sends lost packets again.
+
+The web works on top of these protocols. A browser sends a request to a server, and the server returns a page. Secure connections encrypt the data, so an attacker cannot read the messages.
+
+The speed of a network depends on its bandwidth and on its latency. Modern fiber networks transmit large volumes of data with a very small delay.

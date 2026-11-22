@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Машинный перевод EN→FR</title>
+<link rel="stylesheet" href="/static/style.css?v={{ v }}">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Автоматический машинный перевод текстов</h1>
+    <div class="sub">Англо-французский перевод · система с трансфером · научные статьи по computer science и сочинения по литературе</div>
+  </div>
+  <div class="row" style="margin:0">
+    <button class="btn light" onclick="window.print()">Печать</button>
+    <button class="btn light" onclick="showTab('help')">Справка</button>
+  </div>
+</header>
+<nav class="tabs no-print">
+  <button data-tab="translate" class="active">Перевод</button>
+  <button data-tab="freq">Вкладка 1 · Слова по частоте</button>
+  <button data-tab="tree">Вкладка 2 · Дерево разбора</button>
+  <button data-tab="dict">Словарь</button>
+  <button data-tab="history">История</button>
+  <button data-tab="eval">Оценка качества</button>
+  <button data-tab="help">Справка</button>
+</nav>
+<main>
+
+<section class="tab active" id="tab-translate">
+  <div class="card no-print">
+    <div class="row between">
+      <h2 style="margin:0">Входной текст <button class="q" onclick="help('h-translate')">?</button></h2>
+      <div class="row" style="margin:0">
+        <label>Пример текста
+          <select id="sample" onchange="loadSample()">
+            <option value="">— выбрать —</option>
+            <optgroup label="Тестовая выборка">
+              {% for s in samples if s.part == 'test' %}<option value="{{ s.id }}">{{ s.title }}</option>{% endfor %}
+            </optgroup>
+            <optgroup label="Отладочная выборка">
+              {% for s in samples if s.part == 'dev' %}<option value="{{ s.id }}">{{ s.title }}</option>{% endfor %}
+            </optgroup>
+          </select>
+        </label>
+        <label>Метод
+          <select id="mode"><option value="transfer">Система с трансфером</option><option value="direct">Прямой (пословный) перевод</option></select>
+        </label>
+        <label>Предметная область
+          <select id="domain"><option value="auto">Определить автоматически</option><option value="cs">Computer science</option>
+            <option value="lit">Литература</option><option value="gen">Без учёта области</option></select>
+        </label>
+        <label class="btn" style="flex-direction:row;align-items:center">Открыть файл…
+          <input type="file" id="file" accept=".txt,.docx,.pdf" hidden onchange="uploadFile(this)"></label>
+        <button class="btn primary" onclick="doTranslate()">Перевести</button>
+      </div>
+    </div>
+  </div>
+  <div class="io">
+    <div class="card" id="drop">
+      <h3>Английский текст</h3>
+      <input type="text" id="title" placeholder="Название (необязательно)" style="width:100%;margin-bottom:8px">
+      <textarea id="src" placeholder="Вставьте текст на английском языке или перетащите сюда файл TXT, DOCX, PDF"></textarea>
+    </div>
+    <div class="card">
+      <div class="row between"><h3 style="margin:0">Перевод на французский</h3>
+        <div class="row no-print" style="margin:0" id="out-actions" hidden>
+          <select id="enc" title="Кодировка файла"><option value="utf-8">UTF-8 (BOM)</option><option value="utf-16">UTF-16 (Unicode)</option></select>
+          <button class="btn sm" onclick="saveTxt('translation')">Сохранить перевод (TXT)</button>
+          <button class="btn sm" onclick="saveTxt('all')">Сохранить всё (TXT)</button>
+        </div>
+      </div>
+      <div class="out" id="out"><span class="muted">Здесь появится перевод. Слова, которых нет в словаре, будут <mark>выделены</mark>.</span></div>
+    </div>
+  </div>
+  <div class="cards" id="stats" hidden></div>
+  <div class="card" id="sent-card" hidden>
+    <div class="row between"><h2 style="margin:0">Перевод по предложениям</h2>
+      <span class="muted small">Щелчок по предложению открывает его дерево разбора (вкладка 2)</span></div>
+    <table class="grid" id="sent-table"></table>
+  </div>
+</section>
+
+<section class="tab" id="tab-freq">
+  <div class="card">
+    <div class="row between">
+      <h2 style="margin:0">Слова текста по частоте встречаемости <button class="q" onclick="help('h-freq')">?</button></h2>
+      <div class="row no-print" style="margin:0">
+        <input type="text" id="freq-q" placeholder="Поиск слова" oninput="renderFreq()">
+        <select id="freq-pos" onchange="renderFreq()"><option value="">Все части речи</option></select>
+        <label style="flex-direction:row;align-items:center;gap:6px"><input type="checkbox" id="freq-unk" onchange="renderFreq()"> только без перевода</label>
+        <button class="btn sm" onclick="saveTxt('freq')">Сохранить список (TXT)</button>
+      </div>
+    </div>
+    <div class="meta" id="freq-meta"></div>
+    <table class="grid" id="freq-table"><tr><td class="muted center">Сначала переведите текст.</td></tr></table>
+  </div>
+</section>
+
+<section class="tab" id="tab-tree">
+  <div class="card">
+    <div class="row between">
+      <h2 style="margin:0">Дерево синтаксического разбора <button class="q" onclick="help('h-tree')">?</button></h2>
+      <div class="row no-print" style="margin:0">
+        <label>Предложение <select id="tree-sent" onchange="renderTree()" style="max-width:520px"></select></label>
+        <div class="seg" id="tree-kind">
+          <button class="on" data-k="dep" onclick="setTreeKind('dep')">Зависимости</button>
+          <button data-k="const" onclick="setTreeKind('const')">Составляющие</button>
+        </div>
+      </div>
+    </div>
+    <div class="meta" id="tree-meta"></div>
+    <div class="tree-wrap" id="tree-svg"><span class="muted">Сначала переведите текст.</span></div>
+    <div class="legend small" id="tree-legend"></div>
+  </div>
+  <div class="two-col">
+    <div class="card"><h3>Слова предложения: теги, роли и перевод</h3><table class="grid small" id="tree-tokens"></table></div>
+    <div class="card"><h3>Скобочная запись (составляющие)</h3><div class="bracket" id="tree-bracket"></div>
+      <h3 style="margin-top:12px">Перевод предложения</h3><div id="tree-fr" class="out" style="min-height:0"></div></div>
+  </div>
+</section>
+
+<section class="tab" id="tab-dict">
+  <div class="cards" id="dict-stats"></div>
+  <div class="card">
+    <div class="row between">
+      <h2 style="margin:0">Пополнение словаря <button class="q" onclick="help('h-dict')">?</button></h2>
+      <div class="row no-print" style="margin:0">
+        <button class="btn sm" onclick="loadUnknown()">Обновить</button>
+        <button class="btn sm primary" onclick="acceptAll()">Добавить отмеченные</button>
+        <button class="btn sm danger" onclick="clearUnknown()">Очистить список</button>
+      </div>
+    </div>
+    <p class="muted small">Слова, которых не было в словаре при переводах. Для них система предлагает перевод
+      по правилам англо-французских соответствий (‑tion → ‑tion, ‑ity → ‑ité, ‑ous → ‑eux, ‑ize → ‑iser …) и по уже известным словам
+      (efficiently ← efficient). Проверьте и исправьте гипотезу, отметьте строку и добавьте её в словарь.</p>
+    <table class="grid small" id="unk-table"></table>
+  </div>
+  <div class="card">
+    <div class="row between">
+      <h2 style="margin:0">Словарь</h2>
+      <div class="row no-print" style="margin:0">
+        <input type="text" id="dict-q" placeholder="Поиск (англ. или франц.)" oninput="debounceDict()">
+        <select id="dict-pos" onchange="loadDict()"><option value="">Все части речи</option></select>
+        <select id="dict-src" onchange="loadDict()"><option value="">Все источники</option><option value="seed">исходный</option>
+          <option value="user">пользователь</option><option value="auto">автоматически</option></select>
+        <button class="btn sm" onclick="editEntry()">Добавить слово</button>
+        <a class="btn sm" href="/api/dict/export.tsv">Экспорт TSV</a>
+        <label class="btn sm" style="flex-direction:row">Импорт TSV<input type="file" id="dict-import-file" hidden accept=".tsv,.txt" onchange="importDict(this)"></label>
+      </div>
+    </div>
+    <div class="meta" id="dict-meta"></div>
+    <table class="grid small" id="dict-table"></table>
+    <div class="row"><button class="btn sm" id="dict-more" onclick="loadDict(true)" hidden>Показать ещё</button></div>
+  </div>
+  <div class="card">
+    <div class="row between"><h2 style="margin:0">Обороты</h2>
+      <div class="row no-print" style="margin:0"><input type="text" id="ph-q" placeholder="Поиск" oninput="loadPhrases()">
+        <button class="btn sm" onclick="addPhrase()">Добавить оборот</button></div></div>
+    <table class="grid small" id="ph-table"></table>
+  </div>
+</section>
+
+<section class="tab" id="tab-history">
+  <div class="card">
+    <div class="row between"><h2 style="margin:0">Сохранённые переводы</h2><button class="btn sm no-print" onclick="loadHistory()">Обновить</button></div>
+    <table class="grid" id="hist-table"></table>
+  </div>
+</section>
+
+<section class="tab" id="tab-eval">
+  <div class="card">
+    <div class="row between">
+      <h2 style="margin:0">Оценка качества перевода <button class="q" onclick="help('h-eval')">?</button></h2>
+      <div class="row no-print" style="margin:0">
+        <label>Выборка <select id="eval-part"><option value="test">Тестовая (8 текстов)</option><option value="dev">Отладочная (8 текстов)</option></select></label>
+        <button class="btn primary" onclick="runEval()">Запустить</button>
+      </div>
+    </div>
+    <p class="muted small">Каждый текст переводится двумя методами — системой с трансфером и прямым пословным переводом — и сравнивается
+      с эталонным переводом: BLEU (совпадение n-грамм слов, n = 1…4) и chrF (совпадение символьных n-грамм).
+      На отладочной выборке разрабатывались правила, поэтому её оценки завышены; честная оценка — тестовая выборка.</p>
+    <div class="cards" id="eval-cards"></div>
+    <table class="grid" id="eval-table"></table>
+  </div>
+</section>
+
+<section class="tab" id="tab-help">
+  <div class="help-grid">
+    <div class="card" id="h-translate"><h3>Перевод</h3><ul>
+      <li>Вставьте английский текст, выберите пример или откройте файл TXT, DOCX, PDF (можно перетащить в поле).</li>
+      <li><b>Система с трансфером</b> выполняет анализ (разбор spaCy), перенос структуры по правилам французского языка и синтез форм.
+        <b>Прямой перевод</b> заменяет слова и обороты по словарю в исходном порядке — для сравнения.</li>
+      <li>Предметная область определяется по словам текста; от неё зависит выбор значения (language → langage / langue).</li>
+      <li>Под переводом — число слов во входном тексте, число переведённых и не найденных в словаре слов.</li>
+      <li>«Сохранить … (TXT)» — файл в кодировке Unicode (UTF-8 с меткой BOM или UTF-16); «Печать» — печать текущей вкладки.</li></ul></div>
+    <div class="card" id="h-freq"><h3>Вкладка 1 · Слова по частоте</h3><ul>
+      <li>Все слова текста (по леммам) упорядочены по частоте.</li>
+      <li>Для каждого слова: формы в тексте, часть речи и тег Penn Treebank с расшифровкой, роль в предложении,
+        морфологические признаки (функциональность ЛР №3 весеннего семестра).</li>
+      <li>Перевод из словаря и грамматическая информация о французском слове: род, мн. число, формы прилагательного,
+        спряжение глагола.</li></ul></div>
+    <div class="card" id="h-tree"><h3>Вкладка 2 · Дерево разбора</h3><ul>
+      <li>Выберите предложение (или щёлкните его в таблице на вкладке «Перевод»).</li>
+      <li><b>Зависимости</b>: вершина — слово с тегом и переводом, подпись дуги — синтаксическое отношение.</li>
+      <li><b>Составляющие</b>: группы S, NP, VP, PP, ADJP, построенные из дерева зависимостей.</li>
+      <li>Наведите на узел, чтобы увидеть расшифровку тега.</li></ul></div>
+    <div class="card" id="h-dict"><h3>Словарь</h3><ul>
+      <li>Словарь хранится в PostgreSQL: английская лемма, часть речи, перевод, род, дополнительные формы, область.</li>
+      <li><b>Пополнение</b>: неизвестные слова всех переводов собираются автоматически, для них предлагается перевод;
+        исправьте его при необходимости и добавьте отмеченные строки.</li>
+      <li>Поле «доп.»: <span class="mono">pl=</span> мн. число, <span class="mono">f=</span> ж. род прилагательного,
+        <span class="mono">pre</span> — прилагательное перед существительным, <span class="mono">aux=être</span>,
+        <span class="mono">obj=à</span> — дополнение-лицо с предлогом, <span class="mono">inf=de</span> — предлог перед инфинитивом.</li>
+      <li>Записи можно править и удалять, выгружать и загружать в формате TSV.</li></ul></div>
+    <div class="card" id="h-eval"><h3>Оценка качества</h3><ul>
+      <li>BLEU — доля совпадающих последовательностей из 1–4 слов с эталонным переводом (со штрафом за краткость).</li>
+      <li>chrF — F-мера по последовательностям символов, менее строга к ошибкам в окончаниях.</li>
+      <li>Покрытие — доля слов, для которых найден перевод.</li></ul></div>
+    <div class="card"><h3>Ограничения</h3><ul>
+      <li>Перевод строится по правилам и словарю; идиомы, которых нет среди оборотов, переводятся дословно.</li>
+      <li>Ошибки анализатора spaCy (неверная часть речи или связь) переходят в перевод.</li>
+      <li>Местоимения it / they согласуются с ближайшим подходящим существительным; это не всегда верно.</li></ul></div>
+  </div>
+</section>
+</main>
+
+<div class="modal" id="modal"><div class="modal-box" id="modal-box"></div></div>
+<script src="/static/app.js?v={{ v }}"></script>
+</body>
+</html>

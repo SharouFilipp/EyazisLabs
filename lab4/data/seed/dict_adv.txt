@@ -1,0 +1,186 @@
+# Наречия и служебные слова
+almost|ADV|presque|||
+already|ADV|déjà|||
+also|ADV|aussi|||
+always|ADV|toujours|||
+anymore|ADV|plus|||
+automatically|ADV|automatiquement|||
+carefully|ADV|soigneusement|||
+clearly|ADV|clairement|||
+constantly|ADV|constamment|||
+correctly|ADV|correctement|||
+differently|ADV|différemment|||
+directly|ADV|directement|||
+easily|ADV|facilement|||
+efficiently|ADV|efficacement|||
+especially|ADV|surtout|||
+even|ADV|même|||
+eventually|ADV|finalement|||
+exactly|ADV|exactement|||
+fast|ADV|vite|||
+finally|ADV|enfin|||
+first|ADV|d'abord|||
+frequently|ADV|fréquemment|||
+here|ADV|ici|||
+however|ADV|cependant|||
+immediately|ADV|immédiatement|||
+indeed|ADV|en effet|||
+just|ADV|juste|||
+later|ADV|plus tard|||
+less|ADV|moins|||
+mainly|ADV|principalement|||
+more|ADV|plus|||
+moreover|ADV|de plus|||
+most|ADV|le plus|||
+much|ADV|beaucoup|||
+never|ADV|jamais|||
+now|ADV|maintenant|||
+often|ADV|souvent|||
+only|ADV|seulement|||
+perhaps|ADV|peut-être|||
+probably|ADV|probablement|||
+quickly|ADV|rapidement|||
+rarely|ADV|rarement|||
+really|ADV|vraiment|||
+recursively|ADV|de manière récursive|||cs
+secretly|ADV|secrètement|||
+simply|ADV|simplement|||
+slowly|ADV|lentement|||
+so|ADV|si|||
+sometimes|ADV|parfois|||
+soon|ADV|bientôt|||
+still|ADV|encore|||
+then|ADV|ensuite|||
+there|ADV|là|||
+therefore|ADV|donc|||
+thus|ADV|ainsi|||
+today|ADV|aujourd'hui|||
+together|ADV|ensemble|||
+too|ADV|trop|||
+usually|ADV|généralement|||
+very|ADV|très|||
+well|ADV|bien|||
+yet|ADV|encore|||
+about|ADP|sur|||
+above|ADP|au-dessus de|||
+across|ADP|à travers|||
+after|ADP|après|||
+against|ADP|contre|||
+among|ADP|parmi|||
+around|ADP|autour de|||
+as|ADP|comme|||
+at|ADP|à|||
+because of|ADP|à cause de|||
+before|ADP|avant|||
+behind|ADP|derrière|||
+between|ADP|entre|||
+by|ADP|par|||
+despite|ADP|malgré|||
+during|ADP|pendant|||
+for|ADP|pour|||
+from|ADP|de|||
+in|ADP|dans|||
+inside|ADP|à l'intérieur de|||
+into|ADP|en|||
+like|ADP|comme|||
+of|ADP|de|||
+on|ADP|sur|||
+over|ADP|sur|||
+since|ADP|depuis|||
+than|ADP|que|||
+through|ADP|à travers|||
+to|ADP|à|||
+toward|ADP|vers|||
+towards|ADP|vers|||
+under|ADP|sous|||
+unlike|ADP|contrairement à|||
+until|ADP|jusqu'à|||
+with|ADP|avec|||
+within|ADP|dans|||
+without|ADP|sans|||
+and|CCONJ|et|||
+but|CCONJ|mais|||
+or|CCONJ|ou|||
+nor|CCONJ|ni|||
+so|CCONJ|donc|||
+yet|CCONJ|pourtant|||
+because|SCONJ|parce que|||
+although|SCONJ|bien que|||
+as|SCONJ|comme|||
+if|SCONJ|si|||
+since|SCONJ|puisque|||
+that|SCONJ|que|||
+when|SCONJ|quand|||
+whether|SCONJ|si|||
+while|SCONJ|tandis que|||
+how|SCONJ|comment|||
+where|SCONJ|où|||
+so|SCONJ|donc|||
+until|SCONJ|jusqu'à ce que|||
+a|DET|un|||
+an|DET|un|||
+the|DET|le|||
+this|DET|ce|||
+these|DET|ces|||
+that|DET|ce|||
+those|DET|ces|||
+each|DET|chaque|||
+every|DET|chaque|||
+all|DET|tout|||
+some|DET|des|||
+any|DET|un|||
+no|DET|aucun|||
+another|DET|un autre|||
+both|DET|les deux|||
+many|ADJ|nombreux||pre|
+several|ADJ|plusieurs||pre|
+few|ADJ|peu de||pre|
+other|ADJ|autre||pre|
+not|PART|ne ... pas|||
+to|PART|(инфинитив)|||
+i|PRON|je|||
+you|PRON|vous|||
+he|PRON|il|||
+she|PRON|elle|||
+it|PRON|il|||
+we|PRON|nous|||
+they|PRON|ils|||
+me|PRON|me|||
+him|PRON|le|||
+her|PRON|la|||
+us|PRON|nous|||
+them|PRON|les|||
+my|PRON|mon|||
+your|PRON|votre|||
+his|PRON|son|||
+its|PRON|son|||
+our|PRON|notre|||
+their|PRON|leur|||
+who|PRON|qui|||
+which|PRON|qui|||
+what|PRON|ce que|||
+whose|PRON|dont|||
+this|PRON|cela|||
+that|PRON|cela|||
+everything|PRON|tout|||
+nothing|PRON|rien|||
+something|PRON|quelque chose|||
+someone|PRON|quelqu'un|||
+everyone|PRON|tout le monde|||
+one|NUM|un|||
+two|NUM|deux|||
+three|NUM|trois|||
+four|NUM|quatre|||
+five|NUM|cinq|||
+six|NUM|six|||
+seven|NUM|sept|||
+eight|NUM|huit|||
+nine|NUM|neuf|||
+ten|NUM|dix|||
+eleven|NUM|onze|||
+twelve|NUM|douze|||
+twenty|NUM|vingt|||
+hundred|NUM|cent|||
+thousand|NUM|mille|||
+million|NUM|million|||
+nineteen|NUM|dix-neuf|||

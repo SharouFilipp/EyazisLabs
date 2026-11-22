@@ -1,0 +1,42 @@
+@startuml
+' Поток данных: перевод и пополнение словаря
+!theme plain
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam ArrowColor #555555
+skinparam ActivityBackgroundColor #EAF0FB
+skinparam ActivityBorderColor #555555
+
+|Пользователь|
+start
+:Текст: ввод, пример\nили файл TXT / DOCX / PDF;
+|Система|
+:Перевод (анализ → трансфер → синтез);
+fork
+  :Перевод и статистика
+  слов → вкладка «Перевод»;
+fork again
+  :Частотный список с переводом
+  и грамматикой → вкладка 1;
+fork again
+  :Деревья разбора → вкладка 2;
+fork again
+  :Неизвестные слова → unknown_words,
+  гипотеза suggest.py;
+end fork
+:Сохранение в translations;
+|Пользователь|
+if (Сохранить?) then (да)
+  :TXT в Unicode (UTF-8 / UTF-16),
+  перевод и частотный список;
+endif
+if (Пополнить словарь?) then (да)
+  :Проверить гипотезы, исправить
+  перевод, род, флаги;
+  |Система|
+  :Запись в dictionary (source = user / auto);
+  :Перезагрузка словаря;
+  :Новый перевод использует новые слова;
+endif
+stop
+@enduml

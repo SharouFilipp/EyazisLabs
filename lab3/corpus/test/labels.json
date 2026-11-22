@@ -1,0 +1,490 @@
+{
+ "fr_cs_01.pdf": {
+  "title": "Les algorithmes de tri : principes, complexité et usages",
+  "lang": "fr",
+  "domain": "cs",
+  "keywords": [
+   "algorithme de tri",
+   "complexité",
+   "tri rapide",
+   "tri fusion",
+   "comparaison",
+   "tableau",
+   "pivot",
+   "stabilité",
+   "mémoire",
+   "tas"
+  ],
+  "reference": [
+   "Le tri est l'une des opérations les plus fondamentales de l'informatique, car un grand nombre de traitements supposent que les données soient d'abord ordonnées.",
+   "Un algorithme de tri par comparaison ne dispose que d'une seule opération pour obtenir de l'information sur les données : comparer deux éléments et savoir lequel est le plus petit.",
+   "Les algorithmes qui atteignent cette borne, comme le tri fusion ou le tri par tas, sont donc optimaux au sens asymptotique.",
+   "Le tri fusion repose sur le principe « diviser pour régner » : le tableau est coupé en deux moitiés, chaque moitié est triée récursivement, puis les deux séquences triées sont fusionnées.",
+   "Le tri fusion est stable : deux éléments égaux conservent leur ordre relatif, propriété indispensable lorsqu'on trie successivement selon plusieurs clés.",
+   "Le tri rapide, proposé par Tony Hoare, choisit un élément appelé pivot et partitionne le tableau en deux zones : les éléments plus petits que le pivot et les éléments plus grands.",
+   "Le choix aléatoire du pivot ou la médiane de trois éléments rend ce pire cas extrêmement improbable en pratique.",
+   "Lorsque les clés possèdent une structure connue, il est possible de dépasser la borne des algorithmes par comparaison.",
+   "Dans les bibliothèques modernes, on utilise surtout des algorithmes hybrides qui combinent les qualités de plusieurs méthodes.",
+   "En conclusion, le choix d'un algorithme de tri dépend de plusieurs critères : la taille des données, leur ordre initial, la nécessité de la stabilité, la mémoire disponible et le coût des comparaisons."
+  ],
+  "chars": 4742
+ },
+ "fr_cs_02.pdf": {
+  "title": "Les bases de données relationnelles et le langage SQL",
+  "lang": "fr",
+  "domain": "cs",
+  "keywords": [
+   "base de données",
+   "modèle relationnel",
+   "relation",
+   "SQL",
+   "transaction",
+   "clé",
+   "normalisation",
+   "index",
+   "requête",
+   "intégrité"
+  ],
+  "reference": [
+   "Une base de données est un ensemble organisé d'informations, géré par un logiciel spécialisé appelé système de gestion de bases de données.",
+   "Le modèle relationnel a été introduit par Edgar Codd en 1970 avec une idée simple : représenter toutes les données sous forme de relations, c'est-à-dire de tables composées de lignes et de colonnes.",
+   "La notion de clé joue un rôle central dans l'organisation des relations.",
+   "Les contraintes d'intégrité, déclarées dans le schéma, empêchent l'insertion de données incohérentes, comme une commande attribuée à un client inexistant.",
+   "Le langage SQL est le langage standard des bases de données relationnelles.",
+   "La conception d'un schéma relationnel suit généralement une démarche de normalisation.",
+   "Les transactions garantissent la fiabilité des opérations.",
+   "Les performances d'une base de données dépendent fortement des index.",
+   "En définitive, le succès durable du modèle relationnel s'explique par l'alliance d'un fondement théorique rigoureux, d'un langage de requête standardisé et de mécanismes éprouvés de gestion des transactions."
+  ],
+  "chars": 4650
+ },
+ "fr_cs_03.pdf": {
+  "title": "Les réseaux de neurones artificiels et l'apprentissage profond",
+  "lang": "fr",
+  "domain": "cs",
+  "keywords": [
+   "réseau de neurones",
+   "apprentissage profond",
+   "neurone",
+   "couche",
+   "rétropropagation",
+   "gradient",
+   "données d'apprentissage",
+   "convolution",
+   "surapprentissage",
+   "fonction d'activation"
+  ],
+  "reference": [
+   "Les réseaux de neurones artificiels sont des modèles de calcul inspirés, de manière très simplifiée, du fonctionnement du cerveau.",
+   "L'élément de base d'un réseau est le neurone artificiel, qui reçoit plusieurs valeurs d'entrée, les multiplie par des poids, additionne le résultat et applique une fonction d'activation.",
+   "Sans cette non-linéarité, un empilement de couches équivaudrait à une seule transformation linéaire et le réseau ne pourrait pas représenter des relations complexes.",
+   "On parle d'apprentissage profond lorsque le réseau comporte de nombreuses couches cachées, chacune extrayant des représentations de plus en plus abstraites des données.",
+   "L'apprentissage consiste à ajuster les poids du réseau afin de minimiser une fonction de perte qui mesure l'écart entre les prédictions et les réponses attendues.",
+   "L'algorithme de rétropropagation calcule efficacement le gradient de la perte par rapport à tous les poids en propageant l'erreur de la sortie vers l'entrée, couche par couche.",
+   "Un problème majeur est le surapprentissage : le réseau mémorise les exemples d'apprentissage au lieu d'apprendre des régularités générales, et ses performances chutent sur de nouvelles données.",
+   "Les réseaux de neurones convolutifs sont particulièrement adaptés au traitement des images.",
+   "Depuis 2017, l'architecture des transformeurs, fondée sur un mécanisme d'attention, s'est imposée dans le traitement automatique des langues.",
+   "En conclusion, les réseaux de neurones constituent un outil puissant et polyvalent, dont l'efficacité repose sur l'apprentissage automatique des représentations à partir des données."
+  ],
+  "chars": 4668
+ },
+ "fr_cs_04.pdf": {
+  "title": "La compilation : du code source au programme exécutable",
+  "lang": "fr",
+  "domain": "cs",
+  "keywords": [
+   "compilateur",
+   "analyse lexicale",
+   "analyse syntaxique",
+   "arbre syntaxique",
+   "grammaire",
+   "code intermédiaire",
+   "optimisation",
+   "génération de code",
+   "langage de programmation",
+   "analyse sémantique"
+  ],
+  "reference": [
+   "Un compilateur est un programme qui traduit un texte écrit dans un langage de programmation de haut niveau en un code exécutable par la machine.",
+   "Le travail d'un compilateur est traditionnellement découpé en plusieurs phases successives.",
+   "La première phase est l'analyse lexicale, qui découpe la suite de caractères du programme en unités appelées lexèmes : mots-clés, identificateurs, nombres, opérateurs et signes de ponctuation.",
+   "L'analyse syntaxique vérifie ensuite que la suite de lexèmes respecte la grammaire du langage et construit un arbre syntaxique qui reflète la structure du programme.",
+   "Un programme syntaxiquement correct peut encore contenir des erreurs de sens, que détecte l'analyse sémantique.",
+   "Après les analyses, le compilateur traduit l'arbre syntaxique en un code intermédiaire, indépendant à la fois du langage source et de la machine cible.",
+   "L'optimisation cherche à rendre le programme plus rapide ou plus compact sans modifier son comportement.",
+   "La dernière phase est la génération de code, qui produit les instructions de la machine cible.",
+   "En résumé, la compilation combine des résultats théoriques sur les langages formels et des techniques d'ingénierie très concrètes."
+  ],
+  "chars": 4698
+ },
+ "fr_lit_01.pdf": {
+  "title": "Madame Bovary de Flaubert : le rêve romanesque face à la réalité",
+  "lang": "fr",
+  "domain": "lit",
+  "keywords": [
+   "Emma Bovary",
+   "Flaubert",
+   "roman",
+   "rêve",
+   "ennui",
+   "réalisme",
+   "bourgeoisie",
+   "style",
+   "Charles",
+   "province"
+  ],
+  "reference": [
+   "Publié en 1857, Madame Bovary de Gustave Flaubert est considéré comme l'un des romans fondateurs du réalisme français.",
+   "Le personnage d'Emma Bovary est d'abord façonné par son éducation au couvent, où elle a lu en cachette des romans sentimentaux.",
+   "Toute la tragédie du roman naît de cette opposition entre les illusions romanesques de l'héroïne et la banalité du quotidien.",
+   "L'ennui est le véritable moteur du récit.",
+   "Les aventures amoureuses d'Emma avec Rodolphe, puis avec Léon, apparaissent comme des tentatives désespérées pour réaliser ses rêves.",
+   "La ruine financière et la déception amoureuse se rejoignent pour la conduire au suicide, présenté sans aucune complaisance romantique.",
+   "Le roman est aussi une satire de la bourgeoisie provinciale.",
+   "L'originalité de Flaubert tient surtout à son travail sur le style.",
+   "Il a développé le discours indirect libre, qui permet de faire entendre les pensées d'Emma sans quitter la voix du narrateur, et crée ainsi une distance ironique entre le lecteur et l'héroïne.",
+   "En conclusion, Madame Bovary dépasse largement l'histoire d'un adultère en province."
+  ],
+  "chars": 4074
+ },
+ "fr_lit_02.pdf": {
+  "title": "Les Misérables de Victor Hugo : un roman de la rédemption et de la justice sociale",
+  "lang": "fr",
+  "domain": "lit",
+  "keywords": [
+   "Jean Valjean",
+   "Victor Hugo",
+   "misère",
+   "rédemption",
+   "justice",
+   "Javert",
+   "Cosette",
+   "société",
+   "peuple",
+   "Fantine"
+  ],
+  "reference": [
+   "Les Misérables, publié par Victor Hugo en 1862, est une vaste fresque romanesque qui mêle l'histoire individuelle d'un ancien forçat et le tableau de la société française de la première moitié du dix-neuvième siècle.",
+   "Le héros du roman, Jean Valjean, a passé dix-neuf ans au bagne pour avoir volé un pain afin de nourrir les enfants de sa sœur, puis pour ses tentatives d'évasion.",
+   "Ce geste de pardon bouleverse Valjean et marque le début de sa rédemption, qui constitue le fil conducteur de tout le roman.",
+   "Devenu, sous un faux nom, un industriel respecté et le maire d'une petite ville, Valjean consacre sa vie à faire le bien.",
+   "Face à Valjean se dresse l'inspecteur Javert, personnage rigide qui incarne la loi sans miséricorde.",
+   "Son suicide final exprime la faillite d'une justice purement légale, incapable de reconnaître la conscience et le pardon.",
+   "Le destin de Fantine illustre de manière déchirante la condition des femmes pauvres.",
+   "Le roman est aussi une œuvre engagée qui dénonce la misère comme la source principale du crime.",
+   "La dernière partie du livre est consacrée à l'insurrection républicaine de juin 1832, où se retrouvent les étudiants idéalistes, le jeune Marius amoureux de Cosette et le gamin Gavroche.",
+   "En conclusion, Les Misérables est à la fois un roman d'aventures, une méditation religieuse et un plaidoyer pour la justice sociale."
+  ],
+  "chars": 4173
+ },
+ "fr_lit_03.pdf": {
+  "title": "Le Rouge et le Noir de Stendhal : l'ambition d'un jeune homme sous la Restauration",
+  "lang": "fr",
+  "domain": "lit",
+  "keywords": [
+   "Julien Sorel",
+   "Stendhal",
+   "ambition",
+   "Restauration",
+   "hypocrisie",
+   "Madame de Rênal",
+   "Mathilde",
+   "Napoléon",
+   "société",
+   "passion"
+  ],
+  "reference": [
+   "Le Rouge et le Noir, publié par Stendhal en 1830, retrace l'ascension et la chute de Julien Sorel, un jeune homme d'origine modeste qui rêve de gloire dans une société figée.",
+   "Julien Sorel est le fils d'un charpentier du Jura, méprisé par son père et ses frères parce qu'il préfère les livres au travail manuel.",
+   "Julien choisit donc l'Église, le noir de la soutane, plutôt que le rouge de l'uniforme, non par vocation mais par calcul.",
+   "L'ambition est le trait dominant du héros, mais elle se heurte sans cesse à sa sensibilité et à son orgueil.",
+   "Cette relation révèle la contradiction profonde de Julien, partagé entre la stratégie sociale et la spontanéité du cœur.",
+   "Au séminaire de Besançon, Julien découvre un monde dominé par l'hypocrisie, la surveillance et les rivalités.",
+   "À Paris, devenu secrétaire du marquis de La Mole, Julien pénètre dans l'aristocratie et suscite l'intérêt de Mathilde, la fille du marquis.",
+   "Fou de colère, Julien retourne à Verrières et tire sur madame de Rênal pendant la messe.",
+   "En prison, libéré de son ambition, il découvre enfin le bonheur dans l'amour retrouvé de madame de Rênal, comme si la proximité de la mort lui révélait la vérité de son cœur.",
+   "Stendhal développe une technique originale d'analyse psychologique.",
+   "En conclusion, Le Rouge et le Noir est à la fois le roman d'une ambition individuelle et la satire d'une époque."
+  ],
+  "chars": 3906
+ },
+ "fr_lit_04.pdf": {
+  "title": "Les Fleurs du mal de Baudelaire : le spleen et l'idéal",
+  "lang": "fr",
+  "domain": "lit",
+  "keywords": [
+   "Baudelaire",
+   "poésie",
+   "spleen",
+   "idéal",
+   "poète",
+   "beauté",
+   "recueil",
+   "modernité",
+   "correspondances",
+   "Paris"
+  ],
+  "reference": [
+   "Les Fleurs du mal, recueil publié par Charles Baudelaire en 1857, occupe une place décisive dans l'histoire de la poésie française.",
+   "Le recueil est construit avec une grande rigueur, et Baudelaire tenait à ce qu'on le lise comme un ensemble organisé plutôt que comme une suite de pièces isolées.",
+   "L'ensemble trace ainsi un itinéraire spirituel qui aboutit au voyage final vers l'inconnu.",
+   "L'idéal correspond chez Baudelaire à l'aspiration vers la beauté, la pureté et l'infini.",
+   "Le spleen désigne au contraire un état d'angoisse, d'ennui et d'impuissance qui écrase le poète.",
+   "La force de ces textes tient à la précision des images concrètes qui donnent une forme visible à une souffrance intérieure.",
+   "Le sonnet Correspondances expose une conception nouvelle de la poésie, qui sera reprise par les symbolistes.",
+   "Baudelaire est aussi le poète de la ville moderne.",
+   "La modernité, selon Baudelaire, consiste précisément à dégager ce que la mode et le présent contiennent de poétique.",
+   "En conclusion, Les Fleurs du mal expriment le drame d'une conscience partagée entre l'élévation vers l'idéal et la chute dans le spleen."
+  ],
+  "chars": 3964
+ },
+ "it_cs_01.pdf": {
+  "title": "La crittografia a chiave pubblica e la sicurezza delle comunicazioni",
+  "lang": "it",
+  "domain": "cs",
+  "keywords": [
+   "crittografia",
+   "chiave pubblica",
+   "chiave privata",
+   "cifratura",
+   "algoritmo RSA",
+   "firma digitale",
+   "numeri primi",
+   "sicurezza",
+   "certificato",
+   "scambio di chiavi"
+  ],
+  "reference": [
+   "La crittografia è la disciplina che studia i metodi per rendere un messaggio comprensibile soltanto ai destinatari autorizzati.",
+   "Nei sistemi tradizionali, detti a chiave simmetrica, mittente e destinatario condividono la stessa chiave segreta, utilizzata sia per la cifratura sia per la decifratura.",
+   "In una rete aperta con milioni di utenti che non si conoscono, la distribuzione delle chiavi segrete diventa praticamente impossibile.",
+   "La soluzione fu proposta nel 1976 da Whitfield Diffie e Martin Hellman, che introdussero l'idea di una coppia di chiavi distinte.",
+   "L'algoritmo RSA, presentato nel 1977 da Rivest, Shamir e Adleman, è il più noto sistema a chiave pubblica.",
+   "Un'applicazione fondamentale di questi sistemi è la firma digitale.",
+   "La firma digitale garantisce così l'autenticità del mittente e l'integrità del messaggio, poiché qualsiasi modifica del testo renderebbe la verifica non valida.",
+   "Resta però un problema: come essere sicuri che una chiave pubblica appartenga davvero alla persona indicata?",
+   "Nella pratica, gli algoritmi a chiave pubblica sono molto più lenti di quelli simmetrici e vengono quindi impiegati in sistemi ibridi.",
+   "Una minaccia futura è rappresentata dai calcolatori quantistici, che potrebbero scomporre rapidamente i grandi numeri e risolvere i problemi su cui si basano RSA e le curve ellittiche.",
+   "In conclusione, la crittografia a chiave pubblica ha reso possibile la comunicazione sicura tra persone che non si sono mai incontrate."
+  ],
+  "chars": 4602
+ },
+ "it_cs_02.pdf": {
+  "title": "I sistemi operativi: gestione dei processi, della memoria e dei file",
+  "lang": "it",
+  "domain": "cs",
+  "keywords": [
+   "sistema operativo",
+   "processo",
+   "memoria virtuale",
+   "scheduling",
+   "nucleo",
+   "file system",
+   "thread",
+   "interruzione",
+   "risorse",
+   "sincronizzazione"
+  ],
+  "reference": [
+   "Il sistema operativo è il software fondamentale che gestisce le risorse di un calcolatore e offre ai programmi un ambiente di esecuzione comodo e sicuro.",
+   "La parte centrale del sistema operativo è il nucleo, o kernel, che viene eseguito in una modalità privilegiata del processore.",
+   "Esistono nuclei monolitici, che includono tutti i servizi in un unico programma, e micronuclei, che delegano gran parte delle funzioni a processi separati.",
+   "Il concetto di processo è alla base della gestione dell'esecuzione.",
+   "Poiché i processi pronti sono di solito più numerosi dei processori disponibili, il sistema operativo deve decidere quale eseguire in ogni istante: questo compito è chiamato scheduling.",
+   "Il passaggio da un processo all'altro, detto cambio di contesto, è reso possibile dalle interruzioni del temporizzatore hardware.",
+   "Quando più processi o thread accedono alle stesse risorse, è necessaria la sincronizzazione per evitare risultati incoerenti.",
+   "La gestione della memoria è un'altra funzione essenziale.",
+   "Le pagine poco utilizzate possono essere trasferite sul disco e richiamate quando servono, permettendo di eseguire programmi più grandi della memoria disponibile.",
+   "Il file system organizza i dati memorizzati in modo permanente su dischi e unità a stato solido.",
+   "In conclusione, il sistema operativo è un intermediario indispensabile tra l'hardware e le applicazioni."
+  ],
+  "chars": 4402
+ },
+ "it_cs_03.pdf": {
+  "title": "Le reti di calcolatori e l'architettura dei protocolli di Internet",
+  "lang": "it",
+  "domain": "cs",
+  "keywords": [
+   "rete di calcolatori",
+   "protocollo",
+   "Internet",
+   "pacchetto",
+   "instradamento",
+   "indirizzo IP",
+   "livello di trasporto",
+   "TCP",
+   "commutazione di pacchetto",
+   "nomi di dominio"
+  ],
+  "reference": [
+   "Una rete di calcolatori è un insieme di dispositivi collegati tra loro che possono scambiarsi dati e condividere risorse.",
+   "Perché due calcolatori possano comunicare, devono rispettare regole comuni chiamate protocolli.",
+   "Data la complessità del problema, i protocolli sono organizzati in livelli sovrapposti, ciascuno dei quali offre servizi al livello superiore e utilizza quelli del livello inferiore.",
+   "Internet si basa sulla commutazione di pacchetto.",
+   "Al livello di rete opera il protocollo IP, che assegna a ogni dispositivo un indirizzo IP e si occupa di trasportare i pacchetti dalla sorgente alla destinazione.",
+   "Le tabelle di instradamento vengono costruite automaticamente da protocolli che scambiano informazioni sulla topologia della rete, come OSPF all'interno di un'organizzazione e BGP tra i diversi fornitori di servizi.",
+   "Il livello di trasporto mette in comunicazione i programmi in esecuzione sui calcolatori, distinguendoli mediante numeri di porta.",
+   "Il protocollo UDP, più semplice, rinuncia a queste garanzie ed è preferito dalle applicazioni in tempo reale, come le telefonate via Internet, per le quali un ritardo è peggiore della perdita di qualche dato.",
+   "Gli utenti non utilizzano direttamente gli indirizzi numerici, ma nomi facili da ricordare.",
+   "La crescita di Internet ha posto nuove sfide.",
+   "In conclusione, il successo di Internet deriva da un'architettura a livelli semplice e flessibile, fondata sulla commutazione di pacchetto e su protocolli aperti."
+  ],
+  "chars": 4344
+ },
+ "it_cs_04.pdf": {
+  "title": "L'elaborazione del linguaggio naturale: metodi e applicazioni",
+  "lang": "it",
+  "domain": "cs",
+  "keywords": [
+   "linguaggio naturale",
+   "elaborazione",
+   "analisi morfologica",
+   "analisi sintattica",
+   "corpus",
+   "modello linguistico",
+   "traduzione automatica",
+   "ambiguità",
+   "apprendimento automatico",
+   "riassunto automatico"
+  ],
+  "reference": [
+   "L'elaborazione del linguaggio naturale è il settore dell'informatica che si occupa di rendere i calcolatori capaci di comprendere e produrre testi nelle lingue umane.",
+   "La principale difficoltà del linguaggio naturale è l'ambiguità, che si manifesta a tutti i livelli dell'analisi.",
+   "Per un programma, invece, la scelta dell'interpretazione corretta richiede modelli complessi e grandi quantità di informazioni.",
+   "Il trattamento di un testo comincia generalmente con la suddivisione in frasi e in parole, seguita dall'analisi morfologica.",
+   "L'analisi sintattica individua la struttura della frase, cioè le relazioni tra le parole.",
+   "Nei primi decenni della disciplina prevalevano i sistemi basati su regole scritte a mano da linguisti esperti.",
+   "A partire dagli anni novanta si è affermato l'approccio statistico, in cui i modelli vengono appresi automaticamente da grandi raccolte di testi chiamate corpus.",
+   "Negli ultimi anni l'apprendimento automatico basato sulle reti neurali ha trasformato profondamente il settore.",
+   "Tra le applicazioni più importanti vi è la traduzione automatica, che ha raggiunto una qualità sorprendente grazie ai modelli neurali.",
+   "Il riassunto automatico produce una versione abbreviata di un documento, selezionando le frasi più importanti oppure generando un nuovo testo che ne sintetizza il contenuto.",
+   "Nonostante i grandi progressi, l'elaborazione del linguaggio naturale presenta ancora problemi aperti, come la comprensione del ragionamento, l'ironia e la scarsità di risorse per molte lingue minori."
+  ],
+  "chars": 4272
+ },
+ "it_lit_01.pdf": {
+  "title": "La Divina Commedia di Dante: il viaggio dell'uomo verso la salvezza",
+  "lang": "it",
+  "domain": "lit",
+  "keywords": [
+   "Divina Commedia",
+   "Dante",
+   "Inferno",
+   "Purgatorio",
+   "Paradiso",
+   "Virgilio",
+   "Beatrice",
+   "viaggio",
+   "anima",
+   "allegoria"
+  ],
+  "reference": [
+   "La Divina Commedia, composta da Dante Alighieri all'inizio del Trecento, è considerata il capolavoro della letteratura italiana e una delle opere più importanti della cultura europea.",
+   "L'opera è costruita secondo una struttura rigorosa, fondata sul valore simbolico dei numeri.",
+   "Il numero tre, simbolo della Trinità, ritorna in tutta l'opera e riflette l'ordine perfetto dell'universo creato da Dio.",
+   "Il viaggio comincia in una selva oscura, immagine dello smarrimento morale in cui il poeta si trova a metà della sua vita.",
+   "Virgilio rappresenta la ragione umana, capace di riconoscere il male e di condurre verso la virtù, ma non di giungere da sola alla visione di Dio.",
+   "L'Inferno è una voragine a forma di imbuto, divisa in nove cerchi in cui i dannati sono puniti secondo la gravità dei loro peccati.",
+   "Il Purgatorio è una montagna che sorge in mezzo all'oceano, dove le anime destinate alla salvezza si purificano dai loro peccati.",
+   "Beatrice, la donna amata da Dante in gioventù e morta prematuramente, diventa nel poema la guida verso il Paradiso e il simbolo della grazia divina e della teologia.",
+   "Il viaggio si conclude nell'Empireo con la visione di Dio, che Dante descrive come una luce infinita e come l'amore che muove il sole e le altre stelle.",
+   "La Commedia va letta su più livelli.",
+   "In conclusione, la Divina Commedia è al tempo stesso un'enciclopedia del sapere medievale, un racconto avvincente e un profondo itinerario spirituale."
+  ],
+  "chars": 4093
+ },
+ "it_lit_02.pdf": {
+  "title": "I Promessi sposi di Manzoni: la storia degli umili e la Provvidenza",
+  "lang": "it",
+  "domain": "lit",
+  "keywords": [
+   "Promessi sposi",
+   "Manzoni",
+   "Renzo",
+   "Lucia",
+   "Provvidenza",
+   "don Abbondio",
+   "romanzo storico",
+   "Innominato",
+   "peste",
+   "umili"
+  ],
+  "reference": [
+   "I Promessi sposi di Alessandro Manzoni, pubblicati nella versione definitiva tra il 1840 e il 1842, sono il romanzo più importante dell'Ottocento italiano.",
+   "Il romanzo si apre con l'incontro tra il curato don Abbondio e i bravi di don Rodrigo, che gli ordinano di non celebrare le nozze tra Renzo e Lucia.",
+   "La sua viltà mette in moto l'intera vicenda e rappresenta il modo in cui la debolezza dei singoli favorisce l'ingiustizia dei potenti.",
+   "Il genere scelto da Manzoni è quello del romanzo storico, che mescola personaggi inventati e avvenimenti realmente accaduti.",
+   "Le rivolte, la guerra, la carestia e la peste fanno da sfondo alle vicende private e mostrano come la grande storia ricada soprattutto sugli umili.",
+   "Una delle figure più potenti del romanzo è l'Innominato, un signore temuto da tutti per i suoi delitti, al quale don Rodrigo chiede di rapire Lucia.",
+   "Questo episodio esprime la convinzione di Manzoni che anche l'animo più corrotto possa essere toccato dalla grazia e cambiare vita.",
+   "Un tema centrale dell'opera è la Provvidenza, cioè l'intervento di Dio negli avvenimenti umani.",
+   "La descrizione della peste che colpisce Milano nel 1630 è una delle parti più intense del libro.",
+   "Grande importanza ha anche il lavoro di Manzoni sulla lingua.",
+   "In conclusione, I Promessi sposi sono insieme un romanzo d'avventura, un'opera storica e una meditazione religiosa."
+  ],
+  "chars": 4169
+ },
+ "it_lit_03.pdf": {
+  "title": "Giacomo Leopardi: il pessimismo e la poesia dell'infinito",
+  "lang": "it",
+  "domain": "lit",
+  "keywords": [
+   "Leopardi",
+   "pessimismo",
+   "natura",
+   "infinito",
+   "Canti",
+   "illusioni",
+   "poesia",
+   "dolore",
+   "ginestra",
+   "idilli"
+  ],
+  "reference": [
+   "Giacomo Leopardi, nato a Recanati nel 1798, è uno dei più grandi poeti della letteratura italiana e uno dei pensatori più originali dell'Ottocento europeo.",
+   "La formazione di Leopardi avvenne in gran parte nella ricca biblioteca paterna, dove il giovane trascorse anni di studio intenso e solitario.",
+   "Il contrasto tra le aspirazioni di un animo ardente e la ristrettezza della vita di provincia è all'origine di molti temi della sua poesia.",
+   "Il pensiero leopardiano viene tradizionalmente descritto come un pessimismo che si sviluppa in varie fasi.",
+   "In seguito Leopardi giunge a considerare la natura stessa responsabile del dolore, perché essa genera nell'uomo il desiderio di una felicità che non potrà mai soddisfare.",
+   "Il componimento L'infinito, scritto nel 1819, è uno dei vertici della lirica leopardiana.",
+   "Attraverso il limite concreto della siepe, la poesia rappresenta la capacità dell'immaginazione di superare la realtà e di creare l'idea dell'infinito.",
+   "Gli idilli e i canti composti negli anni successivi, come A Silvia, Il sabato del villaggio e La quiete dopo la tempesta, sviluppano il tema delle illusioni giovanili e della loro inevitabile caduta.",
+   "Nelle Operette morali, dialoghi e racconti filosofici in prosa, Leopardi espone le sue idee con ironia e fantasia.",
+   "L'ultima grande poesia di Leopardi, La ginestra, composta alle pendici del Vesuvio, rappresenta una sorta di testamento spirituale.",
+   "In questo modo il pessimismo leopardiano si trasforma in un messaggio di coraggio e di impegno civile.",
+   "In conclusione, la poesia di Leopardi nasce dal confronto tra il desiderio di felicità e la consapevolezza del dolore."
+  ],
+  "chars": 4062
+ },
+ "it_lit_04.pdf": {
+  "title": "Il fu Mattia Pascal di Pirandello: l'identità e la maschera",
+  "lang": "it",
+  "domain": "lit",
+  "keywords": [
+   "Mattia Pascal",
+   "Pirandello",
+   "identità",
+   "maschera",
+   "romanzo",
+   "Adriano Meis",
+   "libertà",
+   "società",
+   "umorismo",
+   "forma"
+  ],
+  "reference": [
+   "Il fu Mattia Pascal, pubblicato da Luigi Pirandello nel 1904, è uno dei romanzi più innovativi della letteratura italiana del Novecento.",
+   "Mattia Pascal vive in un piccolo paese ligure ed è intrappolato in una situazione familiare e sociale insopportabile.",
+   "Tornando verso casa, legge su un giornale che nel suo paese è stato trovato un cadavere riconosciuto come il suo, e decide di approfittare di questa morte apparente per ricominciare da capo.",
+   "Mattia assume il nome di Adriano Meis e si costruisce un'identità completamente nuova, inventando un passato e cambiando perfino il proprio aspetto fisico.",
+   "Senza un'identità riconosciuta dalla legge, Adriano Meis non può sposarsi, denunciare un furto o difendere il proprio onore, ed è condannato a vivere ai margini della società.",
+   "A Roma, nella pensione del signor Paleari, Adriano si innamora di Adriana e comprende di non poter costruire con lei una vita autentica.",
+   "Ma la moglie si è risposata e ha un figlio, e Mattia scopre di non avere più alcun posto nemmeno nella sua vita precedente.",
+   "Il romanzo esprime una delle idee centrali di Pirandello: il contrasto tra la vita e la forma.",
+   "Il protagonista sperimenta entrambe le condizioni e scopre che né la maschera sociale né la libertà senza forma permettono di essere veramente se stessi.",
+   "Lo stile del romanzo è caratterizzato dall'umorismo, che Pirandello definisce come il sentimento del contrario.",
+   "In conclusione, Il fu Mattia Pascal anticipa molti temi del romanzo europeo del Novecento, come la frammentazione dell'io, la relatività della conoscenza e il peso delle convenzioni sociali."
+  ],
+  "chars": 3989
+ }
+}

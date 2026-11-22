@@ -1,0 +1,91 @@
+Project lab3 {
+  database_type: 'PostgreSQL'
+  Note: 'ЛР №3 — автоматическое реферирование документов (база lab3). Два метода: sentence extraction и семантический метод OSTIS'
+}
+
+Table documents {
+  id serial [primary key]
+  filename text [unique, not null, note: 'Имя файла в data/documents']
+  title text [not null, note: 'Заголовок документа']
+  lang varchar(2) [not null, note: 'fr / it']
+  domain varchar(3) [not null, note: 'cs — научная статья, lit — сочинение']
+  pages integer [not null, default: 1]
+  chars integer [not null]
+  words integer [not null]
+  n_paragraphs integer [not null]
+  n_sentences integer [not null]
+  paragraphs jsonb [not null, note: 'Абзацы текста']
+  reference jsonb [note: 'Эталонный реферат и ключевые слова, NULL если нет']
+  uploaded_at timestamp [not null, default: `now()`]
+
+  Note: 'Входная информация — загруженные документы'
+}
+
+Table sentences {
+  id serial [primary key]
+  document_id integer [not null]
+  idx integer [not null, note: 'Номер предложения в документе']
+  paragraph integer [not null]
+  text text [not null]
+  bd integer [not null, note: 'Символов до предложения в документе']
+  bp integer [not null, note: 'Символов до предложения в абзаце']
+  posd double [note: '1 - BD/|D|']
+  posp double [note: '1 - BP/|P|']
+  score double
+  weight double [note: 'Score · Posd · Posp']
+  in_summary boolean [not null, default: false, note: 'Выбрано методом sentence extraction']
+  sem_weight double [note: 'Вес по методу OSTIS']
+  concepts jsonb [note: 'Понятия базы знаний в предложении']
+  in_summary_ostis boolean [not null, default: false, note: 'Выбрано методом OSTIS']
+
+  indexes {
+    (document_id, idx) [unique]
+    document_id [name: 'idx_sentences_document']
+  }
+}
+
+Table terms {
+  document_id integer [primary key]
+  stem text [primary key, note: 'Основа слова (Snowball)']
+  surface text [not null, note: 'Самая частая словоформа']
+  tf integer [not null]
+  df integer [not null]
+  weight double [not null, note: 'w(t,D)']
+}
+
+Table doc_concepts {
+  document_id integer [primary key]
+  concept text [primary key, note: 'Системный идентификатор понятия']
+  name text [not null]
+  ru text [not null]
+  tf integer [not null]
+  a0 double [not null, note: 'Начальная активация']
+  activation double [not null, note: 'После распространения по связям']
+  parent text [note: 'Родительское понятие (nrel_inclusion)']
+
+  Note: 'Понятия базы знаний, найденные в документе агентом OSTIS'
+}
+
+Table summaries {
+  id serial [primary key]
+  document_id integer [not null]
+  method varchar(10) [not null, note: 'extraction / ostis']
+  n_sentences integer [not null]
+  db_size integer [not null, note: 'Документов того же языка в коллекции']
+  summary_text text [not null]
+  keywords jsonb [not null, note: 'Иерархический список ключевых слов']
+  scs text [not null, note: 'Фрагмент базы знаний в SCs']
+  time_ms double [not null]
+  created_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (document_id, method) [unique]
+  }
+
+  Note: 'Выходная информация — рефераты, по одному на метод'
+}
+
+Ref: sentences.document_id > documents.id [delete: cascade]
+Ref: terms.document_id > documents.id [delete: cascade]
+Ref: doc_concepts.document_id > documents.id [delete: cascade]
+Ref: summaries.document_id > documents.id [delete: cascade]

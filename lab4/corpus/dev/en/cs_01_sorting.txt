@@ -1,0 +1,11 @@
+Sorting Algorithms
+
+Sorting is one of the most important problems in computer science. A sorting algorithm puts the elements of a list in a certain order. The simplest algorithms compare adjacent elements and exchange them. These algorithms are easy to implement, but they are slow on large lists.
+
+Quicksort uses the divide and conquer strategy. The algorithm chooses a pivot and divides the list into two parts. Small elements go to the left part, and large elements go to the right part. Then the algorithm sorts each part recursively. On average, quicksort needs n log n comparisons.
+
+Merge sort also divides the list into two halves. It sorts each half and merges the results. Unlike quicksort, merge sort guarantees good performance in the worst case. However, it needs additional memory for the merge step.
+
+Heapsort builds a binary heap from the data. The largest element is always at the root of the heap. The algorithm removes the root and restores the heap. Heapsort does not need additional memory.
+
+The choice of an algorithm depends on the size of the data and on the available memory. In practice, modern libraries often combine several methods.

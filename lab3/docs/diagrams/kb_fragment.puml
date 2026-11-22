@@ -1,0 +1,33 @@
+@startuml
+' Фрагмент онтологии предметной области computer science
+!theme plain
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 12
+skinparam ArrowColor #555555
+skinparam usecaseBackgroundColor #EAF0FB
+skinparam usecaseBorderColor #333333
+skinparam nodesep 30
+skinparam ranksep 45
+
+
+rectangle "subject_domain_computer_science" as SD #FFF7E8
+
+usecase "concept_algorithm\nalgorithme / algoritmo" as alg
+usecase "concept_sorting\ntri / ordinamento" as sort
+usecase "concept_complexity\ncomplexité / complessità" as cx
+usecase "concept_quicksort\ntri rapide / quicksort" as qs
+usecase "concept_merge_sort\ntri fusion / merge sort" as ms
+usecase "concept_heapsort\ntri par tas / heapsort" as hs
+usecase "concept_divide_and_conquer\ndiviser pour régner" as dc
+usecase "concept_heap\ntas / heap" as heap
+
+SD ..> alg
+alg ==> sort : nrel_inclusion
+alg ==> cx : nrel_inclusion
+sort ==> qs : nrel_inclusion
+sort ==> ms : nrel_inclusion
+sort ==> hs : nrel_inclusion
+qs ..> dc : nrel_related
+ms ..> dc : nrel_related
+hs ..> heap : nrel_related
+@enduml

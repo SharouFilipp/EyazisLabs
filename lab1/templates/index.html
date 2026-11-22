@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Информационно-поисковая система</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Информационно-поисковая система</h1>
+</header>
+
+<nav class="tabs">
+    <button class="tab active" data-tab="search">Поиск</button>
+    <button class="tab" data-tab="docs">Документы</button>
+    <button class="tab" data-tab="load">Загрузка</button>
+    <button class="tab" data-tab="eval">Оценка качества</button>
+    <button class="tab" data-tab="help">Справка</button>
+</nav>
+
+<main>
+
+    <section class="panel active" id="search">
+        <div class="panel-header">
+            <h2>Поиск по базе</h2>
+            <p class="hint">
+                Введите запрос на русском языке. Система найдёт документы,
+                наиболее близкие по содержанию, и отсортирует их по релевантности.
+            </p>
+        </div>
+
+        <div class="row">
+            <label class="topk">
+                Тема:
+                <select id="filter-category">
+                    <option value="">Все</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="search-bar">
+            <input id="query" type="text"
+                   placeholder="Например: векторная модель поиска">
+            <label class="topk">
+                Топ:
+                <input id="topk" type="number" value="10" min="1" max="50">
+            </label>
+            <button id="btn-search" class="primary">Найти</button>
+        </div>
+
+        <p id="search-status" class="status"></p>
+        <div id="results"></div>
+    </section>
+
+    <section class="panel" id="docs">
+        <div class="panel-header">
+            <h2>Документы в базе</h2>
+            <p class="hint">
+                Список всех текстов, по которым работает поиск.
+                Тема определяется автоматически классификатором. Если тема неверна,
+                выберите правильную в списке — документ станет обучающим примером,
+                и классификатор переобучится.
+            </p>
+        </div>
+
+        <div class="row">
+            <button id="btn-refresh" class="ghost">Обновить</button>
+            <button id="btn-clear" class="danger">Очистить всё</button>
+        </div>
+        <p id="docs-status" class="status"></p>
+        <table id="docs-table">
+            <thead><tr>
+                <th style="width:40px">#</th>
+                <th>Заголовок</th>
+                <th style="width:140px">Тема</th>
+                <th>Источник</th>
+                <th style="width:150px">Дата</th>
+                <th style="width:90px">Размер</th>
+                <th style="width:170px">Действия</th>
+            </tr></thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section class="panel" id="load">
+        <div class="panel-header">
+            <h2>Загрузка документов</h2>
+            <p class="hint">
+                Материалы можно добавлять двумя способами: скачивать страницы
+                из интернета или загружать собственные текстовые файлы.
+                Тема определяется автоматически.
+            </p>
+        </div>
+
+        <div class="load-block">
+            <h3>Из интернета</h3>
+            <p class="hint">
+                Вставьте ссылки на русскоязычные страницы — по одной в строке.
+                Система скачает их, извлечёт основной текст, определит тему
+                и добавит в индекс.
+            </p>
+            <textarea id="urls" rows="4"
+                placeholder="https://ru.wikipedia.org/wiki/Информационный_поиск
+https://ru.wikipedia.org/wiki/Векторная_модель
+https://ru.wikipedia.org/wiki/TF-IDF"></textarea>
+            <div class="row">
+                <button id="btn-load-urls" class="primary">Загрузить страницы</button>
+            </div>
+        </div>
+
+        <div class="load-block">
+            <h3>Из файлов</h3>
+            <p class="hint">
+                Перетащите файлы <code>.txt</code> или <code>.md</code> в область ниже.
+                Если загрузить файл с тем же именем, старая версия заменится новой.
+            </p>
+            <div id="dropzone">
+                <input type="file" id="file-input" multiple accept=".txt,.md,.text" hidden>
+                <p>Перетащите файлы сюда</p>
+                <p class="hint">или <a href="#" id="browse">выберите вручную</a></p>
+            </div>
+        </div>
+
+        <p id="load-status" class="status"></p>
+    </section>
+
+    <section class="panel" id="eval">
+        <div class="panel-header">
+            <h2>Оценка качества поиска</h2>
+            <p class="hint">
+                Оцените, насколько хорошо система отвечает на запросы.
+                Выполните тестовый запрос, отметьте релевантные документы —
+                программа рассчитает стандартные метрики ИПС.
+            </p>
+        </div>
+
+        <div class="steps">
+            <span>1. Введите запрос</span>
+            <span>2. Отметьте релевантные документы</span>
+            <span>3. Посмотрите метрики</span>
+        </div>
+
+        <div class="row">
+            <input id="eval-query" type="text" placeholder="Тестовый запрос...">
+            <button id="btn-eval-search" class="primary">Найти</button>
+        </div>
+
+        <h3>Результаты поиска</h3>
+        <div id="eval-results"></div>
+
+        <h3>Все документы базы</h3>
+        <p class="hint">
+            Отметьте все документы, которые, по вашему мнению, отвечают на запрос.
+            Если отметить документ, которого нет в выдаче, это снизит полноту.
+        </p>
+        <div id="all-docs-list" class="docs-checklist"></div>
+
+        <div class="row">
+            <button id="btn-eval-calc" class="primary">Рассчитать метрики</button>
+            <button id="btn-eval-reset" class="ghost">Сбросить</button>
+        </div>
+
+        <table id="metrics-table">
+            <thead><tr>
+                <th>Precision<br><small>точность</small></th>
+                <th>Recall<br><small>полнота</small></th>
+                <th>F1<br><small>среднее</small></th>
+                <th>AP<br><small>с учётом порядка</small></th>
+            </tr></thead>
+            <tbody><tr><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody>
+        </table>
+
+        <div class="chart-wrap">
+            <canvas id="metrics-chart"></canvas>
+        </div>
+    </section>
+
+    <section class="panel" id="help">
+        <div class="panel-header">
+            <h2>Справка</h2>
+        </div>
+
+        <div class="help-grid">
+
+            <div class="help-card">
+                <h3>Как пользоваться</h3>
+                <p>
+                    Откройте «Загрузка» и добавьте несколько документов —
+                    можно скачать страницы по ссылке или перетащить файлы.
+                    Затем перейдите на «Поиск» и введите запрос на русском.
+                </p>
+                <p>
+                    Чтобы посмотреть полный текст документа, нажмите
+                    «Открыть текст» под результатом или «Просмотр» в таблице.
+                </p>
+            </div>
+
+            <div class="help-card">
+                <h3>Как работает поиск</h3>
+                <p>
+                    Используется векторная модель: каждый документ и запрос
+                    представляются как наборы взвешенных терминов (TF-IDF).
+                    Схожесть считается по косинусу угла между векторами.
+                </p>
+                <p class="hint">
+                    Порядок слов в запросе не важен: «модель поиска векторная»
+                    и «векторная модель поиска» дадут одинаковый результат.
+                </p>
+            </div>
+
+            <div class="help-card">
+                <h3>Автоматическая классификация</h3>
+                <p>
+                    Во время индексирования система автоматически определяет тему
+                    каждого документа с помощью наивного байесовского классификатора
+                    (TF-IDF признаки по леммам). Обучение выполняется на вручную
+                    размеченной выборке.
+                </p>
+                <p class="hint">
+                    Категории: ИПС, ИИ, Программирование, Базы данных, Математика,
+                    Постороннее. Если уверенность модели мала, документ относится
+                    к «Постороннее». Тема сохраняется в базе и используется для фильтрации.
+                </p>
+                <p class="hint">
+                    Обучение на исправлениях: на вкладке «Документы» тему можно
+                    исправить вручную (такие документы отмечены ✎). Исправленный
+                    документ добавляется в обучающую выборку, модель переобучается
+                    и пересчитывает темы остальных документов. Пункт «авто»
+                    снимает ручную разметку.
+                </p>
+            </div>
+
+            <div class="help-card">
+                <h3>Метрики качества</h3>
+                <ul class="metric-list">
+                    <li>
+                        <b>Precision</b> — какая доля из показанных документов
+                        действительно релевантна. Высокая точность — мало мусора в выдаче.
+                    </li>
+                    <li>
+                        <b>Recall</b> — какую долю от всех релевантных документов
+                        система смогла найти. Высокая полнота — мало пропусков.
+                    </li>
+                    <li>
+                        <b>F1</b> — среднее между Precision и Recall.
+                    </li>
+                    <li>
+                        <b>AP</b> — точность с учётом порядка в выдаче.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="help-card">
+                <h3>Синхронизация файлов</h3>
+                <p>
+                    Все загруженные тексты хранятся в папке
+                    <code>data/uploads/</code>. Служба watcher следит за
+                    изменениями и автоматически отправляет правки на сервер.
+                </p>
+                <p class="hint">
+                    Если изменить файл прямо в папке — он обновится в базе,
+                    пересобирать индекс вручную не нужно.
+                </p>
+            </div>
+
+            <div class="help-card">
+                <h3>Ограничения</h3>
+                <p>
+                    Поиск работает по точным формам слов (с учётом лемматизации),
+                    но не исправляет опечатки и не знает синонимов — это свойство
+                    векторной модели.
+                </p>
+                <p>
+                    Совсем общие запросы вроде «поиск» или «система» дают
+                    много результатов с низкой точностью.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<div id="viewer" class="modal-overlay" style="display:none;">
+    <div class="modal">
+        <div class="modal-header">
+            <h2 id="viewer-title">Просмотр документа</h2>
+            <button class="modal-close" onclick="closeViewer()">×</button>
+        </div>
+        <div class="modal-meta">
+            <span id="viewer-source"></span>
+            <span id="viewer-date"></span>
+            <span id="viewer-size"></span>
+            <span id="viewer-category"></span>
+        </div>
+        <div class="modal-body">
+            <pre id="viewer-text"></pre>
+        </div>
+        <div class="modal-footer">
+            <button onclick="closeViewer()" class="ghost">Закрыть</button>
+        </div>
+    </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+erDiagram
+    documents ||--o{ results : "имеет результаты"
+    documents {
+        SERIAL id PK
+        TEXT filename UK "имя PDF-файла"
+        TEXT title "заголовок"
+        VARCHAR true_lang "эталонный язык или NULL"
+        INTEGER pages "число страниц"
+        INTEGER chars "длина текста"
+        INTEGER words "число слов"
+        TEXT text "извлечённый текст"
+        TIMESTAMP uploaded_at "дата загрузки"
+    }
+    results {
+        SERIAL id PK
+        INTEGER document_id FK "ON DELETE CASCADE"
+        TEXT method "frequent, short, neural"
+        VARCHAR lang "распознанный язык"
+        REAL score_en "метрика до англ."
+        REAL score_fr "метрика до франц."
+        REAL confidence "уверенность"
+        REAL time_ms "время, мс"
+        TIMESTAMP created_at "дата распознавания"
+    }

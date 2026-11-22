@@ -1,0 +1,18 @@
+# Имена собственные с переводом (остальные переносятся без изменений)
+denmark|PROPN|Danemark|m|country|
+england|PROPN|Angleterre|f|country|
+france|PROPN|France|f|country|
+germany|PROPN|Allemagne|f|country|
+italy|PROPN|Italie|f|country|
+spain|PROPN|Espagne|f|country|
+russia|PROPN|Russie|f|country|
+europe|PROPN|Europe|f|country|
+america|PROPN|Amérique|f|country|
+london|PROPN|Londres|m|city|
+paris|PROPN|Paris|m|city|
+ophelia|PROPN|Ophélie|f||lit
+party|PROPN|Parti|m||lit
+les miserables|PROPN|Les Misérables|m|noart|lit
+ministry of truth|PROPN|ministère de la Vérité|m||lit
+big brother|PROPN|Big Brother|m|noart|lit
+alphonse de lamartine|PROPN|Alphonse de Lamartine|m||lit

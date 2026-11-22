@@ -1,0 +1,11 @@
+Moteurs de recherche
+
+Un moteur de recherche aide les utilisateurs à trouver des documents pertinents parmi des milliards de pages. Le moteur fonctionne en trois étapes : il collecte les pages, il construit un index et il répond aux requêtes.
+
+Un robot d'indexation visite les pages web et suit les liens entre elles. Il télécharge le contenu de chaque page et l'envoie à l'indexeur. L'indexeur extrait les mots du texte et supprime les mots fréquents sans signification.
+
+L'index ressemble à l'index à la fin d'un livre. Pour chaque mot, il stocke la liste des documents qui contiennent ce mot. Grâce à cette structure, le moteur trouve les documents très rapidement.
+
+Quand un utilisateur saisit une requête, le moteur calcule un score pour chaque document. Le score dépend de la fréquence des mots de la requête dans le document et de leur rareté dans la collection. Le moteur analyse aussi les liens : une page qui reçoit de nombreux liens est probablement importante.
+
+Enfin, le moteur trie les documents par score et affiche d'abord les meilleurs résultats. La qualité d'un moteur de recherche dépend de la précision de ce classement.

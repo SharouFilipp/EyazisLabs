@@ -1,0 +1,11 @@
+Cryptographie
+
+La cryptographie protège l'information contre les lecteurs non autorisés. Elle transforme un message lisible en une suite de symboles que personne ne peut comprendre sans clé.
+
+Dans la cryptographie symétrique, l'expéditeur et le destinataire partagent la même clé secrète. L'algorithme utilise cette clé pour chiffrer et pour déchiffrer le message. Cette méthode est rapide, mais les deux parties doivent échanger la clé de manière sûre.
+
+La cryptographie à clé publique résout ce problème. Chaque utilisateur possède deux clés : une clé publique et une clé privée. N'importe qui peut chiffrer un message avec la clé publique, mais seul le propriétaire de la clé privée peut le déchiffrer.
+
+Les signatures numériques utilisent le même principe. L'auteur signe un document avec sa clé privée, et les lecteurs vérifient la signature avec sa clé publique. Ainsi, ils savent que personne n'a modifié le document.
+
+La sécurité de ces méthodes repose sur des problèmes mathématiques difficiles. Par exemple, il est très difficile de trouver les facteurs premiers d'un grand nombre. Cependant, les ordinateurs quantiques pourraient un jour casser certains algorithmes actuels.

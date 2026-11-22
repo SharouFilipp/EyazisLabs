@@ -1,0 +1,31 @@
+@startuml
+' Алгоритм метода sentence extraction
+!theme plain
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam ArrowColor #555555
+skinparam ActivityBackgroundColor #FFF7E8
+skinparam ActivityBorderColor #555555
+
+start
+:Абзацы документа D, язык,
+df(t) и |DB| коллекции, N; <<input>>
+:Разбиение абзацев на предложения S1…Sn,
+для каждого BD(Si), |D|, BP(Si), |P|;
+:Отбор терминов: без чисел, стоп-слов
+и слов короче 3 букв, стемминг Snowball;
+:tf(t,D), tf_max(D);
+:w(t,D) = 0,5·(1 + tf/tf_max)·log(|DB|/df(t));
+:Score(Si) = Σ tf(t,Si)·w(t,D);
+:Posd(Si) = 1 − BD(Si)/|D|
+Posp(Si) = 1 − BP(Si)/|P|;
+:Weight(Si) = Score · Posd · Posp;
+:Выбор N предложений с наибольшим весом
+в порядке следования в тексте;
+:Ключевые слова — термины с max w(t,D),
+уточнения — именные группы с термином;
+:Классический реферат +
+реферат в виде ключевых слов; <<output>>
+:Фрагмент базы знаний в SCs;
+stop
+@enduml

@@ -1,0 +1,11 @@
+Bases de données relationnelles
+
+Une base de données est une collection organisée de données. La plupart des systèmes modernes utilisent le modèle relationnel. Dans ce modèle, les données sont stockées dans des tables. Chaque table est constituée de lignes et de colonnes. Une ligne représente un objet, et une colonne représente une propriété de cet objet.
+
+Chaque table possède une clé primaire qui identifie chaque ligne. Une clé étrangère crée un lien entre deux tables. Ces liens permettent au système d'éviter la duplication des données.
+
+Les utilisateurs accèdent aux données avec le langage SQL. Une requête décrit le résultat, mais elle ne décrit pas la méthode d'exécution. Le système de gestion de base de données choisit le meilleur plan pour chaque requête. Un index accélère la recherche, mais il ralentit l'insertion de nouvelles lignes.
+
+Une transaction est une séquence d'opérations que le système exécute comme une seule unité. Si une erreur se produit, le système annule toute la transaction. Ainsi, la base de données reste toujours dans un état cohérent.
+
+PostgreSQL et MySQL sont des systèmes open source populaires. Ils prennent en charge de grands volumes de données et de nombreux utilisateurs simultanés.

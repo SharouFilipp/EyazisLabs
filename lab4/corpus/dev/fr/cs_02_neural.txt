@@ -1,0 +1,11 @@
+Réseaux de neurones
+
+Un réseau de neurones artificiels est un modèle qui imite la structure du cerveau humain. Le réseau est constitué de couches de neurones artificiels. Chaque neurone reçoit des signaux de la couche précédente et calcule une somme pondérée. Ensuite, il applique une fonction d'activation à cette somme.
+
+La première couche reçoit les données d'entrée, et la dernière couche produit le résultat. Les couches cachées extraient des caractéristiques utiles des données. Un réseau profond contient de nombreuses couches cachées.
+
+Le réseau apprend à partir d'exemples. Pendant l'entraînement, l'algorithme compare la sortie du réseau avec la bonne réponse. Il calcule l'erreur et met à jour les poids des connexions. Cette méthode s'appelle la rétropropagation.
+
+Les réseaux de neurones ont de nombreuses applications. Ils reconnaissent des images, traduisent des textes et génèrent de la parole. Cependant, ils ont besoin de grandes quantités de données et d'ordinateurs puissants. De plus, il est souvent difficile d'expliquer leurs décisions.
+
+Les chercheurs développent de nouvelles architectures qui nécessitent moins de données. À l'avenir, les réseaux de neurones deviendront probablement plus efficaces et plus fiables.

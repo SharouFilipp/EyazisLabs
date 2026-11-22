@@ -1,0 +1,70 @@
+@startuml
+!theme plain
+skinparam componentStyle rectangle
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam nodesep 40
+skinparam ranksep 55
+skinparam ArrowColor #555555
+skinparam packageStyle rectangle
+
+title Структурная схема приложения
+
+actor "Пользователь" as User
+component "Веб-интерфейс\n(index.html, app.js)" as UI #EAF0FB
+component "watcher.py\nСлужба синхронизации" as Watcher #FFF7E8
+
+rectangle "Серверная часть (FastAPI)" #F5F7FB {
+  component "app.py\nREST API" as API
+
+  package "Модуль загрузки" {
+    component "crawler.py\nЗагрузка веб-страниц" as Crawler
+  }
+
+  package "Модуль индексирования (элемент ИИ)" #FFF3F0 {
+    component "indexer.py\nРасчёт весов TF-IDF" as Indexer
+    component "classifier.py\nОпределение темы\n(наивный Байес)" as Classifier
+    component "text_processor.py\nЛемматизация" as TextProc
+  }
+
+  package "Модуль поиска и оценки" {
+    component "search.py\nВекторный поиск" as Search
+    component "evaluation.py\nМетрики качества" as Eval
+  }
+}
+
+cloud "Интернет" as Web
+
+rectangle "Хранилище" #F0F5F0 {
+  file "data/classifier.joblib\nобученная модель" as Model
+  database "PostgreSQL\ndocuments, terms,\ndoc_terms, queries_log" as DB
+  folder "data/uploads\nлокальные .txt" as Files
+}
+
+User --> UI
+UI --> API : HTTP / JSON
+Watcher --> API : синхронизация\nфайлов
+
+API --> Crawler : URL
+API --> Indexer : текст документа
+API --> Search : запрос
+API --> Eval : разметка\nрелевантности
+
+Crawler --> Web : HTTP-запросы
+
+Indexer --> Classifier : леммы → тема
+Indexer --> TextProc : текст → леммы
+Search --> TextProc : запрос → леммы
+
+Classifier --> Model : загрузка /\nсохранение
+Indexer --> DB : документ,\nвеса, тема
+Search --> DB : чтение векторов
+API --> Files : сохранение\nфайлов
+
+Search -[hidden]right- Indexer
+Indexer -[hidden]right- Crawler
+Files -[hidden]right- DB
+DB -[hidden]right- Model
+Model -[hidden]right- Web
+
+@enduml

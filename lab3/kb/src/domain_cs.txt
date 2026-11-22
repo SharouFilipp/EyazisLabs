@@ -1,0 +1,117 @@
+# Онтология предметной области «Computer science».
+# Формат: системный идентификатор | русское имя | fr: идентификаторы | it: идентификаторы | родитель | связанные
+# Родитель — отношение nrel_inclusion (понятие является подклассом родителя); связанные — nrel_related.
+concept_informatics | информатика | informatique; science informatique | informatica | | concept_computer
+concept_computer | вычислительная машина | ordinateur; machine; calculateur | calcolatore; computer; elaboratore | concept_informatics | concept_processor, concept_memory
+concept_processor | процессор | processeur; processeurs | processore; core | concept_computer | concept_register, concept_cache
+concept_cache | кэш | cache | cache | concept_memory |
+concept_register | регистр процессора | registre | registro | concept_processor |
+concept_memory | память | mémoire | memoria | concept_computer |
+concept_algorithm | алгоритм | algorithme | algoritmo | concept_informatics | concept_complexity, concept_data_structure
+concept_complexity | вычислительная сложность | complexité; complexité théorique | complessità | concept_algorithm | concept_lower_bound
+concept_lower_bound | нижняя оценка сложности | borne inférieure | limite inferiore | concept_complexity |
+concept_divide_and_conquer | разделяй и властвуй | diviser pour régner; récursion; récursivement | divide et impera; ricorsione | concept_algorithm |
+concept_sorting | сортировка | tri; algorithme de tri; trier | ordinamento; algoritmo di ordinamento | concept_algorithm | concept_comparison, concept_array
+concept_comparison | сравнение элементов | comparaison; tri par comparaison | confronto | concept_sorting |
+concept_stability | устойчивость сортировки | stabilité; tri stable; stable | stabilità | concept_sorting |
+concept_insertion_sort | сортировка вставками | tri par insertion | ordinamento per inserimento | concept_sorting |
+concept_selection_sort | сортировка выбором | tri par sélection | ordinamento per selezione | concept_sorting |
+concept_bubble_sort | пузырьковая сортировка | tri à bulles | bubble sort | concept_sorting |
+concept_merge_sort | сортировка слиянием | tri fusion; fusion | merge sort | concept_sorting | concept_divide_and_conquer
+concept_quicksort | быстрая сортировка | tri rapide; pivot; partition | quicksort | concept_sorting | concept_divide_and_conquer
+concept_heapsort | пирамидальная сортировка | tri par tas | heapsort | concept_sorting | concept_heap
+concept_counting_sort | сортировка подсчётом | tri par dénombrement; tri par base | counting sort | concept_sorting |
+concept_hybrid_sort | гибридная сортировка | tri introspectif; timsort; algorithme hybride | algoritmo ibrido | concept_sorting |
+concept_data_structure | структура данных | structure de données | struttura dati | concept_informatics |
+concept_array | массив | tableau | array; vettore | concept_data_structure |
+concept_heap | куча | tas; tas binaire | heap | concept_data_structure |
+concept_tree | дерево | arbre | albero | concept_data_structure |
+concept_graph | граф | graphe; coloration de graphe | grafo | concept_data_structure |
+concept_database | база данных | base de données; données | base di dati; database; dati | concept_informatics | concept_dbms
+concept_dbms | СУБД | système de gestion de bases de données | sistema di gestione di basi di dati | concept_database |
+concept_relational_model | реляционная модель | modèle relationnel; base relationnelle | modello relazionale | concept_database | concept_relation_table
+concept_relation_table | отношение (таблица) | relation; table; ligne; colonne; attribut | tabella; relazione; colonna; riga | concept_relational_model |
+concept_key | ключ | clé | chiave | concept_relational_model |
+concept_primary_key | первичный ключ | clé primaire | chiave primaria | concept_key |
+concept_foreign_key | внешний ключ | clé étrangère | chiave esterna | concept_key |
+concept_integrity | целостность данных | intégrité; contrainte d'intégrité; cohérence | integrità; coerenza | concept_database |
+concept_sql | SQL | sql; langage sql | sql | concept_query_language | concept_query
+concept_query_language | язык запросов | langage de requête | linguaggio di interrogazione | concept_database |
+concept_query | запрос | requête; requêtes | query; interrogazione | concept_database | concept_join
+concept_join | соединение таблиц | jointure | join | concept_query |
+concept_normalization | нормализация | normalisation; forme normale; dénormalisation | normalizzazione; forma normale | concept_relational_model |
+concept_transaction | транзакция | transaction; acid; atomicité; durabilité | transazione | concept_database | concept_synchronization
+concept_index | индекс | index; arbre équilibré | indice | concept_database | concept_tree
+concept_nosql | NoSQL | nosql | nosql | concept_database |
+concept_ai | искусственный интеллект | intelligence artificielle | intelligenza artificiale | concept_informatics |
+concept_machine_learning | машинное обучение | apprentissage automatique; apprentissage | apprendimento automatico; apprendimento | concept_ai | concept_training_data
+concept_neural_network | нейронная сеть | réseau de neurones; réseaux de neurones; réseau neuronal | rete neurale; reti neurali | concept_machine_learning | concept_neuron, concept_layer
+concept_neuron | нейрон | neurone; perceptron | neurone | concept_neural_network | concept_activation_function
+concept_activation_function | функция активации | fonction d'activation; sigmoïde; relu; non-linéarité | funzione di attivazione | concept_neuron |
+concept_layer | слой нейронной сети | couche; couches cachées | strato | concept_neural_network |
+concept_deep_learning | глубокое обучение | apprentissage profond | apprendimento profondo | concept_machine_learning | concept_neural_network
+concept_backpropagation | обратное распространение ошибки | rétropropagation | retropropagazione | concept_deep_learning | concept_gradient
+concept_gradient | градиентный спуск | gradient; descente de gradient; fonction de perte; perte | discesa del gradiente; gradiente | concept_machine_learning |
+concept_training_data | обучающие данные | données d'apprentissage; ensemble de validation; exemples | dati di addestramento; addestramento | concept_machine_learning |
+concept_overfitting | переобучение | surapprentissage; régularisation; dropout | sovradattamento; overfitting | concept_machine_learning | concept_training_data
+concept_cnn | свёрточная сеть | réseau convolutif; réseaux de neurones convolutifs; convolution; filtre | rete convoluzionale | concept_neural_network |
+concept_rnn | рекуррентная сеть | réseau récurrent; réseaux récurrents | rete ricorrente | concept_neural_network |
+concept_transformer | трансформер | transformeur; transformeurs; attention | transformer; attenzione | concept_neural_network | concept_language_model
+concept_gpu | графический процессор | processeur graphique | processore grafico; gpu | concept_processor |
+concept_programming_language | язык программирования | langage de programmation; langage | linguaggio di programmazione | concept_informatics | concept_compiler
+concept_program | программа | programme; code source; code | programma; codice | concept_informatics |
+concept_compiler | компилятор | compilateur; compilation | compilatore; compilazione | concept_programming_language | concept_program
+concept_lexical_analysis | лексический анализ | analyse lexicale; lexème; analyseur lexical; expression régulière; automate fini | analisi lessicale | concept_compiler |
+concept_syntax_analysis | синтаксический анализ | analyse syntaxique; analyseur syntaxique; analyseur | analisi sintattica | concept_compiler | concept_grammar
+concept_grammar | грамматика | grammaire; règle de production; grammaire non contextuelle | grammatica | concept_syntax_analysis |
+concept_syntax_tree | синтаксическое дерево | arbre syntaxique | albero sintattico | concept_syntax_analysis | concept_tree
+concept_semantic_analysis | семантический анализ | analyse sémantique; table des symboles | analisi semantica | concept_compiler |
+concept_intermediate_code | промежуточный код | code intermédiaire; représentation intermédiaire; code à trois adresses | codice intermedio | concept_compiler |
+concept_optimization | оптимизация программ | optimisation; code mort; flot de données | ottimizzazione | concept_compiler |
+concept_code_generation | генерация кода | génération de code; générateur; allocation des registres | generazione del codice | concept_compiler | concept_register
+concept_interpreter | интерпретатор | interprétation; machine virtuelle; code octet; compilation à la volée | interprete; macchina virtuale | concept_programming_language |
+concept_security | информационная безопасность | sécurité | sicurezza | concept_informatics | concept_cryptography
+concept_cryptography | криптография | cryptographie; chiffrement | crittografia; cifratura; decifratura | concept_security |
+concept_symmetric_cipher | симметричное шифрование | chiffrement symétrique; clé secrète | chiave simmetrica; algoritmo simmetrico; aes; chiave segreta | concept_cryptography |
+concept_public_key_crypto | криптография с открытым ключом | cryptographie à clé publique; clé publique | chiave pubblica; crittografia a chiave pubblica; crittografia asimmetrica | concept_cryptography | concept_private_key
+concept_private_key | закрытый ключ | clé privée | chiave privata | concept_public_key_crypto |
+concept_key_exchange | обмен ключами | échange de clés | scambio di chiavi; diffie; hellman | concept_public_key_crypto |
+concept_rsa | алгоритм RSA | rsa | rsa; algoritmo rsa | concept_public_key_crypto | concept_prime_number
+concept_prime_number | простое число | nombre premier | numero primo; numeri primi; fattori; scomporre | concept_rsa |
+concept_digital_signature | электронная подпись | signature numérique | firma digitale | concept_public_key_crypto | concept_hash_function
+concept_hash_function | хеш-функция | fonction de hachage | funzione di hash; hash; impronta | concept_cryptography |
+concept_certificate | цифровой сертификат | certificat | certificato; certificati digitali; autorità di certificazione | concept_public_key_crypto |
+concept_elliptic_curves | эллиптические кривые | courbes elliptiques | curve ellittiche | concept_public_key_crypto |
+concept_quantum_computer | квантовый компьютер | ordinateur quantique | calcolatore quantistico; calcolatori quantistici; post-quantistica | concept_cryptography |
+concept_operating_system | операционная система | système d'exploitation | sistema operativo | concept_informatics | concept_kernel, concept_process
+concept_kernel | ядро ОС | noyau | nucleo; kernel; micronuclei; chiamate di sistema | concept_operating_system |
+concept_process | процесс | processus | processo; processi | concept_operating_system | concept_scheduling
+concept_thread | поток выполнения | thread; fil d'exécution | thread | concept_process |
+concept_scheduling | планирование процессов | ordonnancement | scheduling; quanto di tempo; cambio di contesto; priorità | concept_process |
+concept_synchronization | синхронизация | synchronisation; verrouillage | sincronizzazione; semafori; mutex; monitor; mutua esclusione; sezioni critiche | concept_process | concept_deadlock
+concept_deadlock | взаимная блокировка | interblocage | stallo | concept_synchronization |
+concept_virtual_memory | виртуальная память | mémoire virtuelle | memoria virtuale; tabelle delle pagine; spazio di indirizzamento | concept_memory | concept_operating_system
+concept_file_system | файловая система | système de fichiers; fichier | file system; file; cartelle | concept_operating_system |
+concept_driver | драйвер | pilote | driver; dispositivi | concept_operating_system |
+concept_interrupt | прерывание | interruption | interruzione; interruzioni | concept_operating_system | concept_processor
+concept_network | компьютерная сеть | réseau informatique | rete di calcolatori; reti; rete | concept_informatics | concept_protocol
+concept_internet | Интернет | internet; web | internet; web | concept_network |
+concept_protocol | протокол | protocole | protocollo; protocolli; livelli; modello a livelli | concept_network |
+concept_packet_switching | коммутация пакетов | commutation de paquets; paquet | commutazione di pacchetto; pacchetti; pacchetto | concept_network |
+concept_ip | протокол IP | adresse ip; protocole ip | protocollo ip; indirizzo ip; indirizzi | concept_protocol | concept_routing
+concept_routing | маршрутизация | routage; routeur | instradamento; router; tabelle di instradamento; ospf; bgp | concept_network |
+concept_tcp | протокол TCP | tcp | tcp; controllo della congestione; ritrasmette | concept_protocol | concept_transport_layer
+concept_udp | протокол UDP | udp | udp | concept_protocol | concept_transport_layer
+concept_transport_layer | транспортный уровень | couche transport | livello di trasporto; numeri di porta | concept_protocol |
+concept_dns | DNS | dns; nom de domaine | dns; nomi di dominio; server radice | concept_protocol |
+concept_http | HTTP | http | http; cliente servente; browser | concept_protocol | concept_internet
+concept_tls | протокол TLS | tls | tls; chiave di sessione | concept_protocol | concept_cryptography
+concept_nlp | обработка естественного языка | traitement automatique des langues; langage naturel | elaborazione del linguaggio naturale; linguaggio naturale | concept_ai | concept_corpus
+concept_ambiguity | неоднозначность | ambiguïté | ambiguità | concept_nlp |
+concept_morphology | морфологический анализ | analyse morphologique; lemme | analisi morfologica; lemma; flessione | concept_nlp |
+concept_parsing_nl | синтаксический анализ текста | arbre de dépendances | albero a dipendenze; costituenti; sintagmi; struttura sintattica | concept_nlp |
+concept_corpus | корпус текстов | corpus | corpus; raccolte di testi | concept_nlp |
+concept_language_model | языковая модель | modèle de langage | modello linguistico; modelli linguistici | concept_nlp |
+concept_machine_translation | машинный перевод | traduction automatique | traduzione automatica | concept_nlp |
+concept_summarization | автоматическое реферирование | résumé automatique | riassunto automatico; riassunto; estrazione | concept_nlp |
+concept_information_extraction | извлечение информации | extraction d'informations | estrazione di informazioni; analisi del sentimento | concept_nlp |

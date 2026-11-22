@@ -1,0 +1,11 @@
+Operating Systems
+
+An operating system manages the hardware and the software resources of a computer. It acts as an intermediary between the user and the machine. Windows, Linux and macOS are the most widespread operating systems.
+
+The kernel is the central part of the system. It controls the processor, the memory and the devices. When a program starts, the kernel creates a process and allocates memory to it. A modern system executes many processes at the same time.
+
+The scheduler decides which process uses the processor at each moment. It tries to share the processor time fairly between all processes. If a process waits for data from the disk, the scheduler gives the processor to another process.
+
+Virtual memory gives each process its own address space. The system stores rarely used pages on the disk and loads them again when they are necessary. This mechanism allows programs to use more memory than the computer physically contains.
+
+The file system organizes the data on the disk into files and directories. It also protects the files of each user against unauthorized access.

@@ -1,0 +1,68 @@
+@startuml
+' Структурная схема приложения ЛР3 (два метода реферирования)
+!theme plain
+skinparam componentStyle rectangle
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam nodesep 25
+skinparam ranksep 50
+skinparam ArrowColor #555555
+skinparam packageStyle rectangle
+
+actor "Пользователь" as User
+
+rectangle "Клиент (браузер)" #EAF0FB {
+  component "index.html, style.css\n6 вкладок, справка" as UI
+  component "app.js\nтаблицы, Chart.js, SCg-граф" as JS
+}
+
+rectangle "Серверная часть (FastAPI)" #F5F7FB {
+  component "app.py\nREST API, отчёты HTML/TXT,\nэкспорт SCs" as API
+  component "doc_reader.py\nPDF / DOCX / TXT → абзацы" as Reader
+  component "text_processor.py\nпредложения, термины,\nстемминг, язык, область" as TP
+  component "stopwords.py\nстоп-слова fr / it" as SW
+
+  package "Метод 1. Sentence extraction" #FFF7E8 {
+    component "summarizer.py\nw(t,D), Score · Posd · Posp" as Summ
+  }
+
+  package "Метод 2. Семантический метод OSTIS" #FFF3F0 {
+    component "ostis_agent.py\nагент реферирования" as Agent
+    component "sc_memory.py\nsc-память, разбор SCs" as Mem
+  }
+
+  component "ostis.py\nонтология, фрагменты SCs, SCg" as Ost
+  component "evaluation.py\nP, R, F1, ROUGE" as Ev
+  component "db.py" as DBm
+}
+
+rectangle "Хранилище" #F0F5F0 {
+  file "kb/*.scs\nонтологии CS\nи литературы" as KB
+  database "PostgreSQL\nбаза lab3" as PG
+  folder "data/documents\nзагруженные файлы" as Files
+}
+
+User --> UI
+UI - JS
+JS --> API : HTTP / JSON
+API --> Reader
+Reader --> TP
+TP --> SW
+API --> Summ
+Summ --> TP
+API --> Agent
+Agent --> Mem
+Agent --> TP
+Mem --> KB : загрузка при старте
+API --> Ost
+API --> Ev
+API --> DBm
+DBm --> PG
+API --> Files
+
+' раскладка: вспомогательные модули друг под другом, хранилище — внизу
+Ev -[hidden]down- Ost
+Ost -[hidden]down- DBm
+SW -[hidden]down- PG
+Mem -[hidden]down- KB
+@enduml

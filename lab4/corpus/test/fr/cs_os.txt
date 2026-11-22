@@ -1,0 +1,11 @@
+Systèmes d'exploitation
+
+Un système d'exploitation gère les ressources matérielles et logicielles d'un ordinateur. Il sert d'intermédiaire entre l'utilisateur et la machine. Windows, Linux et macOS sont les systèmes d'exploitation les plus répandus.
+
+Le noyau est la partie centrale du système. Il contrôle le processeur, la mémoire et les périphériques. Quand un programme démarre, le noyau crée un processus et lui alloue de la mémoire. Un système moderne exécute de nombreux processus en même temps.
+
+L'ordonnanceur décide quel processus utilise le processeur à chaque instant. Il essaie de partager le temps du processeur équitablement entre tous les processus. Si un processus attend des données du disque, l'ordonnanceur donne le processeur à un autre processus.
+
+La mémoire virtuelle donne à chaque processus son propre espace d'adressage. Le système stocke les pages rarement utilisées sur le disque et les charge de nouveau quand elles sont nécessaires. Ce mécanisme permet aux programmes d'utiliser plus de mémoire que l'ordinateur n'en contient physiquement.
+
+Le système de fichiers organise les données sur le disque en fichiers et en répertoires. Il protège aussi les fichiers de chaque utilisateur contre les accès non autorisés.

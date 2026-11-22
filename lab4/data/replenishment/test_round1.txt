@@ -1,0 +1,127 @@
+# Пополнение словаря по неизвестным словам тестовой выборки (раунд 1).
+# Список получен утилитой пополнения (вкладка «Словарь» → «Пополнение словаря») после перевода 8 текстов
+# тестовой выборки. Для каждого слова гипотеза системы проверена по двуязычному словарю и при необходимости
+# исправлена вручную. В движок перевода (правила) при этом ничего не добавлялось — только записи словаря.
+# Формат как у data/seed: en | POS | fr | род | доп. | область
+adult|NOUN|adulte|m||
+absurdity|NOUN|absurdité|f||lit
+accident|NOUN|accident|m||
+adventure|NOUN|aventure|f||
+affair|NOUN|aventure|f||lit
+arrival|NOUN|arrivée|f||
+attacker|NOUN|attaquant|m||cs
+ball|NOUN|bal|m|pl=bals|lit
+ballet|NOUN|ballet|m||
+bandwidth|NOUN|bande passante|f|pl=bandes passantes|cs
+billion|NOUN|milliard|m||
+boy|NOUN|garçon|m||
+browser|NOUN|navigateur|m||cs
+businessman|NOUN|homme d'affaires|m|pl=hommes d'affaires|
+check|NOUN|vérification|f||
+communication|NOUN|communication|f||
+conscience|NOUN|conscience|f||
+cousin|NOUN|cousin|m||
+crawler|NOUN|robot d'indexation|m|pl=robots d'indexation|cs
+creditor|NOUN|créancier|m||
+criminal|NOUN|criminel|m||
+cryptography|NOUN|cryptographie|f||cs
+debt|NOUN|dette|f||
+delay|NOUN|retard|m||
+desert|NOUN|désert|m||
+destination|NOUN|destination|f||
+directory|NOUN|répertoire|m||cs
+doctor|NOUN|médecin|m||
+engine|NOUN|moteur|m||cs
+evidence|NOUN|preuve|f||
+factor|NOUN|facteur|m||
+farm|NOUN|ferme|f||
+fiber|NOUN|fibre|f||cs
+fight|NOUN|bagarre|f||lit
+film|NOUN|film|m||
+fox|NOUN|renard|m||
+frequency|NOUN|fréquence|f||
+geographer|NOUN|géographe|m||
+hatred|NOUN|haine|f|asp|
+help|NOUN|aide|f||
+indexer|NOUN|indexeur|m||cs
+intermediary|NOUN|intermédiaire|m||
+investigator|NOUN|enquêteur|m||
+kernel|NOUN|noyau|m|pl=noyaux|cs
+latency|NOUN|latence|f||cs
+lover|NOUN|amant|m||lit
+luxury|NOUN|luxe|m||
+mechanism|NOUN|mécanisme|m||
+monk|NOUN|moine|m||
+murder|NOUN|meurtre|m||
+opera|NOUN|opéra|m||
+owner|NOUN|propriétaire|m||
+packet|NOUN|paquet|m||cs
+phone|NOUN|téléphone|m||
+pilot|NOUN|pilote|m||
+planet|NOUN|planète|f||
+pleasure|NOUN|plaisir|m||
+poison|NOUN|poison|m||
+potion|NOUN|potion|f||
+psychology|NOUN|psychologie|f||
+ranking|NOUN|classement|m||cs
+rarity|NOUN|rareté|f||
+receiver|NOUN|destinataire|m||cs
+redemption|NOUN|rédemption|f||lit
+rose|NOUN|rose|f||
+router|NOUN|routeur|m||cs
+scandal|NOUN|scandale|m||
+scheduler|NOUN|ordonnanceur|m||cs
+score|NOUN|score|m||
+sender|NOUN|expéditeur|m||cs
+signature|NOUN|signature|f||
+street|NOUN|rue|f||
+tomb|NOUN|tombeau|m|pl=tombeaux|
+top|NOUN|dessus|m||
+web|NOUN|web|m||cs
+wife|NOUN|femme|f||
+banal|ADJ|banal||pl=banals|
+boring|ADJ|ennuyeux||f=ennuyeuse|
+desperate|ADJ|désespéré|||
+expensive|ADJ|cher||f=chère|
+extraordinary|ADJ|extraordinaire|||
+ill|ADJ|malade|||
+mathematical|ADJ|mathématique|||
+prime|ADJ|premier||f=première|cs
+provincial|ADJ|provincial||pl=provinciaux|
+quantum|ADJ|quantique|||cs
+readable|ADJ|lisible|||
+realist|ADJ|réaliste|||lit
+responsible|ADJ|responsable|||
+ridiculous|ADJ|ridicule|||
+secure|ADJ|sécurisé|||cs
+symmetric|ADJ|symétrique|||cs
+unauthorized|ADJ|non autorisé||f=non autorisée|
+widespread|ADJ|répandu|||
+again|ADV|de nouveau|||
+fairly|ADV|équitablement|||
+abandon|VERB|abandonner|||
+accumulate|VERB|accumuler|||
+accuse|VERB|accuser||on=de;inf=de|
+answer|VERB|répondre||obj=à;dobj=à|
+buy|VERB|acheter|||
+confess|VERB|avouer|||
+criticize|VERB|critiquer|||
+decrypt|VERB|déchiffrer|||cs
+deliver|VERB|livrer|||
+download|VERB|télécharger|||cs
+drink|VERB|boire|||
+encrypt|VERB|chiffrer|||cs
+exile|VERB|exiler|||
+lend|VERB|prêter||obj=à|
+offend|VERB|offenser|||
+poison|VERB|empoisonner|||
+reconcile|VERB|réconcilier|||
+sacrifice|VERB|sacrifier|||
+sign|VERB|signer|||
+store|VERB|stocker|||cs
+suspect|VERB|soupçonner|||
+threaten|VERB|menacer|||
+touch|VERB|toucher|||
+transmit|VERB|transmettre|||
+visit|VERB|visiter|||
+wake|VERB|se réveiller|||

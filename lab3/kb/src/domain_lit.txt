@@ -1,0 +1,70 @@
+# Онтология предметной области «Литература».
+# Формат: системный идентификатор | русское имя | fr: идентификаторы | it: идентификаторы | родитель | связанные
+# Родитель — nrel_inclusion; связанные — nrel_related (для произведений — автор, персонажи, темы).
+concept_literature | литература | littérature; littéraire | letteratura; letterario | |
+concept_literary_work | литературное произведение | œuvre; livre; texte | opera; libro; testo | concept_literature | concept_writer
+concept_writer | писатель | écrivain; auteur; romancier | scrittore; autore; romanziere | concept_literature |
+concept_reader | читатель | lecteur; lecteurs | lettore; lettori | concept_literature |
+concept_novel | роман | roman; romans; récit | romanzo; romanzi; racconto | concept_literary_work |
+concept_historical_novel | исторический роман | roman historique; fresque | romanzo storico | concept_novel | concept_history
+concept_poetry | поэзия | poésie; poète; poèmes; poème | poesia; poeta; poesie; lirica | concept_literary_work | concept_verse
+concept_poem_collection | поэтический сборник | recueil | raccolta; canzoniere | concept_poetry |
+concept_epic_poem | поэма | épopée; épopée moderne | poema; cantica; cantiche; canto | concept_poetry |
+concept_sonnet | сонет | sonnet | sonetto | concept_poetry | concept_verse
+concept_verse | стих | vers; alexandrin; strophe | verso; endecasillabo; terzina; rima | concept_poetry |
+concept_prose_dialogue | философская проза | dialogue; conte philosophique | operette morali; dialogo; prosa | concept_literary_work |
+concept_character | персонаж | personnage; personnages; héros; héroïne; protagoniste | personaggio; personaggi; protagonista; eroe | concept_literary_work |
+concept_narrator | повествователь | narrateur; voix narrative | narratore; voce narrante; prima persona | concept_literary_work | concept_style
+concept_plot | сюжет | intrigue; histoire; destin | vicenda; trama; storia | concept_novel | concept_character
+concept_style | стиль | style; mot juste | stile; linguaggio | concept_literature | concept_irony
+concept_free_indirect | несобственно-прямая речь | discours indirect libre | discorso indiretto libero | concept_style |
+concept_irony | ирония | ironie; ironique | ironia; ironico | concept_style |
+concept_humor | юмор | humour | umorismo; sentimento del contrario; comicità | concept_style | concept_irony
+concept_antithesis | антитеза | antithèse; contraste | antitesi; contrasto | concept_style |
+concept_symbol | символ | symbole; symbolique; image | simbolo; simbolico; immagine | concept_style |
+concept_allegory | аллегория | allégorie | allegoria; senso allegorico; senso letterale | concept_symbol |
+concept_synesthesia | синестезия | correspondances; synesthésie; analogies | sinestesia | concept_symbol |
+concept_literary_movement | литературное направление | mouvement littéraire | corrente letteraria | concept_literature |
+concept_realism | реализм | réalisme; réaliste | realismo; realistico | concept_literary_movement |
+concept_romanticism | романтизм | romantisme; romantique | romanticismo; romantico | concept_literary_movement |
+concept_symbolism | символизм | symbolistes; symbolisme | simbolismo | concept_literary_movement |
+concept_modernity | модерн, современность | modernité; moderne | modernità; moderno; novecento | concept_literary_movement |
+concept_theme | тема произведения | thème | tema | concept_literary_work |
+concept_love | любовь | amour; passion; amant; amants | amore; passione | concept_theme |
+concept_death | смерть | mort; suicide | morte; suicidio | concept_theme |
+concept_dream | мечта, иллюзия | rêve; rêves; illusion; illusions; imaginaire | sogno; illusione; illusioni; immaginazione | concept_theme |
+concept_boredom | скука, сплин | ennui; spleen; mélancolie | noia; malinconia | concept_theme |
+concept_ideal | идеал | idéal; beauté | ideale; bellezza | concept_theme |
+concept_society | общество | société; social; sociale | società; sociale; convenzioni sociali | concept_theme |
+concept_bourgeoisie | буржуазия | bourgeoisie; bourgeois; province; provinciale | borghesia; provincia | concept_society |
+concept_ambition | честолюбие | ambition; ambitieux; ascension | ambizione | concept_theme |
+concept_hypocrisy | лицемерие | hypocrisie; masque | ipocrisia; maschera | concept_society |
+concept_justice | справедливость | justice; loi | giustizia | concept_theme |
+concept_poverty | бедность | misère; pauvres; misérables | miseria; poveri; umili | concept_society |
+concept_redemption | искупление | rédemption; pardon; conscience | redenzione; perdono; salvezza | concept_theme | concept_religion
+concept_religion | религия | église; dieu; religieux; foi | chiesa; dio; religioso; fede; grazia | concept_theme |
+concept_providence | Провидение | providence | provvidenza | concept_religion |
+concept_identity | идентичность | identité | identità; io | concept_theme |
+concept_freedom | свобода | liberté | libertà | concept_theme |
+concept_nature | природа | nature | natura | concept_theme |
+concept_pessimism | пессимизм | pessimisme | pessimismo; dolore; infelicità | concept_theme | concept_nature
+concept_infinity | бесконечность | infini | infinito | concept_theme |
+concept_memory_lit | воспоминание | souvenir | ricordo; rimembranza | concept_theme |
+concept_city | город | ville; paris; urbain | città; milano; roma | concept_theme |
+concept_history | история (эпоха) | restauration; empire; insurrection; époque | seicento; ottocento; epoca | concept_theme |
+concept_flaubert | Гюстав Флобер | flaubert | flaubert | concept_writer | concept_madame_bovary
+concept_madame_bovary | «Госпожа Бовари» | madame bovary; emma; bovary; rodolphe; léon; homais; bovarysme | madame bovary | concept_novel | concept_flaubert, concept_boredom, concept_dream
+concept_hugo | Виктор Гюго | victor hugo; hugo | hugo | concept_writer | concept_les_miserables
+concept_les_miserables | «Отверженные» | les misérables; jean valjean; valjean; javert; cosette; fantine; myriel; gavroche; thénardier; marius | i miserabili | concept_historical_novel | concept_hugo, concept_poverty, concept_redemption, concept_justice
+concept_stendhal | Стендаль | stendhal | stendhal | concept_writer | concept_le_rouge_et_le_noir
+concept_le_rouge_et_le_noir | «Красное и чёрное» | le rouge et le noir; julien sorel; julien; madame de rênal; mathilde; la mole; séminaire; napoléon | il rosso e il nero | concept_novel | concept_stendhal, concept_ambition, concept_hypocrisy
+concept_baudelaire | Шарль Бодлер | baudelaire | baudelaire | concept_writer | concept_les_fleurs_du_mal
+concept_les_fleurs_du_mal | «Цветы зла» | les fleurs du mal; fleurs du mal; spleen et idéal; tableaux parisiens; albatros | i fiori del male | concept_poem_collection | concept_baudelaire, concept_boredom, concept_ideal, concept_synesthesia
+concept_dante | Данте Алигьери | dante | dante; dante alighieri | concept_writer | concept_divine_comedy
+concept_divine_comedy | «Божественная комедия» | divine comédie | divina commedia; commedia; inferno; purgatorio; paradiso; virgilio; beatrice; oltretomba; contrappasso | concept_epic_poem | concept_dante, concept_allegory, concept_redemption
+concept_manzoni | Алессандро Мандзони | manzoni | manzoni; alessandro manzoni | concept_writer | concept_promessi_sposi
+concept_promessi_sposi | «Обручённые» | les fiancés | promessi sposi; renzo; lucia; don abbondio; don rodrigo; innominato; fra cristoforo; peste; lazzaretto | concept_historical_novel | concept_manzoni, concept_providence, concept_poverty
+concept_leopardi | Джакомо Леопарди | leopardi | leopardi; giacomo leopardi; recanati | concept_writer | concept_canti, concept_pessimism
+concept_canti | «Песни» Леопарди | canti | canti; idilli; a silvia; la ginestra; ginestra; siepe | concept_poem_collection | concept_leopardi, concept_infinity, concept_memory_lit
+concept_pirandello | Луиджи Пиранделло | pirandello | pirandello; luigi pirandello | concept_writer | concept_mattia_pascal
+concept_mattia_pascal | «Покойный Маттиа Паскаль» | feu mathias pascal | mattia pascal; adriano meis; paleari; adriana | concept_novel | concept_pirandello, concept_identity, concept_humor

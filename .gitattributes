@@ -1,0 +1,10 @@
+* text=auto
+*.py text eol=lf
+*.scs text eol=lf
+*.sql text eol=lf
+*.md text eol=lf
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.png binary
+*.joblib binary

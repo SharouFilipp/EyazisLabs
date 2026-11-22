@@ -1,0 +1,11 @@
+Search Engines
+
+A search engine helps users find relevant documents among billions of pages. The engine works in three stages: it collects the pages, it builds an index and it answers the queries.
+
+A crawler visits web pages and follows the links between them. It downloads the content of each page and sends it to the indexer. The indexer extracts the words of the text and removes frequent words without meaning.
+
+The index is similar to the index at the end of a book. For each word, it stores the list of documents that contain this word. Thanks to this structure, the engine finds the documents very quickly.
+
+When a user enters a query, the engine calculates a score for each document. The score depends on the frequency of the words of the query in the document and on their rarity in the collection. The engine also analyzes the links: a page that receives many links is probably important.
+
+Finally, the engine sorts the documents by score and shows the best results first. The quality of a search engine depends on the precision of this ranking.

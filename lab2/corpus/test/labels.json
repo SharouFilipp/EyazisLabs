@@ -1,0 +1,182 @@
+{
+  "en_01_Photosynthesis.pdf": {
+    "lang": "en",
+    "title": "Photosynthesis",
+    "chars": 2522,
+    "source": "https://en.wikipedia.org/wiki/Photosynthesis"
+  },
+  "en_02_Volcano.pdf": {
+    "lang": "en",
+    "title": "Volcano",
+    "chars": 2566,
+    "source": "https://en.wikipedia.org/wiki/Volcano"
+  },
+  "en_03_Jazz.pdf": {
+    "lang": "en",
+    "title": "Jazz",
+    "chars": 2547,
+    "source": "https://en.wikipedia.org/wiki/Jazz"
+  },
+  "en_04_Bicycle.pdf": {
+    "lang": "en",
+    "title": "Bicycle",
+    "chars": 2564,
+    "source": "https://en.wikipedia.org/wiki/Bicycle"
+  },
+  "en_05_Chess.pdf": {
+    "lang": "en",
+    "title": "Chess",
+    "chars": 2563,
+    "source": "https://en.wikipedia.org/wiki/Chess"
+  },
+  "en_06_Coffee.pdf": {
+    "lang": "en",
+    "title": "Coffee",
+    "chars": 2515,
+    "source": "https://en.wikipedia.org/wiki/Coffee"
+  },
+  "en_07_Olympic_Games.pdf": {
+    "lang": "en",
+    "title": "Olympic Games",
+    "chars": 2501,
+    "source": "https://en.wikipedia.org/wiki/Olympic_Games"
+  },
+  "en_08_Moon.pdf": {
+    "lang": "en",
+    "title": "Moon",
+    "chars": 2471,
+    "source": "https://en.wikipedia.org/wiki/Moon"
+  },
+  "en_09_Western_honey_bee.pdf": {
+    "lang": "en",
+    "title": "Western honey bee",
+    "chars": 2492,
+    "source": "https://en.wikipedia.org/wiki/Western_honey_bee"
+  },
+  "en_10_Paris.pdf": {
+    "lang": "en",
+    "title": "Paris",
+    "chars": 2449,
+    "source": "https://en.wikipedia.org/wiki/Paris"
+  },
+  "en_11_Renaissance.pdf": {
+    "lang": "en",
+    "title": "Renaissance",
+    "chars": 2557,
+    "source": "https://en.wikipedia.org/wiki/Renaissance"
+  },
+  "en_12_Internet.pdf": {
+    "lang": "en",
+    "title": "Internet",
+    "chars": 2553,
+    "source": "https://en.wikipedia.org/wiki/Internet"
+  },
+  "en_13_Association_football.pdf": {
+    "lang": "en",
+    "title": "Association football",
+    "chars": 2506,
+    "source": "https://en.wikipedia.org/wiki/Association_football"
+  },
+  "en_14_Chocolate.pdf": {
+    "lang": "en",
+    "title": "Chocolate",
+    "chars": 2498,
+    "source": "https://en.wikipedia.org/wiki/Chocolate"
+  },
+  "en_15_Rail_transport.pdf": {
+    "lang": "en",
+    "title": "Rail transport",
+    "chars": 2487,
+    "source": "https://en.wikipedia.org/wiki/Rail_transport"
+  },
+  "fr_01_Photosynthese.pdf": {
+    "lang": "fr",
+    "title": "Photosynthèse",
+    "chars": 2539,
+    "source": "https://fr.wikipedia.org/wiki/Photosynthèse"
+  },
+  "fr_02_Volcan.pdf": {
+    "lang": "fr",
+    "title": "Volcan",
+    "chars": 2586,
+    "source": "https://fr.wikipedia.org/wiki/Volcan"
+  },
+  "fr_03_Jazz.pdf": {
+    "lang": "fr",
+    "title": "Jazz",
+    "chars": 2466,
+    "source": "https://fr.wikipedia.org/wiki/Jazz"
+  },
+  "fr_04_Bicyclette.pdf": {
+    "lang": "fr",
+    "title": "Bicyclette",
+    "chars": 2549,
+    "source": "https://fr.wikipedia.org/wiki/Bicyclette"
+  },
+  "fr_05_Echecs.pdf": {
+    "lang": "fr",
+    "title": "Échecs",
+    "chars": 2497,
+    "source": "https://fr.wikipedia.org/wiki/Échecs"
+  },
+  "fr_06_Cafe.pdf": {
+    "lang": "fr",
+    "title": "Café",
+    "chars": 2448,
+    "source": "https://fr.wikipedia.org/wiki/Café"
+  },
+  "fr_07_Jeux_olympiques.pdf": {
+    "lang": "fr",
+    "title": "Jeux olympiques",
+    "chars": 2524,
+    "source": "https://fr.wikipedia.org/wiki/Jeux_olympiques"
+  },
+  "fr_08_Lune.pdf": {
+    "lang": "fr",
+    "title": "Lune",
+    "chars": 2553,
+    "source": "https://fr.wikipedia.org/wiki/Lune"
+  },
+  "fr_09_Abeille_domestique.pdf": {
+    "lang": "fr",
+    "title": "Abeille domestique",
+    "chars": 2547,
+    "source": "https://fr.wikipedia.org/wiki/Abeille_domestique"
+  },
+  "fr_10_Londres.pdf": {
+    "lang": "fr",
+    "title": "Londres",
+    "chars": 2568,
+    "source": "https://fr.wikipedia.org/wiki/Londres"
+  },
+  "fr_11_Renaissance.pdf": {
+    "lang": "fr",
+    "title": "Renaissance",
+    "chars": 2485,
+    "source": "https://fr.wikipedia.org/wiki/Renaissance"
+  },
+  "fr_12_Internet.pdf": {
+    "lang": "fr",
+    "title": "Internet",
+    "chars": 2448,
+    "source": "https://fr.wikipedia.org/wiki/Internet"
+  },
+  "fr_13_Football.pdf": {
+    "lang": "fr",
+    "title": "Football",
+    "chars": 2470,
+    "source": "https://fr.wikipedia.org/wiki/Football"
+  },
+  "fr_14_Chocolat.pdf": {
+    "lang": "fr",
+    "title": "Chocolat",
+    "chars": 2540,
+    "source": "https://fr.wikipedia.org/wiki/Chocolat"
+  },
+  "fr_15_Transport_ferroviaire.pdf": {
+    "lang": "fr",
+    "title": "Transport ferroviaire",
+    "chars": 2523,
+    "source": "https://fr.wikipedia.org/wiki/Transport_ferroviaire"
+  }
+}

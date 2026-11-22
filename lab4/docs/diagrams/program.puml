@@ -1,0 +1,34 @@
+@startuml
+' Взаимодействие модулей при запросе на перевод
+!theme plain
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam ArrowColor #555555
+skinparam sequenceParticipantBackgroundColor #EAF0FB
+
+actor Пользователь as U
+participant "app.js" as JS
+participant "app.py" as API
+participant "spaCy" as SP
+participant "transfer.py\nRealizer" as TR
+participant "lexicon.py" as LX
+participant "french.py" as FR
+database "PostgreSQL" as DB
+
+U -> JS : «Перевести»
+JS -> API : POST /api/translate
+API -> SP : nlp(абзац)
+SP --> API : Doc (теги, леммы, зависимости)
+loop для каждого предложения
+  API -> TR : translate()
+  TR -> LX : обороты, get(лемма, POS, область)
+  LX --> TR : записи словаря
+  TR -> FR : conjugate, adj_form, article
+  FR --> TR : словоформы
+  TR --> API : элементы перевода
+  API -> FR : finalize (элизия, слияние)
+end
+API -> DB : INSERT translations, unknown_words
+API --> JS : перевод, статистика,\nчастотный список, деревья
+JS --> U : вкладки «Перевод», 1, 2
+@enduml

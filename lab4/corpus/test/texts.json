@@ -1,0 +1,174 @@
+{
+  "about": "Тестовая коллекция ЛР4: английские тексты (научные статьи по computer science и сочинения по литературе) с эталонным французским переводом, выровненным по предложениям. Абзацы разделены пустой строкой в поле en_text.",
+  "texts": [
+    {
+      "id": "cs_01",
+      "title": "Sorting algorithms",
+      "domain": "cs",
+      "paragraphs": [
+        [
+          ["Sorting is one of the most important problems in computer science.", "Le tri est l'un des problèmes les plus importants en informatique."],
+          ["A sorting algorithm arranges the elements of a list in a certain order.", "Un algorithme de tri range les éléments d'une liste dans un certain ordre."],
+          ["Quicksort chooses a pivot and divides the array into two parts.", "Le tri rapide choisit un pivot et divise le tableau en deux parties."],
+          ["The elements that are smaller than the pivot are placed on the left.", "Les éléments qui sont plus petits que le pivot sont placés à gauche."],
+          ["Then the algorithm sorts each part recursively.", "Ensuite, l'algorithme trie chaque partie de manière récursive."],
+          ["In the average case, quicksort is very fast, but in the worst case its complexity is quadratic.", "Dans le cas moyen, le tri rapide est très rapide, mais dans le pire cas sa complexité est quadratique."]
+        ],
+        [
+          ["Merge sort always divides the list into two halves and then merges the sorted halves.", "Le tri fusion divise toujours la liste en deux moitiés, puis fusionne les moitiés triées."],
+          ["This algorithm is stable and its complexity does not depend on the input data.", "Cet algorithme est stable et sa complexité ne dépend pas des données d'entrée."],
+          ["However, merge sort needs additional memory.", "Cependant, le tri fusion a besoin de mémoire supplémentaire."],
+          ["Heapsort uses a binary heap and does not require extra memory.", "Le tri par tas utilise un tas binaire et ne nécessite pas de mémoire supplémentaire."],
+          ["The choice of a sorting algorithm depends on the size of the data and on the available memory.", "Le choix d'un algorithme de tri dépend de la taille des données et de la mémoire disponible."]
+        ]
+      ]
+    },
+    {
+      "id": "cs_02",
+      "title": "Artificial neural networks",
+      "domain": "cs",
+      "paragraphs": [
+        [
+          ["Artificial neural networks are inspired by the human brain.", "Les réseaux de neurones artificiels sont inspirés par le cerveau humain."],
+          ["A neural network consists of layers of artificial neurons.", "Un réseau de neurones se compose de couches de neurones artificiels."],
+          ["Each neuron receives several inputs, computes a weighted sum and applies an activation function.", "Chaque neurone reçoit plusieurs entrées, calcule une somme pondérée et applique une fonction d'activation."],
+          ["The network learns from examples during the training phase.", "Le réseau apprend à partir d'exemples pendant la phase d'apprentissage."],
+          ["The training algorithm adjusts the weights in order to reduce the error.", "L'algorithme d'apprentissage ajuste les poids afin de réduire l'erreur."],
+          ["This method is called backpropagation.", "Cette méthode est appelée rétropropagation."]
+        ],
+        [
+          ["Deep learning uses networks with many hidden layers.", "L'apprentissage profond utilise des réseaux avec de nombreuses couches cachées."],
+          ["Convolutional networks are very effective for image recognition.", "Les réseaux convolutifs sont très efficaces pour la reconnaissance d'images."],
+          ["However, a large network requires a lot of data and powerful computers.", "Cependant, un grand réseau nécessite beaucoup de données et des ordinateurs puissants."],
+          ["Researchers are now developing smaller models that consume less energy.", "Les chercheurs développent maintenant des modèles plus petits qui consomment moins d'énergie."]
+        ]
+      ]
+    },
+    {
+      "id": "cs_03",
+      "title": "Relational databases",
+      "domain": "cs",
+      "paragraphs": [
+        [
+          ["A relational database stores data in tables.", "Une base de données relationnelle stocke les données dans des tables."],
+          ["Each table contains rows and columns.", "Chaque table contient des lignes et des colonnes."],
+          ["A row represents a record, and a column represents an attribute of this record.", "Une ligne représente un enregistrement, et une colonne représente un attribut de cet enregistrement."],
+          ["The primary key uniquely identifies each row of the table.", "La clé primaire identifie de manière unique chaque ligne de la table."],
+          ["A foreign key creates a link between two tables.", "Une clé étrangère crée un lien entre deux tables."]
+        ],
+        [
+          ["Users write queries in SQL to retrieve and modify the data.", "Les utilisateurs écrivent des requêtes en SQL pour récupérer et modifier les données."],
+          ["The database management system checks the integrity of the data and controls concurrent access.", "Le système de gestion de base de données vérifie l'intégrité des données et contrôle l'accès concurrent."],
+          ["A transaction is a sequence of operations that must be executed completely or not at all.", "Une transaction est une séquence d'opérations qui doivent être exécutées complètement ou pas du tout."],
+          ["Indexes make the search faster, but they slow down the insertion of new rows.", "Les index rendent la recherche plus rapide, mais ils ralentissent l'insertion de nouvelles lignes."],
+          ["PostgreSQL and MySQL are popular free systems.", "PostgreSQL et MySQL sont des systèmes libres populaires."]
+        ]
+      ]
+    },
+    {
+      "id": "cs_04",
+      "title": "Computer networks",
+      "domain": "cs",
+      "paragraphs": [
+        [
+          ["A computer network connects computers and allows them to exchange information.", "Un réseau informatique relie des ordinateurs et leur permet d'échanger des informations."],
+          ["The Internet is the largest network in the world.", "Internet est le plus grand réseau du monde."],
+          ["Data are divided into small packets before transmission.", "Les données sont divisées en petits paquets avant la transmission."],
+          ["Each packet contains the address of the sender and the address of the receiver.", "Chaque paquet contient l'adresse de l'expéditeur et l'adresse du destinataire."],
+          ["Routers determine the best path for every packet.", "Les routeurs déterminent le meilleur chemin pour chaque paquet."]
+        ],
+        [
+          ["The TCP protocol guarantees that all packets arrive in the correct order.", "Le protocole TCP garantit que tous les paquets arrivent dans le bon ordre."],
+          ["If a packet is lost, the sender transmits it again.", "Si un paquet est perdu, l'expéditeur le transmet de nouveau."],
+          ["The IP protocol is responsible for addressing and routing.", "Le protocole IP est responsable de l'adressage et du routage."],
+          ["Modern networks also use encryption to protect sensitive data.", "Les réseaux modernes utilisent aussi le chiffrement pour protéger les données sensibles."],
+          ["Without these protocols, the Internet could not work.", "Sans ces protocoles, Internet ne pourrait pas fonctionner."]
+        ]
+      ]
+    },
+    {
+      "id": "lit_01",
+      "title": "Hamlet: the tragedy of doubt",
+      "domain": "lit",
+      "paragraphs": [
+        [
+          ["Hamlet is one of the most famous tragedies of William Shakespeare.", "Hamlet est l'une des tragédies les plus célèbres de William Shakespeare."],
+          ["The young prince learns that his uncle killed his father.", "Le jeune prince apprend que son oncle a tué son père."],
+          ["The ghost of the old king asks Hamlet to avenge his death.", "Le fantôme du vieux roi demande à Hamlet de venger sa mort."],
+          ["However, Hamlet hesitates and cannot act.", "Cependant, Hamlet hésite et ne peut pas agir."],
+          ["He doubts the words of the ghost and he is afraid of his own feelings.", "Il doute des paroles du fantôme et il a peur de ses propres sentiments."]
+        ],
+        [
+          ["His famous monologue expresses this deep doubt.", "Son célèbre monologue exprime ce doute profond."],
+          ["The prince pretends to be mad in order to hide his plans.", "Le prince fait semblant d'être fou afin de cacher ses projets."],
+          ["His hesitation leads to the death of many characters.", "Son hésitation conduit à la mort de nombreux personnages."],
+          ["At the end of the play, Hamlet finally kills the king, but he dies too.", "À la fin de la pièce, Hamlet tue enfin le roi, mais il meurt aussi."],
+          ["The play shows that thought without action can destroy a man.", "La pièce montre que la pensée sans action peut détruire un homme."]
+        ]
+      ]
+    },
+    {
+      "id": "lit_02",
+      "title": "Pride and Prejudice",
+      "domain": "lit",
+      "paragraphs": [
+        [
+          ["Pride and Prejudice is a novel by Jane Austen.", "Orgueil et Préjugés est un roman de Jane Austen."],
+          ["The novel describes the life of the Bennet family in rural England.", "Le roman décrit la vie de la famille Bennet dans l'Angleterre rurale."],
+          ["Mrs Bennet wants to find rich husbands for her five daughters.", "Mme Bennet veut trouver des maris riches pour ses cinq filles."],
+          ["Elizabeth, the second daughter, is intelligent and independent.", "Elizabeth, la deuxième fille, est intelligente et indépendante."],
+          ["She meets Mr Darcy, a proud and wealthy man.", "Elle rencontre M. Darcy, un homme fier et riche."]
+        ],
+        [
+          ["At first, Elizabeth judges him too quickly and refuses his proposal.", "Au début, Elizabeth le juge trop vite et refuse sa demande en mariage."],
+          ["Later she understands that her prejudice was wrong.", "Plus tard, elle comprend que son préjugé était faux."],
+          ["Darcy also changes and becomes less arrogant.", "Darcy change aussi et devient moins arrogant."],
+          ["Austen criticizes a society where marriage often depends on money.", "Austen critique une société où le mariage dépend souvent de l'argent."],
+          ["Her irony makes the novel modern even today.", "Son ironie rend le roman moderne encore aujourd'hui."]
+        ]
+      ]
+    },
+    {
+      "id": "lit_03",
+      "title": "Nineteen Eighty-Four",
+      "domain": "lit",
+      "paragraphs": [
+        [
+          ["Nineteen Eighty-Four is a dystopian novel written by George Orwell.", "1984 est un roman dystopique écrit par George Orwell."],
+          ["The story takes place in a totalitarian state called Oceania.", "L'histoire se déroule dans un État totalitaire appelé Océania."],
+          ["The Party controls every aspect of private life.", "Le Parti contrôle chaque aspect de la vie privée."],
+          ["Telescreens watch the citizens day and night.", "Les télécrans surveillent les citoyens jour et nuit."],
+          ["Winston Smith works at the Ministry of Truth, where he rewrites old newspapers.", "Winston Smith travaille au ministère de la Vérité, où il réécrit de vieux journaux."]
+        ],
+        [
+          ["He secretly hates the Party and starts a forbidden diary.", "Il déteste secrètement le Parti et commence un journal interdit."],
+          ["The new language reduces the number of words.", "La nouvelle langue réduit le nombre de mots."],
+          ["Without words, people cannot express dangerous ideas.", "Sans mots, les gens ne peuvent pas exprimer d'idées dangereuses."],
+          ["At the end, Winston loses his freedom and his love.", "À la fin, Winston perd sa liberté et son amour."],
+          ["The novel remains a strong warning against political control.", "Le roman reste un avertissement fort contre le contrôle politique."]
+        ]
+      ]
+    },
+    {
+      "id": "lit_04",
+      "title": "The Great Gatsby",
+      "domain": "lit",
+      "paragraphs": [
+        [
+          ["The Great Gatsby is a novel by Francis Scott Fitzgerald.", "Gatsby le Magnifique est un roman de Francis Scott Fitzgerald."],
+          ["The narrator, Nick Carraway, moves to New York in 1922.", "Le narrateur, Nick Carraway, s'installe à New York en 1922."],
+          ["His mysterious neighbour, Jay Gatsby, organizes magnificent parties.", "Son voisin mystérieux, Jay Gatsby, organise des fêtes magnifiques."],
+          ["Gatsby loves Daisy, but she is married to a rich man.", "Gatsby aime Daisy, mais elle est mariée à un homme riche."],
+          ["He believes that money can bring back the past.", "Il croit que l'argent peut ramener le passé."]
+        ],
+        [
+          ["The green light at the end of the dock symbolizes his dream.", "La lumière verte au bout du quai symbolise son rêve."],
+          ["Fitzgerald describes the wealth and the emptiness of the Jazz Age.", "Fitzgerald décrit la richesse et le vide de l'ère du jazz."],
+          ["The characters live in luxury, but they are not happy.", "Les personnages vivent dans le luxe, mais ils ne sont pas heureux."],
+          ["At the end of the novel, Gatsby dies alone.", "À la fin du roman, Gatsby meurt seul."],
+          ["The book shows the failure of the American dream.", "Le livre montre l'échec du rêve américain."]
+        ]
+      ]
+    }
+  ]
+}

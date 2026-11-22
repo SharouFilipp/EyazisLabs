@@ -1,0 +1,11 @@
+Compilateurs
+
+Un compilateur traduit un programme d'un langage de haut niveau en code machine. La traduction comprend plusieurs phases. Chaque phase transforme la représentation du programme.
+
+L'analyseur lexical lit le code source et le divise en lexèmes. Un lexème est la plus petite unité significative du langage, par exemple un mot-clé ou un nombre. Ensuite, l'analyseur syntaxique vérifie la syntaxe du programme et construit un arbre syntaxique.
+
+L'analyse sémantique vérifie les types des variables et des expressions. Si le programme contient une erreur, le compilateur affiche un message. Après l'analyse, le compilateur génère une représentation intermédiaire.
+
+L'optimiseur améliore le code intermédiaire. Par exemple, il supprime les instructions inutiles et simplifie les expressions. Enfin, le générateur de code produit les instructions pour le processeur.
+
+Un interpréteur fonctionne différemment. Il ne crée pas de fichier exécutable, mais il exécute le programme directement. Les programmes interprétés sont généralement plus lents, mais ils sont plus faciles à déboguer.

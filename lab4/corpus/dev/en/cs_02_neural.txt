@@ -1,0 +1,11 @@
+Neural Networks
+
+An artificial neural network is a model that imitates the structure of the human brain. The network consists of layers of artificial neurons. Each neuron receives signals from the previous layer and computes a weighted sum. Then it applies an activation function to this sum.
+
+The first layer receives the input data, and the last layer produces the result. The hidden layers extract useful features from the data. A deep network contains many hidden layers.
+
+The network learns from examples. During training, the algorithm compares the output of the network with the correct answer. It computes the error and updates the weights of the connections. This method is called backpropagation.
+
+Neural networks have many applications. They recognize images, translate texts and generate speech. However, they need large amounts of data and powerful computers. Moreover, it is often difficult to explain their decisions.
+
+Researchers are developing new architectures that require less data. In the future, neural networks will probably become more efficient and more reliable.

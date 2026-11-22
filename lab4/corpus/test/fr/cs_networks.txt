@@ -1,0 +1,11 @@
+Réseaux informatiques
+
+Un réseau informatique relie des appareils afin qu'ils puissent échanger des informations. Internet est le plus grand réseau du monde. Il relie des milliards d'ordinateurs, de téléphones et de serveurs.
+
+Les données circulent dans le réseau sous forme de petits paquets. Chaque paquet contient l'adresse de l'expéditeur et l'adresse du destinataire. Les routeurs lisent ces adresses et envoient les paquets vers leur destination.
+
+La communication suit des protocoles, qui sont des ensembles de règles. Le protocole IP achemine les paquets entre les machines, mais il ne garantit pas leur arrivée. Le protocole TCP vérifie que tous les paquets arrivent dans le bon ordre et renvoie les paquets perdus.
+
+Le web fonctionne au-dessus de ces protocoles. Un navigateur envoie une requête à un serveur, et le serveur renvoie une page. Les connexions sécurisées chiffrent les données, donc un attaquant ne peut pas lire les messages.
+
+La vitesse d'un réseau dépend de sa bande passante et de sa latence. Les réseaux modernes en fibre transmettent de grands volumes de données avec un très faible délai.

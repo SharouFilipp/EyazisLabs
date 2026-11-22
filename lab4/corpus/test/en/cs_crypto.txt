@@ -1,0 +1,11 @@
+Cryptography
+
+Cryptography protects information against unauthorized readers. It transforms a readable message into a sequence of symbols that nobody can understand without a key.
+
+In symmetric cryptography, the sender and the receiver share the same secret key. The algorithm uses this key to encrypt and to decrypt the message. This method is fast, but the two parties must exchange the key in a safe way.
+
+Public key cryptography solves this problem. Each user has two keys: a public key and a private key. Anyone can encrypt a message with the public key, but only the owner of the private key can decrypt it.
+
+Digital signatures use the same principle. The author signs a document with his private key, and the readers verify the signature with his public key. Thus they know that nobody modified the document.
+
+The security of these methods depends on difficult mathematical problems. For example, it is very hard to find the prime factors of a large number. However, quantum computers could one day break some current algorithms.

@@ -1,0 +1,11 @@
+Algorithmes de tri
+
+Le tri est l'un des problèmes les plus importants de l'informatique. Un algorithme de tri place les éléments d'une liste dans un certain ordre. Les algorithmes les plus simples comparent les éléments adjacents et les échangent. Ces algorithmes sont faciles à implémenter, mais ils sont lents sur les grandes listes.
+
+Le tri rapide utilise la stratégie diviser pour régner. L'algorithme choisit un pivot et divise la liste en deux parties. Les petits éléments vont dans la partie gauche, et les grands éléments vont dans la partie droite. Ensuite, l'algorithme trie chaque partie de manière récursive. En moyenne, le tri rapide nécessite n log n comparaisons.
+
+Le tri fusion divise aussi la liste en deux moitiés. Il trie chaque moitié et fusionne les résultats. Contrairement au tri rapide, le tri fusion garantit de bonnes performances dans le pire des cas. Cependant, il nécessite de la mémoire supplémentaire pour l'étape de fusion.
+
+Le tri par tas construit un tas binaire à partir des données. Le plus grand élément se trouve toujours à la racine du tas. L'algorithme retire la racine et restaure le tas. Le tri par tas ne nécessite pas de mémoire supplémentaire.
+
+Le choix d'un algorithme dépend de la taille des données et de la mémoire disponible. En pratique, les bibliothèques modernes combinent souvent plusieurs méthodes.

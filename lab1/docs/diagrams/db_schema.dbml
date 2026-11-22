@@ -1,0 +1,41 @@
+Table documents {
+  id serial [primary key]
+  filename text [unique, not null]
+  title text
+  text text [not null]
+  size integer
+  content_hash text
+  disk_path text
+  source_url text
+  source_type text [default: 'file']
+  category text [note: 'Тема документа, определяется классификатором']
+  category_manual boolean [default: false, note: 'true — тема указана пользователем (обучающий пример)']
+  uploaded_at timestamp [default: `now()`]
+}
+
+Table terms {
+  id serial [primary key]
+  lemma text [unique, not null]
+  idf real
+}
+
+Table doc_terms {
+  document_id integer [not null]
+  term_id integer [not null]
+  weight real [not null]
+
+  indexes {
+    (document_id, term_id) [pk]
+    term_id
+    document_id
+  }
+}
+
+Table queries_log {
+  id serial [primary key]
+  query text [not null]
+  created_at timestamp [default: `now()`]
+}
+
+Ref doc_terms_documents: doc_terms.document_id > documents.id [delete: cascade]
+Ref doc_terms_terms: doc_terms.term_id > terms.id [delete: cascade]

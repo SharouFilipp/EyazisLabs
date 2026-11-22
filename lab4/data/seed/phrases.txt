@@ -1,0 +1,92 @@
+# Обороты: последовательность лемм en | перевод | тип (NOUN — именная группа с родом; VERB — глагольный оборот; FIX — неизменяемый) | род / доп.
+neural network|réseau de neurones|NOUN|m;pl=réseaux de neurones
+artificial neural network|réseau de neurones artificiels|NOUN|m;pl=réseaux de neurones artificiels
+sorting algorithm|algorithme de tri|NOUN|m;pl=algorithmes de tri
+merge sort|tri fusion|NOUN|m;pl=tris fusion
+binary heap|tas binaire|NOUN|m;pl=tas binaires
+heapsort|tri par tas|NOUN|m;pl=tris par tas
+divide and conquer|diviser pour régner|NOUN|m;noart
+activation function|fonction d'activation|NOUN|f;pl=fonctions d'activation
+input datum|données d'entrée|NOUN|f;pl=données d'entrée
+input data|données d'entrée|NOUN|f;pl=données d'entrée
+hidden layer|couche cachée|NOUN|f;pl=couches cachées
+weighted sum|somme pondérée|NOUN|f;pl=sommes pondérées
+deep network|réseau profond|NOUN|m;pl=réseaux profonds
+correct answer|bonne réponse|NOUN|f;pl=bonnes réponses
+primary key|clé primaire|NOUN|f;pl=clés primaires
+foreign key|clé étrangère|NOUN|f;pl=clés étrangères
+database management system|système de gestion de base de données|NOUN|m;pl=systèmes de gestion de base de données
+management system|système de gestion|NOUN|m;pl=systèmes de gestion
+sql language|langage SQL|NOUN|m
+open source|open source|ADJ|inv
+source code|code source|NOUN|m;pl=codes sources
+machine code|code machine|NOUN|m
+machine learning|apprentissage automatique|NOUN|m
+high level language|langage de haut niveau|NOUN|m;pl=langages de haut niveau
+high level|haut niveau|NOUN|m
+lexical analyzer|analyseur lexical|NOUN|m;pl=analyseurs lexicaux
+semantic analysis|analyse sémantique|NOUN|f;pl=analyses sémantiques
+syntax tree|arbre syntaxique|NOUN|m;pl=arbres syntaxiques
+code generator|générateur de code|NOUN|m;pl=générateurs de code
+intermediate representation|représentation intermédiaire|NOUN|f;pl=représentations intermédiaires
+intermediate code|code intermédiaire|NOUN|m
+executable file|fichier exécutable|NOUN|m;pl=fichiers exécutables
+operating system|système d'exploitation|NOUN|m;pl=systèmes d'exploitation
+computer science|informatique|NOUN|f
+data structure|structure de données|NOUN|f;pl=structures de données
+worst case|pire des cas|NOUN|m
+merge step|étape de fusion|NOUN|f;pl=étapes de fusion
+loaf of bread|pain|NOUN|m
+point of view|point de vue|NOUN|m;pl=points de vue
+main character|personnage principal|NOUN|m;pl=personnages principaux
+open source system|système open source|NOUN|m;pl=systèmes open source
+freedom of thought|liberté de pensée|NOUN|f
+human brain|cerveau humain|NOUN|m;pl=cerveaux humains
+human action|action humaine|NOUN|f;pl=actions humaines
+poor people|pauvre|NOUN|m;pl=pauvres
+literary movement|mouvement littéraire|NOUN|m;pl=mouvements littéraires
+romantic movement|mouvement romantique|NOUN|m;pl=mouvements romantiques
+take place|se dérouler|VERB|
+fall in love|tomber amoureux|VERB|aux=être;with=de
+keep a diary|tenir un journal|VERB|
+slow down|ralentir|VERB|
+speed up|accélérer|VERB|
+think about|réfléchir|VERB|on=à
+lose mind|perdre la raison|VERB|
+lose her mind|perdre la raison|VERB|
+lose his mind|perdre la raison|VERB|
+consist of|être constitué|VERB|on=de
+pretend to be|faire semblant d'être|VERB|
+give up|abandonner|VERB|
+find out|découvrir|VERB|
+carry out|effectuer|VERB|
+set up|configurer|VERB|
+be hungry|avoir faim|VERB|
+be call|s'appeler|VERB|
+for example|par exemple|FIX|
+for instance|par exemple|FIX|
+in practice|en pratique|FIX|
+on average|en moyenne|FIX|
+in contrast|au contraire|FIX|
+in the future|à l'avenir|FIX|
+for a long time|pendant longtemps|FIX|
+for this reason|pour cette raison|FIX|
+at the end of|à la fin de|FIX|
+in time|à temps|FIX|
+thanks to|grâce à|FIX|
+according to|selon|FIX|
+as well as|ainsi que|FIX|
+such as|comme|FIX|
+rather than|plutôt que|FIX|
+in order to|afin de|FIX|
+at least|au moins|FIX|
+of course|bien sûr|FIX|
+in fact|en fait|FIX|
+in general|en général|FIX|
+as a result|par conséquent|FIX|
+at the same time|en même temps|FIX|
+on the other hand|d'autre part|FIX|
+in addition|de plus|FIX|
+each other|l'un l'autre|FIX|
+a lot of|beaucoup de|FIX|
+in particular|en particulier|FIX|

@@ -1,0 +1,69 @@
+Project lab4 {
+  database_type: 'PostgreSQL'
+  Note: 'ЛР №4 — автоматический машинный перевод EN→FR (база lab4). Словарь системы с трансфером, обороты, история переводов, неизвестные слова для пополнения словаря'
+}
+
+Table dictionary {
+  id serial [primary key]
+  en text [not null, note: 'Английская лемма']
+  pos varchar(6) [not null, note: 'NOUN, VERB, ADJ, ADV, ADP, PROPN…']
+  fr text [not null, note: 'Перевод; для глагола — инфинитив']
+  gender char(1) [note: 'm / f для существительных']
+  extra text [not null, default: '', note: 'Формы и флаги: pl=…; f=…; pre; aux=être; obj=à; inf=de']
+  domain varchar(3) [note: 'cs / lit / NULL — общая лексика']
+  source varchar(5) [not null, default: 'seed', note: 'seed — исходный, user — пользователь, auto — принятая гипотеза']
+  updated_at timestamp [not null, default: `now()`]
+
+  Indexes {
+    (en, pos, domain, fr) [unique, name: 'dictionary_uniq']
+    en [name: 'dictionary_en']
+  }
+  Note: 'Двуязычный словарь (лемма + часть речи + область)'
+}
+
+Table phrases {
+  id serial [primary key]
+  en text [not null, note: 'Последовательность лемм: take into account']
+  fr text [not null]
+  kind varchar(5) [not null, note: 'NOUN, VERB, ADJ, FIX, PROPN']
+  extra text [not null, default: '', note: 'Род и мн. ч. для именных оборотов']
+  source varchar(5) [not null, default: 'seed']
+  updated_at timestamp [not null, default: `now()`]
+
+  Indexes {
+    (en, kind) [unique]
+  }
+  Note: 'Устойчивые обороты и термины из нескольких слов'
+}
+
+Table translations {
+  id serial [primary key]
+  created_at timestamp [not null, default: `now()`]
+  title text [not null]
+  source_text text [not null, note: 'Английский текст']
+  result_text text [not null, note: 'Французский перевод']
+  mode varchar(8) [not null, note: 'transfer / direct']
+  domain varchar(3)
+  n_words integer [not null, note: 'Слов во входном тексте']
+  n_translated integer [not null, note: 'Переведено слов']
+  n_unknown integer [not null]
+  coverage float [not null, note: '% слов, покрытых словарём']
+  time_ms float [not null]
+  result jsonb [not null, note: 'Предложения, частотный список, деревья разбора']
+
+  Note: 'История переводов'
+}
+
+Table unknown_words {
+  lemma text [not null]
+  pos varchar(6) [not null]
+  word text [not null, note: 'Форма в тексте']
+  freq integer [not null, default: 0, note: 'Сколько раз встретилось']
+  example text [note: 'Предложение-пример']
+  last_seen timestamp [not null, default: `now()`]
+
+  Indexes {
+    (lemma, pos) [pk]
+  }
+  Note: 'Слова, которых не было в словаре; источник для утилиты пополнения'
+}

@@ -1,0 +1,702 @@
+{
+ "machine": {
+  "os": "Windows 11 (10.0.26300)",
+  "python": "3.10.11",
+  "cpu": "Intel(R) Core(TM) Ultra 9 185H",
+  "cores": 22,
+  "ram_gb": 31.4,
+  "postgresql": "16.10"
+ },
+ "spacy_model": "en_core_web_sm",
+ "spacy": "3.8.18",
+ "load_ms": 328,
+ "lexicon": {
+  "words": 1150,
+  "lemmas": 1145,
+  "phrases": 95
+ },
+ "quality": {
+  "dev_transfer": {
+   "bleu": 92.4,
+   "precisions": [
+    97.6,
+    94.2,
+    91.5,
+    88.9
+   ],
+   "bp": 0.994,
+   "chrf": 96.9,
+   "words": 1380,
+   "unknown": 4,
+   "coverage": 99.7,
+   "sentences": 143,
+   "by_domain": {
+    "cs": {
+     "bleu": 90.6,
+     "chrf": 96.0
+    },
+    "lit": {
+     "bleu": 94.5,
+     "chrf": 98.0
+    }
+   },
+   "domain_errors": 0,
+   "docs": [
+    {
+     "name": "cs_01_sorting",
+     "title": "Sorting Algorithms",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 193,
+     "unknown": 2,
+     "bleu": 80.4,
+     "chrf": 92.5
+    },
+    {
+     "name": "cs_02_neural",
+     "title": "Neural Networks",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 166,
+     "unknown": 0,
+     "bleu": 95.6,
+     "chrf": 98.0
+    },
+    {
+     "name": "cs_03_databases",
+     "title": "Relational Databases",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 177,
+     "unknown": 2,
+     "bleu": 93.7,
+     "chrf": 96.5
+    },
+    {
+     "name": "cs_04_compilers",
+     "title": "Compilers",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 157,
+     "unknown": 0,
+     "bleu": 92.6,
+     "chrf": 97.2
+    },
+    {
+     "name": "lit_01_hugo",
+     "title": "Les Miserables by Victor Hugo",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 185,
+     "unknown": 0,
+     "bleu": 97.6,
+     "chrf": 98.9
+    },
+    {
+     "name": "lit_02_hamlet",
+     "title": "Hamlet by William Shakespeare",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 168,
+     "unknown": 0,
+     "bleu": 96.9,
+     "chrf": 99.0
+    },
+    {
+     "name": "lit_03_orwell",
+     "title": "1984 by George Orwell",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 182,
+     "unknown": 0,
+     "bleu": 93.0,
+     "chrf": 97.1
+    },
+    {
+     "name": "lit_04_romanticism",
+     "title": "Romantic Poetry",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 152,
+     "unknown": 0,
+     "bleu": 90.4,
+     "chrf": 96.8
+    }
+   ]
+  },
+  "dev_direct": {
+   "bleu": 28.8,
+   "precisions": [
+    70.7,
+    40.7,
+    23.2,
+    14.1
+   ],
+   "bp": 0.924,
+   "chrf": 73.4,
+   "words": 1380,
+   "unknown": 11,
+   "coverage": 99.2,
+   "sentences": 143,
+   "by_domain": {
+    "cs": {
+     "bleu": 32.1,
+     "chrf": 74.5
+    },
+    "lit": {
+     "bleu": 25.9,
+     "chrf": 72.4
+    }
+   },
+   "domain_errors": 0,
+   "docs": [
+    {
+     "name": "cs_01_sorting",
+     "title": "Sorting Algorithms",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 193,
+     "unknown": 3,
+     "bleu": 29.5,
+     "chrf": 73.2
+    },
+    {
+     "name": "cs_02_neural",
+     "title": "Neural Networks",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 166,
+     "unknown": 1,
+     "bleu": 24.4,
+     "chrf": 70.7
+    },
+    {
+     "name": "cs_03_databases",
+     "title": "Relational Databases",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 177,
+     "unknown": 4,
+     "bleu": 31.4,
+     "chrf": 73.5
+    },
+    {
+     "name": "cs_04_compilers",
+     "title": "Compilers",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 157,
+     "unknown": 3,
+     "bleu": 43.3,
+     "chrf": 80.6
+    },
+    {
+     "name": "lit_01_hugo",
+     "title": "Les Miserables by Victor Hugo",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 185,
+     "unknown": 0,
+     "bleu": 27.4,
+     "chrf": 72.9
+    },
+    {
+     "name": "lit_02_hamlet",
+     "title": "Hamlet by William Shakespeare",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 168,
+     "unknown": 0,
+     "bleu": 27.4,
+     "chrf": 73.4
+    },
+    {
+     "name": "lit_03_orwell",
+     "title": "1984 by George Orwell",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 182,
+     "unknown": 0,
+     "bleu": 27.7,
+     "chrf": 74.7
+    },
+    {
+     "name": "lit_04_romanticism",
+     "title": "Romantic Poetry",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 152,
+     "unknown": 0,
+     "bleu": 21.3,
+     "chrf": 68.7
+    }
+   ]
+  },
+  "test_transfer": {
+   "bleu": 53.3,
+   "precisions": [
+    77.3,
+    58.5,
+    47.2,
+    37.9
+   ],
+   "bp": 1.0,
+   "chrf": 76.0,
+   "words": 1341,
+   "unknown": 158,
+   "coverage": 88.2,
+   "sentences": 127,
+   "by_domain": {
+    "cs": {
+     "bleu": 54.2,
+     "chrf": 76.2
+    },
+    "lit": {
+     "bleu": 51.3,
+     "chrf": 75.6
+    }
+   },
+   "domain_errors": 1,
+   "docs": [
+    {
+     "name": "cs_crypto",
+     "title": "Cryptography",
+     "domain": "cs",
+     "detected": "lit",
+     "words": 171,
+     "unknown": 20,
+     "bleu": 49.9,
+     "chrf": 74.1
+    },
+    {
+     "name": "cs_networks",
+     "title": "Computer Networks",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 165,
+     "unknown": 28,
+     "bleu": 43.4,
+     "chrf": 70.2
+    },
+    {
+     "name": "cs_os",
+     "title": "Operating Systems",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 180,
+     "unknown": 11,
+     "bleu": 63.7,
+     "chrf": 82.2
+    },
+    {
+     "name": "cs_search",
+     "title": "Search Engines",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 186,
+     "unknown": 21,
+     "bleu": 59.9,
+     "chrf": 78.4
+    },
+    {
+     "name": "lit_bovary",
+     "title": "Madame Bovary by Gustave Flaubert",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 160,
+     "unknown": 25,
+     "bleu": 55.5,
+     "chrf": 77.4
+    },
+    {
+     "name": "lit_crime",
+     "title": "Crime and Punishment by Fyodor Dostoevsky",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 149,
+     "unknown": 14,
+     "bleu": 54.3,
+     "chrf": 74.4
+    },
+    {
+     "name": "lit_prince",
+     "title": "The Little Prince by Antoine de Saint-Exupery",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 163,
+     "unknown": 17,
+     "bleu": 55.9,
+     "chrf": 79.3
+    },
+    {
+     "name": "lit_romeo",
+     "title": "Romeo and Juliet by William Shakespeare",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 167,
+     "unknown": 22,
+     "bleu": 39.4,
+     "chrf": 71.3
+    }
+   ]
+  },
+  "test_direct": {
+   "bleu": 20.3,
+   "precisions": [
+    60.4,
+    29.9,
+    15.8,
+    8.3
+   ],
+   "bp": 0.922,
+   "chrf": 60.6,
+   "words": 1341,
+   "unknown": 175,
+   "coverage": 87.0,
+   "sentences": 127,
+   "by_domain": {
+    "cs": {
+     "bleu": 23.4,
+     "chrf": 61.1
+    },
+    "lit": {
+     "bleu": 17.1,
+     "chrf": 59.8
+    }
+   },
+   "domain_errors": 1,
+   "docs": [
+    {
+     "name": "cs_crypto",
+     "title": "Cryptography",
+     "domain": "cs",
+     "detected": "lit",
+     "words": 171,
+     "unknown": 24,
+     "bleu": 15.6,
+     "chrf": 57.3
+    },
+    {
+     "name": "cs_networks",
+     "title": "Computer Networks",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 165,
+     "unknown": 29,
+     "bleu": 23.5,
+     "chrf": 55.9
+    },
+    {
+     "name": "cs_os",
+     "title": "Operating Systems",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 180,
+     "unknown": 15,
+     "bleu": 29.0,
+     "chrf": 67.7
+    },
+    {
+     "name": "cs_search",
+     "title": "Search Engines",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 186,
+     "unknown": 22,
+     "bleu": 25.7,
+     "chrf": 63.4
+    },
+    {
+     "name": "lit_bovary",
+     "title": "Madame Bovary by Gustave Flaubert",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 160,
+     "unknown": 27,
+     "bleu": 17.6,
+     "chrf": 59.9
+    },
+    {
+     "name": "lit_crime",
+     "title": "Crime and Punishment by Fyodor Dostoevsky",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 149,
+     "unknown": 16,
+     "bleu": 16.5,
+     "chrf": 58.1
+    },
+    {
+     "name": "lit_prince",
+     "title": "The Little Prince by Antoine de Saint-Exupery",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 163,
+     "unknown": 17,
+     "bleu": 14.4,
+     "chrf": 61.3
+    },
+    {
+     "name": "lit_romeo",
+     "title": "Romeo and Juliet by William Shakespeare",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 167,
+     "unknown": 25,
+     "bleu": 20.0,
+     "chrf": 59.9
+    }
+   ]
+  }
+ },
+ "replenishment": {
+  "files": [
+   "test_round1.txt",
+   "test_round2_names.txt"
+  ],
+  "lexicon": {
+   "words": 1284,
+   "lemmas": 1277,
+   "phrases": 95
+  },
+  "test_transfer": {
+   "bleu": 72.2,
+   "precisions": [
+    88.1,
+    75.7,
+    67.3,
+    60.5
+   ],
+   "bp": 1.0,
+   "chrf": 88.1,
+   "words": 1341,
+   "unknown": 5,
+   "coverage": 99.6,
+   "sentences": 127,
+   "by_domain": {
+    "cs": {
+     "bleu": 70.7,
+     "chrf": 88.1
+    },
+    "lit": {
+     "bleu": 73.1,
+     "chrf": 88.0
+    }
+   },
+   "domain_errors": 0,
+   "docs": [
+    {
+     "name": "cs_crypto",
+     "title": "Cryptography",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 171,
+     "unknown": 1,
+     "bleu": 70.7,
+     "chrf": 89.7
+    },
+    {
+     "name": "cs_networks",
+     "title": "Computer Networks",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 165,
+     "unknown": 1,
+     "bleu": 58.8,
+     "chrf": 81.2
+    },
+    {
+     "name": "cs_os",
+     "title": "Operating Systems",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 180,
+     "unknown": 1,
+     "bleu": 72.3,
+     "chrf": 89.7
+    },
+    {
+     "name": "cs_search",
+     "title": "Search Engines",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 186,
+     "unknown": 1,
+     "bleu": 81.0,
+     "chrf": 91.8
+    },
+    {
+     "name": "lit_bovary",
+     "title": "Madame Bovary by Gustave Flaubert",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 160,
+     "unknown": 1,
+     "bleu": 74.8,
+     "chrf": 89.2
+    },
+    {
+     "name": "lit_crime",
+     "title": "Crime and Punishment by Fyodor Dostoevsky",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 149,
+     "unknown": 0,
+     "bleu": 73.5,
+     "chrf": 87.5
+    },
+    {
+     "name": "lit_prince",
+     "title": "The Little Prince by Antoine de Saint-Exupery",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 163,
+     "unknown": 0,
+     "bleu": 74.0,
+     "chrf": 89.1
+    },
+    {
+     "name": "lit_romeo",
+     "title": "Romeo and Juliet by William Shakespeare",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 167,
+     "unknown": 0,
+     "bleu": 70.2,
+     "chrf": 86.1
+    }
+   ]
+  },
+  "test_direct": {
+   "bleu": 28.8,
+   "precisions": [
+    69.0,
+    39.2,
+    23.2,
+    14.6
+   ],
+   "bp": 0.93,
+   "chrf": 70.1,
+   "words": 1341,
+   "unknown": 17,
+   "coverage": 98.7,
+   "sentences": 127,
+   "by_domain": {
+    "cs": {
+     "bleu": 30.1,
+     "chrf": 71.0
+    },
+    "lit": {
+     "bleu": 27.3,
+     "chrf": 68.9
+    }
+   },
+   "domain_errors": 0,
+   "docs": [
+    {
+     "name": "cs_crypto",
+     "title": "Cryptography",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 171,
+     "unknown": 2,
+     "bleu": 23.3,
+     "chrf": 68.8
+    },
+    {
+     "name": "cs_networks",
+     "title": "Computer Networks",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 165,
+     "unknown": 2,
+     "bleu": 30.2,
+     "chrf": 65.5
+    },
+    {
+     "name": "cs_os",
+     "title": "Operating Systems",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 180,
+     "unknown": 4,
+     "bleu": 33.0,
+     "chrf": 75.6
+    },
+    {
+     "name": "cs_search",
+     "title": "Search Engines",
+     "domain": "cs",
+     "detected": "cs",
+     "words": 186,
+     "unknown": 1,
+     "bleu": 34.1,
+     "chrf": 74.0
+    },
+    {
+     "name": "lit_bovary",
+     "title": "Madame Bovary by Gustave Flaubert",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 160,
+     "unknown": 3,
+     "bleu": 19.4,
+     "chrf": 66.6
+    },
+    {
+     "name": "lit_crime",
+     "title": "Crime and Punishment by Fyodor Dostoevsky",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 149,
+     "unknown": 1,
+     "bleu": 23.0,
+     "chrf": 68.1
+    },
+    {
+     "name": "lit_prince",
+     "title": "The Little Prince by Antoine de Saint-Exupery",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 163,
+     "unknown": 0,
+     "bleu": 29.9,
+     "chrf": 69.8
+    },
+    {
+     "name": "lit_romeo",
+     "title": "Romeo and Juliet by William Shakespeare",
+     "domain": "lit",
+     "detected": "lit",
+     "words": 167,
+     "unknown": 4,
+     "bleu": 36.8,
+     "chrf": 71.1
+    }
+   ]
+  }
+ },
+ "timing": {
+  "1": {
+   "words": 336,
+   "analysis": 122.9,
+   "transfer": 8.4,
+   "synthesis": 0.6,
+   "total": 151.5
+  },
+  "2": {
+   "words": 672,
+   "analysis": 203.0,
+   "transfer": 15.2,
+   "synthesis": 1.2,
+   "total": 237.3
+  },
+  "4": {
+   "words": 1344,
+   "analysis": 377.9,
+   "transfer": 29.9,
+   "synthesis": 2.2,
+   "total": 451.0
+  }
+ }
+}

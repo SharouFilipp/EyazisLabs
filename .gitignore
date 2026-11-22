@@ -1,0 +1,21 @@
+# окружения и кэш
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# рабочие файлы приложений (создаются автоматически)
+lab*/data/
+!lab4/data/
+lab2/results/tmp/
+
+# временные файлы Office и ОС
+~$*
+*.tmp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/

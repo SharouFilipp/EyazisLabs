@@ -1,0 +1,32 @@
+@startuml
+' Блок-схема работы программы
+!theme plain
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam ArrowColor #555555
+skinparam ActivityBackgroundColor #F5F7FB
+skinparam ActivityBorderColor #555555
+
+start
+:Открытие веб-страницы,
+создание / обновление таблиц БД,
+загрузка базы знаний в sc-память;
+repeat
+  :Загрузка документов; <<input>>
+repeat while (Формат поддерживается\nи есть текстовый слой?) is (нет) not (да)
+:Извлечение абзацев, определение
+языка и предметной области;
+:Запись в таблицу documents;
+:Пересчёт df(t) по коллекции,
+рефераты двумя методами;
+:Запись sentences, terms,
+doc_concepts, summaries;
+:Отображение документов, рефератов,
+SCg-графа и оценки качества;
+if (Сохранить или распечатать?) then (да)
+  :Сохранение HTML, TXT, SCs
+или печать;
+else (нет)
+endif
+stop
+@enduml

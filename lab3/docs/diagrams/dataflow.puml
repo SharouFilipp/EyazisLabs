@@ -1,0 +1,39 @@
+@startuml
+' Схема потоков данных: документ проходит через оба метода
+!theme plain
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam ArrowColor #555555
+skinparam ActivityBackgroundColor #F5F7FB
+skinparam ActivityBorderColor #555555
+
+start
+:Файлы PDF / DOCX / TXT;
+:doc_reader: текст и абзацы;
+:text_processor: язык, предметная область,
+предложения, термины;
+:запись в таблицу **documents**;
+fork
+  :df(t) и |DB| по коллекции
+  того же языка;
+  :**Метод 1 — sentence extraction**
+  w(t,D), Score · Posd · Posp;
+  :классический реферат
+  + ключевые слова;
+  :запись **sentences**, **terms**, **summaries**;
+fork again
+  :sc-память с базой знаний kb/*.scs
+  (понятия, идентификаторы fr/it,
+  nrel_inclusion, nrel_related);
+  :**Метод 2 — агент OSTIS**
+  понятия в предложениях, активация,
+  отбор с покрытием понятий;
+  :семантический реферат
+  + ключевые понятия базы знаний;
+  :запись **sentences**, **doc_concepts**, **summaries**;
+end fork
+:ostis.py: фрагменты SCs обоих рефератов;
+:интерфейс: сравнение методов, SCg-граф, оценка;
+:файлы HTML / TXT / SCs, печать;
+stop
+@enduml

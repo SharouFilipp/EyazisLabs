@@ -1,0 +1,14 @@
+# Пополнение словаря, раунд 2: имена собственные и местоимения, которых не было в словаре
+# (слова переносились в перевод без изменений и не попадали в список неизвестных).
+romeo|PROPN|Roméo|m||lit
+juliet|PROPN|Juliette|f||lit
+montague|PROPN|Montaigu|m||lit
+verona|PROPN|Vérone|f|city|lit
+siberia|PROPN|Sibérie|f|country|
+dostoevsky|PROPN|Dostoïevski|m||lit
+fyodor|PROPN|Fiodor|m||lit
+earth|PROPN|Terre|f||
+porfiry|PROPN|Porphyre|m||lit
+nobody|PRON|personne|||
+anyone|PRON|n'importe qui|||
+punishment|NOUN|châtiment|m||lit

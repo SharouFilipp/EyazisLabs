@@ -1,0 +1,11 @@
+Compilers
+
+A compiler translates a program from a high level language into machine code. The translation consists of several phases. Each phase transforms the representation of the program.
+
+The lexical analyzer reads the source code and divides it into tokens. A token is the smallest meaningful unit of the language, for example a keyword or a number. Then the parser checks the syntax of the program and builds a syntax tree.
+
+The semantic analysis verifies the types of the variables and the expressions. If the program contains an error, the compiler displays a message. After the analysis, the compiler generates an intermediate representation.
+
+The optimizer improves the intermediate code. For example, it removes useless instructions and simplifies the expressions. Finally, the code generator produces the instructions for the processor.
+
+An interpreter works differently. It does not create an executable file, but it executes the program directly. Interpreted programs are usually slower, but they are easier to debug.
