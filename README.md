@@ -60,7 +60,7 @@ uv run uvicorn app:app --port 8004
 ## Структура репозитория
 
 ```
-eyzis-labs/
+EyazisLabs/
 ├── setup_db.sql        пользователь ips и базы lab1–lab4
 ├── tasks/              задания к лабораторным работам (PDF)
 ├── lab1/               ИПС: код, docs/ (отчёт, схемы, скриншоты)
