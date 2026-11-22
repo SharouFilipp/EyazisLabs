@@ -46,8 +46,8 @@
 ## Быстрый старт
 
 ```bash
-git clone <адрес репозитория>
-cd eyzis-labs/lab4          # или lab1 / lab2 / lab3
+git clone https://github.com/SharouFilipp/EyazisLabs.git
+cd EyazisLabs/lab4          # или lab1 / lab2 / lab3
 uv sync                     # создаёт .venv и ставит зависимости строго по uv.lock
 uv run uvicorn app:app --port 8004
 ```
